@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace ConsoleTest
 {
@@ -14,10 +15,18 @@ namespace ConsoleTest
 
 	public class UserDatabase
 	{
-
-		public void Class1()
+		Dictionary<string, (string, string, string, string, string, string, string[])> uDatabase = new Dictionary<string, (string, string, string, string, string, string, string[])>();
+		public UserDatabase()
 		{
-
+			Console.WriteLine("Enter location of UserDatabase input file:");
+			string loc = Console.ReadLine();
+			string line;
+			System.IO.StreamReader file = new System.IO.StreamReader(@loc);
+			while ((line = file.ReadLine()) != null)
+			{
+				System.Console.WriteLine(line);
+			}
+			file.Close();
 
 		}
 	}
@@ -33,8 +42,8 @@ namespace ConsoleTest
 
 	public class CourseDatabase
 	{
-		public CourseDatabase()
-		{
+		public CourseDatabase()                             //This is the constructor for creating the database of courses
+		{ 
 			Console.WriteLine("Enter location of CourseDatabase input file:");
 			string loc = Console.ReadLine();
 			string line;
