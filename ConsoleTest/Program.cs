@@ -65,30 +65,28 @@ namespace ConsoleTest
 
 	public class Account
 	{
-		private string userName, password;
-		private string status;
-		private string fName, mName, lName;
+		private string userName { get; set; }
+		private string password { get; set; }
+		private string status { get; set; }
+		private string fName { get; set; }
+		private string mName { get; set; }
+		private string lName { get; set; }
 
 		public Account(string[] args)
         {
-			UserName = args[0];
+			userName = args[0];
 			Password = args[1];
-			FName = args[2];
-			MName = args[3];
-			LName = args[4];
-			Status = args[5];
+			fName = args[2];
+			mName = args[3];
+			lName = args[4];
+			status = args[5];
         }
 
 		public string getAccount()
         {
-			return (UserName + ' ' + Password + ' ' + FName + ' ' + MName + ' ' + LName + ' ' + Status);
+			return (userName + ' ' + password + ' ' + fName + ' ' + mName + ' ' + lName + ' ' + status);
         }
-        public string UserName { get => userName; set => userName = value; }
-        public string Password { get => password; set => password = value; }
-        public string Status { get => status; set => status = value; }
-        public string FName { get => fName; set => fName = value; }
-        public string MName { get => mName; set => mName = value; }
-        public string LName { get => lName; set => lName = value; }
+        
     }
 
 	public class CourseDatabase
