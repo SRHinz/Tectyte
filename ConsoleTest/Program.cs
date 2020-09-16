@@ -96,7 +96,7 @@ namespace ConsoleTest
 			Console.WriteLine("Enter location of CourseDatabase input file:");
 			string loc = Console.ReadLine();
 			string line;
-			System.IO.StreamReader file = new System.IO.StreamReader(@loc);
+            System.IO.StreamReader file = new System.IO.StreamReader(@loc);
 			while ((line = file.ReadLine()) != null)
 			{
 				System.Console.WriteLine(line);
@@ -108,9 +108,27 @@ namespace ConsoleTest
 
 	public class Course
 	{
-		private string courseName, courseTitle, instructor;
-		private int totatSeats, availableSeats;
-		private float Credits;
+		private string courseName { get; }
+		private string courseTitle { get; }
+		private string instructor { get;}
+		private int totalSeats { get; }
+		private int availableSeats { get; set; }
+		private float Credits { get; }
+		private int timeBlock1 { get; }
+		private int timeBlock2 { get; }
+		private int timeBlock3 { get; }
+
+		public Course(string[] args)
+        {
+			courseTitle = args[0];
+			instructor = args[1];
+			totalSeats = Convert.ToInt32(args[2]);
+			availableSeats = Convert.ToInt32(args[3]);
+			Credits = Convert.ToSingle(args[4]);
+			timeBlock1 = Convert.ToInt32(args[5]);
+			timeBlock2 = Convert.ToInt32(args[6]);
+			timeBlock3 = Convert.ToInt32(args[7]);
+		}
 	}
 
 
