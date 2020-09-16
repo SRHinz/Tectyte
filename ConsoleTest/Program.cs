@@ -75,7 +75,7 @@ namespace ConsoleTest
 		public Account(string[] args)
         {
 			userName = args[0];
-			Password = args[1];
+			password = args[1];
 			fName = args[2];
 			mName = args[3];
 			lName = args[4];
