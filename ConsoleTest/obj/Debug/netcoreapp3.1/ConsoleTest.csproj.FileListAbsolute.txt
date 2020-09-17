@@ -23,3 +23,16 @@ C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\bin\Debug\netcoreapp3.1\Con
 C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.dll
 C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.pdb
 C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.genruntimeconfig.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.exe
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.deps.json
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.runtimeconfig.json
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.runtimeconfig.dev.json
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.dll
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.pdb
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.AssemblyInfoInputs.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.AssemblyInfo.cs
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.csproj.CoreCompileInputs.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.dll
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.pdb
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.genruntimeconfig.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.csprojAssemblyReference.cache

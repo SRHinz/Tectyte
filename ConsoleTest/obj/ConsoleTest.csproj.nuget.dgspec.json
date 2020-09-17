@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Downloads\\Tectyte\\ConsoleTest\\ConsoleTest.csproj": {}
+    "C:\\Users\\brkol\\OneDrive\\Desktop\\Software Engineering\\Reg System\\ConsoleTest\\ConsoleTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Downloads\\Tectyte\\ConsoleTest\\ConsoleTest.csproj": {
+    "C:\\Users\\brkol\\OneDrive\\Desktop\\Software Engineering\\Reg System\\ConsoleTest\\ConsoleTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Downloads\\Tectyte\\ConsoleTest\\ConsoleTest.csproj",
+        "projectUniqueName": "C:\\Users\\brkol\\OneDrive\\Desktop\\Software Engineering\\Reg System\\ConsoleTest\\ConsoleTest.csproj",
         "projectName": "ConsoleTest",
-        "projectPath": "C:\\Users\\Administrator\\Downloads\\Tectyte\\ConsoleTest\\ConsoleTest.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Downloads\\Tectyte\\ConsoleTest\\obj\\",
+        "projectPath": "C:\\Users\\brkol\\OneDrive\\Desktop\\Software Engineering\\Reg System\\ConsoleTest\\ConsoleTest.csproj",
+        "packagesPath": "C:\\Users\\brkol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brkol\\OneDrive\\Desktop\\Software Engineering\\Reg System\\ConsoleTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\brkol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
