@@ -91,16 +91,41 @@ namespace ConsoleTest
 
 	public class CourseDatabase
 	{
+		private Dictionary<string, Course> cDatabase = new Dictionary<string, Course>(); //Creating the dictionary in which we will store the courses 
 		public CourseDatabase()                             //This is the constructor for creating the database of courses
-		{ 
+		{
+			int[] courseCounter = { 10, 15, 10, 4, 3, 1, 5, 5, 5 };
 			Console.WriteLine("Enter location of CourseDatabase input file:");
 			string loc = Console.ReadLine();
 			string line;
             System.IO.StreamReader file = new System.IO.StreamReader(@loc);
 			while ((line = file.ReadLine()) != null)
 			{
-				System.Console.WriteLine(line);
+				int nblocks = 0;
+				nblocks = Convert.ToInt32(Char.GetNumericValue(line[47])); //This will tell how many time blocks the course has
+				string[] courseInfo = new string[6+nblocks];
+				int a = 0;
+				for (int i = 0; i <= 6+nblocks-1; i += 1)
+				{
+					string subString = "";
+					if (i != 6+nblocks-1)                 //This if else statement handles the status portion of the input line, so that an out of range exception is not thrown for the SubString
+					{
+						subString = line.Substring(a, courseCounter[i]).TrimEnd();
+					}
+					else
+					{
+						subString = line.Substring(a, line.Length - a); //If it is the last bit of the line, then it simply checks how many characters there are between the end of the line and where it is starting from, and gives that as the length to increment.
+					}
+
+					a = a + courseCounter[i] + 1;
+					courseInfo[i] = subString;
+				}
+
+				cDatabase.Add(courseInfo[0], new Course(courseInfo.Skip(1).ToArray())); //Passes the course info array's first element as the key, and then sends the rest to make a new Course object
+
+
 			}
+
 			file.Close();
 
 		}
@@ -108,12 +133,12 @@ namespace ConsoleTest
 
 	public class Course
 	{
-		private string courseName { get; }
 		private string courseTitle { get; }
 		private string instructor { get;}
 		private int totalSeats { get; }
-		private int availableSeats { get; set; }
+		private int availableSeats { get; set; }	//Available seats will be the only variable that we will want to change after instantiation
 		private float Credits { get; }
+		private int ntimeBlocks { get; }
 		private int timeBlock1 { get; }
 		private int timeBlock2 { get; }
 		private int timeBlock3 { get; }
@@ -125,9 +150,16 @@ namespace ConsoleTest
 			totalSeats = Convert.ToInt32(args[2]);
 			availableSeats = Convert.ToInt32(args[3]);
 			Credits = Convert.ToSingle(args[4]);
-			timeBlock1 = Convert.ToInt32(args[5]);
-			timeBlock2 = Convert.ToInt32(args[6]);
-			timeBlock3 = Convert.ToInt32(args[7]);
+			ntimeBlocks = Convert.ToInt32(args[5]);
+			timeBlock1 = Convert.ToInt32(args[6]);
+			if (ntimeBlocks == 2)
+            {
+				timeBlock2 = Convert.ToInt32(args[7]); //If there are 2 time blocks, this allows the placing of it in time block 2
+            }
+			if (ntimeBlocks == 3)
+			{ 
+				timeBlock3 = Convert.ToInt32(args[8]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
+			}
 		}
 	}
 
@@ -138,6 +170,9 @@ namespace ConsoleTest
 		private string curAccUsername;
 	}
 
+	public class viewCourses
+    {
 
+    }
 }
 
