@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace ConsoleTest
 {
@@ -16,6 +17,21 @@ namespace ConsoleTest
             Console.WriteLine("Hello World!");
         }
     }
+
+	class RegistrationSystem
+	{
+		private bool isUserAuthenticated;
+		private string curAccUsername;
+		static void Main(string[] args)
+        {
+			Console.WriteLine("Please Login");
+			string username, password = Console.ReadLine();
+        }
+		
+
+
+
+	}
 
 	public class UserDatabase
 	{
@@ -60,19 +76,41 @@ namespace ConsoleTest
             }
         }
 
+		public string authenticateUser(string userName, string Password)
+        {
+			if (uDatabase.ContainsKey((userName, Password)))
+			{
+				if (!(uDatabase[(userName, Password)].Status.Equals("faculty") | uDatabase[(userName, Password)].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+				{
+					return "student";
+				}
+				else
+                {
+					return uDatabase[(userName, Password)].Status;
+                }
+			}
+            else
+            {
+				return "Failed";
+            }				
+        }
+
 		
 	}
 
 	public class Account
 	{
-		private string userName { get; set; }
-		private string password { get; set; }
-		private string status { get; set; }
-		private string fName { get; set; }
-		private string mName { get; set; }
-		private string lName { get; set; }
+		private string userName;
+		private string password;
+		private string status;
+		private string fName { get; }
+		private string mName { get; }
+		private string lName { get; }
+        public string Status { get => status;}
+        public string UserName { get => userName;}
+        public string Password { get => password;}
 
-		public Account(string[] args)
+        public Account(string[] args)
         {
 			userName = args[0];
 			password = args[1];
@@ -84,7 +122,7 @@ namespace ConsoleTest
 
 		public string getAccount()
         {
-			return (userName + ' ' + password + ' ' + fName + ' ' + mName + ' ' + lName + ' ' + status);
+			return (UserName + ' ' + Password + ' ' + fName + ' ' + mName + ' ' + lName + ' ' + Status);
         }
         
     }
@@ -108,7 +146,7 @@ namespace ConsoleTest
 				for (int i = 0; i <= 6+nblocks-1; i += 1)
 				{
 					string subString = "";
-					if (i != 6+nblocks-1)                 //This if else statement handles the status portion of the input line, so that an out of range exception is not thrown for the SubString
+					if (i != 6+nblocks-1)                 //This if else statement handles everything before the last portion of the line, so to prevent an indexoutofRange exception from being thrown.
 					{
 						subString = line.Substring(a, courseCounter[i]).TrimEnd();
 					}
@@ -121,7 +159,7 @@ namespace ConsoleTest
 					courseInfo[i] = subString;
 				}
 
-				cDatabase.Add(courseInfo[0], new Course(courseInfo.Skip(1).ToArray())); //Passes the course info array's first element as the key, and then sends the rest to make a new Course object
+				CDatabase.Add(courseInfo[0], new Course(courseInfo.Skip(1).ToArray())); //Passes the course info array's first element as the key, and then sends the rest to make a new Course object
 
 
 			}
@@ -129,27 +167,38 @@ namespace ConsoleTest
 			file.Close();
 
 		}
-	}
+
+        public Dictionary<string, Course> CDatabase { get => cDatabase; }
+    }
 
 	public class Course
 	{
-		private string courseTitle { get; }
-		private string instructor { get;}
-		private int totalSeats { get; }
-		private int availableSeats { get; set; }	//Available seats will be the only variable that we will want to change after instantiation
-		private float Credits { get; }
-		private int ntimeBlocks { get; }
-		private int timeBlock1 { get; }
-		private int timeBlock2 { get; }
-		private int timeBlock3 { get; }
+		private string courseTitle;
+		private string instructor;
+		private int totalSeats;
+		private int availableSeats; //Available seats will be the only variable that we will want to change after instantiation
+		private float credits;
+		private int ntimeBlocks;
+		private int timeBlock1;
+		private int timeBlock2;
+		private int timeBlock3;
+        public string CourseTitle { get => courseTitle; }
+        public string Instructor { get => instructor; }
+        public int TotalSeats { get => totalSeats; }
+        public int AvailableSeats { get => availableSeats; set => availableSeats = value; }
+        public float Credits { get => credits; }
+        public int NtimeBlocks { get => ntimeBlocks; }
+        public int TimeBlock1 { get => timeBlock1; }
+        public int TimeBlock2 { get => timeBlock2; }
+        public int TimeBlock3 { get => timeBlock3; }
 
-		public Course(string[] args)
+        public Course(string[] args)
         {
 			courseTitle = args[0];
 			instructor = args[1];
 			totalSeats = Convert.ToInt32(args[2]);
 			availableSeats = Convert.ToInt32(args[3]);
-			Credits = Convert.ToSingle(args[4]);
+			credits = Convert.ToSingle(args[4]);
 			ntimeBlocks = Convert.ToInt32(args[5]);
 			timeBlock1 = Convert.ToInt32(args[6]);
 			if (ntimeBlocks == 2)
@@ -163,16 +212,22 @@ namespace ConsoleTest
 		}
 	}
 
-
-	class RegistrationSystem
-	{
-		private bool isUserAuthenticated;
-		private string curAccUsername;
-	}
-
 	public class viewCourses
     {
+		public void displayCourses(CourseDatabase cData)
+        {
+			foreach (KeyValuePair<string, Course> course in cData.CDatabase)
+			{
+				string cTitle = course.Value.CourseTitle;
+				string instruc = course.Value.Instructor;
+				int totS = course.Value.TotalSeats;
+				int avS = course.Value.AvailableSeats;
+				float cred = course.Value.Credits;
 
+				
+			}
+
+        }
     }
 }
 
