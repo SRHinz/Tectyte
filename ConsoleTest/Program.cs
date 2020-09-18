@@ -5,6 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.ComponentModel;
+using System.Drawing;
 
 namespace ConsoleTest
 {

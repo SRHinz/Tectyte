@@ -8,3 +8,4 @@ C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreC
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.Form2.resources
