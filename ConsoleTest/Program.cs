@@ -208,8 +208,9 @@ namespace ConsoleTest
             {
 				timeBlock2 = Convert.ToInt32(args[6]); //If there are 2 time blocks, this allows the placing of it in time block 2
             }
-			if (ntimeBlocks == 3)
-			{ 
+			else if (ntimeBlocks == 3)
+			{
+				timeBlock2 = Convert.ToInt32(args[6]);
 				timeBlock3 = Convert.ToInt32(args[7]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
 			}
 			else

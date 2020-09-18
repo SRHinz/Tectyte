@@ -22,3 +22,4 @@ C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\bin\Debug\netcoreapp3.1\Con
 C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.dll
 C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\bin\Debug\netcoreapp3.1\ConsoleTest.pdb
 C:\Users\Administrator\Downloads\Tectyte\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.genruntimeconfig.cache
+C:\Users\User\Downloads\Tectyte\ConsoleTest\obj\Debug\netcoreapp3.1\ConsoleTest.csprojAssemblyReference.cache
