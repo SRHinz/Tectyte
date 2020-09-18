@@ -12,7 +12,9 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-			//CourseDatabase CourseData = new CourseDatabase();
+			CourseDatabase CourseData = new CourseDatabase();
+			viewCourses vc = new viewCourses();
+			vc.displayCourses(CourseData);
 			UserDatabase UserData = new UserDatabase();
 			UserData.viewDatabase();
             Console.WriteLine("Hello World!");
@@ -23,11 +25,11 @@ namespace ConsoleTest
 	{
 		private bool isUserAuthenticated;
 		private string curAccUsername;
-		static void Main(string[] args)
+		/*static void Main(string[] args)
         {
 			Console.WriteLine("Please Login");
 			string username, password = Console.ReadLine();
-        }
+        }*/
 		
 
 
@@ -197,18 +199,18 @@ namespace ConsoleTest
         {
 			courseTitle = args[0];
 			instructor = args[1];
-			totalSeats = Convert.ToInt32(args[2]);
+			totalSeats = Convert.ToInt32(args[3]);
 			availableSeats = Convert.ToInt32(args[3]);
-			credits = Convert.ToSingle(args[4]);
-			ntimeBlocks = Convert.ToInt32(args[5]);
-			timeBlock1 = Convert.ToInt32(args[6]);
+			credits = Convert.ToSingle(args[2]);
+			ntimeBlocks = Convert.ToInt32(args[4]);
+			timeBlock1 = Convert.ToInt32(args[5]);
 			if (ntimeBlocks == 2)
             {
-				timeBlock2 = Convert.ToInt32(args[7]); //If there are 2 time blocks, this allows the placing of it in time block 2
+				timeBlock2 = Convert.ToInt32(args[6]); //If there are 2 time blocks, this allows the placing of it in time block 2
             }
 			if (ntimeBlocks == 3)
 			{ 
-				timeBlock3 = Convert.ToInt32(args[8]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
+				timeBlock3 = Convert.ToInt32(args[7]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
 			}
 			else
             {
@@ -233,8 +235,17 @@ namespace ConsoleTest
 				string tBlock1 = solveTimeblock(course.Value.TimeBlock1);
 				string tBlock2 = solveTimeblock(course.Value.TimeBlock2);
 				string tBlock3 = solveTimeblock(course.Value.TimeBlock3);
-				
-				con
+				if (course.Value.TimeBlock2 == 00000)			//This phrase is what occurs if there is no 
+                {
+					tBlock2 = "";
+					tBlock3 = "";
+                }
+				if (course.Value.TimeBlock3 == 00000)
+                {
+					tBlock3 = "";
+                }
+
+				Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}", course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3);
 				
 			}
 
@@ -295,15 +306,23 @@ namespace ConsoleTest
 			string time = "";
 			float cTime = mTime % 12;               //This extracts what time it would be on a typical 12 hour clock, absent of AM or PM
 			int hour = Convert.ToInt32(cTime - (cTime % 1));        //This gets the hour
+			if (hour == 0)
+            {
+				hour = 12;
+            }
 			int min = Convert.ToInt32((cTime % 1) * 60);            //This gets the minutes
-			time = time.Insert(0, hour + ":" + min);
+			time = time.Insert(0, hour + ":" + min);				//This adds the extra 0 for proper reading if the minutes equal 0.
+			if (min == 0)
+            {
+				time = time + "0";
+            }
 			if (mTime >= 12)
 			{
-				time = time.Concat("PM").ToString();
+				time = time + "PM";
 			}
 			else
 			{
-				time = time.Concat("AM").ToString();
+				time = time + "AM";
 			}
 
 			return time;

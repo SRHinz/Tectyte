@@ -1,0 +1,9 @@
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\bin\Debug\RegSystemGUI.exe
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\bin\Debug\RegSystemGUI.pdb
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.Form1.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.Properties.Resources.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.GenerateResource.cache
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.exe
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
