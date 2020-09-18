@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace ConsoleTest
 {
@@ -168,7 +169,7 @@ namespace ConsoleTest
 
 		}
 
-        public Dictionary<string, Course> CDatabase { get => cDatabase; }
+        public Dictionary<string, Course> CDatabase { get => cDatabase; }	//Made the dictionary a property for easier outside viewing.
     }
 
 	public class Course
@@ -189,7 +190,7 @@ namespace ConsoleTest
         public float Credits { get => credits; }
         public int NtimeBlocks { get => ntimeBlocks; }
         public int TimeBlock1 { get => timeBlock1; }
-        public int TimeBlock2 { get => timeBlock2; }
+        public int TimeBlock2  { get => timeBlock2; }
         public int TimeBlock3 { get => timeBlock3; }
 
         public Course(string[] args)
@@ -209,6 +210,11 @@ namespace ConsoleTest
 			{ 
 				timeBlock3 = Convert.ToInt32(args[8]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
 			}
+			else
+            {
+				timeBlock2 = 00000;
+				timeBlock3 = 00000;
+            }
 		}
 	}
 
@@ -223,11 +229,85 @@ namespace ConsoleTest
 				int totS = course.Value.TotalSeats;
 				int avS = course.Value.AvailableSeats;
 				float cred = course.Value.Credits;
-
+				int nBlocks = course.Value.NtimeBlocks;
+				string tBlock1 = solveTimeblock(course.Value.TimeBlock1);
+				string tBlock2 = solveTimeblock(course.Value.TimeBlock2);
+				string tBlock3 = solveTimeblock(course.Value.TimeBlock3);
+				
+				con
 				
 			}
 
         }
+
+		private string solveTimeblock(int tB)
+        {
+			string days="";
+			string time = "";
+			int dd = tB / 1000;
+			int tt = (tB / 10) % 100;
+			int l = tB % 10;
+			if (dd - 16 >= 0)						//Begin day decoding section
+            {
+				dd += -16;
+				days = days.Insert(0, " Fri");
+            }
+			if (dd - 8 >= 0)
+            {
+				dd += -8;
+				days = days.Insert(0, " Thurs");
+            }
+			if (dd - 4 >= 0)
+            {
+				dd += -4;
+				days = days.Insert(0, " Weds");
+            }
+			if (dd - 2 >= 0)
+            {
+				dd += -2;
+				if (dd == 0)
+				{
+					days = days.Insert(0, "Tues");
+				}
+				else
+				{
+					days = days.Insert(0, " Tues");
+				}
+            }
+			if (dd - 1 == 0)
+            {
+				days = days.Insert(0, "Mon");
+            }
+
+			float mTime = tt / 2;                   //This makes tt into military time
+			string startT = convertTime(mTime);
+			mTime = Convert.ToSingle(mTime + 0.5 * l);	//This gets the ending time in military time, by adding the length times half hour increments to the starting time
+			string endT = convertTime(mTime);
+			time = (startT + " to " + endT);
+
+
+
+			return (days + ", " + time);
+        }
+
+		private string convertTime(float mTime)
+        {
+			string time = "";
+			float cTime = mTime % 12;               //This extracts what time it would be on a typical 12 hour clock, absent of AM or PM
+			int hour = Convert.ToInt32(cTime - (cTime % 1));        //This gets the hour
+			int min = Convert.ToInt32((cTime % 1) * 60);            //This gets the minutes
+			time = time.Insert(0, hour + ":" + min);
+			if (mTime >= 12)
+			{
+				time = time.Concat("PM").ToString();
+			}
+			else
+			{
+				time = time.Concat("AM").ToString();
+			}
+
+			return time;
+		}
     }
 }
 
