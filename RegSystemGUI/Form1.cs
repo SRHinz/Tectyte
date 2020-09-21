@@ -15,9 +15,9 @@ namespace RegSystemGUI
     {
         private string uName;
         private string pWord;
-        public Form1()
+        public Form1(Program.RegistrationSystem coe)
         {
-           
+            Program.RegistrationSystem COE = coe;
         }
        
 
@@ -31,8 +31,10 @@ namespace RegSystemGUI
             string tempUN, tempPW;
             tempUN = UsernameInput.Text;
             tempPW = PasswordText.Text;
+            
             return tempUN + " " + tempPW;
            
         }
+
     }
 }

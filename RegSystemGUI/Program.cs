@@ -8,7 +8,7 @@ using System.IO;
 
 namespace RegSystemGUI
 {
-    static class Program
+    public static class Program
     {
 		/// <summary>
 		/// The main entry point for the application.
@@ -18,13 +18,13 @@ namespace RegSystemGUI
         [STAThread]
         static void Main()
         {
-			RegestrationSystem COE = new RegestrationSystem();
+			RegistrationSystem COE = new RegistrationSystem();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(COE));
         }
 
-		public class RegestrationSystem
+		public class RegistrationSystem
         {
 			private string curAcc;
 			UserDatabase uData = new UserDatabase();
