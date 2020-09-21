@@ -8,3 +8,13 @@ C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreC
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\bin\Debug\RegSystemGUI.exe
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\bin\Debug\RegSystemGUI.pdb
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\obj\Debug\RegSystemGUI.Properties.Resources.resources
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.GenerateResource.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\obj\Debug\RegSystemGUI.exe
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\Reg System\RegSystemGUI\obj\Debug\RegSystemGUI.LoginForm.resources

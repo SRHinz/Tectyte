@@ -17,7 +17,7 @@ namespace ConsoleTest
 			vc.displayCourses(CourseData);
 			UserDatabase UserData = new UserDatabase();
 			UserData.viewDatabase();
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
         }
     }
 
