@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RegSystemGUI
 {
@@ -17,11 +18,19 @@ namespace RegSystemGUI
         [STAThread]
         static void Main()
         {
-			
+			RegestrationSystem COE = new RegestrationSystem();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+		public class RegestrationSystem
+        {
+			private string curAcc;
+			UserDatabase uData = new UserDatabase();
+			CourseDatabase cDate = new CourseDatabase();
+			viewCourses vCourse = new viewCourses();
+		}
 
 		public class UserDatabase
 		{
@@ -29,8 +38,7 @@ namespace RegSystemGUI
 			public UserDatabase()
 			{
 				int[] dataBasecounter = { 10, 10, 15, 15, 15, 10 };
-				Console.WriteLine("Enter location of UserDatabase input file:");
-				string loc = Console.ReadLine();
+				string loc = Path.GetFullPath("Users.txt");					//Gets the path for the input user file
 				string line;
 				System.IO.StreamReader file = new System.IO.StreamReader(@loc);
 				while ((line = file.ReadLine()) != null)
@@ -123,8 +131,8 @@ namespace RegSystemGUI
 			public CourseDatabase()                             //This is the constructor for creating the database of courses
 			{
 				int[] courseCounter = { 10, 15, 10, 4, 3, 1, 5, 5, 5 };
-				Console.WriteLine("Enter location of CourseDatabase input file:");
-				string loc = Console.ReadLine();
+				//Console.WriteLine("Enter location of CourseDatabase input file:");
+				string loc = Path.GetFullPath("Courses.txt");				//Gets the full path for the Courses input file so that it doesn't have to be entered manually.
 				string line;
 				System.IO.StreamReader file = new System.IO.StreamReader(@loc);
 				while ((line = file.ReadLine()) != null)

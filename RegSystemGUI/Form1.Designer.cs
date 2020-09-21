@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.UsernameInput = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PasswordText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,14 +44,14 @@
             this.UsernameInput.TabIndex = 0;
             this.UsernameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // PasswordText
             // 
-            this.textBox1.Location = new System.Drawing.Point(274, 344);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(379, 44);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.PasswordText.Location = new System.Drawing.Point(274, 344);
+            this.PasswordText.Name = "PasswordText";
+            this.PasswordText.PasswordChar = '*';
+            this.PasswordText.Size = new System.Drawing.Size(379, 44);
+            this.PasswordText.TabIndex = 1;
+            this.PasswordText.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -89,7 +89,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PasswordText);
             this.Controls.Add(this.UsernameInput);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -102,7 +102,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox UsernameInput;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PasswordText;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;

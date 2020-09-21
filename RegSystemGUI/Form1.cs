@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace RegSystemGUI
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private string Login_Clicked(object sender, EventArgs e)            //Need to figure out how to send this information to authenticateUser
+        {
+            string tempUN, tempPW;
+            tempUN = UsernameInput.Text;
+            tempPW = PasswordText.Text;
+            return tempUN + " " + tempPW;
+           
         }
     }
 }
