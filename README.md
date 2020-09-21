@@ -1,3 +1,3 @@
 # Tectyte
 
-# Created by Samuel Hinz, Misha Machette, Barritt Kolpin
+# Created by Samuel Hinz, Misha Matchette, Barritt Kolpin
