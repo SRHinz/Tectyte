@@ -27,9 +27,9 @@ namespace RegSystemGUI
 		public class RegistrationSystem
         {
 			private string curAcc;
-			UserDatabase uData = new UserDatabase();
-			CourseDatabase cDate = new CourseDatabase();
-			viewCourses vCourse = new viewCourses();
+			public UserDatabase uData = new UserDatabase();
+			public CourseDatabase cDate = new CourseDatabase();
+			public viewCourses vCourse = new viewCourses();
 		}
 
 		public class UserDatabase
@@ -38,9 +38,8 @@ namespace RegSystemGUI
 			public UserDatabase()
 			{
 				int[] dataBasecounter = { 10, 10, 15, 15, 15, 10 };
-				string loc = Path.GetFullPath("Users.txt");					//Gets the path for the input user file
 				string line;
-				System.IO.StreamReader file = new System.IO.StreamReader(@loc);
+				System.IO.StreamReader file = new System.IO.StreamReader("Users.txt");
 				while ((line = file.ReadLine()) != null)
 				{
 					string[] words = new string[6];
@@ -132,9 +131,8 @@ namespace RegSystemGUI
 			{
 				int[] courseCounter = { 10, 15, 10, 4, 3, 1, 5, 5, 5 };
 				//Console.WriteLine("Enter location of CourseDatabase input file:");
-				string loc = Path.GetFullPath("Courses.txt");				//Gets the full path for the Courses input file so that it doesn't have to be entered manually.
 				string line;
-				System.IO.StreamReader file = new System.IO.StreamReader(@loc);
+				System.IO.StreamReader file = new System.IO.StreamReader("Courses.txt");
 				while ((line = file.ReadLine()) != null)
 				{
 					int nblocks = 0;

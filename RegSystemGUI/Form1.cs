@@ -13,11 +13,11 @@ namespace RegSystemGUI
 {
     public partial class Form1 : Form
     {
-        private string uName;
-        private string pWord;
+        private Program.RegistrationSystem COE = new Program.RegistrationSystem();
         public Form1(Program.RegistrationSystem coe)
         {
-            Program.RegistrationSystem COE = coe;
+            InitializeComponent();
+            COE = coe;
         }
        
 
@@ -26,15 +26,18 @@ namespace RegSystemGUI
 
         }
 
-        private string Login_Clicked(object sender, EventArgs e)            //Need to figure out how to send this information to authenticateUser
+
+        private void button2_Click(object sender, EventArgs e)
         {
             string tempUN, tempPW;
             tempUN = UsernameInput.Text;
             tempPW = PasswordText.Text;
-            
-            return tempUN + " " + tempPW;
-           
+            if (COE.uData.authenticateUser(tempUN, tempPW) != "Failed")
+            {
+                this.Hide();
+                Form2 options = new Form2();
+                options.Show();
+            }
         }
-
     }
 }
