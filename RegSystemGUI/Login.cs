@@ -38,6 +38,10 @@ namespace RegSystemGUI
                 Options options = new Options(ref COE);
                 options.Show();
             }
+            else
+            {
+                MessageBox.Show("Invalid Credentials");
+            }
         }
     }
 }
