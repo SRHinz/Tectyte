@@ -5,6 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Timers;
+using System.Threading;
 
 namespace RegSystemGUI
 {
@@ -18,17 +20,21 @@ namespace RegSystemGUI
         [STAThread]
         static void Main()
         {
+			
 			RegistrationSystem COE = new RegistrationSystem();
-            Application.EnableVisualStyles();
+			
+
+			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login(ref COE));
+			Login login = new Login(ref COE);
+			Application.Run(login);
         }
 
 		public class RegistrationSystem
         {
 			private string curAcc;
 			public UserDatabase uData = new UserDatabase();
-			public CourseDatabase cDate = new CourseDatabase();
+			public CourseDatabase cData = new CourseDatabase();
 			public viewCourses vCourse = new viewCourses();
 		}
 
@@ -216,7 +222,7 @@ namespace RegSystemGUI
 
 		public class viewCourses
 		{
-			public void displayCourses(CourseDatabase cData)
+			public void displayCourses(CourseDatabase cData, TextBox output)
 			{
 				foreach (KeyValuePair<string, Course> course in cData.CDatabase)
 				{
@@ -239,7 +245,7 @@ namespace RegSystemGUI
 						tBlock3 = "";
 					}
 
-					Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}", course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3);
+					output.Text = String.Join(Environment.NewLine, course.Key + "\t" + cTitle + "\t" + instruc + "\t" + totS + "\t" + avS + "\t" + cred + "\t" + tBlock1 + "\t" + tBlock2 + "\t" + tBlock3);
 
 				}
 

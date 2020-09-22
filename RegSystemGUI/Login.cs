@@ -43,5 +43,10 @@ namespace RegSystemGUI
                 MessageBox.Show("Invalid Credentials");
             }
         }
+
+        private void LoginPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

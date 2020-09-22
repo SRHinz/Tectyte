@@ -20,3 +20,4 @@ C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\obj\De
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\obj\Debug\RegSystemGUI.Options.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.Login.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.Options.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseViewer.resources

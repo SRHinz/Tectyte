@@ -33,20 +33,22 @@
             // 
             // ViewCoursesButton
             // 
-            this.ViewCoursesButton.Location = new System.Drawing.Point(104, 69);
+            this.ViewCoursesButton.Location = new System.Drawing.Point(247, 160);
+            this.ViewCoursesButton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.ViewCoursesButton.Name = "ViewCoursesButton";
-            this.ViewCoursesButton.Size = new System.Drawing.Size(135, 47);
+            this.ViewCoursesButton.Size = new System.Drawing.Size(321, 109);
             this.ViewCoursesButton.TabIndex = 0;
             this.ViewCoursesButton.Text = "View Courses";
             this.ViewCoursesButton.UseVisualStyleBackColor = true;
+            this.ViewCoursesButton.Click += new System.EventHandler(this.viewCourse_Click);
             // 
             // Options
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 372);
+            this.ClientSize = new System.Drawing.Size(1427, 860);
             this.Controls.Add(this.ViewCoursesButton);
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Options";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

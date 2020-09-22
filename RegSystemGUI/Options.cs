@@ -12,14 +12,23 @@ namespace RegSystemGUI
 {
     public partial class Options : Form
     {
+        private Program.RegistrationSystem COE = new Program.RegistrationSystem();
         public Options(ref Program.RegistrationSystem coe)
         {
             InitializeComponent();
+            COE = coe;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewCourse_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CourseViewer CV = new CourseViewer(ref COE.cData, ref COE.vCourse);
+            CV.Show();
         }
 
     }
