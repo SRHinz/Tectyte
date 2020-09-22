@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RegSystemGUI
 {
-    public partial class Form2 : Form
+    public partial class Options : Form
     {
-        public Form2()
+        public Options(ref Program.RegistrationSystem coe)
         {
             InitializeComponent();
         }
@@ -22,9 +22,5 @@ namespace RegSystemGUI
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -21,7 +21,7 @@ namespace RegSystemGUI
 			RegistrationSystem COE = new RegistrationSystem();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(COE));
+            Application.Run(new Login(ref COE));
         }
 
 		public class RegistrationSystem

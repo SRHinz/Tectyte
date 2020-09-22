@@ -11,10 +11,11 @@ using System.Windows.Forms;
 
 namespace RegSystemGUI
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
+
         private Program.RegistrationSystem COE = new Program.RegistrationSystem();
-        public Form1(Program.RegistrationSystem coe)
+        public Login(ref Program.RegistrationSystem coe)
         {
             InitializeComponent();
             COE = coe;
@@ -23,19 +24,18 @@ namespace RegSystemGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
             string tempUN, tempPW;
             tempUN = UsernameInput.Text;
-            tempPW = PasswordText.Text;
+            tempPW = PasswordInput.Text;
             if (COE.uData.authenticateUser(tempUN, tempPW) != "Failed")
             {
                 this.Hide();
-                Form2 options = new Form2();
+                Options options = new Options(ref COE);
                 options.Show();
             }
         }
