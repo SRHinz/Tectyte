@@ -222,7 +222,7 @@ namespace RegSystemGUI
 
 		public class viewCourses
 		{
-			public void displayCourses(CourseDatabase cData, TextBox output)
+			public void displayCourses(CourseDatabase cData, DataGridView output)
 			{
 				foreach (KeyValuePair<string, Course> course in cData.CDatabase)
 				{
@@ -245,7 +245,7 @@ namespace RegSystemGUI
 						tBlock3 = "";
 					}
 
-					output.Text = String.Join(Environment.NewLine, output.Text, course.Key + "\t" + cTitle + "\t" + instruc + "\t" + totS + "\t" + avS + "\t" + cred + "\t" + tBlock1 + "\t" + tBlock2 + "\t" + tBlock3);
+					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3);
 
 				}
 
