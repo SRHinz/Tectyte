@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseViewer));
             this.button1 = new System.Windows.Forms.Button();
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
@@ -68,6 +69,7 @@
             this.ClientSize = new System.Drawing.Size(1806, 886);
             this.Controls.Add(this.CourseDataGrid);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CourseViewer";
             this.Text = "View Courses";
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).EndInit();
