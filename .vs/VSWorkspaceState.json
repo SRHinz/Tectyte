@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ConsoleTest"
+    "\\ConsoleTest",
+    "\\RegSystemGUI"
   ],
-  "SelectedNode": "\\ConsoleTest\\Program.cs",
+  "SelectedNode": "\\RegSystemGUI\\CourseViewer.cs",
   "PreviewInSolutionExplorer": false
 }
