@@ -19,7 +19,24 @@ namespace RegSystemGUI
             InitializeComponent();
             coeC = courseD;
             viewC = vC;
-            vC.displayCourses(coeC, CourseDisplays);
+            CourseDataGrid.ColumnCount = 9;
+            GridBuild();
+            vC.displayCourses(coeC, CourseDataGrid);
+        }
+
+        private void GridBuild()
+        {
+            CourseDataGrid.Columns[0].Name = "Course Number";
+            CourseDataGrid.Columns[1].Name = "Course Name";
+            CourseDataGrid.Columns[2].Name = "Instructor";
+            CourseDataGrid.Columns[3].Name = "Total Seals";
+            CourseDataGrid.Columns[4].Name = "Open Seats";
+            CourseDataGrid.Columns[5].Name = "Credits";
+            CourseDataGrid.Columns[6].Name = "Time Block 1";
+            CourseDataGrid.Columns[7].Name = "Time Block 2";
+            CourseDataGrid.Columns[8].Name = "Time Block 3";
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
