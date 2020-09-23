@@ -53,5 +53,10 @@ namespace RegSystemGUI
         {
 
         }
+
+        private void CourseDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

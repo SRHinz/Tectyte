@@ -45,14 +45,20 @@
             // 
             // CourseDataGrid
             // 
+            this.CourseDataGrid.AllowUserToAddRows = false;
+            this.CourseDataGrid.AllowUserToDeleteRows = false;
+            this.CourseDataGrid.AllowUserToResizeColumns = false;
+            this.CourseDataGrid.AllowUserToResizeRows = false;
             this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);
             this.CourseDataGrid.Name = "CourseDataGrid";
+            this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 123;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.Size = new System.Drawing.Size(1916, 818);
             this.CourseDataGrid.TabIndex = 3;
+            this.CourseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGrid_CellContentClick);
             // 
             // CourseViewer
             // 
