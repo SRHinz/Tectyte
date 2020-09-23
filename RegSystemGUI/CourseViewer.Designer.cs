@@ -81,7 +81,7 @@
             this.Controls.Add(this.CourseDisplays);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CourseViewer";
-            this.Text = "Form1";
+            this.Text = "View Courses";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
