@@ -224,6 +224,7 @@ namespace RegSystemGUI
 		{
 			public void displayCourses(CourseDatabase cData, DataGridView output)
 			{
+				int counter = 0;
 				foreach (KeyValuePair<string, Course> course in cData.CDatabase)
 				{
 					string cTitle = course.Value.CourseTitle;
@@ -246,6 +247,8 @@ namespace RegSystemGUI
 					}
 
 					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3);
+					output.Rows[counter].ReadOnly = true;
+					counter++;
 
 				}
 

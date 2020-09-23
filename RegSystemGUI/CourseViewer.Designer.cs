@@ -45,6 +45,7 @@
             // 
             // CourseDataGrid
             // 
+            this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);
             this.CourseDataGrid.Name = "CourseDataGrid";
@@ -55,14 +56,13 @@
             // 
             // CourseViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(288F, 288F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(2282, 886);
             this.Controls.Add(this.CourseDataGrid);
             this.Controls.Add(this.button1);
             this.Name = "CourseViewer";
             this.Text = "View Courses";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).EndInit();
             this.ResumeLayout(false);
 
