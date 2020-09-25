@@ -26,6 +26,7 @@ namespace RegSystemGUI
 
 			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
 			Login login = new Login(ref COE);
 			Application.Run(login);
         }
@@ -36,6 +37,8 @@ namespace RegSystemGUI
 			public UserDatabase uData = new UserDatabase();
 			public CourseDatabase cData = new CourseDatabase();
 			public viewCourses vCourse = new viewCourses();
+			//private Form[] forms = new Form[10];
+			//forms[0] = new Login(ref this)
 		}
 
 		private class HistoryDatabase
@@ -315,25 +318,25 @@ namespace RegSystemGUI
 					string tBlock5 = solveTimeblock(course.Value.TimeBlock5);
 					if (course.Value.TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
 					{
-						tBlock2 = "";
-						tBlock3 = "";
-						tBlock4 = "";
-						tBlock5 = "";
+						tBlock2 = "Not Offered";
+						tBlock3 = "Not Offered";
+						tBlock4 = "Not Offered";
+						tBlock5 = "Not Offered";
 					}
 					else if (course.Value.TimeBlock3 == 00000)
 					{
-						tBlock3 = "";
-						tBlock4 = "";
-						tBlock5 = "";
+						tBlock3 = "Not Offered";
+						tBlock4 = "Not Offered";
+						tBlock5 = "Not Offered";
 					}
 					else if (course.Value.TimeBlock4 == 00000)
                     {
-						tBlock4 = "";
-						tBlock5 = "";
+						tBlock4 = "Not Offered";
+						tBlock5 = "Not Offered";
 					}
 					else if (course.Value.TimeBlock5 == 00000)
                     {
-						tBlock5 = "";
+						tBlock5 = "Not Offered";
                     }
 
 					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
