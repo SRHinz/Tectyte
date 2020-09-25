@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\miche\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Downloads\\Tectyte\\ConsoleTest\\ConsoleTest.csproj",
+      "projectUniqueName": "C:\\Users\\miche\\Source\\Repos\\Tectyte\\ConsoleTest\\ConsoleTest.csproj",
       "projectName": "ConsoleTest",
-      "projectPath": "C:\\Users\\User\\Downloads\\Tectyte\\ConsoleTest\\ConsoleTest.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Downloads\\Tectyte\\ConsoleTest\\obj\\",
+      "projectPath": "C:\\Users\\miche\\Source\\Repos\\Tectyte\\ConsoleTest\\ConsoleTest.csproj",
+      "packagesPath": "C:\\Users\\miche\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\miche\\Source\\Repos\\Tectyte\\ConsoleTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\miche\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
