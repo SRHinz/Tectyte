@@ -56,7 +56,7 @@
             this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
-            this.CourseDataGrid.RowHeadersWidth = 123;
+            this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.Size = new System.Drawing.Size(1261, 818);
             this.CourseDataGrid.TabIndex = 3;
