@@ -212,15 +212,15 @@ namespace RegSystemGUI
 				timeBlock3 = 00000;
 				timeBlock4 = 00000;
 				timeBlock5 = 00000;
-				if (ntimeBlocks <= 2)
+				if (ntimeBlocks >= 2)
 				{
 					timeBlock2 = Convert.ToInt32(args[6]); //If there are 2 time blocks, this allows the placing of it in time block 2
 				}
-				if (ntimeBlocks <= 3)
+				if (ntimeBlocks >= 3)
 				{
 					timeBlock3 = Convert.ToInt32(args[7]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
 				}
-				if (ntimeBlocks <=4 )
+				if (ntimeBlocks >=4 )
                 {
 					timeBlock4 = Convert.ToInt32(args[8]);
                 }
