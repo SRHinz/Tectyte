@@ -45,7 +45,7 @@ namespace RegSystemGUI
 
 			public HistoryDatabase()
 			{
-				int[] hCounter = {10, 1, 23 };
+				int[] hCounter = {10, 2, 23 };
 				string loc = Path.GetFullPath("historyDB.in");
 				string line;                                                        //We are just going to build a list with the student's course histories that can be added to. 
 				string key;
@@ -59,17 +59,25 @@ namespace RegSystemGUI
 					int a = 14;
 					for (int i = 1; i <= numCourses; i++)
                     {
-
+						if (i == numCourses)
+						{
+							courses[i-1] = line.Substring(a, line.Length - a);
+						}
+						else
+						{
+							courses[i - 1] = line.Substring(a, 23).TrimEnd();
+						}
                     }
-
+					hisDatabase.Add(key, courses);
 				}
+				file2.Close();
 			}
         }
 
 		public class UserDatabase
 		{
 			private Dictionary<(string, string), Account> uDatabase = new Dictionary<(string, string), Account>(); //Dictionary of Accounts, with username password tuple as the key
-			
+			private HistoryDatabase hDatabase = new HistoryDatabase();
 
             public UserDatabase()
 			{
@@ -96,6 +104,19 @@ namespace RegSystemGUI
 						a = a + dataBasecounter[i] + 1;
 						words[i] = subString;
 					}
+					if ((words[5] != "faculty") | (words[5] != "admin"))
+                    {
+                        try
+                        {
+							uDatabase.Add((words[0], words[1]), new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
+						}
+                        catch (KeyNotFoundException e)				//If there exists no course records for the student, then it will simply create a student account with no coures in their history.
+                        {
+							string[] noHis = {};
+							uDatabase.Add((words[0], words[1]), new StudentAcc(words, noHis));
+                        }
+							//So this obsencely annoying looking piece of code should create a student account with the relevant course history. 
+                    }
 					uDatabase.Add((words[0], words[1]), new Account(words));
 
 				}
