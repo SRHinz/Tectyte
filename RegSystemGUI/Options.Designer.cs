@@ -34,7 +34,7 @@
             // 
             // ViewCoursesButton
             // 
-            this.ViewCoursesButton.Location = new System.Drawing.Point(156, 108);
+            this.ViewCoursesButton.Location = new System.Drawing.Point(349, 253);
             this.ViewCoursesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ViewCoursesButton.Name = "ViewCoursesButton";
             this.ViewCoursesButton.Size = new System.Drawing.Size(203, 74);
@@ -52,6 +52,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Options";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

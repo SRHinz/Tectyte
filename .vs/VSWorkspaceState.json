@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\ConsoleTest",
-    "\\RegSystemGUI"
+    "\\RegSystemGUI",
+    "\\RegSystemGUI\\bin",
+    "\\RegSystemGUI\\bin\\Debug"
   ],
-  "SelectedNode": "\\RegSystemGUI\\Login.cs",
+  "SelectedNode": "\\RegSystemGUI\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

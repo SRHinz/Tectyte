@@ -29,20 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseViewer));
-            this.button1 = new System.Windows.Forms.Button();
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
+            this.Print = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1374, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(333, 100);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Print";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CourseDataGrid
             // 
@@ -53,7 +43,7 @@
             this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.CourseDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);
+            this.CourseDataGrid.Location = new System.Drawing.Point(20, 34);
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
@@ -62,23 +52,35 @@
             this.CourseDataGrid.TabIndex = 3;
             this.CourseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGrid_CellContentClick);
             // 
+            // Print
+            // 
+            this.Print.Location = new System.Drawing.Point(1320, 34);
+            this.Print.Name = "Print";
+            this.Print.Size = new System.Drawing.Size(307, 104);
+            this.Print.TabIndex = 4;
+            this.Print.Text = "Print";
+            this.Print.UseVisualStyleBackColor = true;
+            this.Print.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // CourseViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1806, 886);
+            this.ClientSize = new System.Drawing.Size(1647, 886);
+            this.Controls.Add(this.Print);
             this.Controls.Add(this.CourseDataGrid);
-            this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CourseViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Courses";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView CourseDataGrid;
+        private System.Windows.Forms.Button Print;
     }
 }

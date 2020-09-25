@@ -14,6 +14,7 @@ namespace RegSystemGUI
     {
         private Program.CourseDatabase coeC = new Program.CourseDatabase();
         private Program.viewCourses viewC = new Program.viewCourses();
+
         public CourseViewer(ref Program.CourseDatabase courseD, ref Program.viewCourses vC)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
             InitializeComponent();
@@ -57,6 +58,11 @@ namespace RegSystemGUI
         }
 
         private void CourseDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
