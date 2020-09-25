@@ -196,8 +196,8 @@ namespace RegSystemGUI
 			public int TimeBlock1 { get => timeBlock1; }
 			public int TimeBlock2 { get => timeBlock2; }
 			public int TimeBlock3 { get => timeBlock3; }
-            public int TimeBlock4 { get => timeBlock4;}
-            public int TimeBlock5 { get => timeBlock5;}
+            public int TimeBlock4 { get => timeBlock4; }
+            public int TimeBlock5 { get => timeBlock5; }
 
             public Course(string[] args)
 			{
