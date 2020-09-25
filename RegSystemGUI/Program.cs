@@ -135,10 +135,11 @@ namespace RegSystemGUI
 			private Dictionary<string, Course> cDatabase = new Dictionary<string, Course>(); //Creating the dictionary in which we will store the courses 
 			public CourseDatabase()                             //This is the constructor for creating the database of courses
 			{
-				int[] courseCounter = { 10, 15, 10, 4, 3, 1, 5, 5, 5 };
+				int[] courseCounter = { 10, 15, 10, 4, 3, 1, 5, 5, 5, 5, 5};
 				//Console.WriteLine("Enter location of CourseDatabase input file:");
+				string loc = Path.GetFullPath("courseDB.in");
 				string line;
-				System.IO.StreamReader file = new System.IO.StreamReader("Courses.txt");
+				System.IO.StreamReader file = new System.IO.StreamReader(@loc);
 				while ((line = file.ReadLine()) != null)
 				{
 					int nblocks = 0;
@@ -184,6 +185,8 @@ namespace RegSystemGUI
 			private int timeBlock1;
 			private int timeBlock2;
 			private int timeBlock3;
+			private int timeBlock4;
+			private int timeBlock5;
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
 			public int TotalSeats { get => totalSeats; }
@@ -193,8 +196,10 @@ namespace RegSystemGUI
 			public int TimeBlock1 { get => timeBlock1; }
 			public int TimeBlock2 { get => timeBlock2; }
 			public int TimeBlock3 { get => timeBlock3; }
+            public int TimeBlock4 { get => timeBlock4;}
+            public int TimeBlock5 { get => timeBlock5;}
 
-			public Course(string[] args)
+            public Course(string[] args)
 			{
 				courseTitle = args[0];
 				instructor = args[1];
@@ -203,20 +208,26 @@ namespace RegSystemGUI
 				credits = Convert.ToSingle(args[2]);
 				ntimeBlocks = Convert.ToInt32(args[4]);
 				timeBlock1 = Convert.ToInt32(args[5]);
-				if (ntimeBlocks == 2)
+				timeBlock2 = 00000;
+				timeBlock3 = 00000;
+				timeBlock4 = 00000;
+				timeBlock5 = 00000;
+				if (ntimeBlocks <= 2)
 				{
 					timeBlock2 = Convert.ToInt32(args[6]); //If there are 2 time blocks, this allows the placing of it in time block 2
 				}
-				else if (ntimeBlocks == 3)
+				if (ntimeBlocks <= 3)
 				{
-					timeBlock2 = Convert.ToInt32(args[6]);
 					timeBlock3 = Convert.ToInt32(args[7]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
 				}
-				else
-				{
-					timeBlock2 = 00000;
-					timeBlock3 = 00000;
-				}
+				if (ntimeBlocks <=4 )
+                {
+					timeBlock4 = Convert.ToInt32(args[8]);
+                }
+				if (ntimeBlocks == 5)
+                {
+					timeBlock5 = Convert.ToInt32(args[9]);
+                }
 			}
 		}
 
@@ -236,17 +247,32 @@ namespace RegSystemGUI
 					string tBlock1 = solveTimeblock(course.Value.TimeBlock1);
 					string tBlock2 = solveTimeblock(course.Value.TimeBlock2);
 					string tBlock3 = solveTimeblock(course.Value.TimeBlock3);
+					string tBlock4 = solveTimeblock(course.Value.TimeBlock4);
+					string tBlock5 = solveTimeblock(course.Value.TimeBlock5);
 					if (course.Value.TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
 					{
 						tBlock2 = "";
 						tBlock3 = "";
+						tBlock4 = "";
+						tBlock5 = "";
 					}
-					if (course.Value.TimeBlock3 == 00000)
+					else if (course.Value.TimeBlock3 == 00000)
 					{
 						tBlock3 = "";
+						tBlock4 = "";
+						tBlock5 = "";
 					}
+					else if (course.Value.TimeBlock4 == 00000)
+                    {
+						tBlock4 = "";
+						tBlock5 = "";
+					}
+					else if (course.Value.TimeBlock5 == 00000)
+                    {
+						tBlock5 = "";
+                    }
 
-					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3);
+					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
 					output.Rows[counter].ReadOnly = true;
 					counter++;
 
