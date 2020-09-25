@@ -38,10 +38,40 @@ namespace RegSystemGUI
 			public viewCourses vCourse = new viewCourses();
 		}
 
+		private class HistoryDatabase
+		{
+			private Dictionary<string, string[]> hisDatabase = new Dictionary<string, string[]>();
+			public Dictionary<string, string[]> HisDatabase { get => hisDatabase; }
+
+			public HistoryDatabase()
+			{
+				int[] hCounter = {10, 1, 23 };
+				string loc = Path.GetFullPath("historyDB.in");
+				string line;                                                        //We are just going to build a list with the student's course histories that can be added to. 
+				string key;
+				int numCourses = 0;
+				System.IO.StreamReader file2 = new System.IO.StreamReader(@loc);
+				while ((line = file2.ReadLine()) != null)
+				{
+					key = line.Substring(0, 10).TrimEnd();
+					numCourses = Convert.ToInt32(line.Substring(11, 2).TrimEnd());  //Converting the number of courses to int32 from the string.
+					string[] courses = new string[numCourses];
+					int a = 14;
+					for (int i = 1; i <= numCourses; i++)
+                    {
+
+                    }
+
+				}
+			}
+        }
+
 		public class UserDatabase
 		{
 			private Dictionary<(string, string), Account> uDatabase = new Dictionary<(string, string), Account>(); //Dictionary of Accounts, with username password tuple as the key
-			public UserDatabase()
+			
+
+            public UserDatabase()
 			{
 				int[] dataBasecounter = { 10, 10, 15, 15, 15, 10 };
 				string loc = Path.GetFullPath("userDB.in");
@@ -70,6 +100,7 @@ namespace RegSystemGUI
 
 				}
 				file.Close();
+
 			}
 			public void viewDatabase()
 			{
@@ -130,6 +161,14 @@ namespace RegSystemGUI
 			}
 
 		}
+
+		public class StudentAcc : Account
+        {
+			public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
+            {
+				//Constructor
+            }
+        }
 
 		public class CourseDatabase
 		{
