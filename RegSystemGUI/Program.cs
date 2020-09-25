@@ -185,10 +185,13 @@ namespace RegSystemGUI
 
 		public class StudentAcc : Account
         {
+			private string[] cHistory;
 			public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
             {
-				//Constructor
+				CHistory = courseHistory;
             }
+
+            public string[] CHistory { get => cHistory; set => cHistory = value; }
         }
 
 		public class CourseDatabase
