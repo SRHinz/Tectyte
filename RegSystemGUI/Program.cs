@@ -44,8 +44,9 @@ namespace RegSystemGUI
 			public UserDatabase()
 			{
 				int[] dataBasecounter = { 10, 10, 15, 15, 15, 10 };
+				string loc = Path.GetFullPath("userDB.in");
 				string line;
-				System.IO.StreamReader file = new System.IO.StreamReader("Users.txt");
+				System.IO.StreamReader file = new System.IO.StreamReader(@loc);
 				while ((line = file.ReadLine()) != null)
 				{
 					string[] words = new string[6];
