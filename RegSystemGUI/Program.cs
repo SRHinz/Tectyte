@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Timers;
 using System.Threading;
+using System.ComponentModel;
 
 namespace RegSystemGUI
 {
@@ -204,13 +205,38 @@ namespace RegSystemGUI
 
 		public class StudentAcc : Account
         {
-			private string[] cHistory;
+			private Dictionary<string, (string, float, string)> cHistory;
 			public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
+            {	
+
+				string[] ordering = new string[4];
+				foreach (string s in courseHistory)
+                {
+					ordering = s.Split(' ');
+					string course = ordering[0]; 
+					string term = ordering[1];
+					float credits = Convert.ToSingle(ordering[2]);
+					string grade = ordering[3];
+					CHistory.Add(course, (term, credits, grade));
+                }
+            }
+			
+			public void addCourse(string course, string term, float credits, string grade)
             {
-				CHistory = courseHistory;
+				cHistory.Add(course, (term, credits, grade));
             }
 
-            public string[] CHistory { get => cHistory; set => cHistory = value; }
+			public void delCourse(string courseName)
+            {
+				if (!(cHistory.Remove(courseName)))		
+                {
+					throw new ArgumentNullException("That course does not exist in student's history.", courseName);
+                }
+				
+				
+            }
+
+            public Dictionary<string, (string, float, string)> CHistory { get => cHistory; }
         }
 
 		public class CourseDatabase
