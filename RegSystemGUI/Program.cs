@@ -26,20 +26,25 @@ namespace RegSystemGUI
 
 			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+			Form[] forms = new Form[10];
+			forms[0] = new Login(ref COE);
 			Login login = new Login(ref COE);
 			Application.Run(login);
         }
 
 		public class RegistrationSystem
         {
-			private string curAcc;
+			private (string, string) curAcc;
 			public UserDatabase uData = new UserDatabase();
 			public CourseDatabase cData = new CourseDatabase();
 			public viewCourses vCourse = new viewCourses();
-			//private Form[] forms = new Form[10];
-			//forms[0] = new Login(ref this)
-		}
+
+            public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
+
+
+            //private Form[] forms = new Form[10];
+            //forms[0] = new Login(ref this)
+        }
 
 		private class HistoryDatabase
 		{
@@ -108,20 +113,22 @@ namespace RegSystemGUI
 						words[i] = subString;
 					}
 					if ((words[5] != "faculty") | (words[5] != "admin"))
-                    {
-                        try
-                        {
+					{
+						try
+						{
 							uDatabase.Add((words[0], words[1]), new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
 						}
-                        catch (KeyNotFoundException e)				//If there exists no course records for the student, then it will simply create a student account with no coures in their history.
-                        {
-							string[] noHis = {};
+						catch (KeyNotFoundException e)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
+						{
+							string[] noHis = { };
 							uDatabase.Add((words[0], words[1]), new StudentAcc(words, noHis));
-                        }
-							//So this obsencely annoying looking piece of code should create a student account with the relevant course history. 
-                    }
-					uDatabase.Add((words[0], words[1]), new Account(words));
-
+						}
+						//So this obsencely annoying looking piece of code should create a student account with the relevant course history. 
+					}
+					else
+					{
+						uDatabase.Add((words[0], words[1]), new Account(words));
+					}
 				}
 				file.Close();
 
@@ -185,6 +192,15 @@ namespace RegSystemGUI
 			}
 
 		}
+
+		//*public class StudentHistory
+        //{
+		//	private Dictionary<string,(string, )>
+		//	StudentHistory()
+        //    {
+
+         //   }
+        //}
 
 		public class StudentAcc : Account
         {

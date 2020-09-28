@@ -6,7 +6,6 @@ C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.Gener
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
-C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\bin\Debug\RegSystemGUI.exe
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\bin\Debug\RegSystemGUI.pdb

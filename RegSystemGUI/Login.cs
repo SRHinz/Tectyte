@@ -34,6 +34,7 @@ namespace RegSystemGUI
             tempPW = PasswordInput.Text;
             if (COE.uData.authenticateUser(tempUN, tempPW) != "Failed")
             {
+                COE.CurAcc = (tempUN, tempPW);
                 this.Hide();
                 Options options = new Options(ref COE);
                 options.Show();
