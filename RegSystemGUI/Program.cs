@@ -8,6 +8,7 @@ using System.IO;
 using System.Timers;
 using System.Threading;
 using System.ComponentModel;
+using System.Drawing.Text;
 
 namespace RegSystemGUI
 {
@@ -204,10 +205,36 @@ namespace RegSystemGUI
          //   }
         //}
 
+
+
 		public class StudentAcc : Account
         {
-			private Dictionary<string, (string, float, string)> cHistory = new Dictionary<string, (string, float, string)>();
-			public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
+			private class sHistory
+            {
+				private string course;
+				private string term;
+				private float credits;
+				private string grade;
+
+				public sHistory(string co, string t, float c, string g)
+                {
+					course = co;
+					term = t;
+					credits = c;
+					grade = g;
+                }
+
+                public string Course { get => course; }
+                public string Term { get => term; }
+                public float Credits { get => credits; }
+                public string Grade { get => grade; set => grade = value; }
+            }
+			//private Dictionary<string, (string, float, string)> cHistory = new Dictionary<string, (string, float, string)>();
+			private List<sHistory> cHistory = new List<sHistory>();		//A list of sHistory classes makes it mutable while also allowing
+
+            private List<sHistory> CHistory { get => cHistory; }
+
+            public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
             {	
 
 				string[] ordering = new string[4];
@@ -217,26 +244,35 @@ namespace RegSystemGUI
 					string term = s.Substring(11, 3);
 					float credits = Convert.ToSingle(s.Substring(14, 4));
 					string grade = s.Substring(20, s.Length - 20);
-					cHistory.Add(course, (term, credits, grade));
+					CHistory.Add(new sHistory(course, term, credits, grade));
                 }
             }
 			
 			public void addCourse(string course, string term, float credits, string grade)
             {
-				cHistory.Add(course, (term, credits, grade));
+				CHistory.Add(new sHistory(course, term, credits, grade));
             }
 
 			public void delCourse(string courseName)
             {
-				if (!(cHistory.Remove(courseName)))		
-                {
-					throw new ArgumentNullException("That course does not exist in student's history.", courseName);
+				bool courseFound = false;
+				foreach (sHistory c in cHistory)                    //This loop checks each course to see if it is the one that is to be removed. If it is, it will remove it. Only courses that are being taken currently or registered for next semester should be allowed to be deleted.		
+				{
+					if (c.Course == "courseName" & c.Grade == "N" & !courseFound)
+					{ 
+						cHistory.Remove(c);
+						courseFound = true;
+					}
                 }
+				if (!courseFound)									//If the course does not exist in the student's history, then it will throw an error.
+                {
+					throw new ArgumentException("That course does not exist in student's history.", courseName);
+				}
 				
 				
             }
 
-            public Dictionary<string, (string, float, string)> CHistory { get => cHistory; }
+            
         }
 
 		public class CourseDatabase
