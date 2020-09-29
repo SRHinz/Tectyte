@@ -32,3 +32,4 @@ C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.G
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\obj\Debug\RegSystemGUI.CourseViewer.resources

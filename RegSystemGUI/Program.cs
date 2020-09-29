@@ -75,6 +75,7 @@ namespace RegSystemGUI
 						else
 						{
 							courses[i - 1] = line.Substring(a, 23).TrimEnd();
+							a += 24;
 						}
                     }
 					hisDatabase.Add(key, courses);
@@ -205,19 +206,23 @@ namespace RegSystemGUI
 
 		public class StudentAcc : Account
         {
-			private Dictionary<string, (string, float, string)> cHistory;
+			private Dictionary<string, (string, float, string)> cHistory = new Dictionary<string, (string, float, string)>();
 			public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
             {	
 
 				string[] ordering = new string[4];
 				foreach (string s in courseHistory)
                 {
-					ordering = s.Split(' ');
-					string course = ordering[0]; 
-					string term = ordering[1];
-					float credits = Convert.ToSingle(ordering[2]);
-					string grade = ordering[3];
-					CHistory.Add(course, (term, credits, grade));
+					Console.WriteLine(s);
+					string course = s.Substring(0, 11);
+					Console.WriteLine(course);
+					string term = s.Substring(11, 3);
+					Console.WriteLine(term);
+					float credits = Convert.ToSingle(s.Substring(14, 4));
+					Console.WriteLine(credits);
+					string grade = s.Substring(20, 2);
+					Console.WriteLine(grade);
+					cHistory.Add(course, (term, credits, grade));
                 }
             }
 			
