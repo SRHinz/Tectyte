@@ -13,15 +13,18 @@ namespace RegSystemGUI
     public partial class Options : Form
     {
         private Program.RegistrationSystem COE = new Program.RegistrationSystem();
-        public Options(ref Program.RegistrationSystem coe)
+        private string aType;
+        public Options(ref Program.RegistrationSystem coe, string accountType)
         {
             InitializeComponent();
             COE = coe;
+            aType = accountType;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            if (aType != "student")
+                CourseHisButton.Hide();
         }
 
         private void viewCourse_Click(object sender, EventArgs e)
@@ -31,5 +34,9 @@ namespace RegSystemGUI
             CV.Show();
         }
 
+        private void CourseHisButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

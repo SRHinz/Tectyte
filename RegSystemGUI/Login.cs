@@ -36,7 +36,7 @@ namespace RegSystemGUI
             {
                 COE.CurAcc = (tempUN, tempPW);
                 this.Hide();
-                Options options = new Options(ref COE);
+                Options options = new Options(ref COE, COE.uData.authenticateUser(tempUN, tempPW));
                 options.Show();
             }
             else

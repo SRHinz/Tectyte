@@ -30,24 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.ViewCoursesButton = new System.Windows.Forms.Button();
+            this.CourseHisButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ViewCoursesButton
             // 
-            this.ViewCoursesButton.Location = new System.Drawing.Point(156, 108);
-            this.ViewCoursesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ViewCoursesButton.Location = new System.Drawing.Point(104, 69);
             this.ViewCoursesButton.Name = "ViewCoursesButton";
-            this.ViewCoursesButton.Size = new System.Drawing.Size(203, 74);
+            this.ViewCoursesButton.Size = new System.Drawing.Size(135, 47);
             this.ViewCoursesButton.TabIndex = 0;
             this.ViewCoursesButton.Text = "View Courses";
             this.ViewCoursesButton.UseVisualStyleBackColor = true;
             this.ViewCoursesButton.Click += new System.EventHandler(this.viewCourse_Click);
             // 
+            // CourseHisButton
+            // 
+            this.CourseHisButton.Location = new System.Drawing.Point(293, 69);
+            this.CourseHisButton.Name = "CourseHisButton";
+            this.CourseHisButton.Size = new System.Drawing.Size(118, 47);
+            this.CourseHisButton.TabIndex = 1;
+            this.CourseHisButton.Text = "View Course History";
+            this.CourseHisButton.UseVisualStyleBackColor = true;
+            this.CourseHisButton.Click += new System.EventHandler(this.CourseHisButton_Click);
+            // 
             // Options
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 581);
+            this.ClientSize = new System.Drawing.Size(601, 372);
+            this.Controls.Add(this.CourseHisButton);
             this.Controls.Add(this.ViewCoursesButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
@@ -61,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Button ViewCoursesButton;
+        private System.Windows.Forms.Button CourseHisButton;
     }
 }
