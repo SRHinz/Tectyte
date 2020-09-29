@@ -213,15 +213,10 @@ namespace RegSystemGUI
 				string[] ordering = new string[4];
 				foreach (string s in courseHistory)
                 {
-					Console.WriteLine(s);
 					string course = s.Substring(0, 11);
-					Console.WriteLine(course);
 					string term = s.Substring(11, 3);
-					Console.WriteLine(term);
 					float credits = Convert.ToSingle(s.Substring(14, 4));
-					Console.WriteLine(credits);
-					string grade = s.Substring(20, 2);
-					Console.WriteLine(grade);
+					string grade = s.Substring(20, s.Length - 20);
 					cHistory.Add(course, (term, credits, grade));
                 }
             }
