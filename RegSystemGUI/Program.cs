@@ -366,7 +366,10 @@ namespace RegSystemGUI
 
 		public class viewCourses
 		{
-			public void display
+			public void displayStuHist(StudentAcc acc, DataGridView output)
+            {
+
+            }
 			public void displayCourses(CourseDatabase cData, DataGridView output)
 			{
 				int counter = 0;
