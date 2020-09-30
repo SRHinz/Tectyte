@@ -14,8 +14,6 @@ namespace RegSystemGUI
     {
         private Program.CourseDatabase coeC = new Program.CourseDatabase();
         private Program.viewCourses viewC = new Program.viewCourses();
-        private Program.UserDatabase uDatabase = new Program.UserDatabase();
-        private string username, password;
         public CourseViewer(ref Program.CourseDatabase courseD, ref Program.viewCourses vC)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
             InitializeComponent();
@@ -26,11 +24,6 @@ namespace RegSystemGUI
             vC.displayCourses(coeC, CourseDataGrid);
         }
 
-        public CourseViewer(ref Program.UserDatabase userDatabase, string UN, string PW)
-        {
-            InitializeComponent();
-            uDatabase = userDatabase;
-        }
 
         private void CoursesGridBuild()
         {

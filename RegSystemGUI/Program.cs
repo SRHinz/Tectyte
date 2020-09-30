@@ -44,8 +44,6 @@ namespace RegSystemGUI
             public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
 
 
-            //private Form[] forms = new Form[10];
-            //forms[0] = new Login(ref this)
         }
 
 		private class HistoryDatabase
@@ -196,15 +194,6 @@ namespace RegSystemGUI
 
 		}
 
-		//*public class StudentHistory
-        //{
-		//	private Dictionary<string,(string, )>
-		//	StudentHistory()
-        //    {
-
-         //   }
-        //}
-
 
 
 		public class StudentAcc : Account
@@ -237,7 +226,6 @@ namespace RegSystemGUI
             public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
             {	
 
-				string[] ordering = new string[4];
 				foreach (string s in courseHistory)
                 {
 					string course = s.Substring(0, 11);
@@ -378,6 +366,7 @@ namespace RegSystemGUI
 
 		public class viewCourses
 		{
+			public void display
 			public void displayCourses(CourseDatabase cData, DataGridView output)
 			{
 				int counter = 0;
