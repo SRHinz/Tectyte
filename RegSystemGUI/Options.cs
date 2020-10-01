@@ -14,6 +14,7 @@ namespace RegSystemGUI
     {
         private Program.RegistrationSystem COE = new Program.RegistrationSystem();
         private string aType, accountUN, accountPW;
+        private Form[] forms = new Form[10];
         public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW)
         {
             InitializeComponent();
@@ -21,6 +22,9 @@ namespace RegSystemGUI
             aType = accountType;
             accountUN = tempUN;
             accountPW = tempPW;
+            forms[0] = this;
+            forms[1] = new CourseViewer(ref COE.cData, ref COE.vCourse);
+            forms[2] = new stuCourseHist();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -32,14 +36,13 @@ namespace RegSystemGUI
         private void viewCourse_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CourseViewer CV = new CourseViewer(ref COE.cData, ref COE.vCourse);
-            CV.Show();
+            forms[1].Show();
         }
 
         private void CourseHisButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CourseViewer CV = new CourseViewer(ref COE.uData, accountUN, accountPW);
+            stuCourseHist studentSchedule = new stuCourseHist();
         }
     }
 }

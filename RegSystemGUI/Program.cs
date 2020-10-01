@@ -37,6 +37,7 @@ namespace RegSystemGUI
 		public class RegistrationSystem
         {
 			private (string, string) curAcc;
+			private string curTerm = "F14";
 			public UserDatabase uData = new UserDatabase();
 			public CourseDatabase cData = new CourseDatabase();
 			public viewCourses vCourse = new viewCourses();
@@ -170,14 +171,17 @@ namespace RegSystemGUI
 			private string userName;
 			private string password;
 			private string status;
-			private string fName { get; }
-			private string mName { get; }
-			private string lName { get; }
+			private string fName;
+			private string mName;
+			private string lName;
 			public string Status { get => status; }
 			public string UserName { get => userName; }
 			public string Password { get => password; }
+            public string FName { get => fName; }
+            public string MName { get => mName; }
+            public string LName { get => lName; }
 
-			public Account(string[] args)
+            public Account(string[] args)
 			{
 				userName = args[0];
 				password = args[1];
@@ -189,39 +193,44 @@ namespace RegSystemGUI
 
 			public string getAccount()
 			{
-				return (UserName + ' ' + Password + ' ' + fName + ' ' + mName + ' ' + lName + ' ' + Status);
+				return (UserName + ' ' + Password + ' ' + FName + ' ' + MName + ' ' + LName + ' ' + Status);
 			}
 
 		}
 
+		public class sHistory: IComparable<sHistory>
+		{
+			private string course;
+			private string term;
+			private float credits;
+			private string grade;
+
+			public sHistory(string co, string t, float c, string g)
+			{
+				course = co;
+				term = t;
+				credits = c;
+				grade = g;
+			}
+
+			public string Course { get => course; }
+			public string Term { get => term; }
+			public float Credits { get => credits; }
+			public string Grade { get => grade; set => grade = value; }
+
+            public int CompareTo(sHistory other)
+            {
+                throw new NotImplementedException();
+            }
+        }
 
 
 		public class StudentAcc : Account
         {
-			private class sHistory
-            {
-				private string course;
-				private string term;
-				private float credits;
-				private string grade;
+			
+			private List<sHistory> cHistory = new List<sHistory>();     //A list of sHistory classes makes it mutable while also allowing
 
-				public sHistory(string co, string t, float c, string g)
-                {
-					course = co;
-					term = t;
-					credits = c;
-					grade = g;
-                }
-
-                public string Course { get => course; }
-                public string Term { get => term; }
-                public float Credits { get => credits; }
-                public string Grade { get => grade; set => grade = value; }
-            }
-			//private Dictionary<string, (string, float, string)> cHistory = new Dictionary<string, (string, float, string)>();
-			private List<sHistory> cHistory = new List<sHistory>();		//A list of sHistory classes makes it mutable while also allowing
-
-            private List<sHistory> CHistory { get => cHistory; }
+            public List<sHistory> CHistory { get => cHistory; }
 
             public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
             {	
@@ -232,13 +241,13 @@ namespace RegSystemGUI
 					string term = s.Substring(11, 3);
 					float credits = Convert.ToSingle(s.Substring(14, 4));
 					string grade = s.Substring(20, s.Length - 20);
-					CHistory.Add(new sHistory(course, term, credits, grade));
+					cHistory.Add(new sHistory(course, term, credits, grade));
                 }
             }
 			
 			public void addCourse(string course, string term, float credits, string grade)
             {
-				CHistory.Add(new sHistory(course, term, credits, grade));
+				cHistory.Add(new sHistory(course, term, credits, grade));
             }
 
 			public void delCourse(string courseName)
@@ -368,6 +377,10 @@ namespace RegSystemGUI
 		{
 			public void displayStuHist(StudentAcc acc, DataGridView output)
             {
+				foreach (sHistory course in acc.CHistory)
+                {
+
+                }
 
             }
 			public void displayCourses(CourseDatabase cData, DataGridView output)
