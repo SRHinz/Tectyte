@@ -23,8 +23,12 @@ namespace RegSystemGUI
             accountUN = tempUN;
             accountPW = tempPW;
             forms[0] = this;
-            forms[1] = new CourseViewer(ref COE.cData, ref COE.vCourse);
-            forms[2] = new stuCourseHist();
+            forms[1] = new CourseViewer(ref COE.cData, ref COE.vCourse, this);
+            if (aType == "student")
+            {
+                Program.StudentAcc curACC = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
+                forms[2] = new stuCourseHist(curACC, this);
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -36,13 +40,14 @@ namespace RegSystemGUI
         private void viewCourse_Click(object sender, EventArgs e)
         {
             this.Hide();
+           // forms[1].CourseViewerLoad(this);
             forms[1].Show();
         }
 
         private void CourseHisButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            stuCourseHist studentSchedule = new stuCourseHist();
+            forms[2].Show();
         }
     }
 }

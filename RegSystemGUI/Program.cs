@@ -89,6 +89,8 @@ namespace RegSystemGUI
 			private Dictionary<(string, string), Account> uDatabase = new Dictionary<(string, string), Account>(); //Dictionary of Accounts, with username password tuple as the key
 			private HistoryDatabase hDatabase = new HistoryDatabase();
 
+            public Dictionary<(string, string), Account> UDatabase { get => uDatabase; }
+
             public UserDatabase()
 			{
 				int[] dataBasecounter = { 10, 10, 15, 15, 15, 10 };
@@ -118,18 +120,18 @@ namespace RegSystemGUI
 					{
 						try
 						{
-							uDatabase.Add((words[0], words[1]), new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
+							UDatabase.Add((words[0], words[1]), new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
 						}
 						catch (KeyNotFoundException e)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
 						{
 							string[] noHis = { };
-							uDatabase.Add((words[0], words[1]), new StudentAcc(words, noHis));
+							UDatabase.Add((words[0], words[1]), new StudentAcc(words, noHis));
 						}
 						//So this obsencely annoying looking piece of code should create a student account with the relevant course history. 
 					}
 					else
 					{
-						uDatabase.Add((words[0], words[1]), new Account(words));
+						UDatabase.Add((words[0], words[1]), new Account(words));
 					}
 				}
 				file.Close();
@@ -138,7 +140,7 @@ namespace RegSystemGUI
 			public void viewDatabase()
 			{
 				Console.WriteLine("User Database");
-				foreach (KeyValuePair<(string, string), Account> user in uDatabase)
+				foreach (KeyValuePair<(string, string), Account> user in UDatabase)
 				{
 					Console.WriteLine("Key: {0}, Value: {1}", user.Key, user.Value.getAccount());
 				}
@@ -146,15 +148,15 @@ namespace RegSystemGUI
 
 			public string authenticateUser(string userName, string Password)
 			{
-				if (uDatabase.ContainsKey((userName, Password)))
+				if (UDatabase.ContainsKey((userName, Password)))
 				{
-					if (!(uDatabase[(userName, Password)].Status.Equals("faculty") | uDatabase[(userName, Password)].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+					if (!(UDatabase[(userName, Password)].Status.Equals("faculty") | UDatabase[(userName, Password)].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
 					{
 						return "student";
 					}
 					else
 					{
-						return uDatabase[(userName, Password)].Status;
+						return UDatabase[(userName, Password)].Status;
 					}
 				}
 				else
