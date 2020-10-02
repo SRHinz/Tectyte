@@ -389,7 +389,7 @@ namespace RegSystemGUI
 						}
 					}
 
-                    else
+                    else if (type == "Current")
                     {
 						if (course.Grade == "N")
                         {

@@ -53,7 +53,7 @@ namespace RegSystemGUI
             else if(TermSelectorBox.SelectedItem == "Current Courses")
             {
                 CourseDataGrid.Rows.Clear();
-
+                vCourses.displayStuHist(account, CourseDataGrid, "Current");
             }
         }
     }
