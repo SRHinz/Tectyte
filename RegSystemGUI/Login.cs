@@ -15,6 +15,7 @@ namespace RegSystemGUI
     {
 
         private Program.RegistrationSystem COE = new Program.RegistrationSystem();
+
         public Login(ref Program.RegistrationSystem coe)
         {
             InitializeComponent();

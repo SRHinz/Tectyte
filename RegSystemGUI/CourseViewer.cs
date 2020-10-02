@@ -63,6 +63,11 @@ namespace RegSystemGUI
 
         }
 
+        private void menuReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu.Show();
+        }
         private void CourseDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

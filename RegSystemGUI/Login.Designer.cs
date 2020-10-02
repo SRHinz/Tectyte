@@ -109,6 +109,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration System Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.LoginPanel.ResumeLayout(false);
@@ -125,6 +126,7 @@
         private System.Windows.Forms.TextBox UsernameInput;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label UsernameLabel;
+
     }
 }
 

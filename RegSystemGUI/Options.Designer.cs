@@ -31,13 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.ViewCoursesButton = new System.Windows.Forms.Button();
             this.CourseHisButton = new System.Windows.Forms.Button();
+            this.logOutButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
             // ViewCoursesButton
             // 
-            this.ViewCoursesButton.Location = new System.Drawing.Point(104, 69);
+            this.ViewCoursesButton.Location = new System.Drawing.Point(221, 181);
+            this.ViewCoursesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ViewCoursesButton.Name = "ViewCoursesButton";
-            this.ViewCoursesButton.Size = new System.Drawing.Size(135, 47);
+            this.ViewCoursesButton.Size = new System.Drawing.Size(202, 73);
             this.ViewCoursesButton.TabIndex = 0;
             this.ViewCoursesButton.Text = "View Courses";
             this.ViewCoursesButton.UseVisualStyleBackColor = true;
@@ -45,27 +48,54 @@
             // 
             // CourseHisButton
             // 
-            this.CourseHisButton.Location = new System.Drawing.Point(293, 69);
+            this.CourseHisButton.Location = new System.Drawing.Point(505, 181);
+            this.CourseHisButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CourseHisButton.Name = "CourseHisButton";
-            this.CourseHisButton.Size = new System.Drawing.Size(118, 47);
+            this.CourseHisButton.Size = new System.Drawing.Size(177, 73);
             this.CourseHisButton.TabIndex = 1;
             this.CourseHisButton.Text = "View Course History";
             this.CourseHisButton.UseVisualStyleBackColor = true;
             this.CourseHisButton.Click += new System.EventHandler(this.CourseHisButton_Click);
             // 
+            // logOutButton
+            // 
+            this.logOutButton.Location = new System.Drawing.Point(363, 327);
+            this.logOutButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(177, 73);
+            this.logOutButton.TabIndex = 2;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(902, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // Options
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 372);
+            this.ClientSize = new System.Drawing.Size(902, 581);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.CourseHisButton);
             this.Controls.Add(this.ViewCoursesButton);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Options";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -73,5 +103,7 @@
 
         private System.Windows.Forms.Button ViewCoursesButton;
         private System.Windows.Forms.Button CourseHisButton;
+        private System.Windows.Forms.Button logOutButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

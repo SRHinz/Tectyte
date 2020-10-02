@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(stuCourseHist));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MenuReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -35,33 +36,38 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 34);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 23);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 123;
-            this.dataGridView1.Size = new System.Drawing.Size(1897, 1212);
+            this.dataGridView1.Size = new System.Drawing.Size(1198, 819);
             this.dataGridView1.TabIndex = 0;
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(1977, 652);
+            this.MenuReturn.Location = new System.Drawing.Point(1249, 401);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(527, 96);
+            this.MenuReturn.Size = new System.Drawing.Size(333, 65);
             this.MenuReturn.TabIndex = 1;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
             // 
             // stuCourseHist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2533, 1281);
+            this.ClientSize = new System.Drawing.Size(1600, 866);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "stuCourseHist";
-            this.Text = "stuCourseHist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Course History";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -37,6 +37,11 @@ namespace RegSystemGUI
                 CourseHisButton.Hide();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void viewCourse_Click(object sender, EventArgs e)
         {
             this.Hide();

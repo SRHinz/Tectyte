@@ -29,20 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseViewer));
-            this.button1 = new System.Windows.Forms.Button();
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
+            this.MenuReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1374, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(333, 100);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Print";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CourseDataGrid
             // 
@@ -62,23 +52,35 @@
             this.CourseDataGrid.TabIndex = 3;
             this.CourseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGrid_CellContentClick);
             // 
+            // MenuReturn
+            // 
+            this.MenuReturn.Location = new System.Drawing.Point(1374, 411);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuReturn.Name = "MenuReturn";
+            this.MenuReturn.Size = new System.Drawing.Size(333, 65);
+            this.MenuReturn.TabIndex = 4;
+            this.MenuReturn.Text = "Return to Menu";
+            this.MenuReturn.UseVisualStyleBackColor = true;
+            // 
             // CourseViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1806, 886);
+            this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.CourseDataGrid);
-            this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CourseViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Courses";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView CourseDataGrid;
+        private System.Windows.Forms.Button MenuReturn;
     }
 }

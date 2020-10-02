@@ -28,7 +28,7 @@ namespace RegSystemGUI
         private void MenuButtonClicked(object sender, EventArgs e)
         {
             this.Hide();
-            Menu.();
+            Menu.Show();
         }
     }
 }
