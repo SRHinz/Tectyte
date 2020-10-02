@@ -17,15 +17,12 @@ namespace RegSystemGUI
         {
             
             InitializeComponent();
-        }
-
-        public void stuCourseHistLoad(Program.StudentAcc studentAcc, Options menu)
-        {
             Menu = menu;
 
         }
 
-        private void MenuButtonClicked(object sender, EventArgs e)
+
+        private void MenuReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
             Menu.Show();

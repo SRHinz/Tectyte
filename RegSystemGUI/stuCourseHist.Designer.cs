@@ -38,32 +38,33 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 23);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 15);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 123;
-            this.dataGridView1.Size = new System.Drawing.Size(1198, 819);
+            this.dataGridView1.Size = new System.Drawing.Size(799, 524);
             this.dataGridView1.TabIndex = 0;
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(1249, 401);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuReturn.Location = new System.Drawing.Point(833, 257);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(333, 65);
+            this.MenuReturn.Size = new System.Drawing.Size(222, 42);
             this.MenuReturn.TabIndex = 1;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
+            this.MenuReturn.Click += new System.EventHandler(this.MenuReturn_Click);
             // 
             // stuCourseHist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 866);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";
