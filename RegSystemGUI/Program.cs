@@ -43,10 +43,48 @@ namespace RegSystemGUI
 			public viewCourses vCourse = new viewCourses();
 
             public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
-
-
+            public string CurTerm { get => curTerm;}
         }
 
+		public class Register
+        {
+			private CourseDatabase cDatabase;
+			public Register(ref CourseDatabase courseData)
+            {
+				cDatabase = courseData;
+            }
+			public void stuRegister(StudentAcc sAcc, Course regCourse, string coursetitle, string term)		//Just adds a course to the student's schedule
+            {
+				float courseCredCounter = 0;
+				foreach (sHistory curCourse in sAcc.CHistory)
+                {
+					
+					if (curCourse.Grade == "N" & curCourse.Term == "term")					//This garuntees we will only be checking against courses that 
+                    {
+						courseCredCounter += curCourse.Credits;
+						int cc = curCourse.Course.Length - 3;
+						int bb = coursetitle.Length - 3;
+						if (curCourse.Course.Substring(0,cc) == coursetitle.Substring(0,bb))
+                        {
+							throw new ArgumentException("Cannot add duplicate course!");
+                        }
+						else if (courseCredCounter >= 5)
+                        {
+							throw new ArgumentException("Too many credits");
+                        }
+						else if (cDatabase.CDatabase[coursetitle].AvailableSeats == 0)
+                        {
+							throw new ArgumentException("No available seats");
+                        }
+						for (int i = 1; i<= regCourse.NtimeBlocks; i++)
+                        {
+
+                        }
+                    }
+                }
+				sAcc.addCourse(coursetitle, term, regCourse.Credits, "N");
+            }
+        }
 		private class HistoryDatabase
 		{
 			private Dictionary<string, string[]> hisDatabase = new Dictionary<string, string[]>();
@@ -200,7 +238,7 @@ namespace RegSystemGUI
 
 		}
 
-		public class sHistory: IComparable<sHistory>
+		public class sHistory
 		{
 			private string course;
 			private string term;
@@ -220,10 +258,6 @@ namespace RegSystemGUI
 			public float Credits { get => credits; }
 			public string Grade { get => grade; set => grade = value; }
 
-            public int CompareTo(sHistory other)
-            {
-                throw new NotImplementedException();
-            }
         }
 
 
