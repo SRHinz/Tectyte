@@ -37,9 +37,9 @@
             // 
             // MenuReturn
             // 
-            this.MenuReturn.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.MenuReturn.BackColor = System.Drawing.SystemColors.Control;
             this.MenuReturn.Location = new System.Drawing.Point(1250, 402);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
             this.MenuReturn.Name = "MenuReturn";
             this.MenuReturn.Size = new System.Drawing.Size(333, 66);
             this.MenuReturn.TabIndex = 1;
@@ -88,7 +88,7 @@
             this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";
