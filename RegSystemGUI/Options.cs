@@ -29,7 +29,7 @@ namespace RegSystemGUI
             if (aType == "student")
             {
                 Program.StudentAcc curACC = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
-                forms[2] = new stuCourseHist(curACC, this);
+                forms[2] = new stuCourseHist(curACC, this, COE.vCourse);
             }
         }
 

@@ -17,6 +17,7 @@ namespace RegSystemGUI
         private string course, term, grade;
         private float credits;
         private Options Menu;
+
         public CourseViewer(ref Program.CourseDatabase courseD, ref Program.viewCourses vC, Options menu)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
             InitializeComponent();

@@ -377,11 +377,26 @@ namespace RegSystemGUI
 
 		public class viewCourses
 		{
-			public void displayStuHist(StudentAcc acc, DataGridView output)
+			public void displayStuHist(StudentAcc acc, DataGridView output, string type)
             {
 				foreach (sHistory course in acc.CHistory)
                 {
+					if (type == "History")
+                    {
+						if (course.Grade != "N")
+                        {
+							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
+						}
+					}
 
+                    else
+                    {
+						if (course.Grade == "N")
+                        {
+							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
+						}
+                    }
+					
                 }
 
             }
