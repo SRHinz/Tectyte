@@ -61,6 +61,7 @@
             this.MenuReturn.TabIndex = 4;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
+            this.MenuReturn.Click += new System.EventHandler(this.MenuReturn_Click_1);
             // 
             // CourseViewer
             // 

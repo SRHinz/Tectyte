@@ -37,12 +37,16 @@ namespace RegSystemGUI
             {
                 COE.CurAcc = (tempUN, tempPW);
                 this.Hide();
-                Options options = new Options(ref COE, COE.uData.authenticateUser(tempUN, tempPW), tempUN, tempPW);
+                Options options = new Options(ref COE, COE.uData.authenticateUser(tempUN, tempPW), tempUN, tempPW, this);
+                UsernameInput.Clear();
+                PasswordInput.Clear();
                 options.Show();
             }
             else
             {
                 MessageBox.Show("Invalid Credentials");
+                UsernameInput.Clear();
+                PasswordInput.Clear();
             }
         }
 

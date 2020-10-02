@@ -15,9 +15,11 @@ namespace RegSystemGUI
         private Program.RegistrationSystem COE = new Program.RegistrationSystem();
         private string aType, accountUN, accountPW;
         private Form[] forms = new Form[10];
-        public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW)
+        Login login;
+        public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW, Login loginform)
         {
             InitializeComponent();
+            login = loginform;
             COE = coe;
             aType = accountType;
             accountUN = tempUN;
@@ -39,6 +41,8 @@ namespace RegSystemGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
+            login.Show();
 
         }
 

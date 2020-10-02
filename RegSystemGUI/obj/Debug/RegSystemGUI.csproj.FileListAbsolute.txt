@@ -34,3 +34,4 @@ C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\obj\Debug\RegSystemGUI.CourseViewer.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\rSystem\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources

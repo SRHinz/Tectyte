@@ -14,10 +14,13 @@ namespace RegSystemGUI
     {
         private Program.CourseDatabase coeC = new Program.CourseDatabase();
         private Program.viewCourses viewC = new Program.viewCourses();
-        Options Menu;
+        private string course, term, grade;
+        private float credits;
+        private Options Menu;
         public CourseViewer(ref Program.CourseDatabase courseD, ref Program.viewCourses vC, Options menu)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
             InitializeComponent();
+            Menu = menu;
             coeC = courseD;
             viewC = vC;
             CourseDataGrid.ColumnCount = 11;
@@ -63,13 +66,20 @@ namespace RegSystemGUI
 
         }
 
-        private void menuReturn_Click(object sender, EventArgs e)
+        private void MenuReturn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             Menu.Show();
         }
+
+
         private void CourseDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            course = CourseDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //credits = CourseDataGrid.Rows[e.RowIndex].Cells[2].Value.
+            grade = "N";
+            term = "S15";
+            //Program.sHistory addCourse = new Program.sHistory(course, term, credits, grade);
 
         }
     }
