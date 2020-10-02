@@ -12,20 +12,28 @@ namespace RegSystemGUI
 {
     public partial class stuCourseHist : Form
     {
-        Options Menu;
+        private Options Menu;
         public stuCourseHist(Program.StudentAcc studentAcc, Options menu)
         {
             
             InitializeComponent();
             Menu = menu;
 
+
         }
+
+
 
 
         private void MenuReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
             Menu.Show();
+        }
+
+        private void TermSelectorBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

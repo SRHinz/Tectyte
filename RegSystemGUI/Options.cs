@@ -41,7 +41,13 @@ namespace RegSystemGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (Form form in forms)
+            {
+                if (form != null)
+                {
+                    form.Close();
+                }
+            }
             login.Show();
 
         }

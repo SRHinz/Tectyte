@@ -29,26 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(stuCourseHist));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MenuReturn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.TermSelectorBox = new System.Windows.Forms.ComboBox();
+            this.CourseListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 123;
-            this.dataGridView1.Size = new System.Drawing.Size(799, 524);
-            this.dataGridView1.TabIndex = 0;
             // 
             // MenuReturn
             // 
             this.MenuReturn.Location = new System.Drawing.Point(833, 257);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1);
             this.MenuReturn.Name = "MenuReturn";
             this.MenuReturn.Size = new System.Drawing.Size(222, 42);
             this.MenuReturn.TabIndex = 1;
@@ -56,27 +45,49 @@
             this.MenuReturn.UseVisualStyleBackColor = true;
             this.MenuReturn.Click += new System.EventHandler(this.MenuReturn_Click);
             // 
+            // TermSelectorBox
+            // 
+            this.TermSelectorBox.FormattingEnabled = true;
+            this.TermSelectorBox.Items.AddRange(new object[] {
+            "Course History",
+            "Current Courses",
+            "Future Courses"});
+            this.TermSelectorBox.Location = new System.Drawing.Point(842, 34);
+            this.TermSelectorBox.Name = "TermSelectorBox";
+            this.TermSelectorBox.Size = new System.Drawing.Size(121, 24);
+            this.TermSelectorBox.TabIndex = 2;
+            this.TermSelectorBox.SelectedIndexChanged += new System.EventHandler(this.TermSelectorBox_SelectedIndexChanged);
+            // 
+            // CourseListBox
+            // 
+            this.CourseListBox.FormattingEnabled = true;
+            this.CourseListBox.ItemHeight = 16;
+            this.CourseListBox.Location = new System.Drawing.Point(68, 51);
+            this.CourseListBox.Name = "CourseListBox";
+            this.CourseListBox.Size = new System.Drawing.Size(486, 276);
+            this.CourseListBox.TabIndex = 3;
+            // 
             // stuCourseHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.CourseListBox);
+            this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
-            this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button MenuReturn;
+        private System.Windows.Forms.ComboBox TermSelectorBox;
+        private System.Windows.Forms.ListBox CourseListBox;
     }
 }
