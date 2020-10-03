@@ -9,6 +9,7 @@ using System.Timers;
 using System.Threading;
 using System.ComponentModel;
 using System.Drawing.Text;
+using System.Drawing;
 
 namespace RegSystemGUI
 {
@@ -76,13 +77,46 @@ namespace RegSystemGUI
                         {
 							throw new ArgumentException("No available seats");
                         }
-						for (int i = 1; i<= regCourse.NtimeBlocks; i++)
+						string[] timeBlocks1 = new string[cDatabase.CDatabase[coursetitle].NtimeBlocks];
+						for (int i = 1; i < timeBlocks1.Length; i++)
+                        {
+							timeBlocks1[i] = cDatabase.CDatabase[coursetitle][3]
+                        }
+						if (timeConflict())
                         {
 
                         }
                     }
                 }
 				sAcc.addCourse(coursetitle, term, regCourse.Credits, "N");
+            }
+
+			private (bool, string) timeConflict(string[] t1, string[] t2)
+            {
+				bool conflict = false;
+				string issue = "";
+				foreach (string timeblock in t1)
+				{ 
+					string[] daysAndTime = timeblock.Split(',');
+					string[] days1 = daysAndTime[0].Split(' ');
+					foreach (string timeblock2 in t2)
+					{
+						string[] daysAndTime2 = timeblock2.Split(',');
+						string[] days2 = daysAndTime2[0].Split(' ');
+						foreach (string i in days1)
+						{
+							foreach (string j in days2)
+							{
+								if (i == j)
+								{
+
+								}
+							}
+						}
+					}
+                }
+
+				return (conflict, issue);
             }
         }
 		private class HistoryDatabase
