@@ -47,7 +47,7 @@ namespace RegSystemGUI
             public string CurTerm { get => curTerm;}
         }
 
-		public class Register
+		public class Register: viewCourses
         {
 			private CourseDatabase cDatabase;
 			public Register(ref CourseDatabase courseData)
@@ -77,12 +77,17 @@ namespace RegSystemGUI
                         {
 							throw new ArgumentException("No available seats");
                         }
-						string[] timeBlocks1 = new string[cDatabase.CDatabase[coursetitle].NtimeBlocks];
+						string[] timeBlocks1 = new string[regCourse.NtimeBlocks];
 						for (int i = 1; i < timeBlocks1.Length; i++)
                         {
-							timeBlocks1[i] = cDatabase.CDatabase[coursetitle][3]
+							timeBlocks1[i - 1] = base.solveTimeblock(regCourse.TimeBlockCollection[i - 1]);
                         }
-						if (timeConflict())
+						string[] timeBlocks2 = new string[cDatabase.CDatabase[curCourse.Course].NtimeBlocks];
+						for (int j = 1; j < timeBlocks2.Length; j++)
+                        {
+							timeBlocks2[j - 1] = base.solveTimeblock(cDatabase.CDatabase[curCourse.Course].TimeBlockCollection[j - 1]);
+                        }
+						if (timeConflict(timeBlocks1, timeBlocks2))
                         {
 
                         }
@@ -91,7 +96,7 @@ namespace RegSystemGUI
 				sAcc.addCourse(coursetitle, term, regCourse.Credits, "N");
             }
 
-			private (bool, string) timeConflict(string[] t1, string[] t2)
+			private bool timeConflict(string[] t1, string[] t2)
             {
 				bool conflict = false;
 				string issue = "";
@@ -116,7 +121,7 @@ namespace RegSystemGUI
 					}
                 }
 
-				return (conflict, issue);
+				return conflict;
             }
         }
 		private class HistoryDatabase
@@ -399,6 +404,8 @@ namespace RegSystemGUI
 			private int timeBlock3;
 			private int timeBlock4;
 			private int timeBlock5;
+			private int[] timeBlockCollection;
+
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
 			public int TotalSeats { get => totalSeats; }
@@ -410,6 +417,7 @@ namespace RegSystemGUI
 			public int TimeBlock3 { get => timeBlock3; }
             public int TimeBlock4 { get => timeBlock4; }
             public int TimeBlock5 { get => timeBlock5; }
+            public int[] TimeBlockCollection { get => timeBlockCollection; }
 
             public Course(string[] args)
 			{
@@ -419,7 +427,9 @@ namespace RegSystemGUI
 				availableSeats = Convert.ToInt32(args[3]);
 				credits = Convert.ToSingle(args[2]);
 				ntimeBlocks = Convert.ToInt32(args[4]);
+				timeBlockCollection = new int[ntimeBlocks];
 				timeBlock1 = Convert.ToInt32(args[5]);
+				timeBlockCollection[0] = timeBlock1;
 				timeBlock2 = 00000;
 				timeBlock3 = 00000;
 				timeBlock4 = 00000;
@@ -427,19 +437,24 @@ namespace RegSystemGUI
 				if (ntimeBlocks >= 2)
 				{
 					timeBlock2 = Convert.ToInt32(args[6]); //If there are 2 time blocks, this allows the placing of it in time block 2
+					TimeBlockCollection[1] = timeBlock2;
 				}
 				if (ntimeBlocks >= 3)
 				{
 					timeBlock3 = Convert.ToInt32(args[7]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
+					timeBlockCollection[2] = timeBlock3;
 				}
 				if (ntimeBlocks >=4 )
                 {
 					timeBlock4 = Convert.ToInt32(args[8]);
+					timeBlockCollection[3] = timeBlock4;
                 }
 				if (ntimeBlocks == 5)
                 {
 					timeBlock5 = Convert.ToInt32(args[9]);
+					TimeBlockCollection[4] = timeBlock5;
                 }
+				
 			}
 		}
 
@@ -515,7 +530,7 @@ namespace RegSystemGUI
 
 			}
 
-			private string solveTimeblock(int tB)
+			public string solveTimeblock(int tB)
 			{
 				string days = "";
 				string time = "";
