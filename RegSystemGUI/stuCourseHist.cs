@@ -13,15 +13,17 @@ namespace RegSystemGUI
     public partial class stuCourseHist : Form
     {
         private Options Menu;
-        Program.StudentAcc account;
-        Program.viewCourses vCourses;
-        string currentTerm;
-        public stuCourseHist(Program.StudentAcc studentAcc, Options menu, Program.viewCourses viewC, string cTerm)
+        private Program.StudentAcc account;
+        private Program.viewCourses vCourses;
+        private Program.CourseDatabase cData;
+        private string currentTerm;
+        public stuCourseHist(Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, Options menu)
         {
             
             InitializeComponent();
             CourseDataGrid.ColumnCount = 4;
             CourseHistoryGridBuild();
+            cData = courseData;
             account = studentAcc;
             vCourses = viewC;
             Menu = menu;

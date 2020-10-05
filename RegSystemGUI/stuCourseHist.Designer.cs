@@ -34,16 +34,17 @@
             this.TermSelectorBox = new System.Windows.Forms.ComboBox();
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
             this.courseDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(1103, 259);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuReturn.Location = new System.Drawing.Point(735, 166);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(333, 66);
+            this.MenuReturn.Size = new System.Drawing.Size(222, 42);
             this.MenuReturn.TabIndex = 1;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -57,10 +58,9 @@
             "Course History",
             "Current Courses",
             "Future Courses"});
-            this.TermSelectorBox.Location = new System.Drawing.Point(1103, 116);
-            this.TermSelectorBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TermSelectorBox.Location = new System.Drawing.Point(735, 74);
             this.TermSelectorBox.Name = "TermSelectorBox";
-            this.TermSelectorBox.Size = new System.Drawing.Size(180, 33);
+            this.TermSelectorBox.Size = new System.Drawing.Size(121, 24);
             this.TermSelectorBox.TabIndex = 2;
             this.TermSelectorBox.SelectedIndexChanged += new System.EventHandler(this.TermSelectorBox_SelectedIndexChanged);
             // 
@@ -73,29 +73,38 @@
             this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CourseDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CourseDataGrid.Location = new System.Drawing.Point(146, 97);
-            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CourseDataGrid.Location = new System.Drawing.Point(97, 62);
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
-            this.CourseDataGrid.Size = new System.Drawing.Size(810, 362);
+            this.CourseDataGrid.Size = new System.Drawing.Size(540, 232);
             this.CourseDataGrid.TabIndex = 4;
             // 
             // courseDatabaseBindingSource
             // 
             this.courseDatabaseBindingSource.DataSource = typeof(RegSystemGUI.Program.CourseDatabase);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(735, 245);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(222, 35);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // stuCourseHist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 938);
+            this.ClientSize = new System.Drawing.Size(1055, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CourseDataGrid);
             this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";
@@ -111,5 +120,6 @@
         private System.Windows.Forms.ComboBox TermSelectorBox;
         private System.Windows.Forms.DataGridView CourseDataGrid;
         private System.Windows.Forms.BindingSource courseDatabaseBindingSource;
+        private System.Windows.Forms.Button button1;
     }
 }
