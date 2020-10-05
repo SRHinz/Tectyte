@@ -26,6 +26,7 @@ namespace RegSystemGUI
             vCourses = viewC;
             Menu = menu;
             currentTerm = cTerm;
+            TermSelectorBox.SelectedIndex = 0;
         }
 
         private void CourseHistoryGridBuild()
