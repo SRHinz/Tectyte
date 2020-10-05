@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Windows.Forms.Layout;
+using System.Runtime.InteropServices;
+
+
 namespace RegSystemGUI
 {
     public partial class stuCourseHist : Form
