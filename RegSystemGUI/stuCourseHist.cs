@@ -28,6 +28,8 @@ namespace RegSystemGUI
             account = studentAcc;
             vCourses = viewC;
             Menu = menu;
+
+            TermSelectorBox.SelectedIndex = 0;
         }
 
         private void CourseHistoryGridBuild()
@@ -59,6 +61,11 @@ namespace RegSystemGUI
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Current");
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
