@@ -12,9 +12,31 @@ namespace RegSystemGUI
 {
     public partial class DropCourse : Form
     {
-        public DropCourse()
+        private stuCourseHist StuHist;
+        private Program.StudentAcc account;
+        private Program.viewCourses vCourses;
+        private Program.CourseDatabase cData;
+        private string currentTerm;
+
+        public DropCourse(Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, stuCourseHist stuHis)
         {
             InitializeComponent();
+            StuHist = stuHis;
+            cData = courseData;
+            account = studentAcc;
+            vCourses = viewC;
+            currentTerm = cTerm;
+        }
+
+        private void DropCourseButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StuHist.Show();
         }
     }
 }
