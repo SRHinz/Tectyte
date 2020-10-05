@@ -34,7 +34,7 @@
             this.TermSelectorBox = new System.Windows.Forms.ComboBox();
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
             this.courseDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.DropButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -85,21 +85,21 @@
             // 
             this.courseDatabaseBindingSource.DataSource = typeof(RegSystemGUI.Program.CourseDatabase);
             // 
-            // button1
+            // DropButton
             // 
-            this.button1.Location = new System.Drawing.Point(735, 245);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 35);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.DropButton.Location = new System.Drawing.Point(735, 245);
+            this.DropButton.Name = "DropButton";
+            this.DropButton.Size = new System.Drawing.Size(222, 35);
+            this.DropButton.TabIndex = 5;
+            this.DropButton.Text = "Drop";
+            this.DropButton.UseVisualStyleBackColor = true;
             // 
             // stuCourseHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 600);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DropButton);
             this.Controls.Add(this.CourseDataGrid);
             this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
@@ -120,6 +120,6 @@
         private System.Windows.Forms.ComboBox TermSelectorBox;
         private System.Windows.Forms.DataGridView CourseDataGrid;
         private System.Windows.Forms.BindingSource courseDatabaseBindingSource;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DropButton;
     }
 }

@@ -21,6 +21,7 @@ namespace RegSystemGUI
         {
             
             InitializeComponent();
+            DropButton.Hide();
             CourseDataGrid.ColumnCount = 4;
             CourseHistoryGridBuild();
             cData = courseData;
@@ -59,11 +60,14 @@ namespace RegSystemGUI
             {
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm);
+                DropButton.Show();
             }
 
             else if (TermSelectorBox.SelectedItem == "Future Courses")
             {
+                CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
+                DropButton.Show();
             }
         }
     }
