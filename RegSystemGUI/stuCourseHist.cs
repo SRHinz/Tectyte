@@ -13,15 +13,18 @@ namespace RegSystemGUI
     public partial class stuCourseHist : Form
     {
         private Options Menu;
-        Program.StudentAcc account;
-        Program.viewCourses vCourses;
-        string currentTerm;
-        public stuCourseHist(Program.StudentAcc studentAcc, Options menu, Program.viewCourses viewC, string cTerm)
+        private Program.StudentAcc account;
+        private Program.viewCourses vCourses;
+        private Program.CourseDatabase cData;
+        private string currentTerm;
+        public stuCourseHist(Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, Options menu)
         {
             
             InitializeComponent();
+            DropButton.Hide();
             CourseDataGrid.ColumnCount = 4;
             CourseHistoryGridBuild();
+            cData = courseData;
             account = studentAcc;
             vCourses = viewC;
             Menu = menu;
@@ -47,7 +50,11 @@ namespace RegSystemGUI
 
         private void TermSelectorBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TermSelectorBox.SelectedItem == "Course History")
+            if (TermSelectorBox.SelectedItem == "--select--")
+            {
+                CourseDataGrid.Rows.Clear();
+            }
+            else if (TermSelectorBox.SelectedItem == "Course History")
             {
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm);
@@ -57,11 +64,14 @@ namespace RegSystemGUI
             {
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm);
+                DropButton.Show();
             }
 
             else if (TermSelectorBox.SelectedItem == "Future Courses")
             {
+                CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
+                DropButton.Show();
             }
         }
     }
