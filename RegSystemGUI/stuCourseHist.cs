@@ -15,7 +15,8 @@ namespace RegSystemGUI
         private Options Menu;
         Program.StudentAcc account;
         Program.viewCourses vCourses;
-        public stuCourseHist(Program.StudentAcc studentAcc, Options menu, Program.viewCourses viewC)
+        string currentTerm;
+        public stuCourseHist(Program.StudentAcc studentAcc, Options menu, Program.viewCourses viewC, string cTerm)
         {
             
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace RegSystemGUI
             account = studentAcc;
             vCourses = viewC;
             Menu = menu;
+            currentTerm = cTerm;
         }
 
         private void CourseHistoryGridBuild()
@@ -47,13 +49,18 @@ namespace RegSystemGUI
             if (TermSelectorBox.SelectedItem == "Course History")
             {
                 CourseDataGrid.Rows.Clear();
-                vCourses.displayStuHist(account, CourseDataGrid, "History");
+                vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm);
             }
 
             else if(TermSelectorBox.SelectedItem == "Current Courses")
             {
                 CourseDataGrid.Rows.Clear();
-                vCourses.displayStuHist(account, CourseDataGrid, "Current");
+                vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm);
+            }
+
+            else if (TermSelectorBox.SelectedItem == "Future Courses")
+            {
+                vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
             }
         }
     }
