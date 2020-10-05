@@ -47,7 +47,11 @@ namespace RegSystemGUI
 
         private void TermSelectorBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TermSelectorBox.SelectedItem == "Course History")
+            if (TermSelectorBox.SelectedItem == "--select--")
+            {
+                CourseDataGrid.Rows.Clear();
+            }
+            else if (TermSelectorBox.SelectedItem == "Course History")
             {
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm);
@@ -61,6 +65,7 @@ namespace RegSystemGUI
 
             else if (TermSelectorBox.SelectedItem == "Future Courses")
             {
+                CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
             }
         }
