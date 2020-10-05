@@ -8,10 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.Windows.Forms.Layout;
-using System.Runtime.InteropServices;
-
-
 namespace RegSystemGUI
 {
     public partial class stuCourseHist : Form
@@ -19,7 +15,8 @@ namespace RegSystemGUI
         private Options Menu;
         Program.StudentAcc account;
         Program.viewCourses vCourses;
-        public stuCourseHist(Program.StudentAcc studentAcc, Options menu, Program.viewCourses viewC)
+        string currentTerm;
+        public stuCourseHist(Program.StudentAcc studentAcc, Options menu, Program.viewCourses viewC, string cTerm)
         {
             
             InitializeComponent();
@@ -28,8 +25,7 @@ namespace RegSystemGUI
             account = studentAcc;
             vCourses = viewC;
             Menu = menu;
-
-            TermSelectorBox.SelectedIndex = 0;
+            currentTerm = cTerm;
         }
 
         private void CourseHistoryGridBuild()
@@ -53,19 +49,19 @@ namespace RegSystemGUI
             if (TermSelectorBox.SelectedItem == "Course History")
             {
                 CourseDataGrid.Rows.Clear();
-                vCourses.displayStuHist(account, CourseDataGrid, "History");
+                vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm);
             }
 
             else if(TermSelectorBox.SelectedItem == "Current Courses")
             {
                 CourseDataGrid.Rows.Clear();
-                vCourses.displayStuHist(account, CourseDataGrid, "Current");
+                vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm);
             }
-        }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            else if (TermSelectorBox.SelectedItem == "Future Courses")
+            {
+                vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
+            }
         }
     }
 }

@@ -460,7 +460,7 @@ namespace RegSystemGUI
 
 		public class viewCourses
 		{
-			public void displayStuHist(StudentAcc acc, DataGridView output, string type)
+			public void displayStuHist(StudentAcc acc, DataGridView output, string type, string Term)
             {
 				foreach (sHistory course in acc.CHistory)
                 {
@@ -476,9 +476,20 @@ namespace RegSystemGUI
                     {
 						if (course.Grade == "N")
                         {
+							if (course.Term == Term)
 							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
+
 						}
+
                     }
+
+                    else
+                    {
+						if (course.Grade == "N")
+							if (course.Term != Term)
+								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
+                    }
+
 					
                 }
 
