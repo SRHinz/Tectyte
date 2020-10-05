@@ -42,7 +42,7 @@
             // MenuReturn
             // 
             this.MenuReturn.Location = new System.Drawing.Point(735, 166);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1);
             this.MenuReturn.Name = "MenuReturn";
             this.MenuReturn.Size = new System.Drawing.Size(222, 42);
             this.MenuReturn.TabIndex = 1;
@@ -78,6 +78,7 @@
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
+            this.CourseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CourseDataGrid.Size = new System.Drawing.Size(540, 232);
             this.CourseDataGrid.TabIndex = 4;
             // 
@@ -104,7 +105,7 @@
             this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";

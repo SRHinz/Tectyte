@@ -52,26 +52,32 @@ namespace RegSystemGUI
         {
             if (TermSelectorBox.SelectedItem == "--select--")
             {
+                if (DropButton.Visible) // checks to see if drop button is already displayed and hides it if not
+                    DropButton.Hide();
                 CourseDataGrid.Rows.Clear();
             }
             else if (TermSelectorBox.SelectedItem == "Course History")
             {
+                if (DropButton.Visible)
+                    DropButton.Hide();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm);
             }
 
             else if(TermSelectorBox.SelectedItem == "Current Courses")
             {
+                if (!DropButton.Visible)
+                    DropButton.Show();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm);
-                DropButton.Show();
             }
 
             else if (TermSelectorBox.SelectedItem == "Future Courses")
             {
+                if (!DropButton.Visible) // checks to see if drop button is displayed and displays it if not
+                    DropButton.Show();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
-                DropButton.Show();
             }
         }
     }

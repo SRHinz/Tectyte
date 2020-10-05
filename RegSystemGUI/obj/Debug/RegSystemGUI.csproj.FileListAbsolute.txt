@@ -48,3 +48,4 @@ C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Deb
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
+C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.DropCourse.resources
