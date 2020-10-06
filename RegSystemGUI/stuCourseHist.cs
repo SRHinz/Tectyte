@@ -17,13 +17,13 @@ namespace RegSystemGUI
         private Program.viewCourses vCourses;
         private Program.CourseDatabase cData;
         private string currentTerm;
+        private int rowIndex;
         public stuCourseHist(Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, Options menu)
         {
             
             InitializeComponent();
             DropButton.Hide();
             CourseDataGrid.ColumnCount = 4;
-            CourseHistoryGridBuild();
             cData = courseData;
             account = studentAcc;
             vCourses = viewC;
@@ -31,15 +31,6 @@ namespace RegSystemGUI
             currentTerm = cTerm;
             TermSelectorBox.SelectedIndex = 0;
         }
-
-        private void CourseHistoryGridBuild()
-        {
-            CourseDataGrid.Columns[0].Name = "Course";
-            CourseDataGrid.Columns[1].Name = "Term";
-            CourseDataGrid.Columns[2].Name = "Credits";
-            CourseDataGrid.Columns[3].Name = "Grade";
-        }
-
 
 
         private void MenuReturn_Click(object sender, EventArgs e)
@@ -79,6 +70,17 @@ namespace RegSystemGUI
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
             }
+        }
+
+        private void DropButton_Click(object sender, EventArgs e)
+        {
+            rowIndex = CourseDataGrid.CurrentCell.RowIndex;
+            DataGridViewCellCollection row = CourseDataGrid.Rows[rowIndex].Cells;
+            DataGridViewCell cell = row[0];
+            String courseName = cell.Value.ToString();
+            cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
+
+            
         }
     }
 }

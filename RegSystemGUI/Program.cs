@@ -92,7 +92,7 @@ namespace RegSystemGUI
 						int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course].TimeBlockCollection;
 						if (timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
                         {
-							throw new MemberAccessException("There is a time conflict. Please resolve this.")
+							throw new MemberAccessException("There is a time conflict. Please resolve this.");
                         }
                     }
                 }

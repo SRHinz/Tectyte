@@ -35,6 +35,10 @@
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
             this.courseDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DropButton = new System.Windows.Forms.Button();
+            this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Term = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credits = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +77,13 @@
             this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CourseDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CourseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Course,
+            this.Term,
+            this.Credits,
+            this.Grade});
             this.CourseDataGrid.Location = new System.Drawing.Point(97, 62);
+            this.CourseDataGrid.MultiSelect = false;
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
@@ -94,6 +104,35 @@
             this.DropButton.TabIndex = 5;
             this.DropButton.Text = "Drop";
             this.DropButton.UseVisualStyleBackColor = true;
+            this.DropButton.Click += new System.EventHandler(this.DropButton_Click);
+            // 
+            // Course
+            // 
+            this.Course.HeaderText = "Course";
+            this.Course.MinimumWidth = 6;
+            this.Course.Name = "Course";
+            this.Course.ReadOnly = true;
+            // 
+            // Term
+            // 
+            this.Term.HeaderText = "Term";
+            this.Term.MinimumWidth = 6;
+            this.Term.Name = "Term";
+            this.Term.ReadOnly = true;
+            // 
+            // Credits
+            // 
+            this.Credits.HeaderText = "Credits";
+            this.Credits.MinimumWidth = 6;
+            this.Credits.Name = "Credits";
+            this.Credits.ReadOnly = true;
+            // 
+            // Grade
+            // 
+            this.Grade.HeaderText = "Grade";
+            this.Grade.MinimumWidth = 6;
+            this.Grade.Name = "Grade";
+            this.Grade.ReadOnly = true;
             // 
             // stuCourseHist
             // 
@@ -122,5 +161,9 @@
         private System.Windows.Forms.DataGridView CourseDataGrid;
         private System.Windows.Forms.BindingSource courseDatabaseBindingSource;
         private System.Windows.Forms.Button DropButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Course;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Term;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Credits;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Grade;
     }
 }

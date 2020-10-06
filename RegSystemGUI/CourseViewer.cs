@@ -67,6 +67,11 @@ namespace RegSystemGUI
 
         }
 
+        private void AddCourseButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void MenuReturn_Click_1(object sender, EventArgs e)
         {
             this.Hide();

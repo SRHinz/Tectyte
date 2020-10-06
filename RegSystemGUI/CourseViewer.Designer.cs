@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseViewer));
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
             this.MenuReturn = new System.Windows.Forms.Button();
+            this.AddCourseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +65,22 @@
             this.MenuReturn.UseVisualStyleBackColor = true;
             this.MenuReturn.Click += new System.EventHandler(this.MenuReturn_Click_1);
             // 
+            // AddCourseButton
+            // 
+            this.AddCourseButton.Location = new System.Drawing.Point(1374, 569);
+            this.AddCourseButton.Name = "AddCourseButton";
+            this.AddCourseButton.Size = new System.Drawing.Size(333, 73);
+            this.AddCourseButton.TabIndex = 5;
+            this.AddCourseButton.Text = "Add Course";
+            this.AddCourseButton.UseVisualStyleBackColor = true;
+            this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
+            // 
             // CourseViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1806, 886);
+            this.Controls.Add(this.AddCourseButton);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.CourseDataGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -84,5 +96,6 @@
         #endregion
         private System.Windows.Forms.DataGridView CourseDataGrid;
         private System.Windows.Forms.Button MenuReturn;
+        private System.Windows.Forms.Button AddCourseButton;
     }
 }
