@@ -360,10 +360,11 @@ namespace RegSystemGUI
 				bool courseFound = false;
 				foreach (sHistory c in cHistory)                    //This loop checks each course to see if it is the one that is to be removed. If it is, it will remove it. Only courses that are being taken currently or registered for next semester should be allowed to be deleted.		
 				{
-					if (c.Course == "courseName" & c.Grade == "N" & !courseFound)
+					if (c.Course == courseName & c.Grade == "N  " & !courseFound)
 					{ 
 						cHistory.Remove(c);
 						courseFound = true;
+						break;
 					}
                 }
 				if (!courseFound)									//If the course does not exist in the student's history, then it will throw an error.
@@ -494,17 +495,19 @@ namespace RegSystemGUI
             {
 				foreach (sHistory course in acc.CHistory)
                 {
+
 					if (type == "History")
                     {
-						if (course.Grade != "N")
+						if (course.Grade != "N  ")
                         {
+							Console.WriteLine("Test");
 							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
 						}
 					}
 
                     else if (type == "Current")
                     {
-						if (course.Grade == "N")
+						if (course.Grade == "N  ")
                         {
 							if (course.Term == Term)
 							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
@@ -515,7 +518,7 @@ namespace RegSystemGUI
 
                     else
                     {
-						if (course.Grade == "N")
+						if (course.Grade == "N  ")
 							if (course.Term != Term)
 								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
                     }

@@ -78,7 +78,10 @@ namespace RegSystemGUI
             DataGridViewCellCollection row = CourseDataGrid.Rows[rowIndex].Cells;
             DataGridViewCell cell = row[0];
             String courseName = cell.Value.ToString();
-            cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
+            Console.WriteLine(courseName);
+            account.delCourse(courseName);
+            //cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
+            TermSelectorBox_SelectedIndexChanged(sender, e);
 
             
         }
