@@ -24,6 +24,7 @@ namespace RegSystemGUI
             InitializeComponent();
             DropButton.Hide();
             warningBox.Hide();
+            warningBox2.Hide();
             CourseDataGrid.ColumnCount = 4;
             cData = courseData;
             account = studentAcc;
