@@ -111,15 +111,17 @@ namespace RegSystemGUI
             rowIndex = CourseDataGrid.CurrentCell.RowIndex;
             DataGridViewCellCollection row = CourseDataGrid.Rows[rowIndex].Cells;
             DataGridViewCell cell = row[0];
-            String courseName = cell.Value.ToString();
+            String courseName = cell.Value.ToString().Trim();
+            cell = row[1];
+            String courseTerm = cell.Value.ToString().Trim();
             Console.WriteLine(courseName);
             bool success = account.delCourse(courseName);
-            courseName = courseName.Trim();
-            cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
             if (success)
             {
                 MessageBox.Show("Course successfully dropped.");
                 TermSelectorBox_SelectedIndexChanged(sender, e);
+                if (courseTerm != currentTerm)
+                    cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
             }
             else
             {
