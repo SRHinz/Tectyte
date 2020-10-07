@@ -371,7 +371,7 @@ namespace RegSystemGUI
                 }
 				if (!courseFound)									//If the course does not exist in the student's history, then it will throw an error.
                 {
-					throw new ArgumentException("That course does not exist in student's history.", courseName);
+					success = false;
 				}
 				return success;
 				

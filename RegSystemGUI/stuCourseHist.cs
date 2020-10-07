@@ -48,6 +48,8 @@ namespace RegSystemGUI
                     DropButton.Hide();
                 if (warningBox.Visible)
                     warningBox.Hide();
+                if (warningBox2.Visible)
+                    warningBox2.Hide();
                 CourseDataGrid.Rows.Clear();
             }
             else if (TermSelectorBox.SelectedItem == "Course History")
@@ -56,10 +58,15 @@ namespace RegSystemGUI
                     DropButton.Hide();
                 if (warningBox.Visible)
                     warningBox.Hide();
+                if (warningBox2.Visible)
+                    warningBox2.Hide();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm);
                 if (CourseDataGrid.Rows.Count == 0)
+                {
                     warningBox.Show();
+                    DropButton.Hide();
+                }
             }
 
             else if(TermSelectorBox.SelectedItem == "Current Courses")
@@ -68,10 +75,15 @@ namespace RegSystemGUI
                     DropButton.Show();
                 if (warningBox.Visible)
                     warningBox.Hide();
+                if (warningBox2.Visible)
+                    warningBox2.Hide();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm);
                 if (CourseDataGrid.Rows.Count == 0)
+                {
                     warningBox.Show();
+                    DropButton.Hide();
+                }
             }
 
             else if (TermSelectorBox.SelectedItem == "Future Courses")
@@ -80,10 +92,16 @@ namespace RegSystemGUI
                     DropButton.Show();
                 if (warningBox.Visible)
                     warningBox.Hide();
+                if (warningBox2.Visible)
+                    warningBox2.Hide();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
                 if (CourseDataGrid.Rows.Count == 0)
+                {
                     warningBox.Show();
+                    DropButton.Hide();
+                }
+                
             }
         }
 
@@ -99,6 +117,11 @@ namespace RegSystemGUI
             cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
             if (success)
                 MessageBox.Show("Course successfully dropped.");
+            else
+            {
+                MessageBox.Show("There was an error in dropping the course.");
+            }
+            
             
         }
 

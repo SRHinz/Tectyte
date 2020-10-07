@@ -40,6 +40,7 @@
             this.courseDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DropButton = new System.Windows.Forms.Button();
             this.warningBox = new System.Windows.Forms.TextBox();
+            this.warningBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -150,11 +151,23 @@
             this.warningBox.Text = "**Warning: There are no registered classes.**";
             this.warningBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // warningBox2
+            // 
+            this.warningBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.warningBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.warningBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warningBox2.Location = new System.Drawing.Point(129, 136);
+            this.warningBox2.Name = "warningBox2";
+            this.warningBox2.Size = new System.Drawing.Size(810, 31);
+            this.warningBox2.TabIndex = 7;
+            this.warningBox2.Text = "**Warning: There is a time conflict between two or more classes.**";
+            // 
             // stuCourseHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1582, 938);
+            this.Controls.Add(this.warningBox2);
             this.Controls.Add(this.warningBox);
             this.Controls.Add(this.DropButton);
             this.Controls.Add(this.CourseDataGrid);
@@ -184,5 +197,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Credits;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grade;
         private System.Windows.Forms.TextBox warningBox;
+        private System.Windows.Forms.TextBox warningBox2;
     }
 }
