@@ -94,11 +94,9 @@ namespace RegSystemGUI
             DataGridViewCell cell = row[0];
             String courseName = cell.Value.ToString();
             Console.WriteLine(courseName);
-            account.delCourse(courseName);
+            bool success = account.delCourse(courseName);
             courseName = courseName.Trim();
             cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
-            TermSelectorBox_SelectedIndexChanged(sender, e);
-
             
         }
 

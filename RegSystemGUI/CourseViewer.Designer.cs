@@ -41,7 +41,7 @@
             this.CourseDataGrid.AllowUserToDeleteRows = false;
             this.CourseDataGrid.AllowUserToResizeColumns = false;
             this.CourseDataGrid.AllowUserToResizeRows = false;
-            this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CourseDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);

@@ -355,15 +355,17 @@ namespace RegSystemGUI
 				cHistory.Add(new sHistory(course, term, credits, grade));
             }
 
-			public void delCourse(string courseName)
+			public bool delCourse(string courseName)
             {
 				bool courseFound = false;
+				bool success = false;
 				foreach (sHistory c in cHistory)                    //This loop checks each course to see if it is the one that is to be removed. If it is, it will remove it. Only courses that are being taken currently or registered for next semester should be allowed to be deleted.		
 				{
 					if (c.Course == courseName & c.Grade == "N" & !courseFound)
 					{ 
 						cHistory.Remove(c);
 						courseFound = true;
+						success = true;
 						break;
 					}
                 }
@@ -371,7 +373,7 @@ namespace RegSystemGUI
                 {
 					throw new ArgumentException("That course does not exist in student's history.", courseName);
 				}
-				
+				return success;
 				
             }
 
