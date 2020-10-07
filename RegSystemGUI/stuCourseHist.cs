@@ -35,7 +35,7 @@ namespace RegSystemGUI
 
         private void MenuReturn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Menu.Show();
         }
 
@@ -80,7 +80,8 @@ namespace RegSystemGUI
             String courseName = cell.Value.ToString();
             Console.WriteLine(courseName);
             account.delCourse(courseName);
-            //cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
+            courseName = courseName.Trim();
+            cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
             TermSelectorBox_SelectedIndexChanged(sender, e);
 
             

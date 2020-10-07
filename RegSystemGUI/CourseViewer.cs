@@ -74,7 +74,7 @@ namespace RegSystemGUI
 
         private void MenuReturn_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Menu.Show();
         }
 

@@ -12,10 +12,10 @@ namespace RegSystemGUI
 {
     public partial class Options : Form
     {
-        private Program.RegistrationSystem COE = new Program.RegistrationSystem();
+        private Program.RegistrationSystem COE;
         private string aType, accountUN, accountPW;
-        private Form[] forms = new Form[10];
         Login login;
+        private Program.StudentAcc curAcc;
         public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW, Login loginform)
         {
             InitializeComponent();
@@ -24,12 +24,9 @@ namespace RegSystemGUI
             aType = accountType;
             accountUN = tempUN;
             accountPW = tempPW;
-            forms[0] = this;
-            forms[1] = new CourseViewer(ref COE.cData, ref COE.vCourse, this);
             if (aType == "student")
             {
-                Program.StudentAcc curACC = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
-                forms[2] = new stuCourseHist(curACC, ref COE.cData, COE.vCourse, COE.CurTerm, this);
+                curAcc = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
             }
         }
 
@@ -41,13 +38,7 @@ namespace RegSystemGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach (Form form in forms)
-            {
-                if (form != null)
-                {
-                    form.Close();
-                }
-            }
+            this.Close();
             login.Show();
 
         }
@@ -55,14 +46,16 @@ namespace RegSystemGUI
         private void viewCourse_Click(object sender, EventArgs e)
         {
             this.Hide();
-           // forms[1].CourseViewerLoad(this);
-            forms[1].Show();
+            // forms[1].CourseViewerLoad(this);
+            CourseViewer cV = new CourseViewer(ref COE.cData, ref COE.vCourse, this);
+            cV.Show();
         }
 
         private void CourseHisButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            forms[2].Show();
+            stuCourseHist cH = new stuCourseHist(curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, this );
+            cH.Show();
         }
     }
 }

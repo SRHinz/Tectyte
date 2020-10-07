@@ -440,7 +440,7 @@ namespace RegSystemGUI
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
 			public int TotalSeats { get => totalSeats; }
-			public int AvailableSeats { get => availableSeats; set => availableSeats = value; }
+			public int AvailableSeats { get => availableSeats; set => availableSeats = value; } 
 			public float Credits { get => credits; }
 			public int NtimeBlocks { get => ntimeBlocks; }
 			public int TimeBlock1 { get => timeBlock1; }
@@ -449,6 +449,8 @@ namespace RegSystemGUI
             public int TimeBlock4 { get => timeBlock4; }
             public int TimeBlock5 { get => timeBlock5; }
             public int[] TimeBlockCollection { get => timeBlockCollection; }
+
+
 
             public Course(string[] args)
 			{
@@ -487,6 +489,7 @@ namespace RegSystemGUI
                 }
 				
 			}
+
 		}
 
 		public class viewCourses
@@ -500,7 +503,6 @@ namespace RegSystemGUI
                     {
 						if (course.Grade != "N")
                         {
-							Console.WriteLine("Test");
 							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
 						}
 					}
