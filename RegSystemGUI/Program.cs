@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Drawing.Text;
 using System.Drawing;
 using System.Diagnostics;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace RegSystemGUI
 {
@@ -43,6 +44,7 @@ namespace RegSystemGUI
 			public UserDatabase uData = new UserDatabase();
 			public CourseDatabase cData = new CourseDatabase();
 			public viewCourses vCourse = new viewCourses();
+			public Register registerC;
 
             public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
             public string CurTerm { get => curTerm;}
@@ -94,6 +96,10 @@ namespace RegSystemGUI
                         {
 							throw new MemberAccessException("There is a time conflict. Please resolve this.");
                         }
+						else if (courseRepeatConflict(coursetitle, sAcc)
+						{
+							throw new MemberAccessException("You have already previously registered for this course.");
+						}
                     }
                 }
 				sAcc.addCourse(coursetitle, term, regCourse.Credits, "N");
@@ -152,6 +158,21 @@ namespace RegSystemGUI
                 }
 
 				return conflict;
+            }
+
+			private bool courseRepeatConflict(string regCourse, StudentAcc student)
+            {
+				foreach (sHistory prevCourse in student.CHistory)
+                {
+					if (prevCourse.Grade != "N")
+					{
+						if (regCourse.Substring(0, regCourse.Length - 2).Equals(prevCourse.Course.Substring(0, prevCourse.Course.Length - 2)))
+						{
+							return true;
+						}
+					}
+                }
+				return false;
             }
         }
 		private class HistoryDatabase

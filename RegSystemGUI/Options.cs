@@ -24,6 +24,7 @@ namespace RegSystemGUI
             aType = accountType;
             accountUN = tempUN;
             accountPW = tempPW;
+            COE.registerC = new Program.Register(ref COE.cData);
             if (aType == "student")
             {
                 curAcc = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
@@ -47,7 +48,7 @@ namespace RegSystemGUI
         {
             this.Hide();
             // forms[1].CourseViewerLoad(this);
-            CourseViewer cV = new CourseViewer(ref COE.cData, ref COE.vCourse, this);
+            CourseViewer cV = new CourseViewer(ref COE, this);
             cV.Show();
         }
 

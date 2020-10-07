@@ -13,20 +13,28 @@ namespace RegSystemGUI
     public partial class CourseViewer : Form
     {
         private Program.CourseDatabase coeC = new Program.CourseDatabase();
-        private Program.viewCourses viewC = new Program.viewCourses();
+        private Program.Register regC;
         private string course, term, grade;
         private float credits;
         private Options Menu;
+        private Program.Account curAcc;
+        private Program.StudentAcc curStuAcc;
 
-        public CourseViewer(ref Program.CourseDatabase courseD, ref Program.viewCourses vC, Options menu)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
+        public CourseViewer(ref Program.RegistrationSystem coe, Options menu)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
             InitializeComponent();
             Menu = menu;
-            coeC = courseD;
-            viewC = vC;
+            coeC = coe.cData;
+            regC = coe.registerC;
             CourseDataGrid.ColumnCount = 11;
             CoursesGridBuild();
-            vC.displayCourses(coeC, CourseDataGrid);
+            curAcc = coe.uData.UDatabase[coe.CurAcc];
+            if ((curAcc.Status != "faculty") | (curAcc.Status != "admin"))
+            {
+                curStuAcc = coe.uData.UDatabase[coe.CurAcc] as Program.StudentAcc;
+            }
+            term = coe.CurTerm;
+            regC.displayCourses(coeC, CourseDataGrid);
         }
 
         public void CourseViewerLoad(Options menu)
@@ -69,7 +77,11 @@ namespace RegSystemGUI
 
         private void AddCourseButton_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                regC.stuRegister(curStuAcc,);
+            }
+            
         }
 
         private void MenuReturn_Click_1(object sender, EventArgs e)
@@ -83,8 +95,6 @@ namespace RegSystemGUI
         {
             course = CourseDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             //credits = CourseDataGrid.Rows[e.RowIndex].Cells[2].Value.
-            grade = "N";
-            term = "S15";
             //Program.sHistory addCourse = new Program.sHistory(course, term, credits, grade);
 
         }
