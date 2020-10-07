@@ -97,6 +97,8 @@ namespace RegSystemGUI
             bool success = account.delCourse(courseName);
             courseName = courseName.Trim();
             cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
+            if (success)
+                MessageBox.Show("Course successfully dropped.");
             
         }
 
