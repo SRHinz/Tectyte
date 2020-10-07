@@ -117,7 +117,10 @@ namespace RegSystemGUI
             courseName = courseName.Trim();
             cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
             if (success)
+            {
                 MessageBox.Show("Course successfully dropped.");
+                TermSelectorBox_SelectedIndexChanged(sender, e);
+            }
             else
             {
                 MessageBox.Show("There was an error in dropping the course.");
