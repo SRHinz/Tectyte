@@ -378,22 +378,16 @@ namespace RegSystemGUI
 
 			public bool delCourse(string courseName)
             {
-				bool courseFound = false;
 				bool success = false;
-				foreach (sHistory c in cHistory)                    //This loop checks each course to see if it is the one that is to be removed. If it is, it will remove it. Only courses that are being taken currently or registered for next semester should be allowed to be deleted.		
+				foreach (sHistory c in cHistory)        //This loop checks each course to see if it is the one that is to be removed. If it is, it will remove it. Only courses that are being taken currently or registered for next semester should be allowed to be deleted.		
 				{
-					if (c.Course == courseName & c.Grade == "N" & !courseFound)
+					if (c.Course.Trim() == courseName && c.Grade == "N")
 					{ 
 						cHistory.Remove(c);
-						courseFound = true;
 						success = true;
 						break;
 					}
                 }
-				if (!courseFound)									//If the course does not exist in the student's history, then it will throw an error.
-                {
-					success = false;
-				}
 				return success;
 				
             }
