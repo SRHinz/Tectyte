@@ -177,7 +177,7 @@ namespace RegSystemGUI
                     {
 						if (i == numCourses)
 						{
-							courses[i-1] = line.Substring(a, line.Length - a);
+							courses[i - 1] = line.Substring(a, line.Length - a).Trim();
 						}
 						else
 						{
@@ -360,7 +360,7 @@ namespace RegSystemGUI
 				bool courseFound = false;
 				foreach (sHistory c in cHistory)                    //This loop checks each course to see if it is the one that is to be removed. If it is, it will remove it. Only courses that are being taken currently or registered for next semester should be allowed to be deleted.		
 				{
-					if (c.Course == courseName & c.Grade == "N  " & !courseFound)
+					if (c.Course == courseName & c.Grade == "N" & !courseFound)
 					{ 
 						cHistory.Remove(c);
 						courseFound = true;
@@ -399,7 +399,7 @@ namespace RegSystemGUI
 						string subString = "";
 						if (i != 6 + nblocks - 1)                 //This if else statement handles everything before the last portion of the line, so to prevent an indexoutofRange exception from being thrown.
 						{
-							subString = line.Substring(a, courseCounter[i]).TrimEnd();
+							subString = line.Substring(a, courseCounter[i]).Trim();
 						}
 						else
 						{
@@ -498,7 +498,7 @@ namespace RegSystemGUI
 
 					if (type == "History")
                     {
-						if (course.Grade != "N  ")
+						if (course.Grade != "N")
                         {
 							Console.WriteLine("Test");
 							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
@@ -507,7 +507,7 @@ namespace RegSystemGUI
 
                     else if (type == "Current")
                     {
-						if (course.Grade == "N  ")
+						if (course.Grade == "N")
                         {
 							if (course.Term == Term)
 							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
@@ -518,7 +518,7 @@ namespace RegSystemGUI
 
                     else
                     {
-						if (course.Grade == "N  ")
+						if (course.Grade == "N")
 							if (course.Term != Term)
 								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
                     }
