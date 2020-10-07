@@ -23,6 +23,7 @@ namespace RegSystemGUI
             
             InitializeComponent();
             DropButton.Hide();
+            warningBox.Hide();
             CourseDataGrid.ColumnCount = 4;
             cData = courseData;
             account = studentAcc;
@@ -45,30 +46,44 @@ namespace RegSystemGUI
             {
                 if (DropButton.Visible) // checks to see if drop button is already displayed and hides it if not
                     DropButton.Hide();
+                if (warningBox.Visible)
+                    warningBox.Hide();
                 CourseDataGrid.Rows.Clear();
             }
             else if (TermSelectorBox.SelectedItem == "Course History")
             {
                 if (DropButton.Visible)
                     DropButton.Hide();
+                if (warningBox.Visible)
+                    warningBox.Hide();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm);
+                if (CourseDataGrid.Rows.Count == 0)
+                    warningBox.Show();
             }
 
             else if(TermSelectorBox.SelectedItem == "Current Courses")
             {
                 if (!DropButton.Visible)
                     DropButton.Show();
+                if (warningBox.Visible)
+                    warningBox.Hide();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm);
+                if (CourseDataGrid.Rows.Count == 0)
+                    warningBox.Show();
             }
 
             else if (TermSelectorBox.SelectedItem == "Future Courses")
             {
                 if (!DropButton.Visible) // checks to see if drop button is displayed and displays it if not
                     DropButton.Show();
+                if (warningBox.Visible)
+                    warningBox.Hide();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "Future", currentTerm);
+                if (CourseDataGrid.Rows.Count == 0)
+                    warningBox.Show();
             }
         }
 
@@ -85,6 +100,11 @@ namespace RegSystemGUI
             TermSelectorBox_SelectedIndexChanged(sender, e);
 
             
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
