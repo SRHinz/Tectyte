@@ -33,7 +33,7 @@ namespace RegSystemGUI
             {
                 curStuAcc = coe.uData.UDatabase[coe.CurAcc] as Program.StudentAcc;
             }
-            term = coe.CurTerm;
+            term = coe.NexTerm;
             regC.displayCourses(coeC, CourseDataGrid);
         }
 

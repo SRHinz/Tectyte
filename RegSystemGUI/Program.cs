@@ -42,6 +42,7 @@ namespace RegSystemGUI
         {
 			private (string, string) curAcc;
 			private string curTerm = "F14";
+			private string nexTerm = "S15";
 			public UserDatabase uData = new UserDatabase();
 			public CourseDatabase cData = new CourseDatabase();
 			public viewCourses vCourse = new viewCourses();
@@ -49,6 +50,7 @@ namespace RegSystemGUI
 
             public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
             public string CurTerm { get => curTerm;}
+            public string NexTerm { get => nexTerm;}
         }
 
 		public class Register: viewCourses
