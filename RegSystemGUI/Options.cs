@@ -30,7 +30,6 @@ namespace RegSystemGUI
             {
                 curAcc = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
             }
-            cV = new CourseViewer(ref COE, this);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -50,6 +49,7 @@ namespace RegSystemGUI
         {
             this.Hide();
             // forms[1].CourseViewerLoad(this);
+            cV = new CourseViewer(ref COE, this);
             cV.Show();
         }
 

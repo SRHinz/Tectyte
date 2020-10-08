@@ -16,7 +16,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace RegSystemGUI
 {
-    public static class Program
+    public class Program
     {
 		/// <summary>
 		/// The main entry point for the application.
@@ -32,8 +32,7 @@ namespace RegSystemGUI
 
 			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-			Form[] forms = new Form[10];
-			forms[0] = new Login(ref COE);
+			RegisterHistoryClasses(ref COE.cData, ref COE.uData);
 			Login login = new Login(ref COE);
 			Application.Run(login);
         }
@@ -52,6 +51,27 @@ namespace RegSystemGUI
             public string CurTerm { get => curTerm;}
             public string NexTerm { get => nexTerm;}
         }
+
+
+		public static void RegisterHistoryClasses(ref CourseDatabase cData, ref UserDatabase uData)
+		{
+			foreach (KeyValuePair<(string, string), Account> uValues in uData.UDatabase)
+			{
+				if (uValues.Value is StudentAcc)
+				{
+					StudentAcc account = (StudentAcc)uValues.Value;
+					string[] courses = account.getFutureCourseNames();
+					foreach (string course in courses)
+					{
+						if (course != null)
+						{
+							Console.WriteLine(course + "test");
+							cData.CDatabase[course].AvailableSeats--;
+						}
+					}
+				}
+			}
+		}
 
 		public class Register: viewCourses
         {
@@ -389,7 +409,23 @@ namespace RegSystemGUI
 					cHistory.Add(new sHistory(course, term, credits, grade));
                 }
             }
-			
+
+			public string[] getFutureCourseNames()
+			{
+				string[] fCourses = new string[cHistory.Count];
+				int count = 0;
+				foreach (sHistory his in cHistory)
+				{
+					if (his.Grade.Trim() == "N" && his.Term.Trim() != "F14")
+					{
+						fCourses[count] = his.Course.Trim();
+						Console.WriteLine(his.Course);
+					}
+					count++;
+				}
+				return fCourses;
+			}
+
 			public void addCourse(string course, string term, float credits, string grade)
             {
 				cHistory.Add(new sHistory(course, term, credits, grade));
