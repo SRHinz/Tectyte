@@ -12,6 +12,7 @@ using System.Drawing.Text;
 using System.Drawing;
 using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Forms.VisualStyles;
 
 namespace RegSystemGUI
 {
@@ -57,9 +58,10 @@ namespace RegSystemGUI
             {
 				cDatabase = courseData;
             }
-			public void stuRegister(StudentAcc sAcc, Course regCourse, string coursetitle, string term)		//Just adds a course to the student's schedule
+			public int stuRegister(StudentAcc sAcc, Course regCourse, string coursetitle, string term)		//Just adds a course to the student's schedule
             {
 				float courseCredCounter = 0;
+				int passable = 0;
 				foreach (sHistory curCourse in sAcc.CHistory)
                 {
 					
@@ -93,16 +95,31 @@ namespace RegSystemGUI
 						int[] timeBNum = regCourse.TimeBlockCollection;
 						int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course].TimeBlockCollection;
 						if (timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
-                        {
-							throw new MemberAccessException("There is a time conflict. Please resolve this.");
-                        }
-						else if (courseRepeatConflict(coursetitle, sAcc)
 						{
-							throw new MemberAccessException("You have already previously registered for this course.");
+							if ((passable == 2) | (passable == 3))
+							{
+								passable = 3;
+							}
+							else 
+							{ 
+								passable = 1;
+							}
+                        }
+						else if (courseRepeatConflict(coursetitle, sAcc))
+						{
+							if ((passable == 1) | (passable == 3))
+							{
+								passable = 3;
+							}
+							else
+							{
+								passable = 2;
+							}
 						}
                     }
                 }
 				sAcc.addCourse(coursetitle, term, regCourse.Credits, "N");
+				return passable;									//Passable gives a code that allows us to know if there is an issue, or what the issue is
             }
 
 			private bool timeConflict(string[] t1, int[] n1, string[] t2, int[]  n2)
@@ -173,7 +190,7 @@ namespace RegSystemGUI
 					}
                 }
 				return false;
-            }
+            }	   //This will catch if a student has previously taken the course
         }
 		private class HistoryDatabase
 		{

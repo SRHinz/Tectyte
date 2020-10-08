@@ -16,6 +16,7 @@ namespace RegSystemGUI
         private string aType, accountUN, accountPW;
         Login login;
         private Program.StudentAcc curAcc;
+        private CourseViewer cV;
         public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW, Login loginform)
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace RegSystemGUI
             {
                 curAcc = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
             }
+            cV = new CourseViewer(ref COE, this);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -48,7 +50,6 @@ namespace RegSystemGUI
         {
             this.Hide();
             // forms[1].CourseViewerLoad(this);
-            CourseViewer cV = new CourseViewer(ref COE, this);
             cV.Show();
         }
 

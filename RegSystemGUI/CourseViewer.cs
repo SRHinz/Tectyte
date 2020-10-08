@@ -77,11 +77,30 @@ namespace RegSystemGUI
 
         private void AddCourseButton_Click(object sender, EventArgs e)
         {
+            int error = 0;
             try
             {
-                regC.stuRegister(curStuAcc,);
+                error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course, term);
+                coeC.CDatabase[course].AvailableSeats += -1;
             }
-            
+            catch (ArgumentException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
+            {
+                f.ToString();
+            }
+
+            if (error == 1)
+            {
+                MessageBox.Show("There is a time conflict with this course and one or more courses you are registered for.");
+
+            }
+            else if (error == 2)
+            {
+                MessageBox.Show("You have already previously taken this course.");
+            }
+            else if (error == 3)
+            {
+                MessageBox.Show("There is a time conflict between this course and one or more courses you are registered for. In addition, you have already previously completed this course.");
+            }
         }
 
         private void MenuReturn_Click_1(object sender, EventArgs e)
