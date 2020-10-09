@@ -587,7 +587,7 @@ namespace RegSystemGUI
 
 		public class viewCourses
 		{
-			public void displayStuHist(StudentAcc acc, DataGridView output, string type, string Term)
+			public void displayStuHist(StudentAcc acc, DataGridView output, string type, string Term, CourseDatabase cData)
             {
 				foreach (sHistory course in acc.CHistory)
                 {
@@ -605,7 +605,38 @@ namespace RegSystemGUI
 						if (course.Grade == "N")
                         {
 							if (course.Term == Term)
-							output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
+                            {
+								int nBlocks = cData.CDatabase[course.Course.Trim()].NtimeBlocks;
+								string tBlock1 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock1);
+								string tBlock2 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock2);
+								string tBlock3 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock3);
+								string tBlock4 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock4);
+								string tBlock5 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock5);
+								if (cData.CDatabase[course.Course.Trim()].TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
+								{
+									tBlock2 = "Not Offered";
+									tBlock3 = "Not Offered";
+									tBlock4 = "Not Offered";
+									tBlock5 = "Not Offered";
+								}
+								else if (cData.CDatabase[course.Course.Trim()].TimeBlock3 == 00000)
+								{
+									tBlock3 = "Not Offered";
+									tBlock4 = "Not Offered";
+									tBlock5 = "Not Offered";
+								}
+								else if (cData.CDatabase[course.Course.Trim()].TimeBlock4 == 00000)
+								{
+									tBlock4 = "Not Offered";
+									tBlock5 = "Not Offered";
+								}
+								else if (cData.CDatabase[course.Course.Trim()].TimeBlock5 == 00000)
+								{
+									tBlock5 = "Not Offered";
+								}
+								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
+                            }
+							
 
 						}
 
@@ -615,7 +646,37 @@ namespace RegSystemGUI
                     {
 						if (course.Grade == "N")
 							if (course.Term != Term)
-								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
+                            {
+								int nBlocks = cData.CDatabase[course.Course.Trim()].NtimeBlocks;
+								string tBlock1 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock1);
+								string tBlock2 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock2);
+								string tBlock3 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock3);
+								string tBlock4 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock4);
+								string tBlock5 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock5);
+								if (cData.CDatabase[course.Course.Trim()].TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
+								{
+									tBlock2 = "Not Offered";
+									tBlock3 = "Not Offered";
+									tBlock4 = "Not Offered";
+									tBlock5 = "Not Offered";
+								}
+								else if (cData.CDatabase[course.Course.Trim()].TimeBlock3 == 00000)
+								{
+									tBlock3 = "Not Offered";
+									tBlock4 = "Not Offered";
+									tBlock5 = "Not Offered";
+								}
+								else if (cData.CDatabase[course.Course.Trim()].TimeBlock4 == 00000)
+								{
+									tBlock4 = "Not Offered";
+									tBlock5 = "Not Offered";
+								}
+								else if (cData.CDatabase[course.Course.Trim()].TimeBlock5 == 00000)
+								{
+									tBlock5 = "Not Offered";
+								}
+								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
+							}
                     }
 
 					

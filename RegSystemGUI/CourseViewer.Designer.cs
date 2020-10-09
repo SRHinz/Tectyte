@@ -33,6 +33,7 @@
             this.MenuReturn = new System.Windows.Forms.Button();
             this.AddCourseButton = new System.Windows.Forms.Button();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OpenSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +57,7 @@
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CourseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CourseName,
+            this.CourseTitle,
             this.Instructor,
             this.TotalSeats,
             this.OpenSeats,
@@ -102,6 +104,13 @@
             this.CourseName.MinimumWidth = 6;
             this.CourseName.Name = "CourseName";
             this.CourseName.ReadOnly = true;
+            // 
+            // CourseTitle
+            // 
+            this.CourseTitle.HeaderText = "Course Title";
+            this.CourseTitle.MinimumWidth = 10;
+            this.CourseTitle.Name = "CourseTitle";
+            this.CourseTitle.ReadOnly = true;
             // 
             // Instructor
             // 
@@ -189,6 +198,7 @@
         private System.Windows.Forms.Button MenuReturn;
         private System.Windows.Forms.Button AddCourseButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Instructor;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalSeats;
         private System.Windows.Forms.DataGridViewTextBoxColumn OpenSeats;
