@@ -83,36 +83,36 @@ namespace RegSystemGUI
             DataGridViewCell cell = row[0];
             course = cell.Value.ToString().Trim();
             int error = 100;
-            //try
+            try
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
                 coeC.CDatabase[course.Trim()].AvailableSeats += -1;
             }
-            //catch (ArgumentException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
-            //{
-            //    string eMsg = f.ToString();
-            //    if (eMsg.Contains("duplicate"))
-            //    {
-            //        MessageBox.Show("Cannot add duplicate course.");
-            //    }
-            //    else if (eMsg.Contains("credits"))
-            //    {
-            //        MessageBox.Show("You are registered for too many credits.");
-            //    }
-            //    else if (eMsg.Contains("seats"))
-            //    {
-            //        MessageBox.Show("No available seats.");
-            //    }
-            //    else
-            //        MessageBox.Show(eMsg);
-            //}
+            catch (Program.regConflictException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
+            { 
+                string eMsg = f.ToString();
+                if (eMsg.Contains("duplicate"))
+                {
+                    MessageBox.Show("Cannot add duplicate course.");
+                }
+                else if (eMsg.Contains("credits"))
+                {
+                    MessageBox.Show("You are registered for too many credits.");
+               }
+                else if (eMsg.Contains("seats"))
+                {
+                    MessageBox.Show("No available seats.");
+                }
+                else
+                    MessageBox.Show(eMsg);
+            }
 
             if (error == 0)
             {
                 MessageBox.Show("Course added successfully.");
             }
 
-            if (error == 1)
+            else if (error == 1)
             {
                 MessageBox.Show("Course added. Please note: there is a time conflict with this course and one or more courses you are registered for.");
 
