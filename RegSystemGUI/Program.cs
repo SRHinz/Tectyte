@@ -87,7 +87,7 @@ namespace RegSystemGUI
 				foreach (sHistory curCourse in sAcc.CHistory)
                 {
 					
-					if (curCourse.Grade == "N" & curCourse.Term == "term")					//This garuntees we will only be checking against courses that 
+					if (curCourse.Grade == "N" & curCourse.Term == term)					//This guarentees we will only be checking against courses that 
                     {
 						courseCredCounter += curCourse.Credits;
 						int cc = curCourse.Course.Length - 3;
