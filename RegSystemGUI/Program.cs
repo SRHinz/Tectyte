@@ -94,29 +94,31 @@ namespace RegSystemGUI
 						int bb = coursetitle.Length - 3;
 						if (curCourse.Course.Substring(0,cc) == coursetitle.Substring(0,bb))
                         {
-							throw new ArgumentException("Cannot add duplicate course!");
+							throw new ArgumentException("duplicate");
                         }
 						else if (courseCredCounter >= 5)
                         {
-							throw new ArgumentException("Too many credits");
+							throw new ArgumentException("credits");
                         }
 						else if (cDatabase.CDatabase[coursetitle].AvailableSeats == 0)
                         {
-							throw new ArgumentException("No available seats");
+							throw new ArgumentException("seats");
                         }
 						string[] timeBlocks1 = new string[regCourse.NtimeBlocks];
-						for (int i = 1; i < timeBlocks1.Length; i++)
+						for (int i = 0; i < timeBlocks1.Length; i++)
                         {
-							timeBlocks1[i - 1] = base.solveTimeblock(regCourse.TimeBlockCollection[i - 1]);
+							timeBlocks1[i] = base.solveTimeblock(regCourse.TimeBlockCollection[i]);
                         }
-						int numTblocks = cDatabase.CDatabase[curCourse.Course].NtimeBlocks;
+						//string test = curCourse.Course;
+						//test = test.Trim();
+						int numTblocks = cDatabase.CDatabase[curCourse.Course.Trim()].NtimeBlocks;
 						string[] timeBlocks2 = new string[numTblocks];
-						for (int j = 1; j < timeBlocks2.Length; j++)
+						for (int j = 0; j < timeBlocks2.Length; j++)
                         {
-							timeBlocks2[j - 1] = base.solveTimeblock(cDatabase.CDatabase[curCourse.Course].TimeBlockCollection[j - 1]);
+							timeBlocks2[j] = base.solveTimeblock(cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection[j]);
                         }
 						int[] timeBNum = regCourse.TimeBlockCollection;
-						int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course].TimeBlockCollection;
+						int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection;
 						if (timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
 						{
 							if ((passable == 2) | (passable == 3))
@@ -185,9 +187,15 @@ namespace RegSystemGUI
 							{
 								if (i == j)								//If there are matching days, then we get to check those!
 								{
-									if (((st1[num1].CompareTo(st2[num2]) <= 0) & ((st1[num1] + lengths1[num1]).CompareTo(st2[num2]) > 0)) | ((st2[num2].CompareTo(st1[num1]) <= 0) & ((st2[num2] + lengths2[num2]).CompareTo(st1[num1]) > 0)))
+									int comp1 = st1[num1].CompareTo(st2[num2]);
+									int comp2 = (st1[num1] + lengths1[num1]).CompareTo(st2[num2]);
+									int comp3 = st2[num2].CompareTo(st1[num1]);
+									int comp4 = (st2[num2] + lengths2[num2]).CompareTo(st1[num1]);
+
+									if (((comp1 <= 0) & (comp2 > 0)) | (comp3 <= 0) & (comp4 > 0))
                                     {
 										conflict = true;
+										return conflict;
                                     }
 								}
 							}

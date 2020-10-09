@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,16 +79,29 @@ namespace RegSystemGUI
         private void AddCourseButton_Click(object sender, EventArgs e)
         {
             int error = 100;
-            try
+            //try
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
                 coeC.CDatabase[course.Trim()].AvailableSeats += -1;
             }
-            catch (ArgumentException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
-            {
-                string eMsg = f.ToString();
-                MessageBox.Show(eMsg);
-            }
+            //catch (ArgumentException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
+            //{
+            //    string eMsg = f.ToString();
+            //    if (eMsg.Contains("duplicate"))
+            //    {
+            //        MessageBox.Show("Cannot add duplicate course.");
+            //    }
+            //    else if (eMsg.Contains("credits"))
+            //    {
+            //        MessageBox.Show("You are registered for too many credits.");
+            //    }
+            //    else if (eMsg.Contains("seats"))
+            //    {
+            //        MessageBox.Show("No available seats.");
+            //    }
+            //    else
+            //        MessageBox.Show(eMsg);
+            //}
 
             if (error == 0)
             {
