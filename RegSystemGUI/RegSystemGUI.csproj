@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adviseeViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adviseeViewer.Designer.cs">
+      <DependentUpon>adviseeViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="stuCourseHist.Designer.cs">
       <DependentUpon>stuCourseHist.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adviseeViewer.resx">
+      <DependentUpon>adviseeViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseViewer.resx">
       <DependentUpon>CourseViewer.cs</DependentUpon>
     </EmbeddedResource>

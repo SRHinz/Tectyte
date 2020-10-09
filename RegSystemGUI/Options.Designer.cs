@@ -33,12 +33,11 @@
             this.CourseHisButton = new System.Windows.Forms.Button();
             this.logOutButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.viewAdvisees = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ViewCoursesButton
             // 
-            this.ViewCoursesButton.Location = new System.Drawing.Point(214, 181);
+            this.ViewCoursesButton.Location = new System.Drawing.Point(221, 181);
             this.ViewCoursesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ViewCoursesButton.Name = "ViewCoursesButton";
             this.ViewCoursesButton.Size = new System.Drawing.Size(202, 73);
@@ -49,10 +48,10 @@
             // 
             // CourseHisButton
             // 
-            this.CourseHisButton.Location = new System.Drawing.Point(486, 181);
+            this.CourseHisButton.Location = new System.Drawing.Point(505, 181);
             this.CourseHisButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CourseHisButton.Name = "CourseHisButton";
-            this.CourseHisButton.Size = new System.Drawing.Size(202, 73);
+            this.CourseHisButton.Size = new System.Drawing.Size(177, 73);
             this.CourseHisButton.TabIndex = 1;
             this.CourseHisButton.Text = "View Course History";
             this.CourseHisButton.UseVisualStyleBackColor = true;
@@ -60,7 +59,7 @@
             // 
             // logOutButton
             // 
-            this.logOutButton.Location = new System.Drawing.Point(356, 327);
+            this.logOutButton.Location = new System.Drawing.Point(363, 327);
             this.logOutButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(177, 73);
@@ -75,26 +74,15 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(902, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(902, 48);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // viewAdvisees
-            // 
-            this.viewAdvisees.Location = new System.Drawing.Point(486, 181);
-            this.viewAdvisees.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.viewAdvisees.Name = "viewAdvisees";
-            this.viewAdvisees.Size = new System.Drawing.Size(202, 73);
-            this.viewAdvisees.TabIndex = 4;
-            this.viewAdvisees.Text = "View Advisees";
-            this.viewAdvisees.UseVisualStyleBackColor = true;
             // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 581);
-            this.Controls.Add(this.viewAdvisees);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.CourseHisButton);
             this.Controls.Add(this.ViewCoursesButton);
@@ -117,6 +105,5 @@
         private System.Windows.Forms.Button CourseHisButton;
         private System.Windows.Forms.Button logOutButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Button viewAdvisees;
     }
 }
