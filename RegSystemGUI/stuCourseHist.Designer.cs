@@ -53,6 +53,8 @@
             this.courseDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
+            this.creditsEarnedBox = new System.Windows.Forms.TextBox();
+            this.GPAbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
@@ -291,11 +293,36 @@
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // creditsEarnedBox
+            // 
+            this.creditsEarnedBox.BackColor = System.Drawing.SystemColors.Control;
+            this.creditsEarnedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.creditsEarnedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditsEarnedBox.Location = new System.Drawing.Point(32, 638);
+            this.creditsEarnedBox.Name = "creditsEarnedBox";
+            this.creditsEarnedBox.Size = new System.Drawing.Size(810, 31);
+            this.creditsEarnedBox.TabIndex = 11;
+            this.creditsEarnedBox.Text = "Number of credits earned:";
+            // 
+            // GPAbox
+            // 
+            this.GPAbox.BackColor = System.Drawing.SystemColors.Control;
+            this.GPAbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GPAbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GPAbox.Location = new System.Drawing.Point(275, 675);
+            this.GPAbox.Name = "GPAbox";
+            this.GPAbox.Size = new System.Drawing.Size(810, 31);
+            this.GPAbox.TabIndex = 12;
+            this.GPAbox.Text = "GPA: ";
+            this.GPAbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // stuCourseHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1841, 927);
+            this.Controls.Add(this.GPAbox);
+            this.Controls.Add(this.creditsEarnedBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.courseSchedule);
@@ -344,5 +371,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
+        private System.Windows.Forms.TextBox creditsEarnedBox;
+        private System.Windows.Forms.TextBox GPAbox;
     }
 }

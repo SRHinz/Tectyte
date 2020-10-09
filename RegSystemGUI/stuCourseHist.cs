@@ -25,6 +25,8 @@ namespace RegSystemGUI
             DropButton.Hide();
             warningBox.Hide();
             warningBox2.Hide();
+            creditsEarnedBox.Hide();
+            GPAbox.Hide();
             courseSchedule.Hide();
             CourseDataGrid.ColumnCount = 4;
             cData = courseData;
@@ -56,6 +58,10 @@ namespace RegSystemGUI
                     courseSchedule.Hide();
                 if (!CourseDataGrid.Visible)
                     CourseDataGrid.Show();
+                if (GPAbox.Visible)
+                    GPAbox.Hide();
+                if (creditsEarnedBox.Visible)
+                    creditsEarnedBox.Hide();
                 CourseDataGrid.Rows.Clear();
             }
             else if (TermSelectorBox.SelectedItem == "Course History")
@@ -70,6 +76,10 @@ namespace RegSystemGUI
                     courseSchedule.Hide();
                 if (!CourseDataGrid.Visible)
                     CourseDataGrid.Show();
+                if (!GPAbox.Visible)
+                    GPAbox.Show();
+                if (!creditsEarnedBox.Visible)
+                    creditsEarnedBox.Show();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm, cData);
                 if (CourseDataGrid.Rows.Count == 0)
@@ -91,6 +101,10 @@ namespace RegSystemGUI
                     courseSchedule.Show();
                 if (CourseDataGrid.Visible)
                     CourseDataGrid.Hide();
+                if (GPAbox.Visible)
+                    GPAbox.Hide();
+                if (creditsEarnedBox.Visible)
+                    creditsEarnedBox.Hide();
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Current", currentTerm, cData);
                 if (courseSchedule.Rows.Count == 0)
@@ -112,6 +126,10 @@ namespace RegSystemGUI
                     courseSchedule.Show();
                 if (CourseDataGrid.Visible)
                     CourseDataGrid.Hide();
+                if (GPAbox.Visible)
+                    GPAbox.Hide();
+                if (creditsEarnedBox.Visible)
+                    creditsEarnedBox.Hide();
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Future", currentTerm, cData);
                 if (courseSchedule.Rows.Count == 0)
@@ -154,6 +172,11 @@ namespace RegSystemGUI
         }
 
         private void CourseDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
