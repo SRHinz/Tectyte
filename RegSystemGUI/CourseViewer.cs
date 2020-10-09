@@ -80,8 +80,8 @@ namespace RegSystemGUI
             int error = 0;
             try
             {
-                error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course, term);
-                coeC.CDatabase[course].AvailableSeats += -1;
+                error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
+                coeC.CDatabase[course.Trim()].AvailableSeats += -1;
             }
             catch (ArgumentException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
             {

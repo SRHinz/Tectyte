@@ -475,7 +475,7 @@ namespace RegSystemGUI
 						}
 						else
 						{
-							subString = line.Substring(a, line.Length - a); //If it is the last bit of the line, then it simply checks how many characters there are between the end of the line and where it is starting from, and gives that as the length to increment.
+							subString = line.Substring(a, line.Length - a).Trim(); //If it is the last bit of the line, then it simply checks how many characters there are between the end of the line and where it is starting from, and gives that as the length to increment.
 						}
 
 						a = a + courseCounter[i] + 1;
@@ -606,8 +606,8 @@ namespace RegSystemGUI
 				int counter = 0;
 				foreach (KeyValuePair<string, Course> course in cData.CDatabase)
 				{
-					string cTitle = course.Value.CourseTitle;
-					string instruc = course.Value.Instructor;
+					string cTitle = course.Value.CourseTitle.Trim();
+					string instruc = course.Value.Instructor.Trim();
 					int totS = course.Value.TotalSeats;
 					int avS = course.Value.AvailableSeats;
 					float cred = course.Value.Credits;
