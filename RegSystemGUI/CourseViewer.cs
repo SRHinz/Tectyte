@@ -85,7 +85,8 @@ namespace RegSystemGUI
             }
             catch (ArgumentException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
             {
-                f.ToString();
+                string eMsg = f.ToString();
+                MessageBox.Show(eMsg);
             }
 
             if (error == 0)
