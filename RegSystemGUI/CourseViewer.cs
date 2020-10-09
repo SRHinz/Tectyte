@@ -28,7 +28,7 @@ namespace RegSystemGUI
             coeC = coe.cData;
             regC = coe.registerC;
             CourseDataGrid.ColumnCount = 11;
-            CoursesGridBuild();
+            //CoursesGridBuild();
             curAcc = coe.uData.UDatabase[coe.CurAcc];
             if ((curAcc.Status != "faculty") | (curAcc.Status != "admin"))
             {
@@ -78,6 +78,10 @@ namespace RegSystemGUI
 
         private void AddCourseButton_Click(object sender, EventArgs e)
         {
+            int rowIndex = CourseDataGrid.CurrentCell.RowIndex;
+            DataGridViewCellCollection row = CourseDataGrid.Rows[rowIndex].Cells;
+            DataGridViewCell cell = row[0];
+            course = cell.Value.ToString().Trim();
             int error = 100;
             //try
             {
@@ -132,7 +136,7 @@ namespace RegSystemGUI
 
         private void CourseDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            course = CourseDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //course = CourseDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             //credits = CourseDataGrid.Rows[e.RowIndex].Cells[2].Value.
             //Program.sHistory addCourse = new Program.sHistory(course, term, credits, grade);
 
