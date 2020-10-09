@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseViewer));
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
-            this.MenuReturn = new System.Windows.Forms.Button();
-            this.AddCourseButton = new System.Windows.Forms.Button();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +41,12 @@
             this.tBlock3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tBlock4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tBlock5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MenuReturn = new System.Windows.Forms.Button();
+            this.AddCourseButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.copyrightBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // CourseDataGrid
@@ -76,27 +79,6 @@
             this.CourseDataGrid.Size = new System.Drawing.Size(1261, 818);
             this.CourseDataGrid.TabIndex = 3;
             this.CourseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGrid_CellContentClick);
-            // 
-            // MenuReturn
-            // 
-            this.MenuReturn.Location = new System.Drawing.Point(1374, 411);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
-            this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(333, 65);
-            this.MenuReturn.TabIndex = 4;
-            this.MenuReturn.Text = "Return to Menu";
-            this.MenuReturn.UseVisualStyleBackColor = true;
-            this.MenuReturn.Click += new System.EventHandler(this.MenuReturn_Click_1);
-            // 
-            // AddCourseButton
-            // 
-            this.AddCourseButton.Location = new System.Drawing.Point(1374, 569);
-            this.AddCourseButton.Name = "AddCourseButton";
-            this.AddCourseButton.Size = new System.Drawing.Size(333, 73);
-            this.AddCourseButton.TabIndex = 5;
-            this.AddCourseButton.Text = "Add Course";
-            this.AddCourseButton.UseVisualStyleBackColor = true;
-            this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
             // 
             // CourseName
             // 
@@ -175,11 +157,55 @@
             this.tBlock5.Name = "tBlock5";
             this.tBlock5.ReadOnly = true;
             // 
+            // MenuReturn
+            // 
+            this.MenuReturn.Location = new System.Drawing.Point(1374, 411);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuReturn.Name = "MenuReturn";
+            this.MenuReturn.Size = new System.Drawing.Size(333, 65);
+            this.MenuReturn.TabIndex = 4;
+            this.MenuReturn.Text = "Return to Menu";
+            this.MenuReturn.UseVisualStyleBackColor = true;
+            this.MenuReturn.Click += new System.EventHandler(this.MenuReturn_Click_1);
+            // 
+            // AddCourseButton
+            // 
+            this.AddCourseButton.Location = new System.Drawing.Point(1374, 569);
+            this.AddCourseButton.Name = "AddCourseButton";
+            this.AddCourseButton.Size = new System.Drawing.Size(333, 73);
+            this.AddCourseButton.TabIndex = 5;
+            this.AddCourseButton.Text = "Add Course";
+            this.AddCourseButton.UseVisualStyleBackColor = true;
+            this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(680, 921);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // copyrightBox
+            // 
+            this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
+            this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.copyrightBox.Location = new System.Drawing.Point(710, 928);
+            this.copyrightBox.Name = "copyrightBox";
+            this.copyrightBox.Size = new System.Drawing.Size(416, 24);
+            this.copyrightBox.TabIndex = 8;
+            this.copyrightBox.Text = "this software is property of tectyte ©2020";
+            this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // CourseViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1806, 886);
+            this.ClientSize = new System.Drawing.Size(1806, 964);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.AddCourseButton);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.CourseDataGrid);
@@ -189,7 +215,9 @@
             this.Text = "View Courses";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,5 +236,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tBlock3;
         private System.Windows.Forms.DataGridViewTextBoxColumn tBlock4;
         private System.Windows.Forms.DataGridViewTextBoxColumn tBlock5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox copyrightBox;
     }
 }

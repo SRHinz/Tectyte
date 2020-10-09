@@ -35,11 +35,16 @@
             this.UsernameInput = new System.Windows.Forms.TextBox();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.copyrightBox = new System.Windows.Forms.TextBox();
             this.LoginPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginPanel
             // 
+            this.LoginPanel.Controls.Add(this.pictureBox1);
+            this.LoginPanel.Controls.Add(this.copyrightBox);
             this.LoginPanel.Controls.Add(this.LoginButton);
             this.LoginPanel.Controls.Add(this.PasswordInput);
             this.LoginPanel.Controls.Add(this.UsernameInput);
@@ -100,6 +105,28 @@
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(240, 671);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // copyrightBox
+            // 
+            this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
+            this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.copyrightBox.Location = new System.Drawing.Point(270, 678);
+            this.copyrightBox.Name = "copyrightBox";
+            this.copyrightBox.Size = new System.Drawing.Size(416, 24);
+            this.copyrightBox.TabIndex = 6;
+            this.copyrightBox.Text = "this software is property of tectyte ©2020";
+            this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.copyrightBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Login
             // 
             this.AcceptButton = this.LoginButton;
@@ -115,6 +142,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -127,7 +155,8 @@
         private System.Windows.Forms.TextBox UsernameInput;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label UsernameLabel;
-
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox copyrightBox;
     }
 }
 

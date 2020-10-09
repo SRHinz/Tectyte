@@ -37,7 +37,6 @@
             this.Term = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Credits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DropButton = new System.Windows.Forms.Button();
             this.warningBox = new System.Windows.Forms.TextBox();
             this.warningBox2 = new System.Windows.Forms.TextBox();
@@ -51,9 +50,13 @@
             this.TimeBlock3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeBlock4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeBlock5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.copyrightBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSchedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuReturn
@@ -135,10 +138,6 @@
             this.Grade.MinimumWidth = 6;
             this.Grade.Name = "Grade";
             this.Grade.ReadOnly = true;
-            // 
-            // courseDatabaseBindingSource
-            // 
-            this.courseDatabaseBindingSource.DataSource = typeof(RegSystemGUI.Program.CourseDatabase);
             // 
             // DropButton
             // 
@@ -267,11 +266,38 @@
             this.TimeBlock5.Name = "TimeBlock5";
             this.TimeBlock5.ReadOnly = true;
             // 
+            // courseDatabaseBindingSource
+            // 
+            this.courseDatabaseBindingSource.DataSource = typeof(RegSystemGUI.Program.CourseDatabase);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(697, 884);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // copyrightBox
+            // 
+            this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
+            this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.copyrightBox.Location = new System.Drawing.Point(727, 891);
+            this.copyrightBox.Name = "copyrightBox";
+            this.copyrightBox.Size = new System.Drawing.Size(416, 24);
+            this.copyrightBox.TabIndex = 10;
+            this.copyrightBox.Text = "this software is property of tectyte ©2020";
+            this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // stuCourseHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1841, 927);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.courseSchedule);
             this.Controls.Add(this.warningBox2);
             this.Controls.Add(this.warningBox);
@@ -286,8 +312,9 @@
             this.Text = "Course History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSchedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +342,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock3;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox copyrightBox;
     }
 }
