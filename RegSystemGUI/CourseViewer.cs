@@ -88,18 +88,23 @@ namespace RegSystemGUI
                 f.ToString();
             }
 
+            if (error == 0)
+            {
+                MessageBox.Show("Course added successfully.");
+            }
+
             if (error == 1)
             {
-                MessageBox.Show("There is a time conflict with this course and one or more courses you are registered for.");
+                MessageBox.Show("Course added. Please note: there is a time conflict with this course and one or more courses you are registered for.");
 
             }
             else if (error == 2)
             {
-                MessageBox.Show("You have already previously taken this course.");
+                MessageBox.Show("Course added. Please note: You have already previously taken this course.");
             }
             else if (error == 3)
             {
-                MessageBox.Show("There is a time conflict between this course and one or more courses you are registered for. In addition, you have already previously completed this course.");
+                MessageBox.Show("Course added. Please note: there is a time conflict between this course and one or more courses you are registered for. In addition, you have already previously completed this course.");
             }
         }
 
