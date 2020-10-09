@@ -41,14 +41,25 @@
             this.DropButton = new System.Windows.Forms.Button();
             this.warningBox = new System.Windows.Forms.TextBox();
             this.warningBox2 = new System.Windows.Forms.TextBox();
+            this.courseSchedule = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTerm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeBlock1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeBlock2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeBlock3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeBlock4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeBlock5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseSchedule)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(1085, 343);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuReturn.Location = new System.Drawing.Point(1471, 374);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
             this.MenuReturn.Name = "MenuReturn";
             this.MenuReturn.Size = new System.Drawing.Size(333, 66);
             this.MenuReturn.TabIndex = 1;
@@ -64,7 +75,7 @@
             "Course History",
             "Current Courses",
             "Future Courses"});
-            this.TermSelectorBox.Location = new System.Drawing.Point(1085, 200);
+            this.TermSelectorBox.Location = new System.Drawing.Point(1471, 231);
             this.TermSelectorBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TermSelectorBox.Name = "TermSelectorBox";
             this.TermSelectorBox.Size = new System.Drawing.Size(180, 33);
@@ -85,7 +96,7 @@
             this.Term,
             this.Credits,
             this.Grade});
-            this.CourseDataGrid.Location = new System.Drawing.Point(129, 181);
+            this.CourseDataGrid.Location = new System.Drawing.Point(32, 175);
             this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CourseDataGrid.MultiSelect = false;
             this.CourseDataGrid.Name = "CourseDataGrid";
@@ -93,8 +104,9 @@
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CourseDataGrid.Size = new System.Drawing.Size(810, 362);
+            this.CourseDataGrid.Size = new System.Drawing.Size(1405, 446);
             this.CourseDataGrid.TabIndex = 4;
+            this.CourseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGrid_CellContentClick);
             // 
             // Course
             // 
@@ -130,7 +142,7 @@
             // 
             // DropButton
             // 
-            this.DropButton.Location = new System.Drawing.Point(1085, 467);
+            this.DropButton.Location = new System.Drawing.Point(1471, 498);
             this.DropButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DropButton.Name = "DropButton";
             this.DropButton.Size = new System.Drawing.Size(333, 55);
@@ -162,11 +174,105 @@
             this.warningBox2.TabIndex = 7;
             this.warningBox2.Text = "**Warning: There is a time conflict between two or more classes.**";
             // 
+            // courseSchedule
+            // 
+            this.courseSchedule.AllowUserToAddRows = false;
+            this.courseSchedule.AllowUserToDeleteRows = false;
+            this.courseSchedule.AllowUserToResizeColumns = false;
+            this.courseSchedule.AllowUserToResizeRows = false;
+            this.courseSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.courseSchedule.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.courseSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.cTerm,
+            this.Credit,
+            this.dataGridViewTextBoxColumn4,
+            this.TimeBlock1,
+            this.TimeBlock2,
+            this.TimeBlock3,
+            this.TimeBlock4,
+            this.TimeBlock5});
+            this.courseSchedule.Location = new System.Drawing.Point(32, 175);
+            this.courseSchedule.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.courseSchedule.MultiSelect = false;
+            this.courseSchedule.Name = "courseSchedule";
+            this.courseSchedule.ReadOnly = true;
+            this.courseSchedule.RowHeadersWidth = 30;
+            this.courseSchedule.RowTemplate.Height = 46;
+            this.courseSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.courseSchedule.Size = new System.Drawing.Size(1405, 446);
+            this.courseSchedule.TabIndex = 8;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Course";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cTerm
+            // 
+            this.cTerm.HeaderText = "Term";
+            this.cTerm.MinimumWidth = 10;
+            this.cTerm.Name = "cTerm";
+            this.cTerm.ReadOnly = true;
+            // 
+            // Credit
+            // 
+            this.Credit.HeaderText = "Credit";
+            this.Credit.MinimumWidth = 10;
+            this.Credit.Name = "Credit";
+            this.Credit.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Grade";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // TimeBlock1
+            // 
+            this.TimeBlock1.HeaderText = "Time Block 1";
+            this.TimeBlock1.MinimumWidth = 10;
+            this.TimeBlock1.Name = "TimeBlock1";
+            this.TimeBlock1.ReadOnly = true;
+            // 
+            // TimeBlock2
+            // 
+            this.TimeBlock2.HeaderText = "Time Block 2";
+            this.TimeBlock2.MinimumWidth = 10;
+            this.TimeBlock2.Name = "TimeBlock2";
+            this.TimeBlock2.ReadOnly = true;
+            // 
+            // TimeBlock3
+            // 
+            this.TimeBlock3.HeaderText = "Time Block 3";
+            this.TimeBlock3.MinimumWidth = 10;
+            this.TimeBlock3.Name = "TimeBlock3";
+            this.TimeBlock3.ReadOnly = true;
+            // 
+            // TimeBlock4
+            // 
+            this.TimeBlock4.HeaderText = "Time Block 4";
+            this.TimeBlock4.MinimumWidth = 10;
+            this.TimeBlock4.Name = "TimeBlock4";
+            this.TimeBlock4.ReadOnly = true;
+            // 
+            // TimeBlock5
+            // 
+            this.TimeBlock5.HeaderText = "Time Block 5";
+            this.TimeBlock5.MinimumWidth = 10;
+            this.TimeBlock5.Name = "TimeBlock5";
+            this.TimeBlock5.ReadOnly = true;
+            // 
             // stuCourseHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 938);
+            this.ClientSize = new System.Drawing.Size(1841, 927);
+            this.Controls.Add(this.courseSchedule);
             this.Controls.Add(this.warningBox2);
             this.Controls.Add(this.warningBox);
             this.Controls.Add(this.DropButton);
@@ -174,13 +280,14 @@
             this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseSchedule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +305,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Grade;
         private System.Windows.Forms.TextBox warningBox;
         private System.Windows.Forms.TextBox warningBox2;
+        private System.Windows.Forms.DataGridView courseSchedule;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTerm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock5;
     }
 }
