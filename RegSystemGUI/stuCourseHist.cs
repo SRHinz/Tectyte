@@ -93,7 +93,7 @@ namespace RegSystemGUI
                     CourseDataGrid.Hide();
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Current", currentTerm, cData);
-                if (CourseDataGrid.Rows.Count == 0)
+                if (courseSchedule.Rows.Count == 0)
                 {
                     warningBox.Show();
                     DropButton.Hide();
@@ -114,7 +114,7 @@ namespace RegSystemGUI
                     CourseDataGrid.Hide();
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Future", currentTerm, cData);
-                if (CourseDataGrid.Rows.Count == 0)
+                if (courseSchedule.Rows.Count == 0)
                 {
                     warningBox.Show();
                     DropButton.Hide();
@@ -125,8 +125,8 @@ namespace RegSystemGUI
 
         private void DropButton_Click(object sender, EventArgs e)
         {
-            rowIndex = CourseDataGrid.CurrentCell.RowIndex;
-            DataGridViewCellCollection row = CourseDataGrid.Rows[rowIndex].Cells;
+            rowIndex = courseSchedule.CurrentCell.RowIndex;
+            DataGridViewCellCollection row = courseSchedule.Rows[rowIndex].Cells;
             DataGridViewCell cell = row[0];
             String courseName = cell.Value.ToString().Trim();
             cell = row[1];
