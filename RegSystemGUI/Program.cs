@@ -109,7 +109,8 @@ namespace RegSystemGUI
                         {
 							timeBlocks1[i - 1] = base.solveTimeblock(regCourse.TimeBlockCollection[i - 1]);
                         }
-						string[] timeBlocks2 = new string[cDatabase.CDatabase[curCourse.Course].NtimeBlocks];
+						int numTblocks = cDatabase.CDatabase[curCourse.Course].NtimeBlocks;
+						string[] timeBlocks2 = new string[numTblocks];
 						for (int j = 1; j < timeBlocks2.Length; j++)
                         {
 							timeBlocks2[j - 1] = base.solveTimeblock(cDatabase.CDatabase[curCourse.Course].TimeBlockCollection[j - 1]);

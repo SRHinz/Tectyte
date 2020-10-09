@@ -77,7 +77,7 @@ namespace RegSystemGUI
 
         private void AddCourseButton_Click(object sender, EventArgs e)
         {
-            int error = 0;
+            int error = 100;
             try
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
