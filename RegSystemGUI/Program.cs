@@ -65,7 +65,6 @@ namespace RegSystemGUI
 					{
 						if (course != null)
 						{
-							Console.WriteLine(course + "test");
 							cData.CDatabase[course].AvailableSeats--;
 						}
 					}
@@ -420,7 +419,6 @@ namespace RegSystemGUI
 					if (his.Grade.Trim() == "N" && his.Term.Trim() != "F14")
 					{
 						fCourses[count] = his.Course.Trim();
-						Console.WriteLine(his.Course);
 					}
 					count++;
 				}
@@ -480,7 +478,7 @@ namespace RegSystemGUI
 						}
 
 						a = a + courseCounter[i] + 1;
-						courseInfo[i] = subString;
+						courseInfo[i] = subString.Trim();
 					}
 
 					CDatabase.Add(courseInfo[0], new Course(courseInfo.Skip(1).ToArray())); //Passes the course info array's first element as the key, and then sends the rest to make a new Course object

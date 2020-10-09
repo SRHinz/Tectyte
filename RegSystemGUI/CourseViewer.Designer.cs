@@ -32,6 +32,16 @@
             this.CourseDataGrid = new System.Windows.Forms.DataGridView();
             this.MenuReturn = new System.Windows.Forms.Button();
             this.AddCourseButton = new System.Windows.Forms.Button();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OpenSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreditsCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBlock1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBlock2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBlock3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBlock4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBlock5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +54,17 @@
             this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CourseDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CourseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CourseName,
+            this.Instructor,
+            this.TotalSeats,
+            this.OpenSeats,
+            this.CreditsCol,
+            this.tBlock1,
+            this.tBlock2,
+            this.tBlock3,
+            this.tBlock4,
+            this.tBlock5});
             this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
@@ -75,6 +96,76 @@
             this.AddCourseButton.UseVisualStyleBackColor = true;
             this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
             // 
+            // CourseName
+            // 
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.MinimumWidth = 6;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            // 
+            // Instructor
+            // 
+            this.Instructor.HeaderText = "Instructor";
+            this.Instructor.MinimumWidth = 6;
+            this.Instructor.Name = "Instructor";
+            this.Instructor.ReadOnly = true;
+            // 
+            // TotalSeats
+            // 
+            this.TotalSeats.HeaderText = "Total Seats";
+            this.TotalSeats.MinimumWidth = 6;
+            this.TotalSeats.Name = "TotalSeats";
+            this.TotalSeats.ReadOnly = true;
+            // 
+            // OpenSeats
+            // 
+            this.OpenSeats.HeaderText = "Open Seats";
+            this.OpenSeats.MinimumWidth = 6;
+            this.OpenSeats.Name = "OpenSeats";
+            this.OpenSeats.ReadOnly = true;
+            // 
+            // CreditsCol
+            // 
+            this.CreditsCol.HeaderText = "Credits";
+            this.CreditsCol.MinimumWidth = 6;
+            this.CreditsCol.Name = "CreditsCol";
+            this.CreditsCol.ReadOnly = true;
+            // 
+            // tBlock1
+            // 
+            this.tBlock1.HeaderText = "Time Block 1";
+            this.tBlock1.MinimumWidth = 6;
+            this.tBlock1.Name = "tBlock1";
+            this.tBlock1.ReadOnly = true;
+            // 
+            // tBlock2
+            // 
+            this.tBlock2.HeaderText = "Time Block 2";
+            this.tBlock2.MinimumWidth = 6;
+            this.tBlock2.Name = "tBlock2";
+            this.tBlock2.ReadOnly = true;
+            // 
+            // tBlock3
+            // 
+            this.tBlock3.HeaderText = "Time Block 3";
+            this.tBlock3.MinimumWidth = 6;
+            this.tBlock3.Name = "tBlock3";
+            this.tBlock3.ReadOnly = true;
+            // 
+            // tBlock4
+            // 
+            this.tBlock4.HeaderText = "Time Block 4";
+            this.tBlock4.MinimumWidth = 6;
+            this.tBlock4.Name = "tBlock4";
+            this.tBlock4.ReadOnly = true;
+            // 
+            // tBlock5
+            // 
+            this.tBlock5.HeaderText = "Time Block 5";
+            this.tBlock5.MinimumWidth = 6;
+            this.tBlock5.Name = "tBlock5";
+            this.tBlock5.ReadOnly = true;
+            // 
             // CourseViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -97,5 +188,15 @@
         private System.Windows.Forms.DataGridView CourseDataGrid;
         private System.Windows.Forms.Button MenuReturn;
         private System.Windows.Forms.Button AddCourseButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Instructor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalSeats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OpenSeats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreditsCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tBlock1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tBlock2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tBlock3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tBlock4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tBlock5;
     }
 }
