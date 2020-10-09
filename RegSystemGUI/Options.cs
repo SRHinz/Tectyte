@@ -56,7 +56,7 @@ namespace RegSystemGUI
         private void CourseHisButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            stuCourseHist cH = new stuCourseHist(curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, this );
+            stuCourseHist cH = new stuCourseHist(ref curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, this );
             cH.Show();
         }
     }

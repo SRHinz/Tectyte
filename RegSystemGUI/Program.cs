@@ -131,7 +131,7 @@ namespace RegSystemGUI
                         }
 						int[] timeBNum = regCourse.TimeBlockCollection;
 						int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection;
-						if (timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
+						if (base.timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
 						{
 							if ((passable == 2) | (passable == 3))
 							{
@@ -160,67 +160,7 @@ namespace RegSystemGUI
 				return passable;									//Passable gives a code that allows us to know if there is an issue, or what the issue is
             }
 
-			private bool timeConflict(string[] t1, int[] n1, string[] t2, int[]  n2)
-            {
-				bool conflict = false;
-				string issue = "";
-				int num1 = 0;					//These keep track of the position for the int blocks, which have the base 5 digit timeblocks in them
-				int num2 = 0;
-				List<float> st1 = new List<float>();
-				List<float> st2 = new List<float>();
-				foreach(int sTime in n1)
-                {
-					st1.Add((Convert.ToSingle((sTime / 10) % 100) / 2));
-                }
-				foreach (int sTime in n2)
-				{
-					st2.Add(Convert.ToSingle(((sTime) / 10) % 100) / 2);
-				}
-				List<float> lengths1 = new List<float>();
-				List<float> lengths2 = new List<float>();
-				foreach (int lTime in n2)
-                {
-					lengths2.Add(Convert.ToSingle((lTime % 10) * .5));
-                }
-				foreach (int lTime in n1)
-				{
-					lengths1.Add(Convert.ToSingle((lTime % 10) * .5));
-				}
-				foreach (string timeblock in t1)						//This will be checking against every timeblock for the first course being compared
-				{ 
-					string[] daysAndTime = timeblock.Split(',');
-					string[] days1 = daysAndTime[0].Split(' ');
-					num2 = 0;
-					foreach (string timeblock2 in t2)					//This will be making sure every timeblock of the second course is compared
-					{
-						string[] daysAndTime2 = timeblock2.Split(',');
-						string[] days2 = daysAndTime2[0].Split(' ');
-						foreach (string i in days1)						//This makes sure each day is checked in the list of days for timeblock 1
-						{
-							foreach (string j in days2)					//THis does the above for all the days in timeblock 2
-							{
-								if (i == j)								//If there are matching days, then we get to check those!
-								{
-									int comp1 = st1[num1].CompareTo(st2[num2]);
-									int comp2 = (st1[num1] + lengths1[num1]).CompareTo(st2[num2]);
-									int comp3 = st2[num2].CompareTo(st1[num1]);
-									int comp4 = (st2[num2] + lengths2[num2]).CompareTo(st1[num1]);
-
-									if (((comp1 <= 0) & (comp2 > 0)) | (comp3 <= 0) & (comp4 > 0))
-                                    {
-										conflict = true;
-										return conflict;
-                                    }
-								}
-							}
-						}
-						num2 += 1;
-					}
-					num1 += 1;
-                }
-
-				return conflict;
-            }
+			
 
 			private bool courseRepeatConflict(string regCourse, StudentAcc student)
             {
@@ -684,6 +624,68 @@ namespace RegSystemGUI
                 }
 
             }
+			public bool timeConflict(string[] t1, int[] n1, string[] t2, int[] n2)
+			{
+				bool conflict = false;
+				string issue = "";
+				int num1 = 0;                   //These keep track of the position for the int blocks, which have the base 5 digit timeblocks in them
+				int num2 = 0;
+				List<float> st1 = new List<float>();
+				List<float> st2 = new List<float>();
+				foreach (int sTime in n1)
+				{
+					st1.Add((Convert.ToSingle((sTime / 10) % 100) / 2));
+				}
+				foreach (int sTime in n2)
+				{
+					st2.Add(Convert.ToSingle(((sTime) / 10) % 100) / 2);
+				}
+				List<float> lengths1 = new List<float>();
+				List<float> lengths2 = new List<float>();
+				foreach (int lTime in n2)
+				{
+					lengths2.Add(Convert.ToSingle((lTime % 10) * .5));
+				}
+				foreach (int lTime in n1)
+				{
+					lengths1.Add(Convert.ToSingle((lTime % 10) * .5));
+				}
+				foreach (string timeblock in t1)                        //This will be checking against every timeblock for the first course being compared
+				{
+					string[] daysAndTime = timeblock.Split(',');
+					string[] days1 = daysAndTime[0].Split(' ');
+					num2 = 0;
+					foreach (string timeblock2 in t2)                   //This will be making sure every timeblock of the second course is compared
+					{
+						string[] daysAndTime2 = timeblock2.Split(',');
+						string[] days2 = daysAndTime2[0].Split(' ');
+						foreach (string i in days1)                     //This makes sure each day is checked in the list of days for timeblock 1
+						{
+							foreach (string j in days2)                 //THis does the above for all the days in timeblock 2
+							{
+								if (i == j)                             //If there are matching days, then we get to check those!
+								{
+									int comp1 = st1[num1].CompareTo(st2[num2]);
+									int comp2 = (st1[num1] + lengths1[num1]).CompareTo(st2[num2]);
+									int comp3 = st2[num2].CompareTo(st1[num1]);
+									int comp4 = (st2[num2] + lengths2[num2]).CompareTo(st1[num1]);
+
+									if (((comp1 <= 0) & (comp2 > 0)) | (comp3 <= 0) & (comp4 > 0))
+									{
+										conflict = true;
+										return conflict;
+									}
+								}
+							}
+						}
+						num2 += 1;
+					}
+					num1 += 1;
+				}
+
+				return conflict;
+			}
+
 			public void displayCourses(CourseDatabase cData, DataGridView output)
 			{
 				int counter = 0;
