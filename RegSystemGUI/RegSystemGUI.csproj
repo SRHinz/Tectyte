@@ -53,12 +53,6 @@
     <Compile Include="CourseViewer.Designer.cs">
       <DependentUpon>CourseViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="DropCourse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DropCourse.Designer.cs">
-      <DependentUpon>DropCourse.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,9 +75,6 @@
     </Compile>
     <EmbeddedResource Include="CourseViewer.resx">
       <DependentUpon>CourseViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DropCourse.resx">
-      <DependentUpon>DropCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
