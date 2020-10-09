@@ -79,6 +79,12 @@
     <Compile Include="stuCourseHist.Designer.cs">
       <DependentUpon>stuCourseHist.cs</DependentUpon>
     </Compile>
+    <Compile Include="studentsEnrolled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentsEnrolled.Designer.cs">
+      <DependentUpon>studentsEnrolled.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="adviseeViewer.resx">
       <DependentUpon>adviseeViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="stuCourseHist.resx">
       <DependentUpon>stuCourseHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentsEnrolled.resx">
+      <DependentUpon>studentsEnrolled.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Program.CourseDatabase.datasource" />
     <None Include="Properties\Settings.settings">
