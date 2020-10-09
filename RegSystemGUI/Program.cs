@@ -16,29 +16,29 @@ using System.Windows.Forms.VisualStyles;
 
 namespace RegSystemGUI
 {
-    public class Program
-    {
+	public class Program
+	{
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
 		/// 
-		
-        [STAThread]
-        static void Main()
-        {
-			
+
+		[STAThread]
+		static void Main()
+		{
+
 			RegistrationSystem COE = new RegistrationSystem();
-			
+
 
 			Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+			Application.SetCompatibleTextRenderingDefault(false);
 			RegisterHistoryClasses(ref COE.cData, ref COE.uData);
 			Login login = new Login(ref COE);
 			Application.Run(login);
-        }
+		}
 
 		public class RegistrationSystem
-        {
+		{
 			private (string, string) curAcc;
 			private string curTerm = "F14";
 			private string nexTerm = "S15";
@@ -47,13 +47,27 @@ namespace RegSystemGUI
 			public viewCourses vCourse = new viewCourses();
 			public Register registerC;
 
-            public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
-            public string CurTerm { get => curTerm;}
-            public string NexTerm { get => nexTerm;}
+			public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
+			public string CurTerm { get => curTerm; }
+			public string NexTerm { get => nexTerm; }
+		}
+
+        public class regConflictException : Exception
+        {
+            public regConflictException()
+            {
+            }
+
+            public regConflictException(string message) : base(message)
+            {
+            }
+
+            public regConflictException(string message, Exception innerException) : base(message, innerException)
+            {
+            }
         }
 
-
-		public static void RegisterHistoryClasses(ref CourseDatabase cData, ref UserDatabase uData)
+        public static void RegisterHistoryClasses(ref CourseDatabase cData, ref UserDatabase uData)
 		{
 			foreach (KeyValuePair<(string, string), Account> uValues in uData.UDatabase)
 			{
@@ -156,11 +170,11 @@ namespace RegSystemGUI
 				List<float> st2 = new List<float>();
 				foreach(int sTime in n1)
                 {
-					st1.Add(((Convert.ToSingle(sTime) / 10) % 100) / 2);
+					st1.Add((Convert.ToSingle((sTime / 10) % 100) / 2));
                 }
 				foreach (int sTime in n2)
 				{
-					st2.Add(((Convert.ToSingle(sTime) / 10) % 100) / 2);
+					st2.Add(Convert.ToSingle(((sTime) / 10) % 100) / 2);
 				}
 				List<float> lengths1 = new List<float>();
 				List<float> lengths2 = new List<float>();
@@ -694,7 +708,7 @@ namespace RegSystemGUI
 					days = days.Insert(0, "Mon");
 				}
 
-				float mTime = tt / 2;                   //This makes tt into military time
+				float mTime = Convert.ToSingle(tt) / 2;                   //This makes tt into military time
 				string startT = convertTime(mTime);
 				mTime = Convert.ToSingle(mTime + 0.5 * l);  //This gets the ending time in military time, by adding the length times half hour increments to the starting time
 				string endT = convertTime(mTime);
