@@ -18,7 +18,7 @@ namespace RegSystemGUI
         private Program.CourseDatabase cData;
         private string currentTerm;
         private int rowIndex;
-        public stuCourseHist(Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, Options menu)
+        public stuCourseHist(ref Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, Options menu)
         {
             
             InitializeComponent();
