@@ -80,6 +80,7 @@ namespace RegSystemGUI
 						if (course != null)
 						{
 							cData.CDatabase[course].AvailableSeats--;
+							cData.CDatabase[course].enrollStudent(account);
 						}
 					}
 				}
@@ -515,6 +516,7 @@ namespace RegSystemGUI
 			private int timeBlock4;
 			private int timeBlock5;
 			private int[] timeBlockCollection;
+			private List<StudentAcc> enrolledStudents = new List<StudentAcc>();
 
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
@@ -531,7 +533,8 @@ namespace RegSystemGUI
 
 
 
-            public Course(string[] args)
+
+			public Course(string[] args)
 			{
 				courseTitle = args[0];
 				instructor = args[1];
@@ -568,6 +571,16 @@ namespace RegSystemGUI
                 }
 				
 			}
+
+			public void enrollStudent(StudentAcc student)
+            {
+				enrolledStudents.Add(student);
+            }
+
+			public void unenrollStudent(StudentAcc student)
+            {
+				enrolledStudents.Remove(student);
+            }
 
 		}
 

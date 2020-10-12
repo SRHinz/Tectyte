@@ -158,7 +158,10 @@ namespace RegSystemGUI
                 MessageBox.Show("Course successfully dropped.");
                 TermSelectorBox_SelectedIndexChanged(sender, e);
                 if (courseTerm != currentTerm)
+                {
                     cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
+                    cData.CDatabase[courseName].unenrollStudent(account);
+                }             
             }
             else
             {
