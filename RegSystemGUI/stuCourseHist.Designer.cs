@@ -302,7 +302,7 @@
             this.creditsEarnedBox.Name = "creditsEarnedBox";
             this.creditsEarnedBox.Size = new System.Drawing.Size(810, 31);
             this.creditsEarnedBox.TabIndex = 11;
-            this.creditsEarnedBox.Text = "Number of credits earned:";
+            this.creditsEarnedBox.Text = "Number of credits earned: ";
             // 
             // GPAbox
             // 

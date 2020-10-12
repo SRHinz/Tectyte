@@ -87,6 +87,7 @@ namespace RegSystemGUI
                     warningBox.Show();
                     DropButton.Hide();
                 }
+                creditsEarnedBox.Text += account.totalCredits.ToString();
             }
 
             else if(TermSelectorBox.SelectedItem == "Current Courses")
