@@ -35,6 +35,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
+            this.viewAdvisees = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(902, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(902, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,11 +103,23 @@
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // viewAdvisees
+            // 
+            this.viewAdvisees.Location = new System.Drawing.Point(505, 181);
+            this.viewAdvisees.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.viewAdvisees.Name = "viewAdvisees";
+            this.viewAdvisees.Size = new System.Drawing.Size(177, 73);
+            this.viewAdvisees.TabIndex = 9;
+            this.viewAdvisees.Text = "View Advisees";
+            this.viewAdvisees.UseVisualStyleBackColor = true;
+            this.viewAdvisees.Click += new System.EventHandler(this.viewAdvisees_Click);
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 581);
+            this.Controls.Add(this.viewAdvisees);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.logOutButton);
@@ -134,5 +147,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
+        private System.Windows.Forms.Button viewAdvisees;
     }
 }
