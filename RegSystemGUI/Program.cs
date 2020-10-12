@@ -252,7 +252,7 @@ namespace RegSystemGUI
 						{
 							UDatabase.Add((words[0], words[1]), new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
 						}
-						catch (KeyNotFoundException e)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
+						catch (KeyNotFoundException)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
 						{
 							string[] noHis = { };
 							UDatabase.Add((words[0], words[1]), new StudentAcc(words, noHis));
@@ -405,10 +405,13 @@ namespace RegSystemGUI
 						if (c.Grade.Substring(0, 1) == "R")
                         {
 							totalCred -= c.Credits;
+							credits4GradePoint -= c.Credits;
                         }
                         else
                         {
 							totalCred += c.Credits;
+							credits4GradePoint += c.Credits;
+							gradePoints += gradesGP[c.Grade.Trim()];
                         }
                     }
 						

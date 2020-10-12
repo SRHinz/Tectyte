@@ -46,7 +46,7 @@ namespace RegSystemGUI
 
         private void TermSelectorBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TermSelectorBox.SelectedItem == "--select--")
+            if (TermSelectorBox.SelectedItem.ToString() == "--select--")
             {
                 if (DropButton.Visible) // checks to see if drop button is already displayed and hides it if not
                     DropButton.Hide();
@@ -64,7 +64,7 @@ namespace RegSystemGUI
                     creditsEarnedBox.Hide();
                 CourseDataGrid.Rows.Clear();
             }
-            else if (TermSelectorBox.SelectedItem == "Course History")
+            else if (TermSelectorBox.SelectedItem.ToString() == "Course History")
             {
                 if (DropButton.Visible)
                     DropButton.Hide();
@@ -91,7 +91,7 @@ namespace RegSystemGUI
                 GPAbox.Text += account.GPA.ToString();
             }
 
-            else if(TermSelectorBox.SelectedItem == "Current Courses")
+            else if(TermSelectorBox.SelectedItem.ToString() == "Current Courses")
             {
                 if (!DropButton.Visible)
                     DropButton.Show();
@@ -116,7 +116,7 @@ namespace RegSystemGUI
                 }
             }
 
-            else if (TermSelectorBox.SelectedItem == "Future Courses")
+            else if (TermSelectorBox.SelectedItem.ToString() == "Future Courses")
             {
                 if (!DropButton.Visible) // checks to see if drop button is displayed and displays it if not
                     DropButton.Show();
