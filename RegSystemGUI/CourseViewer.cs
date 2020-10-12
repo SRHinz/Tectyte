@@ -13,7 +13,7 @@ namespace RegSystemGUI
 {
     public partial class CourseViewer : Form
     {
-        private Program.CourseDatabase coeC = new Program.CourseDatabase();
+        private Program.CourseDatabase coeC;
         private Program.Register regC;
         private string course, term, grade;
         private float credits;
@@ -82,6 +82,7 @@ namespace RegSystemGUI
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
                 coeC.CDatabase[course.Trim()].AvailableSeats += -1;
+                coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc);
             }
             catch (Program.regConflictException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
             { 
