@@ -404,18 +404,23 @@ namespace RegSystemGUI
                     {
 						if (c.Grade.Substring(0, 1) == "R")
                         {
-							totalCred -= c.Credits;
-							credits4GradePoint -= c.Credits;
+							foreach (sHistory s in cHistory)
+                            {
+								if ((s.Course.Trim().Substring(0, (s.Course.Trim().Length - 2)) == (c.Course.Trim().Substring(0, (c.Course.Trim().Length - 2 )))) &  (s.Grade.Trim().Substring(0, 1) != "R"))
+                                {
+									credits4GradePoint -= s.Credits;
+									gradePoints -= gradesGP[s.Grade.Trim()];
+                                }
+
+							}
                         }
-                        else
-                        {
-							totalCred += c.Credits;
-							credits4GradePoint += c.Credits;
-							gradePoints += gradesGP[c.Grade.Trim()];
-                        }
+						totalCred += c.Credits;
+						credits4GradePoint += c.Credits;
+						gradePoints += gradesGP[c.Grade.Trim()];
                     }
 						
                 }
+				gradePointAvg = gradePoints / credits4GradePoint;
             }
 
 			public string[] getFutureCourseNames()

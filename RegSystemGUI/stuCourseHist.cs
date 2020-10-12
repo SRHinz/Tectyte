@@ -14,19 +14,20 @@ namespace RegSystemGUI
     {
         private Options Menu;
         private Program.StudentAcc account;
+        private Program.Account Account;
         private Program.viewCourses vCourses;
         private Program.CourseDatabase cData;
         private string currentTerm;
         private int rowIndex;
         public stuCourseHist(ref Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, Options menu)
         {
-            
+
             InitializeComponent();
             DropButton.Hide();
             warningBox.Hide();
             warningBox2.Hide();
             creditsEarnedBox.Hide();
-            GPAbox.Hide();
+            GPABox.Hide();
             courseSchedule.Hide();
             CourseDataGrid.ColumnCount = 4;
             cData = courseData;
@@ -35,6 +36,9 @@ namespace RegSystemGUI
             Menu = menu;
             currentTerm = cTerm;
             TermSelectorBox.SelectedIndex = 0;
+            if (account.GetType().Equals(Program.StudentAcc))
+            { 
+            }
         }
 
 
@@ -58,8 +62,8 @@ namespace RegSystemGUI
                     courseSchedule.Hide();
                 if (!CourseDataGrid.Visible)
                     CourseDataGrid.Show();
-                if (GPAbox.Visible)
-                    GPAbox.Hide();
+                if (GPABox.Visible)
+                    GPABox.Hide();
                 if (creditsEarnedBox.Visible)
                     creditsEarnedBox.Hide();
                 CourseDataGrid.Rows.Clear();
@@ -76,8 +80,8 @@ namespace RegSystemGUI
                     courseSchedule.Hide();
                 if (!CourseDataGrid.Visible)
                     CourseDataGrid.Show();
-                if (!GPAbox.Visible)
-                    GPAbox.Show();
+                if (!GPABox.Visible)
+                    GPABox.Show();
                 if (!creditsEarnedBox.Visible)
                     creditsEarnedBox.Show();
                 CourseDataGrid.Rows.Clear();
@@ -88,10 +92,10 @@ namespace RegSystemGUI
                     DropButton.Hide();
                 }
                 creditsEarnedBox.Text += account.totalCredits.ToString();
-                GPAbox.Text += account.GPA.ToString();
+                GPABox.Text += account.GPA.ToString();
             }
 
-            else if(TermSelectorBox.SelectedItem.ToString() == "Current Courses")
+            else if (TermSelectorBox.SelectedItem.ToString() == "Current Courses")
             {
                 if (!DropButton.Visible)
                     DropButton.Show();
@@ -103,8 +107,8 @@ namespace RegSystemGUI
                     courseSchedule.Show();
                 if (CourseDataGrid.Visible)
                     CourseDataGrid.Hide();
-                if (GPAbox.Visible)
-                    GPAbox.Hide();
+                if (GPABox.Visible)
+                    GPABox.Hide();
                 if (creditsEarnedBox.Visible)
                     creditsEarnedBox.Hide();
                 courseSchedule.Rows.Clear();
@@ -139,7 +143,7 @@ namespace RegSystemGUI
                     warningBox.Show();
                     DropButton.Hide();
                 }
-                
+
             }
         }
 
@@ -164,8 +168,8 @@ namespace RegSystemGUI
             {
                 MessageBox.Show("There was an error in dropping the course.");
             }
-            
-            
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -182,5 +186,16 @@ namespace RegSystemGUI
         {
 
         }
+
+        private void creditsEarnedBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
