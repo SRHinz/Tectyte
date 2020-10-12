@@ -159,7 +159,6 @@ namespace RegSystemGUI
                 TermSelectorBox_SelectedIndexChanged(sender, e);
                 if (courseTerm != currentTerm)
                 {
-                    cData.CDatabase[courseName].AvailableSeats++; //Adds seat to course in courseDatabase
                     cData.CDatabase[courseName].unenrollStudent(account);
                 }             
             }
