@@ -12,9 +12,18 @@ namespace RegSystemGUI
 {
     public partial class adviseeViewer : Form
     {
-        public adviseeViewer()
+        private Options Menu;
+        private Program.Account curAcc;
+        public adviseeViewer(ref Program.RegistrationSystem coe, Options menu)
         {
             InitializeComponent();
+            Menu = menu;
+        }
+
+        private void MenuReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Menu.Show();
         }
     }
 }

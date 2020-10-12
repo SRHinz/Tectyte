@@ -13,7 +13,7 @@ namespace RegSystemGUI
 {
     public partial class CourseViewer : Form
     {
-        private Program.CourseDatabase coeC = new Program.CourseDatabase();
+        private Program.CourseDatabase coeC;
         private Program.Register regC;
         private string course, term, grade;
         private float credits;
@@ -81,7 +81,7 @@ namespace RegSystemGUI
             try
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
-                coeC.CDatabase[course.Trim()].AvailableSeats += -1;
+                coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc);
             }
             catch (Program.regConflictException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
             { 
@@ -129,12 +129,5 @@ namespace RegSystemGUI
         }
 
 
-        private void CourseDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //course = CourseDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //credits = CourseDataGrid.Rows[e.RowIndex].Cells[2].Value.
-            //Program.sHistory addCourse = new Program.sHistory(course, term, credits, grade);
-
-        }
     }
 }
