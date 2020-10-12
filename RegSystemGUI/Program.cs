@@ -364,6 +364,10 @@ namespace RegSystemGUI
 
 			public float totalCredits { get => totalCred; }
 
+			private float gradePointAvg = 0;
+
+			public float GPA { get => gradePointAvg; }
+
             public StudentAcc(string[] args, string[] courseHistory) : base (args)	//This Student account is a subclass of account, and takes in all the same parameters, plus some for the course history
             {	
 
@@ -375,10 +379,39 @@ namespace RegSystemGUI
 					string grade = s.Substring(20, s.Length - 20);
 					cHistory.Add(new sHistory(course, term, credits, grade));
                 }
+				float gradePoints = 0;
+				Dictionary<string, float> gradesGP = new Dictionary<string, float>()
+				{
+					{"A", 4.0F },
+					{"A-", 3.7F },
+					{"B+", 3.3F },
+					{"B", 3.0F },
+					{"B-", 2.7F },
+					{"C+", 2.3F },
+					{"C", 2.0F },
+					{"C-", 1.7F },
+					{"D+", 1.3F },
+					{"D", 1.0F },
+					{"D-", 0.7F },
+					{"F", 0.0F },
+					{"WF", 0.0F },
+
+				};
+				float credits4GradePoint = 0;
 				foreach (sHistory c in cHistory)
                 {
 					if (c.Term.Trim() != "F14" && c.Term.Trim() != "S15")
-						totalCred += c.Credits;
+                    {
+						if (c.Grade.Substring(0, 1) == "R")
+                        {
+							totalCred -= c.Credits;
+                        }
+                        else
+                        {
+							totalCred += c.Credits;
+                        }
+                    }
+						
                 }
             }
 

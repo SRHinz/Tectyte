@@ -88,6 +88,7 @@ namespace RegSystemGUI
                     DropButton.Hide();
                 }
                 creditsEarnedBox.Text += account.totalCredits.ToString();
+                GPAbox.Text += account.GPA.ToString();
             }
 
             else if(TermSelectorBox.SelectedItem == "Current Courses")
