@@ -17,6 +17,13 @@ namespace RegSystemGUI
         public adviseeViewer(ref Program.RegistrationSystem coe, Options menu)
         {
             InitializeComponent();
+            Menu = menu;
+        }
+
+        private void MenuReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Menu.Show();
         }
     }
 }
