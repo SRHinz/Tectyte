@@ -109,7 +109,7 @@
             this.viewAdvisees.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.viewAdvisees.Name = "viewAdvisees";
             this.viewAdvisees.Size = new System.Drawing.Size(177, 73);
-            this.viewAdvisees.TabIndex = 9;
+            this.viewAdvisees.TabIndex = 1;
             this.viewAdvisees.Text = "View Advisees";
             this.viewAdvisees.UseVisualStyleBackColor = true;
             this.viewAdvisees.Click += new System.EventHandler(this.viewAdvisees_Click);
