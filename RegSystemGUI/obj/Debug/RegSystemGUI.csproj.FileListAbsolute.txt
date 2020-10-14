@@ -70,3 +70,18 @@ C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\bin\Debug\RegSystemGUI.exe
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\bin\Debug\RegSystemGUI.pdb
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.CourseViewer.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.Login.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.Options.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.Properties.Resources.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.exe
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.pdb

@@ -18,12 +18,21 @@ namespace RegSystemGUI
         {
             InitializeComponent();
             Menu = menu;
+            foreach (string student in (coe.uData.UDatabase[coe.CurAcc] as Program.FactultyAcc).Advisees)
+            {   
+                listView1.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
+            }
         }
 
         private void MenuReturn_Click(object sender, EventArgs e)
         {
             this.Close();
             Menu.Show();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
