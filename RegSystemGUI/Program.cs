@@ -261,14 +261,20 @@ namespace RegSystemGUI
 					if (words[5] == "faculty")
                     {
 						UDatabase.Add(words[0], new FactultyAcc(words));
-						foreach (KeyValuePair<string, string> pair in leftovers)
-                        {
-							if (pair.Value == words[0])
-                            {
-								(UDatabase[words[0]] as FactultyAcc).addAdvisee(pair.Key);		//If there have been students that have been added to the database before their advisor has, this will make sure to add them into the faculty's advisee list, then remove them from leftovers.
-								leftovers.Remove(pair.Key);
+						try
+						{
+							foreach (KeyValuePair<string, string> pair in leftovers)
+							{
+								if (pair.Value == words[0])
+								{
+									(UDatabase[words[0]] as FactultyAcc).addAdvisee(pair.Key);      //If there have been students that have been added to the database before their advisor has, this will make sure to add them into the faculty's advisee list, then remove them from leftovers.
 
+								}
 							}
+						}
+						catch (InvalidOperationException b)
+                        {
+							//Do nothing, skipping over this one
                         }
                     }
 					else if ((words[5] != "admin"))
@@ -806,6 +812,19 @@ namespace RegSystemGUI
 				return conflict;
 			}
 
+			public void displayFacultyCourses(CourseDatabase cData, DataGridView output, string instructor)
+            {
+				CourseDatabase cFdata = new CourseDatabase();
+				foreach (KeyValuePair<string, Course> course in cData.CDatabase)
+                {
+					if (course.Value.Instructor.Trim() != instructor.Trim())
+                    {
+						cFdata.CDatabase.Remove(course.Key);
+                    }
+                }
+				displayCourses(cFdata, output);
+            }
+
 			public void displayCourses(CourseDatabase cData, DataGridView output)
 			{
 				int counter = 0;
@@ -824,25 +843,25 @@ namespace RegSystemGUI
 					string tBlock5 = solveTimeblock(course.Value.TimeBlock5);
 					if (course.Value.TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
 					{
-						tBlock2 = "Not Offered";
-						tBlock3 = "Not Offered";
-						tBlock4 = "Not Offered";
-						tBlock5 = "Not Offered";
+						tBlock2 = "-";
+						tBlock3 = "-";
+						tBlock4 = "-";
+						tBlock5 = "-";
 					}
 					else if (course.Value.TimeBlock3 == 00000)
 					{
-						tBlock3 = "Not Offered";
-						tBlock4 = "Not Offered";
-						tBlock5 = "Not Offered";
+						tBlock3 = "-";
+						tBlock4 = "-";
+						tBlock5 = "-";
 					}
 					else if (course.Value.TimeBlock4 == 00000)
                     {
-						tBlock4 = "Not Offered";
-						tBlock5 = "Not Offered";
+						tBlock4 = "-";
+						tBlock5 = "-";
 					}
 					else if (course.Value.TimeBlock5 == 00000)
                     {
-						tBlock5 = "Not Offered";
+						tBlock5 = "-";
                     }
 
 					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);

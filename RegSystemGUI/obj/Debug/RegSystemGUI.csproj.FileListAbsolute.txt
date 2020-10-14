@@ -63,9 +63,10 @@ C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
-C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.DropCourse.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources

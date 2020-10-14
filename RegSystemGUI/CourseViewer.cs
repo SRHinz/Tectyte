@@ -20,6 +20,7 @@ namespace RegSystemGUI
         private Options Menu;
         private Program.Account curAcc;
         private Program.StudentAcc curStuAcc;
+        private Program.FactultyAcc curFacAcc;
 
         public CourseViewer(ref Program.RegistrationSystem coe, Options menu)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
@@ -30,15 +31,24 @@ namespace RegSystemGUI
             CourseDataGrid.ColumnCount = 11;
             //CoursesGridBuild();
             curAcc = coe.uData.UDatabase[coe.CurAcc];
-            if ((curAcc.Status != "faculty") | (curAcc.Status != "admin"))
+            if (curAcc is Program.StudentAcc)
             {
                 curStuAcc = coe.uData.UDatabase[coe.CurAcc] as Program.StudentAcc;
+                AddCourseButton.Show();
+                FacCourseViewer.Hide();
+                Back2Courses.Hide();
+            }
+            else if (curAcc is Program.FactultyAcc)
+            {
+                curFacAcc = coe.uData.UDatabase[coe.CurAcc] as Program.FactultyAcc;
+                AddCourseButton.Hide();
+                Back2Courses.Hide();
             }
             term = coe.NexTerm;
             regC.displayCourses(coeC, CourseDataGrid);
         }
 
-        public void CourseViewerLoad(Options menu)
+        public void CourseViewerLoad()
         {
 
         }
@@ -65,7 +75,22 @@ namespace RegSystemGUI
         {
 
         }
+        
+        private void FacCourseView_Click(object sender, EventArgs e)
+        {
+            CourseDataGrid.Rows.Clear();
+            regC.displayFacultyCourses(coeC, CourseDataGrid, curFacAcc.UserName);
+            Back2Courses.Show();
+            FacCourseViewer.Hide();
+        }
 
+        private void Back2Courses_Click(object sender, EventArgs e)
+        {
+            CourseDataGrid.Rows.Clear();
+            regC.displayCourses(coeC, CourseDataGrid);
+            FacCourseViewer.Show();
+            Back2Courses.Hide();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 

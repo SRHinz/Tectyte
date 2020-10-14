@@ -45,6 +45,8 @@
             this.AddCourseButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
+            this.FacCourseViewer = new System.Windows.Forms.Button();
+            this.Back2Courses = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -193,16 +195,38 @@
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.copyrightBox.Location = new System.Drawing.Point(710, 928);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(416, 24);
+            this.copyrightBox.Size = new System.Drawing.Size(416, 37);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FacCourseViewer
+            // 
+            this.FacCourseViewer.Location = new System.Drawing.Point(1374, 569);
+            this.FacCourseViewer.Name = "FacCourseViewer";
+            this.FacCourseViewer.Size = new System.Drawing.Size(333, 73);
+            this.FacCourseViewer.TabIndex = 9;
+            this.FacCourseViewer.Text = "View My Courses";
+            this.FacCourseViewer.UseVisualStyleBackColor = true;
+            this.FacCourseViewer.Click += new System.EventHandler(this.FacCourseView_Click);
+            // 
+            // Back2Courses
+            // 
+            this.Back2Courses.Location = new System.Drawing.Point(1374, 727);
+            this.Back2Courses.Name = "Back2Courses";
+            this.Back2Courses.Size = new System.Drawing.Size(333, 73);
+            this.Back2Courses.TabIndex = 10;
+            this.Back2Courses.Text = "All Courses";
+            this.Back2Courses.UseVisualStyleBackColor = true;
+            this.Back2Courses.Click += new System.EventHandler(this.Back2Courses_Click);
             // 
             // CourseViewer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1806, 964);
+            this.Controls.Add(this.Back2Courses);
+            this.Controls.Add(this.FacCourseViewer);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.AddCourseButton);
@@ -237,5 +261,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tBlock5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
+        private System.Windows.Forms.Button FacCourseViewer;
+        private System.Windows.Forms.Button Back2Courses;
     }
 }
