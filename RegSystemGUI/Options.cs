@@ -29,7 +29,7 @@ namespace RegSystemGUI
             COE.registerC = new Program.Register(ref COE.cData);
             if (aType == "student")
             {
-                curAcc = COE.uData.UDatabase[(tempUN, tempPW)] as Program.StudentAcc;
+                curAcc = COE.uData.UDatabase[tempUN] as Program.StudentAcc;
             }
         }
 

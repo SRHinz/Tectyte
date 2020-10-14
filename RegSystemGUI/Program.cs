@@ -226,11 +226,11 @@ namespace RegSystemGUI
 
 		public class UserDatabase
 		{
-			private Dictionary<(string, string), Account> uDatabase = new Dictionary<(string, string), Account>(); //Dictionary of Accounts, with username password tuple as the key
+			private Dictionary<string, Account> uDatabase = new Dictionary<string, Account>(); //Dictionary of Accounts, with username password tuple as the key
 			private HistoryDatabase hDatabase = new HistoryDatabase();
 			private Dictionary<string, adviseesDatabase> aDatabase = new Dictionary<string, adviseesDatabase>();
 
-            public Dictionary<(string, string), Account> UDatabase { get => uDatabase; }
+            public Dictionary<string, Account> UDatabase { get => uDatabase; }
 			
 
             public UserDatabase()
@@ -260,30 +260,30 @@ namespace RegSystemGUI
 					}
 					if (words[5] == "faculty")
                     {
-						UDatabase.Add((words[0], words[1]), new FactultyAcc(words));
+						UDatabase.Add(words[0], new FactultyAcc(words));
 						aDatabase.Add(words[0], new adviseesDatabase());
                     }
 					else if ((words[5] != "admin"))
 					{
 						try
 						{
-							UDatabase.Add((words[0], words[1]), new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
+							UDatabase.Add(words[0], new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
 							if 
 						}
 						catch (KeyNotFoundException)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
 						{
 							string[] noHis = { };
-							UDatabase.Add((words[0], words[1]), new StudentAcc(words, noHis));
+							UDatabase.Add(words[0], new StudentAcc(words, noHis));
 						}
 						//So this obsencely annoying looking piece of code should create a student account with the relevant course history. 
 					}
 					else
 					{
-						UDatabase.Add((words[0], words[1]), new Account(words));
+						UDatabase.Add(words[0], new Account(words));
 					}
 				}
 				file.Close();
-				foreach (KeyValuePair<(string, string), Account> user in UDatabase)
+				foreach (KeyValuePair<string, Account> user in UDatabase)
 				{
 					if (user.Value is StudentAcc)
                     {
@@ -295,7 +295,7 @@ namespace RegSystemGUI
 			public void viewDatabase()
 			{
 				Console.WriteLine("User Database");
-				foreach (KeyValuePair<(string, string), Account> user in UDatabase)
+				foreach (KeyValuePair<string, Account> user in UDatabase)
 				{
 					Console.WriteLine("Key: {0}, Value: {1}", user.Key, user.Value.getAccount());
 				}
@@ -303,15 +303,15 @@ namespace RegSystemGUI
 
 			public string authenticateUser(string userName, string Password)
 			{
-				if (UDatabase.ContainsKey((userName, Password)))
+				if (UDatabase.ContainsKey(userName) & UDatabase[userName].Password == Password)
 				{
-					if (!(UDatabase[(userName, Password)].Status.Equals("faculty") | UDatabase[(userName, Password)].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+					if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
 					{
 						return "student";
 					}
 					else
 					{
-						return UDatabase[(userName, Password)].Status;
+						return UDatabase[userName].Status;
 					}
 				}
 				else
