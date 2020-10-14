@@ -882,28 +882,28 @@ namespace RegSystemGUI
 				if (dd - 16 >= 0)                       //Begin day decoding section
 				{
 					dd += -16;
-					days = days.Insert(0, "F");
+					days = days.Insert(0, " Fri");
 				}
 				if (dd - 8 >= 0)
 				{
 					dd += -8;
-					days = days.Insert(0, "TR");
+					days = days.Insert(0, " Thurs");
 				}
 				if (dd - 4 >= 0)
 				{
 					dd += -4;
-					days = days.Insert(0, "W");
+					days = days.Insert(0, " Weds");
 				}
 				if (dd - 2 >= 0)
 				{
 					dd += -2;
 					if (dd == 0)
 					{
-						days = days.Insert(0, "T");
+						days = days.Insert(0, "Tues");
 					}
 					else
 					{
-						days = days.Insert(0, "T");
+						days = days.Insert(0, " Tues");
 					}
 				}
 				if (dd - 1 == 0)
