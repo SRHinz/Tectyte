@@ -265,7 +265,7 @@ namespace RegSystemGUI
                         {
 							if (pair.Value == words[0])
                             {
-								(UDatabase[words[0]] as FactultyAcc).addAdvisee(pair.Key, UDatabase[pair.Key] as StudentAcc);		//If there have been students that have been added to the database before their advisor has, this will make sure to add them into the faculty's advisee list, then remove them from leftovers.
+								(UDatabase[words[0]] as FactultyAcc).addAdvisee(pair.Key);		//If there have been students that have been added to the database before their advisor has, this will make sure to add them into the faculty's advisee list, then remove them from leftovers.
 								leftovers.Remove(pair.Key);
 
 							}
@@ -278,7 +278,7 @@ namespace RegSystemGUI
 							UDatabase.Add(words[0], new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
 							if (UDatabase.ContainsKey(words[5]))
                             {
-								(UDatabase[words[5]] as FactultyAcc).addAdvisee(words[0], UDatabase[words[0]] as StudentAcc);	//This will add the student as an advisee of whoever is listed in their status, if the account is already created.
+								(UDatabase[words[5]] as FactultyAcc).addAdvisee(words[0]);	//This will add the student as an advisee of whoever is listed in their status, if the account is already created.
                             }
                             else
                             {
@@ -496,18 +496,18 @@ namespace RegSystemGUI
 
 		public class FactultyAcc: Account
         {
-			private Dictionary<string, StudentAcc> advisees = new Dictionary<string, StudentAcc>();
+			private List<string> advisees = new List<string>();
 			private Dictionary<string, Course> teachingCourses = new Dictionary<string, Course>();
 			public FactultyAcc(string[] args) : base(args)
             {
 
             }
 
-            public Dictionary<string, StudentAcc> Advisees { get => advisees; set => advisees = value; }
+            public List<string> Advisees { get => advisees;}
 
-			public void addAdvisee(string stuUser, StudentAcc stuAcc)
+			public void addAdvisee(string stuUser)
             {
-				advisees.Add(stuUser, stuAcc);
+				advisees.Add(stuUser);
             }
 
 			public void removeAdvisee(string stuUser)
