@@ -31,18 +31,18 @@ namespace RegSystemGUI
             CourseDataGrid.ColumnCount = 11;
             //CoursesGridBuild();
             curAcc = coe.uData.UDatabase[coe.CurAcc];
+            FacultyCourseSelector.SelectedItem = "All Courses";
             if (curAcc is Program.StudentAcc)
             {
                 curStuAcc = coe.uData.UDatabase[coe.CurAcc] as Program.StudentAcc;
                 AddCourseButton.Show();
-                FacCourseViewer.Hide();
-                Back2Courses.Hide();
+                FacultyCourseSelector.Hide();
             }
             else if (curAcc is Program.FactultyAcc)
             {
                 curFacAcc = coe.uData.UDatabase[coe.CurAcc] as Program.FactultyAcc;
                 AddCourseButton.Hide();
-                Back2Courses.Hide();
+                FacultyCourseSelector.Show();
             }
             term = coe.NexTerm;
             regC.displayCourses(coeC, CourseDataGrid);
@@ -55,29 +55,18 @@ namespace RegSystemGUI
 
 
 
-        private void label1_Click(object sender, EventArgs e)
+        private void FacultyCourseSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-        
-        private void FacCourseView_Click(object sender, EventArgs e)
-        {
-            CourseDataGrid.Rows.Clear();
-            regC.displayFacultyCourses(coeC, CourseDataGrid, curFacAcc.UserName);
-            Back2Courses.Show();
-            FacCourseViewer.Hide();
-        }
-
-        private void Back2Courses_Click(object sender, EventArgs e)
-        {
-            CourseDataGrid.Rows.Clear();
-            regC.displayCourses(coeC, CourseDataGrid);
-            FacCourseViewer.Show();
-            Back2Courses.Hide();
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            if (FacultyCourseSelector.SelectedItem.ToString() == "All Courses")
+            {
+                CourseDataGrid.Rows.Clear();
+                regC.displayCourses(coeC, CourseDataGrid);
+            }
+            else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
+            {
+                CourseDataGrid.Rows.Clear();
+                regC.displayFacultyCourses(coeC, CourseDataGrid, curFacAcc.UserName);
+            }    
         }
 
         private void AddCourseButton_Click(object sender, EventArgs e)
