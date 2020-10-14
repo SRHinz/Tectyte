@@ -73,12 +73,12 @@ namespace RegSystemGUI
 
         private void FacultyCourseSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (FacultyCourseSelector.SelectedIndex.ToString() == "All Courses")
+            if (FacultyCourseSelector.SelectedItem.ToString() == "All Courses")
             {
                 CourseDataGrid.Rows.Clear();
                 regC.displayCourses(coeC, CourseDataGrid);
             }
-            else if (FacultyCourseSelector.SelectedIndex.ToString() == "My Courses")
+            else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
             {
                 CourseDataGrid.Rows.Clear();
                 regC.displayFacultyCourses(coeC, CourseDataGrid, curFacAcc.UserName);
