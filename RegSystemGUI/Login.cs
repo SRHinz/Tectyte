@@ -35,7 +35,7 @@ namespace RegSystemGUI
             tempPW = PasswordInput.Text;
             if (COE.uData.authenticateUser(tempUN, tempPW) != "Failed")
             {
-                COE.CurAcc = (tempUN, tempPW);
+                COE.CurAcc = tempUN;
                 this.Hide();
                 Options options = new Options(ref COE, COE.uData.authenticateUser(tempUN, tempPW), tempUN, tempPW, this);
                 UsernameInput.Clear();

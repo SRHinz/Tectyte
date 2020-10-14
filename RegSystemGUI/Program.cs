@@ -39,7 +39,7 @@ namespace RegSystemGUI
 
 		public class RegistrationSystem
 		{
-			private (string, string) curAcc;
+			private string curAcc;
 			private string curTerm = "F14";
 			private string nexTerm = "S15";
 			public CourseDatabase cData = new CourseDatabase();
@@ -47,7 +47,7 @@ namespace RegSystemGUI
 			public viewCourses vCourse = new viewCourses();
 			public Register registerC;
 
-			public (string, string) CurAcc { get => curAcc; set => curAcc = value; }
+			public string CurAcc { get => curAcc; set => curAcc = value; }
 			public string CurTerm { get => curTerm; }
 			public string NexTerm { get => nexTerm; }
 		}
@@ -69,7 +69,7 @@ namespace RegSystemGUI
 
         public static void RegisterHistoryClasses(ref CourseDatabase cData, ref UserDatabase uData)
 		{
-			foreach (KeyValuePair<(string, string), Account> uValues in uData.UDatabase)
+			foreach (KeyValuePair<string, Account> uValues in uData.UDatabase)
 			{
 				if (uValues.Value is StudentAcc)
 				{
@@ -228,7 +228,7 @@ namespace RegSystemGUI
 		{
 			private Dictionary<string, Account> uDatabase = new Dictionary<string, Account>(); //Dictionary of Accounts, with username password tuple as the key
 			private HistoryDatabase hDatabase = new HistoryDatabase();
-			private Dictionary<string, adviseesDatabase> aDatabase = new Dictionary<string, adviseesDatabase>();
+			private Dictionary<string, string> leftovers = new Dictionary<string, string>();
 
             public Dictionary<string, Account> UDatabase { get => uDatabase; }
 			
@@ -261,14 +261,29 @@ namespace RegSystemGUI
 					if (words[5] == "faculty")
                     {
 						UDatabase.Add(words[0], new FactultyAcc(words));
-						aDatabase.Add(words[0], new adviseesDatabase());
+						foreach (KeyValuePair<string, string> pair in leftovers)
+                        {
+							if (pair.Value == words[0])
+                            {
+								(UDatabase[words[0]] as FactultyAcc).addAdvisee(pair.Key, UDatabase[pair.Key] as StudentAcc);		//If there have been students that have been added to the database before their advisor has, this will make sure to add them into the faculty's advisee list, then remove them from leftovers.
+								leftovers.Remove(pair.Key);
+
+							}
+                        }
                     }
 					else if ((words[5] != "admin"))
 					{
 						try
 						{
 							UDatabase.Add(words[0], new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
-							if 
+							if (UDatabase.ContainsKey(words[5]))
+                            {
+								(UDatabase[words[5]] as FactultyAcc).addAdvisee(words[0], UDatabase[words[0]] as StudentAcc);	//This will add the student as an advisee of whoever is listed in their status, if the account is already created.
+                            }
+                            else
+                            {
+								leftovers.Add(words[0], words[5]);																//If the student's advisor has not yet been added to the database, this will store them in the leftovers dictionary, which keeps track of students who are not yet listed in their advisor's advisee list.
+                            }
 						}
 						catch (KeyNotFoundException)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
 						{
@@ -283,14 +298,6 @@ namespace RegSystemGUI
 					}
 				}
 				file.Close();
-				foreach (KeyValuePair<string, Account> user in UDatabase)
-				{
-					if (user.Value is StudentAcc)
-                    {
-
-						aDatabase[user.Value.Status].addAdvisee(user.Value as StudentAcc);
-                    }
-                }
 			}
 			public void viewDatabase()
 			{
@@ -497,6 +504,16 @@ namespace RegSystemGUI
             }
 
             public Dictionary<string, StudentAcc> Advisees { get => advisees; set => advisees = value; }
+
+			public void addAdvisee(string stuUser, StudentAcc stuAcc)
+            {
+				advisees.Add(stuUser, stuAcc);
+            }
+
+			public void removeAdvisee(string stuUser)
+            {
+				advisees.Remove(stuUser);
+            }
 
 			
         }
