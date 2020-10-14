@@ -1,4 +1,6 @@
-﻿namespace RegSystemGUI
+﻿using System;
+
+namespace RegSystemGUI
 {
     partial class stuCourseHist
     {
@@ -361,6 +363,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void GPABox_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

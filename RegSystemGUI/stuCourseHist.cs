@@ -14,7 +14,6 @@ namespace RegSystemGUI
     {
         private Options Menu;
         private Program.StudentAcc account;
-        private Program.Account Account;
         private Program.viewCourses vCourses;
         private Program.CourseDatabase cData;
         private string currentTerm;
@@ -36,9 +35,7 @@ namespace RegSystemGUI
             Menu = menu;
             currentTerm = cTerm;
             TermSelectorBox.SelectedIndex = 0;
-            if (account.GetType().Equals(Program.StudentAcc))
-            { 
-            }
+            
         }
 
 
@@ -132,8 +129,8 @@ namespace RegSystemGUI
                     courseSchedule.Show();
                 if (CourseDataGrid.Visible)
                     CourseDataGrid.Hide();
-                if (GPAbox.Visible)
-                    GPAbox.Hide();
+                if (GPABox.Visible)
+                    GPABox.Hide();
                 if (creditsEarnedBox.Visible)
                     creditsEarnedBox.Hide();
                 courseSchedule.Rows.Clear();

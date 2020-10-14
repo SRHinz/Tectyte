@@ -42,8 +42,8 @@ namespace RegSystemGUI
 			private (string, string) curAcc;
 			private string curTerm = "F14";
 			private string nexTerm = "S15";
-			public UserDatabase uData = new UserDatabase();
 			public CourseDatabase cData = new CourseDatabase();
+			public UserDatabase uData = new UserDatabase();
 			public viewCourses vCourse = new viewCourses();
 			public Register registerC;
 
@@ -213,13 +213,25 @@ namespace RegSystemGUI
 				file2.Close();
 			}
         }
+		
+		private class adviseesDatabase
+        {
+			private List<StudentAcc> advisees = new List<StudentAcc>();
+
+			public void addAdvisee(StudentAcc student)
+            {
+				advisees.Add(student);
+            }
+        }
 
 		public class UserDatabase
 		{
 			private Dictionary<(string, string), Account> uDatabase = new Dictionary<(string, string), Account>(); //Dictionary of Accounts, with username password tuple as the key
 			private HistoryDatabase hDatabase = new HistoryDatabase();
+			private Dictionary<string, adviseesDatabase> aDatabase = new Dictionary<string, adviseesDatabase>();
 
             public Dictionary<(string, string), Account> UDatabase { get => uDatabase; }
+			
 
             public UserDatabase()
 			{
@@ -246,11 +258,17 @@ namespace RegSystemGUI
 						a = a + dataBasecounter[i] + 1;
 						words[i] = subString;
 					}
-					if ((words[5] != "faculty") | (words[5] != "admin"))
+					if (words[5] == "faculty")
+                    {
+						UDatabase.Add((words[0], words[1]), new FactultyAcc(words));
+						aDatabase.Add(words[0], new adviseesDatabase());
+                    }
+					else if ((words[5] != "admin"))
 					{
 						try
 						{
 							UDatabase.Add((words[0], words[1]), new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
+							if 
 						}
 						catch (KeyNotFoundException)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
 						{
@@ -265,7 +283,14 @@ namespace RegSystemGUI
 					}
 				}
 				file.Close();
+				foreach (KeyValuePair<(string, string), Account> user in UDatabase)
+				{
+					if (user.Value is StudentAcc)
+                    {
 
+						aDatabase[user.Value.Status].addAdvisee(user.Value as StudentAcc);
+                    }
+                }
 			}
 			public void viewDatabase()
 			{
@@ -460,6 +485,20 @@ namespace RegSystemGUI
             }
 
             
+        }
+
+		public class FactultyAcc: Account
+        {
+			private Dictionary<string, StudentAcc> advisees = new Dictionary<string, StudentAcc>();
+			private Dictionary<string, Course> teachingCourses = new Dictionary<string, Course>();
+			public FactultyAcc(string[] args) : base(args)
+            {
+
+            }
+
+            public Dictionary<string, StudentAcc> Advisees { get => advisees; set => advisees = value; }
+
+			
         }
 
 		public class CourseDatabase
