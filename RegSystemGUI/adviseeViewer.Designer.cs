@@ -39,9 +39,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(286, 823);
+            this.pictureBox1.Location = new System.Drawing.Point(143, 428);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(19, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -50,19 +51,20 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(316, 830);
+            this.copyrightBox.Location = new System.Drawing.Point(158, 432);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(416, 24);
+            this.copyrightBox.Size = new System.Drawing.Size(208, 13);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(642, 223);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuReturn.Location = new System.Drawing.Point(321, 116);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(333, 65);
+            this.MenuReturn.Size = new System.Drawing.Size(166, 34);
             this.MenuReturn.TabIndex = 9;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -71,22 +73,26 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(57, 50);
+            this.listView1.Location = new System.Drawing.Point(28, 26);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(502, 663);
+            this.listView1.Size = new System.Drawing.Size(253, 347);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // adviseeViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 866);
+            this.ClientSize = new System.Drawing.Size(509, 450);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "adviseeViewer";
             this.Text = "Advisee Viewer";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
