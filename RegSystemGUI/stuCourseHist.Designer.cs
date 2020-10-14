@@ -66,10 +66,10 @@ namespace RegSystemGUI
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(736, 194);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MenuReturn.Location = new System.Drawing.Point(981, 239);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(166, 34);
+            this.MenuReturn.Size = new System.Drawing.Size(221, 42);
             this.MenuReturn.TabIndex = 1;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@ namespace RegSystemGUI
             "Course History",
             "Current Courses",
             "Future Courses"});
-            this.TermSelectorBox.Location = new System.Drawing.Point(736, 120);
-            this.TermSelectorBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TermSelectorBox.Location = new System.Drawing.Point(981, 148);
+            this.TermSelectorBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TermSelectorBox.Name = "TermSelectorBox";
-            this.TermSelectorBox.Size = new System.Drawing.Size(92, 21);
+            this.TermSelectorBox.Size = new System.Drawing.Size(121, 24);
             this.TermSelectorBox.TabIndex = 2;
             this.TermSelectorBox.SelectedIndexChanged += new System.EventHandler(this.TermSelectorBox_SelectedIndexChanged);
             // 
@@ -104,15 +104,15 @@ namespace RegSystemGUI
             this.Term,
             this.Credits,
             this.Grade});
-            this.CourseDataGrid.Location = new System.Drawing.Point(16, 91);
-            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.CourseDataGrid.Location = new System.Drawing.Point(21, 112);
+            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseDataGrid.MultiSelect = false;
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CourseDataGrid.Size = new System.Drawing.Size(702, 232);
+            this.CourseDataGrid.Size = new System.Drawing.Size(936, 286);
             this.CourseDataGrid.TabIndex = 4;
             this.CourseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGrid_CellContentClick);
             // 
@@ -146,10 +146,10 @@ namespace RegSystemGUI
             // 
             // DropButton
             // 
-            this.DropButton.Location = new System.Drawing.Point(736, 259);
-            this.DropButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DropButton.Location = new System.Drawing.Point(981, 319);
+            this.DropButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DropButton.Name = "DropButton";
-            this.DropButton.Size = new System.Drawing.Size(166, 29);
+            this.DropButton.Size = new System.Drawing.Size(221, 36);
             this.DropButton.TabIndex = 5;
             this.DropButton.Text = "Drop";
             this.DropButton.UseVisualStyleBackColor = true;
@@ -160,10 +160,10 @@ namespace RegSystemGUI
             this.warningBox.BackColor = System.Drawing.SystemColors.Control;
             this.warningBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.warningBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warningBox.Location = new System.Drawing.Point(64, 71);
-            this.warningBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.warningBox.Location = new System.Drawing.Point(85, 87);
+            this.warningBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.warningBox.Name = "warningBox";
-            this.warningBox.Size = new System.Drawing.Size(405, 16);
+            this.warningBox.Size = new System.Drawing.Size(540, 20);
             this.warningBox.TabIndex = 6;
             this.warningBox.Text = "**Warning: There are no registered classes.**";
             this.warningBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -173,10 +173,10 @@ namespace RegSystemGUI
             this.warningBox2.BackColor = System.Drawing.SystemColors.Control;
             this.warningBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.warningBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warningBox2.Location = new System.Drawing.Point(64, 71);
-            this.warningBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.warningBox2.Location = new System.Drawing.Point(85, 87);
+            this.warningBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.warningBox2.Name = "warningBox2";
-            this.warningBox2.Size = new System.Drawing.Size(405, 16);
+            this.warningBox2.Size = new System.Drawing.Size(540, 20);
             this.warningBox2.TabIndex = 7;
             this.warningBox2.Text = "**Warning: There is a time conflict between two or more classes.**";
             // 
@@ -199,15 +199,15 @@ namespace RegSystemGUI
             this.TimeBlock3,
             this.TimeBlock4,
             this.TimeBlock5});
-            this.courseSchedule.Location = new System.Drawing.Point(16, 91);
-            this.courseSchedule.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.courseSchedule.Location = new System.Drawing.Point(21, 112);
+            this.courseSchedule.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.courseSchedule.MultiSelect = false;
             this.courseSchedule.Name = "courseSchedule";
             this.courseSchedule.ReadOnly = true;
             this.courseSchedule.RowHeadersWidth = 30;
             this.courseSchedule.RowTemplate.Height = 46;
             this.courseSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.courseSchedule.Size = new System.Drawing.Size(702, 232);
+            this.courseSchedule.Size = new System.Drawing.Size(936, 286);
             this.courseSchedule.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
@@ -280,10 +280,10 @@ namespace RegSystemGUI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(348, 460);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(464, 566);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(19, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -292,10 +292,10 @@ namespace RegSystemGUI
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(364, 463);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.copyrightBox.Location = new System.Drawing.Point(485, 570);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(208, 13);
+            this.copyrightBox.Size = new System.Drawing.Size(277, 15);
             this.copyrightBox.TabIndex = 10;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -305,20 +305,21 @@ namespace RegSystemGUI
             this.creditsEarnedBox.BackColor = System.Drawing.SystemColors.Control;
             this.creditsEarnedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.creditsEarnedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditsEarnedBox.Location = new System.Drawing.Point(16, 332);
-            this.creditsEarnedBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.creditsEarnedBox.Location = new System.Drawing.Point(21, 409);
+            this.creditsEarnedBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creditsEarnedBox.Name = "creditsEarnedBox";
-            this.creditsEarnedBox.Size = new System.Drawing.Size(405, 16);
+            this.creditsEarnedBox.Size = new System.Drawing.Size(540, 20);
             this.creditsEarnedBox.TabIndex = 11;
             this.creditsEarnedBox.Text = "Number of credits earned: ";
             this.creditsEarnedBox.TextChanged += new System.EventHandler(this.creditsEarnedBox_TextChanged);
             // 
             // GPABox
             // 
-            this.GPABox.Location = new System.Drawing.Point(174, 350);
+            this.GPABox.Location = new System.Drawing.Point(232, 431);
+            this.GPABox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GPABox.Name = "GPABox";
             this.GPABox.ReadOnly = true;
-            this.GPABox.Size = new System.Drawing.Size(100, 20);
+            this.GPABox.Size = new System.Drawing.Size(132, 22);
             this.GPABox.TabIndex = 13;
             this.GPABox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GPABox.TextChanged += new System.EventHandler(this.GPABox_TextChanged);
@@ -327,18 +328,19 @@ namespace RegSystemGUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(131, 351);
+            this.label1.Location = new System.Drawing.Point(175, 432);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 17);
+            this.label1.Size = new System.Drawing.Size(44, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "GPA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // stuCourseHist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 458);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1069, 564);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GPABox);
             this.Controls.Add(this.creditsEarnedBox);
@@ -352,6 +354,7 @@ namespace RegSystemGUI
             this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";

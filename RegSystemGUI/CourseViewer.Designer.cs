@@ -195,7 +195,7 @@
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.copyrightBox.Location = new System.Drawing.Point(710, 928);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(416, 37);
+            this.copyrightBox.Size = new System.Drawing.Size(416, 15);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -222,7 +222,8 @@
             // 
             // CourseViewer
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1806, 964);
             this.Controls.Add(this.Back2Courses);
