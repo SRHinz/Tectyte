@@ -660,25 +660,25 @@ namespace RegSystemGUI
 								string tBlock5 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock5);
 								if (cData.CDatabase[course.Course.Trim()].TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
 								{
-									tBlock2 = "Not Offered";
-									tBlock3 = "Not Offered";
-									tBlock4 = "Not Offered";
-									tBlock5 = "Not Offered";
+									tBlock2 = "-";
+									tBlock3 = "-";
+									tBlock4 = "-";
+									tBlock5 = "-";
 								}
 								else if (cData.CDatabase[course.Course.Trim()].TimeBlock3 == 00000)
 								{
-									tBlock3 = "Not Offered";
-									tBlock4 = "Not Offered";
-									tBlock5 = "Not Offered";
+									tBlock3 = "-";
+									tBlock4 = "-";
+									tBlock5 = "-";
 								}
 								else if (cData.CDatabase[course.Course.Trim()].TimeBlock4 == 00000)
 								{
-									tBlock4 = "Not Offered";
-									tBlock5 = "Not Offered";
+									tBlock4 = "-";
+									tBlock5 = "-";
 								}
 								else if (cData.CDatabase[course.Course.Trim()].TimeBlock5 == 00000)
 								{
-									tBlock5 = "Not Offered";
+									tBlock5 = "-";
 								}
 								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
 							}
