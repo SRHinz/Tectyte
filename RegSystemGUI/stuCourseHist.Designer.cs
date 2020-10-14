@@ -186,7 +186,8 @@ namespace RegSystemGUI
             this.courseSchedule.AllowUserToDeleteRows = false;
             this.courseSchedule.AllowUserToResizeColumns = false;
             this.courseSchedule.AllowUserToResizeRows = false;
-            this.courseSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.courseSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.courseSchedule.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.courseSchedule.BackgroundColor = System.Drawing.SystemColors.Control;
             this.courseSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courseSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -216,6 +217,7 @@ namespace RegSystemGUI
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 82;
             // 
             // cTerm
             // 
@@ -223,6 +225,7 @@ namespace RegSystemGUI
             this.cTerm.MinimumWidth = 10;
             this.cTerm.Name = "cTerm";
             this.cTerm.ReadOnly = true;
+            this.cTerm.Width = 70;
             // 
             // Credit
             // 
@@ -230,6 +233,7 @@ namespace RegSystemGUI
             this.Credit.MinimumWidth = 10;
             this.Credit.Name = "Credit";
             this.Credit.ReadOnly = true;
+            this.Credit.Width = 74;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -237,6 +241,7 @@ namespace RegSystemGUI
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 77;
             // 
             // TimeBlock1
             // 
@@ -244,6 +249,7 @@ namespace RegSystemGUI
             this.TimeBlock1.MinimumWidth = 10;
             this.TimeBlock1.Name = "TimeBlock1";
             this.TimeBlock1.ReadOnly = true;
+            this.TimeBlock1.Width = 98;
             // 
             // TimeBlock2
             // 
@@ -251,6 +257,7 @@ namespace RegSystemGUI
             this.TimeBlock2.MinimumWidth = 10;
             this.TimeBlock2.Name = "TimeBlock2";
             this.TimeBlock2.ReadOnly = true;
+            this.TimeBlock2.Width = 98;
             // 
             // TimeBlock3
             // 
@@ -258,6 +265,7 @@ namespace RegSystemGUI
             this.TimeBlock3.MinimumWidth = 10;
             this.TimeBlock3.Name = "TimeBlock3";
             this.TimeBlock3.ReadOnly = true;
+            this.TimeBlock3.Width = 98;
             // 
             // TimeBlock4
             // 
@@ -265,6 +273,7 @@ namespace RegSystemGUI
             this.TimeBlock4.MinimumWidth = 10;
             this.TimeBlock4.Name = "TimeBlock4";
             this.TimeBlock4.ReadOnly = true;
+            this.TimeBlock4.Width = 98;
             // 
             // TimeBlock5
             // 
@@ -272,6 +281,7 @@ namespace RegSystemGUI
             this.TimeBlock5.MinimumWidth = 10;
             this.TimeBlock5.Name = "TimeBlock5";
             this.TimeBlock5.ReadOnly = true;
+            this.TimeBlock5.Width = 98;
             // 
             // courseDatabaseBindingSource
             // 

@@ -882,33 +882,33 @@ namespace RegSystemGUI
 				if (dd - 16 >= 0)                       //Begin day decoding section
 				{
 					dd += -16;
-					days = days.Insert(0, " Fri");
+					days = days.Insert(0, "F");
 				}
 				if (dd - 8 >= 0)
 				{
 					dd += -8;
-					days = days.Insert(0, " Thurs");
+					days = days.Insert(0, "TR");
 				}
 				if (dd - 4 >= 0)
 				{
 					dd += -4;
-					days = days.Insert(0, " Weds");
+					days = days.Insert(0, "W");
 				}
 				if (dd - 2 >= 0)
 				{
 					dd += -2;
 					if (dd == 0)
 					{
-						days = days.Insert(0, "Tues");
+						days = days.Insert(0, "T");
 					}
 					else
 					{
-						days = days.Insert(0, " Tues");
+						days = days.Insert(0, "T");
 					}
 				}
 				if (dd - 1 == 0)
 				{
-					days = days.Insert(0, "Mon");
+					days = days.Insert(0, "M");
 				}
 
 				float mTime = Convert.ToSingle(tt) / 2;                   //This makes tt into military time

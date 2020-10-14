@@ -54,22 +54,6 @@ namespace RegSystemGUI
         }
 
 
-        private void CoursesGridBuild()
-        {
-            CourseDataGrid.Columns[0].Name = "Course Number";
-            CourseDataGrid.Columns[1].Name = "Course Name";
-            CourseDataGrid.Columns[2].Name = "Instructor";
-            CourseDataGrid.Columns[3].Name = "Total Seals";
-            CourseDataGrid.Columns[4].Name = "Open Seats";
-            CourseDataGrid.Columns[5].Name = "Credits";
-            CourseDataGrid.Columns[6].Name = "Time Block 1";
-            CourseDataGrid.Columns[7].Name = "Time Block 2";
-            CourseDataGrid.Columns[8].Name = "Time Block 3";
-            CourseDataGrid.Columns[9].Name = "Time Block 4";
-            CourseDataGrid.Columns[10].Name = "Time Block 5";
-
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {

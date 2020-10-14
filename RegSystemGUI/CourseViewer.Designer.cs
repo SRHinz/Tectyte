@@ -57,7 +57,8 @@
             this.CourseDataGrid.AllowUserToDeleteRows = false;
             this.CourseDataGrid.AllowUserToResizeColumns = false;
             this.CourseDataGrid.AllowUserToResizeRows = false;
-            this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CourseDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.CourseDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.CourseDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.CourseDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CourseDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -87,6 +88,7 @@
             this.CourseName.MinimumWidth = 6;
             this.CourseName.Name = "CourseName";
             this.CourseName.ReadOnly = true;
+            this.CourseName.Width = 123;
             // 
             // CourseTitle
             // 
@@ -94,6 +96,7 @@
             this.CourseTitle.MinimumWidth = 10;
             this.CourseTitle.Name = "CourseTitle";
             this.CourseTitle.ReadOnly = true;
+            this.CourseTitle.Width = 113;
             // 
             // Instructor
             // 
@@ -101,6 +104,7 @@
             this.Instructor.MinimumWidth = 6;
             this.Instructor.Name = "Instructor";
             this.Instructor.ReadOnly = true;
+            this.Instructor.Width = 96;
             // 
             // TotalSeats
             // 
@@ -108,6 +112,7 @@
             this.TotalSeats.MinimumWidth = 6;
             this.TotalSeats.Name = "TotalSeats";
             this.TotalSeats.ReadOnly = true;
+            this.TotalSeats.Width = 109;
             // 
             // OpenSeats
             // 
@@ -115,6 +120,7 @@
             this.OpenSeats.MinimumWidth = 6;
             this.OpenSeats.Name = "OpenSeats";
             this.OpenSeats.ReadOnly = true;
+            this.OpenSeats.Width = 112;
             // 
             // CreditsCol
             // 
@@ -122,6 +128,7 @@
             this.CreditsCol.MinimumWidth = 6;
             this.CreditsCol.Name = "CreditsCol";
             this.CreditsCol.ReadOnly = true;
+            this.CreditsCol.Width = 81;
             // 
             // tBlock1
             // 
@@ -129,6 +136,7 @@
             this.tBlock1.MinimumWidth = 6;
             this.tBlock1.Name = "tBlock1";
             this.tBlock1.ReadOnly = true;
+            this.tBlock1.Width = 118;
             // 
             // tBlock2
             // 
@@ -136,6 +144,7 @@
             this.tBlock2.MinimumWidth = 6;
             this.tBlock2.Name = "tBlock2";
             this.tBlock2.ReadOnly = true;
+            this.tBlock2.Width = 118;
             // 
             // tBlock3
             // 
@@ -143,6 +152,7 @@
             this.tBlock3.MinimumWidth = 6;
             this.tBlock3.Name = "tBlock3";
             this.tBlock3.ReadOnly = true;
+            this.tBlock3.Width = 118;
             // 
             // tBlock4
             // 
@@ -150,6 +160,7 @@
             this.tBlock4.MinimumWidth = 6;
             this.tBlock4.Name = "tBlock4";
             this.tBlock4.ReadOnly = true;
+            this.tBlock4.Width = 118;
             // 
             // tBlock5
             // 
@@ -157,6 +168,7 @@
             this.tBlock5.MinimumWidth = 6;
             this.tBlock5.Name = "tBlock5";
             this.tBlock5.ReadOnly = true;
+            this.tBlock5.Width = 118;
             // 
             // MenuReturn
             // 
