@@ -45,8 +45,7 @@
             this.AddCourseButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
-            this.FacCourseViewer = new System.Windows.Forms.Button();
-            this.Back2Courses = new System.Windows.Forms.Button();
+            this.FacultyCourseSelector = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,13 +71,14 @@
             this.tBlock3,
             this.tBlock4,
             this.tBlock5});
-            this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);
+            this.CourseDataGrid.Location = new System.Drawing.Point(22, 90);
+            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(5);
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CourseDataGrid.Size = new System.Drawing.Size(1261, 818);
+            this.CourseDataGrid.Size = new System.Drawing.Size(2018, 1309);
             this.CourseDataGrid.TabIndex = 3;
             // 
             // CourseName
@@ -160,10 +160,9 @@
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(1374, 411);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuReturn.Location = new System.Drawing.Point(2198, 658);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(333, 65);
+            this.MenuReturn.Size = new System.Drawing.Size(533, 104);
             this.MenuReturn.TabIndex = 4;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -171,9 +170,10 @@
             // 
             // AddCourseButton
             // 
-            this.AddCourseButton.Location = new System.Drawing.Point(1374, 569);
+            this.AddCourseButton.Location = new System.Drawing.Point(2198, 910);
+            this.AddCourseButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddCourseButton.Name = "AddCourseButton";
-            this.AddCourseButton.Size = new System.Drawing.Size(333, 73);
+            this.AddCourseButton.Size = new System.Drawing.Size(533, 117);
             this.AddCourseButton.TabIndex = 5;
             this.AddCourseButton.Text = "Add Course";
             this.AddCourseButton.UseVisualStyleBackColor = true;
@@ -182,9 +182,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(680, 921);
+            this.pictureBox1.Location = new System.Drawing.Point(1088, 1474);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(61, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -193,47 +194,40 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(710, 928);
+            this.copyrightBox.Location = new System.Drawing.Point(1136, 1485);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(416, 15);
+            this.copyrightBox.Size = new System.Drawing.Size(666, 24);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // FacCourseViewer
+            // FacultyCourseSelector
             // 
-            this.FacCourseViewer.Location = new System.Drawing.Point(1374, 569);
-            this.FacCourseViewer.Name = "FacCourseViewer";
-            this.FacCourseViewer.Size = new System.Drawing.Size(333, 73);
-            this.FacCourseViewer.TabIndex = 9;
-            this.FacCourseViewer.Text = "View My Courses";
-            this.FacCourseViewer.UseVisualStyleBackColor = true;
-            this.FacCourseViewer.Click += new System.EventHandler(this.FacCourseView_Click);
-            // 
-            // Back2Courses
-            // 
-            this.Back2Courses.Location = new System.Drawing.Point(1374, 727);
-            this.Back2Courses.Name = "Back2Courses";
-            this.Back2Courses.Size = new System.Drawing.Size(333, 73);
-            this.Back2Courses.TabIndex = 10;
-            this.Back2Courses.Text = "All Courses";
-            this.Back2Courses.UseVisualStyleBackColor = true;
-            this.Back2Courses.Click += new System.EventHandler(this.Back2Courses_Click);
+            this.FacultyCourseSelector.FormattingEnabled = true;
+            this.FacultyCourseSelector.Items.AddRange(new object[] {
+            "All Courses",
+            "My Courses"});
+            this.FacultyCourseSelector.Location = new System.Drawing.Point(2187, 90);
+            this.FacultyCourseSelector.Name = "FacultyCourseSelector";
+            this.FacultyCourseSelector.Size = new System.Drawing.Size(260, 33);
+            this.FacultyCourseSelector.TabIndex = 9;
+            this.FacultyCourseSelector.SelectedIndexChanged += new System.EventHandler(this.FacultyCourseSelector_SelectedIndexChanged);
             // 
             // CourseViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1806, 964);
-            this.Controls.Add(this.Back2Courses);
-            this.Controls.Add(this.FacCourseViewer);
+            this.ClientSize = new System.Drawing.Size(2740, 1542);
+            this.Controls.Add(this.FacultyCourseSelector);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.AddCourseButton);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.CourseDataGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "CourseViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Courses";
@@ -262,7 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tBlock5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
-        private System.Windows.Forms.Button FacCourseViewer;
-        private System.Windows.Forms.Button Back2Courses;
+        private System.Windows.Forms.ComboBox FacultyCourseSelector;
     }
 }
