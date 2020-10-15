@@ -14,6 +14,7 @@ namespace RegSystemGUI
     {
         private Options Menu;
         private Program.Account curAcc;
+        private string student;
         public adviseeViewer(ref Program.RegistrationSystem coe, Options menu)
         {
             InitializeComponent();
@@ -33,6 +34,12 @@ namespace RegSystemGUI
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void ViewStudent_Click(object sender, EventArgs e)
+        {
+            string selected = listView1.SelectedItems.ToString();
         }
     }
 }
