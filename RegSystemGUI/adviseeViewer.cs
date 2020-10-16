@@ -19,7 +19,7 @@ namespace RegSystemGUI
         {
             InitializeComponent();
             Menu = menu;
-            foreach (string student in (coe.uData.UDatabase[coe.CurAcc] as Program.FactultyAcc).Advisees)
+            foreach (string student in (coe.uData.UDatabase[coe.CurAcc] as Program.FacultyAcc).Advisees)
             {   
                 listView1.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
             }

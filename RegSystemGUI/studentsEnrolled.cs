@@ -12,7 +12,7 @@ namespace RegSystemGUI
 {
     public partial class studentsEnrolled : Form
     {
-        public studentsEnrolled(ref Program.FacultyAcc facultyAcc)
+        public studentsEnrolled(ref Program.FacultyAcc facultyAcc, ref Program.CourseDatabase courseData)
         {
             InitializeComponent();
         }
