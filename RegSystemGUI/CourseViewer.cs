@@ -89,7 +89,7 @@ namespace RegSystemGUI
             try
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
-                coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc);
+                coeC.CDatabase[course.Trim()].enrollStudent(curAcc.UserName);
             }
             catch (Program.regConflictException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
             { 

@@ -45,6 +45,8 @@ namespace RegSystemGUI
             string selected = item.SubItems[0].Text;
             int spaceLOC = selected.IndexOf(' ');
             adviseeView AD = new adviseeView(selected.Substring(0, spaceLOC), ref COE);
+            AD.Show();
+            this.Hide();
         }
     }
 }

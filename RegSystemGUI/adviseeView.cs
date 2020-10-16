@@ -44,7 +44,7 @@ namespace RegSystemGUI
                 AdviseeViewGrid.Columns[6].Visible = true;
                 AdviseeViewGrid.Columns[7].Visible = true;
                 AdviseeViewGrid.Columns[8].Visible = true;
-                coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Future", coe.NexTerm, coe.cData);
+                coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Future", coe.CurTerm, coe.cData);
             }
         }
     }
