@@ -67,10 +67,10 @@ namespace RegSystemGUI
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(2354, 574);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuReturn.Location = new System.Drawing.Point(981, 239);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(530, 101);
+            this.MenuReturn.Size = new System.Drawing.Size(221, 42);
             this.MenuReturn.TabIndex = 1;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -84,10 +84,10 @@ namespace RegSystemGUI
             "Course History",
             "Current Courses",
             "Future Courses"});
-            this.TermSelectorBox.Location = new System.Drawing.Point(2354, 355);
-            this.TermSelectorBox.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
+            this.TermSelectorBox.Location = new System.Drawing.Point(981, 148);
+            this.TermSelectorBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TermSelectorBox.Name = "TermSelectorBox";
-            this.TermSelectorBox.Size = new System.Drawing.Size(285, 45);
+            this.TermSelectorBox.Size = new System.Drawing.Size(121, 24);
             this.TermSelectorBox.TabIndex = 2;
             this.TermSelectorBox.SelectedIndexChanged += new System.EventHandler(this.TermSelectorBox_SelectedIndexChanged);
             // 
@@ -105,15 +105,15 @@ namespace RegSystemGUI
             this.Term,
             this.Credits,
             this.Grade});
-            this.CourseDataGrid.Location = new System.Drawing.Point(50, 269);
-            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
+            this.CourseDataGrid.Location = new System.Drawing.Point(21, 112);
+            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseDataGrid.MultiSelect = false;
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CourseDataGrid.Size = new System.Drawing.Size(2246, 686);
+            this.CourseDataGrid.Size = new System.Drawing.Size(936, 286);
             this.CourseDataGrid.TabIndex = 4;
             this.CourseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseDataGrid_CellContentClick);
             // 
@@ -147,10 +147,10 @@ namespace RegSystemGUI
             // 
             // DropButton
             // 
-            this.DropButton.Location = new System.Drawing.Point(2354, 766);
-            this.DropButton.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
+            this.DropButton.Location = new System.Drawing.Point(981, 319);
+            this.DropButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DropButton.Name = "DropButton";
-            this.DropButton.Size = new System.Drawing.Size(530, 86);
+            this.DropButton.Size = new System.Drawing.Size(221, 36);
             this.DropButton.TabIndex = 5;
             this.DropButton.Text = "Drop";
             this.DropButton.UseVisualStyleBackColor = true;
@@ -161,10 +161,10 @@ namespace RegSystemGUI
             this.warningBox.BackColor = System.Drawing.SystemColors.Control;
             this.warningBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.warningBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warningBox.Location = new System.Drawing.Point(204, 209);
-            this.warningBox.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.warningBox.Location = new System.Drawing.Point(85, 87);
+            this.warningBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.warningBox.Name = "warningBox";
-            this.warningBox.Size = new System.Drawing.Size(1296, 46);
+            this.warningBox.Size = new System.Drawing.Size(540, 20);
             this.warningBox.TabIndex = 6;
             this.warningBox.Text = "**Warning: There are no registered classes.**";
             this.warningBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -174,10 +174,10 @@ namespace RegSystemGUI
             this.warningBox2.BackColor = System.Drawing.SystemColors.Control;
             this.warningBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.warningBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warningBox2.Location = new System.Drawing.Point(204, 209);
-            this.warningBox2.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.warningBox2.Location = new System.Drawing.Point(85, 87);
+            this.warningBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.warningBox2.Name = "warningBox2";
-            this.warningBox2.Size = new System.Drawing.Size(1296, 46);
+            this.warningBox2.Size = new System.Drawing.Size(540, 20);
             this.warningBox2.TabIndex = 7;
             this.warningBox2.Text = "**Warning: There is a time conflict between two or more classes.**";
             // 
@@ -201,15 +201,15 @@ namespace RegSystemGUI
             this.TimeBlock3,
             this.TimeBlock4,
             this.TimeBlock5});
-            this.courseSchedule.Location = new System.Drawing.Point(50, 269);
-            this.courseSchedule.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
+            this.courseSchedule.Location = new System.Drawing.Point(21, 112);
+            this.courseSchedule.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.courseSchedule.MultiSelect = false;
             this.courseSchedule.Name = "courseSchedule";
             this.courseSchedule.ReadOnly = true;
             this.courseSchedule.RowHeadersWidth = 30;
             this.courseSchedule.RowTemplate.Height = 46;
             this.courseSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.courseSchedule.Size = new System.Drawing.Size(2246, 686);
+            this.courseSchedule.Size = new System.Drawing.Size(936, 286);
             this.courseSchedule.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
@@ -218,7 +218,7 @@ namespace RegSystemGUI
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 183;
+            this.dataGridViewTextBoxColumn1.Width = 82;
             // 
             // cTerm
             // 
@@ -226,7 +226,7 @@ namespace RegSystemGUI
             this.cTerm.MinimumWidth = 10;
             this.cTerm.Name = "cTerm";
             this.cTerm.ReadOnly = true;
-            this.cTerm.Width = 155;
+            this.cTerm.Width = 70;
             // 
             // Credit
             // 
@@ -234,7 +234,7 @@ namespace RegSystemGUI
             this.Credit.MinimumWidth = 10;
             this.Credit.Name = "Credit";
             this.Credit.ReadOnly = true;
-            this.Credit.Width = 165;
+            this.Credit.Width = 74;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -242,7 +242,7 @@ namespace RegSystemGUI
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 169;
+            this.dataGridViewTextBoxColumn4.Width = 77;
             // 
             // TimeBlock1
             // 
@@ -250,7 +250,7 @@ namespace RegSystemGUI
             this.TimeBlock1.MinimumWidth = 10;
             this.TimeBlock1.Name = "TimeBlock1";
             this.TimeBlock1.ReadOnly = true;
-            this.TimeBlock1.Width = 263;
+            this.TimeBlock1.Width = 118;
             // 
             // TimeBlock2
             // 
@@ -258,7 +258,7 @@ namespace RegSystemGUI
             this.TimeBlock2.MinimumWidth = 10;
             this.TimeBlock2.Name = "TimeBlock2";
             this.TimeBlock2.ReadOnly = true;
-            this.TimeBlock2.Width = 265;
+            this.TimeBlock2.Width = 118;
             // 
             // TimeBlock3
             // 
@@ -266,7 +266,7 @@ namespace RegSystemGUI
             this.TimeBlock3.MinimumWidth = 10;
             this.TimeBlock3.Name = "TimeBlock3";
             this.TimeBlock3.ReadOnly = true;
-            this.TimeBlock3.Width = 265;
+            this.TimeBlock3.Width = 118;
             // 
             // TimeBlock4
             // 
@@ -274,7 +274,7 @@ namespace RegSystemGUI
             this.TimeBlock4.MinimumWidth = 10;
             this.TimeBlock4.Name = "TimeBlock4";
             this.TimeBlock4.ReadOnly = true;
-            this.TimeBlock4.Width = 265;
+            this.TimeBlock4.Width = 118;
             // 
             // TimeBlock5
             // 
@@ -282,7 +282,7 @@ namespace RegSystemGUI
             this.TimeBlock5.MinimumWidth = 10;
             this.TimeBlock5.Name = "TimeBlock5";
             this.TimeBlock5.ReadOnly = true;
-            this.TimeBlock5.Width = 265;
+            this.TimeBlock5.Width = 118;
             // 
             // courseDatabaseBindingSource
             // 
@@ -291,10 +291,10 @@ namespace RegSystemGUI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1114, 1358);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(464, 566);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -303,10 +303,10 @@ namespace RegSystemGUI
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(1164, 1368);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.copyrightBox.Location = new System.Drawing.Point(485, 570);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(665, 37);
+            this.copyrightBox.Size = new System.Drawing.Size(277, 15);
             this.copyrightBox.TabIndex = 10;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -316,21 +316,21 @@ namespace RegSystemGUI
             this.creditsEarned.BackColor = System.Drawing.SystemColors.Control;
             this.creditsEarned.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.creditsEarned.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditsEarned.Location = new System.Drawing.Point(50, 982);
-            this.creditsEarned.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.creditsEarned.Location = new System.Drawing.Point(21, 409);
+            this.creditsEarned.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.creditsEarned.Name = "creditsEarned";
-            this.creditsEarned.Size = new System.Drawing.Size(485, 46);
+            this.creditsEarned.Size = new System.Drawing.Size(202, 20);
             this.creditsEarned.TabIndex = 11;
             this.creditsEarned.Text = "Number of credits earned: ";
             this.creditsEarned.TextChanged += new System.EventHandler(this.creditsEarnedBox_TextChanged);
             // 
             // GPABox
             // 
-            this.GPABox.Location = new System.Drawing.Point(557, 1034);
-            this.GPABox.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.GPABox.Location = new System.Drawing.Point(232, 431);
+            this.GPABox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GPABox.Name = "GPABox";
             this.GPABox.ReadOnly = true;
-            this.GPABox.Size = new System.Drawing.Size(311, 44);
+            this.GPABox.Size = new System.Drawing.Size(132, 22);
             this.GPABox.TabIndex = 13;
             this.GPABox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GPABox.TextChanged += new System.EventHandler(this.GPABox_TextChanged);
@@ -339,26 +339,27 @@ namespace RegSystemGUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(420, 1037);
-            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label1.Location = new System.Drawing.Point(175, 432);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 46);
+            this.label1.Size = new System.Drawing.Size(49, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "GPA:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // CreditsEarnedBox
             // 
-            this.CreditsEarnedBox.Location = new System.Drawing.Point(557, 984);
+            this.CreditsEarnedBox.Location = new System.Drawing.Point(232, 410);
+            this.CreditsEarnedBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.CreditsEarnedBox.Name = "CreditsEarnedBox";
-            this.CreditsEarnedBox.Size = new System.Drawing.Size(311, 44);
+            this.CreditsEarnedBox.Size = new System.Drawing.Size(132, 22);
             this.CreditsEarnedBox.TabIndex = 15;
             // 
             // stuCourseHist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(288F, 288F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(2566, 1354);
+            this.ClientSize = new System.Drawing.Size(1223, 534);
             this.Controls.Add(this.CreditsEarnedBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GPABox);
@@ -373,7 +374,7 @@ namespace RegSystemGUI
             this.Controls.Add(this.TermSelectorBox);
             this.Controls.Add(this.MenuReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "stuCourseHist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course History";

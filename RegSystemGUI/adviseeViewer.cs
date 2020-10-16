@@ -39,7 +39,8 @@ namespace RegSystemGUI
 
         private void ViewStudent_Click(object sender, EventArgs e)
         {
-            string selected = listView1.SelectedItems.ToString();
+            ListViewItem item = listView1.SelectedItems[0];
+            string selected = item.SubItems[0].Text;
         }
     }
 }

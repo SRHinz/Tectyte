@@ -86,3 +86,4 @@ C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\Re
 C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeView.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeView.resources
