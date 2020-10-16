@@ -75,8 +75,9 @@ namespace RegSystemGUI
 
         private void studentsEnrolled_Click(object sender, EventArgs e)
         {
-            stuEnrolled = new studentsEnrolled(ref curFacAcc, ref coeC);
+            stuEnrolled = new studentsEnrolled(ref curFacAcc, ref coeC, this, Menu);
             stuEnrolled.Show();
+            this.Hide();
         }
 
         private void AddCourseButton_Click(object sender, EventArgs e)
