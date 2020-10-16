@@ -260,14 +260,14 @@ namespace RegSystemGUI
 					}
 					if (words[5] == "faculty")
                     {
-						UDatabase.Add(words[0], new FactultyAcc(words));
+						UDatabase.Add(words[0], new FacultyAcc(words));
 						try
 						{
 							foreach (KeyValuePair<string, string> pair in leftovers)
 							{
 								if (pair.Value == words[0])
 								{
-									(UDatabase[words[0]] as FactultyAcc).addAdvisee(pair.Key);      //If there have been students that have been added to the database before their advisor has, this will make sure to add them into the faculty's advisee list, then remove them from leftovers.
+									(UDatabase[words[0]] as FacultyAcc).addAdvisee(pair.Key);      //If there have been students that have been added to the database before their advisor has, this will make sure to add them into the faculty's advisee list, then remove them from leftovers.
 
 								}
 							}
@@ -284,7 +284,7 @@ namespace RegSystemGUI
 							UDatabase.Add(words[0], new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
 							if (UDatabase.ContainsKey(words[5]))
                             {
-								(UDatabase[words[5]] as FactultyAcc).addAdvisee(words[0]);	//This will add the student as an advisee of whoever is listed in their status, if the account is already created.
+								(UDatabase[words[5]] as FacultyAcc).addAdvisee(words[0]);	//This will add the student as an advisee of whoever is listed in their status, if the account is already created.
                             }
                             else
                             {
@@ -500,11 +500,11 @@ namespace RegSystemGUI
             
         }
 
-		public class FactultyAcc: Account
+		public class FacultyAcc: Account
         {
 			private List<string> advisees = new List<string>();
 			private Dictionary<string, Course> teachingCourses = new Dictionary<string, Course>();
-			public FactultyAcc(string[] args) : base(args)
+			public FacultyAcc(string[] args) : base(args)
             {
 
             }

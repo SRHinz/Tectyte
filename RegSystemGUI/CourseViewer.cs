@@ -21,7 +21,7 @@ namespace RegSystemGUI
         private studentsEnrolled stuEnrolled;
         private Program.Account curAcc;
         private Program.StudentAcc curStuAcc;
-        private Program.FactultyAcc curFacAcc;
+        private Program.FacultyAcc curFacAcc;
 
         public CourseViewer(ref Program.RegistrationSystem coe, Options menu)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
@@ -40,9 +40,9 @@ namespace RegSystemGUI
                 AddCourseButton.Show();
                 FacultyCourseSelector.Hide();
             }
-            else if (curAcc is Program.FactultyAcc)
+            else if (curAcc is Program.FacultyAcc)
             {
-                curFacAcc = coe.uData.UDatabase[coe.CurAcc] as Program.FactultyAcc;
+                curFacAcc = coe.uData.UDatabase[coe.CurAcc] as Program.FacultyAcc;
                 AddCourseButton.Hide();
                 FacultyCourseSelector.Show();
             }
