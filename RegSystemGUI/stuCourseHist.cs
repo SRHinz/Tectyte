@@ -163,7 +163,7 @@ namespace RegSystemGUI
                 TermSelectorBox_SelectedIndexChanged(sender, e);
                 if (courseTerm != currentTerm)
                 {
-                    cData.CDatabase[courseName].unenrollStudent(account);
+                    cData.CDatabase[courseName].unenrollStudent(account.UserName);
                 }             
             }
             else

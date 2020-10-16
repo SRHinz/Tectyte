@@ -582,7 +582,7 @@ namespace RegSystemGUI
 			private int timeBlock4;
 			private int timeBlock5;
 			private int[] timeBlockCollection;
-			private List<StudentAcc> enrolledStudents = new List<StudentAcc>();
+			private List<string> enrolledStudents = new List<string>();
 
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
@@ -638,13 +638,13 @@ namespace RegSystemGUI
 				
 			}
 
-			public void enrollStudent(StudentAcc student)
+			public void enrollStudent(string student)
             {
 				enrolledStudents.Add(student);
 				availableSeats--;
             }
 
-			public void unenrollStudent(StudentAcc student)
+			public void unenrollStudent(string student)
             {
 				enrolledStudents.Remove(student);
 				availableSeats++;
@@ -672,36 +672,8 @@ namespace RegSystemGUI
 						if (course.Grade == "N")
                         {
 							if (course.Term == Term)
-                            {
-								int nBlocks = cData.CDatabase[course.Course.Trim()].NtimeBlocks;
-								string tBlock1 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock1);
-								string tBlock2 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock2);
-								string tBlock3 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock3);
-								string tBlock4 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock4);
-								string tBlock5 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock5);
-								if (cData.CDatabase[course.Course.Trim()].TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
-								{
-									tBlock2 = "-";
-									tBlock3 = "-";
-									tBlock4 = "-";
-									tBlock5 = "-";
-								}
-								else if (cData.CDatabase[course.Course.Trim()].TimeBlock3 == 00000)
-								{
-									tBlock3 = "-";
-									tBlock4 = "-";
-									tBlock5 = "-";
-								}
-								else if (cData.CDatabase[course.Course.Trim()].TimeBlock4 == 00000)
-								{
-									tBlock4 = "-";
-									tBlock5 = "-";
-								}
-								else if (cData.CDatabase[course.Course.Trim()].TimeBlock5 == 00000)
-								{
-									tBlock5 = "-";
-								}
-								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
+							{ 
+								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade);
                             }
 							
 

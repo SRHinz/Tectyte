@@ -12,11 +12,25 @@ namespace RegSystemGUI
 {
     public partial class adviseeView : Form
     {
-        public adviseeView()
+        private string stu;
+        Program.RegistrationSystem coe;
+        public adviseeView(string Student, ref Program.RegistrationSystem system)
         {
             InitializeComponent();
-            AdviseeViewGrid.ColumnCount = 4;
+            stu = Student;
+            coe = system;
 
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString() == "Current Courses")
+            {
+                AdviseeViewGrid.Rows.Clear();
+                coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Current"
+
+            }
         }
     }
 }
