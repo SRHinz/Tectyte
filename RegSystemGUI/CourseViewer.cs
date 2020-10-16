@@ -89,7 +89,6 @@ namespace RegSystemGUI
             try
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
-                coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc);
                 coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc.UserName);
                 CourseDataGrid.Rows.Clear();
                 regC.displayCourses(coeC, CourseDataGrid);
