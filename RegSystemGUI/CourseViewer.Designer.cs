@@ -46,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
             this.FacultyCourseSelector = new System.Windows.Forms.ComboBox();
+            this.studentsEnrolled = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +89,7 @@
             this.CourseName.MinimumWidth = 6;
             this.CourseName.Name = "CourseName";
             this.CourseName.ReadOnly = true;
-            this.CourseName.Width = 123;
+            this.CourseName.Width = 188;
             // 
             // CourseTitle
             // 
@@ -96,7 +97,7 @@
             this.CourseTitle.MinimumWidth = 10;
             this.CourseTitle.Name = "CourseTitle";
             this.CourseTitle.ReadOnly = true;
-            this.CourseTitle.Width = 113;
+            this.CourseTitle.Width = 173;
             // 
             // Instructor
             // 
@@ -104,7 +105,7 @@
             this.Instructor.MinimumWidth = 6;
             this.Instructor.Name = "Instructor";
             this.Instructor.ReadOnly = true;
-            this.Instructor.Width = 96;
+            this.Instructor.Width = 146;
             // 
             // TotalSeats
             // 
@@ -112,7 +113,7 @@
             this.TotalSeats.MinimumWidth = 6;
             this.TotalSeats.Name = "TotalSeats";
             this.TotalSeats.ReadOnly = true;
-            this.TotalSeats.Width = 109;
+            this.TotalSeats.Width = 166;
             // 
             // OpenSeats
             // 
@@ -120,7 +121,7 @@
             this.OpenSeats.MinimumWidth = 6;
             this.OpenSeats.Name = "OpenSeats";
             this.OpenSeats.ReadOnly = true;
-            this.OpenSeats.Width = 112;
+            this.OpenSeats.Width = 170;
             // 
             // CreditsCol
             // 
@@ -128,7 +129,7 @@
             this.CreditsCol.MinimumWidth = 6;
             this.CreditsCol.Name = "CreditsCol";
             this.CreditsCol.ReadOnly = true;
-            this.CreditsCol.Width = 81;
+            this.CreditsCol.Width = 125;
             // 
             // tBlock1
             // 
@@ -136,7 +137,7 @@
             this.tBlock1.MinimumWidth = 6;
             this.tBlock1.Name = "tBlock1";
             this.tBlock1.ReadOnly = true;
-            this.tBlock1.Width = 118;
+            this.tBlock1.Width = 181;
             // 
             // tBlock2
             // 
@@ -144,7 +145,7 @@
             this.tBlock2.MinimumWidth = 6;
             this.tBlock2.Name = "tBlock2";
             this.tBlock2.ReadOnly = true;
-            this.tBlock2.Width = 118;
+            this.tBlock2.Width = 181;
             // 
             // tBlock3
             // 
@@ -152,7 +153,7 @@
             this.tBlock3.MinimumWidth = 6;
             this.tBlock3.Name = "tBlock3";
             this.tBlock3.ReadOnly = true;
-            this.tBlock3.Width = 118;
+            this.tBlock3.Width = 181;
             // 
             // tBlock4
             // 
@@ -160,7 +161,7 @@
             this.tBlock4.MinimumWidth = 6;
             this.tBlock4.Name = "tBlock4";
             this.tBlock4.ReadOnly = true;
-            this.tBlock4.Width = 118;
+            this.tBlock4.Width = 181;
             // 
             // tBlock5
             // 
@@ -168,7 +169,7 @@
             this.tBlock5.MinimumWidth = 6;
             this.tBlock5.Name = "tBlock5";
             this.tBlock5.ReadOnly = true;
-            this.tBlock5.Width = 118;
+            this.tBlock5.Width = 181;
             // 
             // MenuReturn
             // 
@@ -226,12 +227,24 @@
             this.FacultyCourseSelector.TabIndex = 9;
             this.FacultyCourseSelector.SelectedIndexChanged += new System.EventHandler(this.FacultyCourseSelector_SelectedIndexChanged);
             // 
+            // studentsEnrolled
+            // 
+            this.studentsEnrolled.Location = new System.Drawing.Point(2198, 910);
+            this.studentsEnrolled.Margin = new System.Windows.Forms.Padding(5);
+            this.studentsEnrolled.Name = "studentsEnrolled";
+            this.studentsEnrolled.Size = new System.Drawing.Size(533, 117);
+            this.studentsEnrolled.TabIndex = 10;
+            this.studentsEnrolled.Text = "View Enrolled Students";
+            this.studentsEnrolled.UseVisualStyleBackColor = true;
+            this.studentsEnrolled.Click += new System.EventHandler(this.studentsEnrolled_Click);
+            // 
             // CourseViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(2740, 1542);
+            this.Controls.Add(this.studentsEnrolled);
             this.Controls.Add(this.FacultyCourseSelector);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
@@ -269,5 +282,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
         private System.Windows.Forms.ComboBox FacultyCourseSelector;
+        private System.Windows.Forms.Button studentsEnrolled;
     }
 }

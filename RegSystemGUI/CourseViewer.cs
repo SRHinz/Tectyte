@@ -18,6 +18,7 @@ namespace RegSystemGUI
         private string course, term, grade;
         private float credits;
         private Options Menu;
+        private studentsEnrolled stuEnrolled;
         private Program.Account curAcc;
         private Program.StudentAcc curStuAcc;
         private Program.FactultyAcc curFacAcc;
@@ -32,6 +33,7 @@ namespace RegSystemGUI
             //CoursesGridBuild();
             curAcc = coe.uData.UDatabase[coe.CurAcc];
             FacultyCourseSelector.SelectedItem = "All Courses";
+            studentsEnrolled.Hide();
             if (curAcc is Program.StudentAcc)
             {
                 curStuAcc = coe.uData.UDatabase[coe.CurAcc] as Program.StudentAcc;
@@ -61,12 +63,20 @@ namespace RegSystemGUI
             {
                 CourseDataGrid.Rows.Clear();
                 regC.displayCourses(coeC, CourseDataGrid);
+                studentsEnrolled.Hide();
             }
             else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
             {
                 CourseDataGrid.Rows.Clear();
                 regC.displayFacultyCourses(coeC, CourseDataGrid, curFacAcc.UserName);
+                studentsEnrolled.Show();
             }    
+        }
+
+        private void studentsEnrolled_Click(object sender, EventArgs e)
+        {
+            stuEnrolled = new studentsEnrolled();
+            stuEnrolled.Show();
         }
 
         private void AddCourseButton_Click(object sender, EventArgs e)
