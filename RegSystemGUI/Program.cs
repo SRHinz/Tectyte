@@ -79,7 +79,7 @@ namespace RegSystemGUI
 					{
 						if (course != null)
 						{
-							cData.CDatabase[course].enrollStudent(account);
+							cData.CDatabase[course].enrollStudent(uValues.Value.UserName);
 						}
 					}
 				}

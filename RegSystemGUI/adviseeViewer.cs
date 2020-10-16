@@ -15,6 +15,7 @@ namespace RegSystemGUI
         private Options Menu;
         private Program.Account curAcc;
         private string student;
+        private Program.RegistrationSystem COE;
         public adviseeViewer(ref Program.RegistrationSystem coe, Options menu)
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace RegSystemGUI
             {   
                 listView1.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
             }
+            COE = coe;
         }
 
         private void MenuReturn_Click(object sender, EventArgs e)
@@ -41,6 +43,8 @@ namespace RegSystemGUI
         {
             ListViewItem item = listView1.SelectedItems[0];
             string selected = item.SubItems[0].Text;
+            int spaceLOC = selected.IndexOf(' ');
+            adviseeView AD = new adviseeView(selected.Substring(0, spaceLOC), ref COE);
         }
     }
 }

@@ -28,8 +28,23 @@ namespace RegSystemGUI
             if (comboBox1.SelectedItem.ToString() == "Current Courses")
             {
                 AdviseeViewGrid.Rows.Clear();
-                coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Current"
+                AdviseeViewGrid.Columns[4].Visible = false;
+                AdviseeViewGrid.Columns[5].Visible = false;
+                AdviseeViewGrid.Columns[6].Visible = false;
+                AdviseeViewGrid.Columns[7].Visible = false;
+                AdviseeViewGrid.Columns[8].Visible = false;
+                coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Current", coe.CurTerm, coe.cData);
 
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Future Courses")
+            {
+                AdviseeViewGrid.Rows.Clear();
+                AdviseeViewGrid.Columns[4].Visible = true;
+                AdviseeViewGrid.Columns[5].Visible = true;
+                AdviseeViewGrid.Columns[6].Visible = true;
+                AdviseeViewGrid.Columns[7].Visible = true;
+                AdviseeViewGrid.Columns[8].Visible = true;
+                coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Future", coe.NexTerm, coe.cData);
             }
         }
     }
