@@ -75,9 +75,8 @@ namespace RegSystemGUI
 
         private void studentsEnrolled_Click(object sender, EventArgs e)
         {
-            stuEnrolled = new studentsEnrolled(ref curFacAcc, ref coeC, this, Menu);
+            stuEnrolled = new studentsEnrolled(ref curFacAcc, ref coeC);
             stuEnrolled.Show();
-            this.Hide();
         }
 
         private void AddCourseButton_Click(object sender, EventArgs e)
@@ -91,6 +90,8 @@ namespace RegSystemGUI
             {
                 error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
                 coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc.UserName);
+                CourseDataGrid.Rows.Clear();
+                regC.displayCourses(coeC, CourseDataGrid);
             }
             catch (Program.regConflictException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
             { 
