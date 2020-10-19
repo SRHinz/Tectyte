@@ -46,7 +46,7 @@ namespace RegSystemGUI
                 ListViewItem item = listView1.SelectedItems[0];
                 string selected = item.SubItems[0].Text;
                 int spaceLOC = selected.IndexOf(' ');
-                adviseeView AD = new adviseeView(selected.Substring(0, spaceLOC), ref COE);
+                adviseeView AD = new adviseeView(selected.Substring(0, spaceLOC), ref COE, this);
                 AD.Show();
                 this.Hide();
             }

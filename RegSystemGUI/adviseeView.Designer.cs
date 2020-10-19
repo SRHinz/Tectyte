@@ -39,6 +39,7 @@
             this.TimeBlock4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeBlock5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Return_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AdviseeViewGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.TimeBlock4,
             this.TimeBlock5});
             this.AdviseeViewGrid.Location = new System.Drawing.Point(12, 14);
-            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(2);
             this.AdviseeViewGrid.Name = "AdviseeViewGrid";
             this.AdviseeViewGrid.ReadOnly = true;
             this.AdviseeViewGrid.RowHeadersWidth = 123;
@@ -146,20 +147,31 @@
             "Current Courses",
             "Future Courses"});
             this.comboBox1.Location = new System.Drawing.Point(2630, 24);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(333, 45);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // Return_Button
+            // 
+            this.Return_Button.Location = new System.Drawing.Point(2630, 127);
+            this.Return_Button.Name = "Return_Button";
+            this.Return_Button.Size = new System.Drawing.Size(333, 85);
+            this.Return_Button.TabIndex = 2;
+            this.Return_Button.Text = "Return";
+            this.Return_Button.UseVisualStyleBackColor = true;
+            this.Return_Button.Click += new System.EventHandler(this.return_Button_Click);
+            // 
             // adviseeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(288F, 288F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(3617, 1181);
+            this.ClientSize = new System.Drawing.Size(2981, 1181);
+            this.Controls.Add(this.Return_Button);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.AdviseeViewGrid);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "adviseeView";
             this.Text = "adviseeView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -181,5 +193,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock3;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeBlock5;
+        private System.Windows.Forms.Button Return_Button;
     }
 }

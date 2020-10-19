@@ -377,7 +377,7 @@ namespace RegSystemGUI
 
 			public sHistory(string co, string t, float c, string g)
 			{
-				course = co;
+				course = co.Trim();
 				term = t;
 				credits = c;
 				grade = g;
@@ -788,15 +788,14 @@ namespace RegSystemGUI
 
 			public void displayFacultyCourses(CourseDatabase cData, DataGridView output, string instructor)
             {
-				CourseDatabase cFdata = new CourseDatabase();
+				List<string> cFdata = new List<string>();
 				foreach (KeyValuePair<string, Course> course in cData.CDatabase)
                 {
-					if (course.Value.Instructor.Trim() != instructor.Trim())
+					if (course.Value.Instructor.Trim() == instructor.Trim())
                     {
-						cFdata.CDatabase.Remove(course.Key);
+						output.Rows.Add(course.Key, course.Value.CourseTitle.Trim(), course.Value.Instructor.Trim(), course.Value.TotalSeats, course.Value.AvailableSeats, course.Value.Credits, course.Value.NtimeBlocks, solveTimeblock(course.Value.TimeBlock1), solveTimeblock(course.Value.TimeBlock2), solveTimeblock(course.Value.TimeBlock3), solveTimeblock(course.Value.TimeBlock4), solveTimeblock(course.Value.TimeBlock5)); //This solves the issue of having to copy over the entire course database and then delete from the copy by simply printing out all the things of courses that match instructor to the current signed in account. 
                     }
                 }
-				displayCourses(cFdata, output);
             }
 
 			public void displayCourses(CourseDatabase cData, DataGridView output)
@@ -815,29 +814,6 @@ namespace RegSystemGUI
 					string tBlock3 = solveTimeblock(course.Value.TimeBlock3);
 					string tBlock4 = solveTimeblock(course.Value.TimeBlock4);
 					string tBlock5 = solveTimeblock(course.Value.TimeBlock5);
-					if (course.Value.TimeBlock2 == 00000)           //This phrase is what occurs if there is no 
-					{
-						tBlock2 = "-";
-						tBlock3 = "-";
-						tBlock4 = "-";
-						tBlock5 = "-";
-					}
-					else if (course.Value.TimeBlock3 == 00000)
-					{
-						tBlock3 = "-";
-						tBlock4 = "-";
-						tBlock5 = "-";
-					}
-					else if (course.Value.TimeBlock4 == 00000)
-                    {
-						tBlock4 = "-";
-						tBlock5 = "-";
-					}
-					else if (course.Value.TimeBlock5 == 00000)
-                    {
-						tBlock5 = "-";
-                    }
-
 					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
 					output.Rows[counter].ReadOnly = true;
 					counter++;
@@ -892,8 +868,14 @@ namespace RegSystemGUI
 				time = (startT + " to " + endT);
 
 
-
-				return (days + ", " + time);
+				if (tB == 0)
+				{
+					return ("-");
+				}
+				else
+				{
+					return (days + ", " + time);
+				}
 			}
 
 			private string convertTime(float mTime)
