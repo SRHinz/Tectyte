@@ -41,12 +41,19 @@ namespace RegSystemGUI
 
         private void ViewStudent_Click(object sender, EventArgs e)
         {
-            ListViewItem item = listView1.SelectedItems[0];
-            string selected = item.SubItems[0].Text;
-            int spaceLOC = selected.IndexOf(' ');
-            adviseeView AD = new adviseeView(selected.Substring(0, spaceLOC), ref COE);
-            AD.Show();
-            this.Hide();
+            try
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                string selected = item.SubItems[0].Text;
+                int spaceLOC = selected.IndexOf(' ');
+                adviseeView AD = new adviseeView(selected.Substring(0, spaceLOC), ref COE);
+                AD.Show();
+                this.Hide();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("No advisee selected");
+            }
         }
     }
 }
