@@ -880,7 +880,7 @@ namespace RegSystemGUI
 				}
 				if (dd - 1 == 0)
 				{
-					days = days.Insert(0, "M");
+					days = days.Insert(0, "Mon");
 				}
 
 				float mTime = Convert.ToSingle(tt) / 2;                   //This makes tt into military time
