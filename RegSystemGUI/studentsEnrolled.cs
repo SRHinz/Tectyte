@@ -14,11 +14,25 @@ namespace RegSystemGUI
     {
         private CourseViewer cV;
         private Options menu;
-        public studentsEnrolled(ref Program.FacultyAcc facultyAcc, ref Program.CourseDatabase courseData, CourseViewer courseViewer, Options Menu)
+       
+        public studentsEnrolled(ref Program.RegistrationSystem coe, ref Program.CourseDatabase courseData, CourseViewer courseViewer, Options Menu, string course)
         {
             InitializeComponent();
             cV = courseViewer;
             menu = Menu;
+            foreach (string student in courseData.CDatabase[course].EnrolledStudents)
+            {
+                enrolledStudentList.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
+            }
+            if (enrolledStudentList.Items.Count == 0)
+            {
+                noEnrolledBox.Show();
+            }
+            else
+            {
+                noEnrolledBox.Hide();
+            }
+
         }
 
         private void studentsEnrolled_Load(object sender, EventArgs e)

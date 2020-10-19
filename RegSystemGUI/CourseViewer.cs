@@ -22,6 +22,7 @@ namespace RegSystemGUI
         private Program.Account curAcc;
         private Program.StudentAcc curStuAcc;
         private Program.FacultyAcc curFacAcc;
+        private Program.RegistrationSystem COE;
 
         public CourseViewer(ref Program.RegistrationSystem coe, Options menu)     //By passing in these two variables, we should be able to display the courses to the readonly textbox upon creation of this form.
         {
@@ -29,6 +30,7 @@ namespace RegSystemGUI
             Menu = menu;
             coeC = coe.cData;
             regC = coe.registerC;
+            COE = coe;
             CourseDataGrid.ColumnCount = 11;
             //CoursesGridBuild();
             curAcc = coe.uData.UDatabase[coe.CurAcc];
@@ -75,7 +77,11 @@ namespace RegSystemGUI
 
         private void studentsEnrolled_Click(object sender, EventArgs e)
         {
-            stuEnrolled = new studentsEnrolled(ref curFacAcc, ref coeC, this, Menu);
+            int rowIndex = CourseDataGrid.CurrentCell.RowIndex;
+            DataGridViewCellCollection row = CourseDataGrid.Rows[rowIndex].Cells;
+            DataGridViewCell cell = row[0];
+            course = cell.Value.ToString().Trim();
+            stuEnrolled = new studentsEnrolled(ref COE, ref coeC, this, Menu, course);
             stuEnrolled.Show();
             this.Hide();
         }

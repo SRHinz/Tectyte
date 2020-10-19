@@ -597,6 +597,8 @@ namespace RegSystemGUI
             public int TimeBlock5 { get => timeBlock5; }
             public int[] TimeBlockCollection { get => timeBlockCollection; }
 
+			public List<string> EnrolledStudents { get => enrolledStudents; }
+
 
 
 

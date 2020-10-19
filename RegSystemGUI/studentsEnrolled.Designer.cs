@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentsEnrolled));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.enrolledStudentList = new System.Windows.Forms.ListView();
             this.MenuReturn = new System.Windows.Forms.Button();
             this.courseReturn = new System.Windows.Forms.Button();
+            this.noEnrolledBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,17 +59,17 @@
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // listView1
+            // enrolledStudentList
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(50, 45);
-            this.listView1.Margin = new System.Windows.Forms.Padding(5);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(535, 679);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.enrolledStudentList.HideSelection = false;
+            this.enrolledStudentList.Location = new System.Drawing.Point(50, 45);
+            this.enrolledStudentList.Margin = new System.Windows.Forms.Padding(5);
+            this.enrolledStudentList.MultiSelect = false;
+            this.enrolledStudentList.Name = "enrolledStudentList";
+            this.enrolledStudentList.Size = new System.Drawing.Size(535, 679);
+            this.enrolledStudentList.TabIndex = 11;
+            this.enrolledStudentList.UseCompatibleStateImageBehavior = false;
+            this.enrolledStudentList.View = System.Windows.Forms.View.List;
             // 
             // MenuReturn
             // 
@@ -90,14 +91,24 @@
             this.courseReturn.UseVisualStyleBackColor = true;
             this.courseReturn.Click += new System.EventHandler(this.courseReturn_Click);
             // 
+            // noEnrolledBox
+            // 
+            this.noEnrolledBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.noEnrolledBox.Location = new System.Drawing.Point(50, 12);
+            this.noEnrolledBox.Name = "noEnrolledBox";
+            this.noEnrolledBox.Size = new System.Drawing.Size(539, 24);
+            this.noEnrolledBox.TabIndex = 14;
+            this.noEnrolledBox.Text = "**No students are currently registered for this course.**";
+            // 
             // studentsEnrolled
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 836);
+            this.Controls.Add(this.noEnrolledBox);
             this.Controls.Add(this.courseReturn);
             this.Controls.Add(this.MenuReturn);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.enrolledStudentList);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -114,8 +125,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView enrolledStudentList;
         private System.Windows.Forms.Button MenuReturn;
         private System.Windows.Forms.Button courseReturn;
+        private System.Windows.Forms.TextBox noEnrolledBox;
     }
 }
