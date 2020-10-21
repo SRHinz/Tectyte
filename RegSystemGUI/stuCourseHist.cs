@@ -25,8 +25,10 @@ namespace RegSystemGUI
             DropButton.Hide();
             warningBox.Hide();
             warningBox2.Hide();
-            creditsEarned.Hide();
             GPABox.Hide();
+            CreditsEarnedBox.Hide();
+            GPALabel.Hide();
+            NumCreditsEarnedLabel.Hide();
             courseSchedule.Hide();
             CourseDataGrid.ColumnCount = 4;
             cData = courseData;
@@ -61,8 +63,12 @@ namespace RegSystemGUI
                     CourseDataGrid.Show();
                 if (GPABox.Visible)
                     GPABox.Hide();
-                if (creditsEarned.Visible)
-                    creditsEarned.Hide();
+                if (CreditsEarnedBox.Visible)
+                    CreditsEarnedBox.Hide();
+                if (GPALabel.Visible)
+                    GPALabel.Hide();
+                if (NumCreditsEarnedLabel.Visible)
+                    NumCreditsEarnedLabel.Hide();
                 CourseDataGrid.Rows.Clear();
             }
             else if (TermSelectorBox.SelectedItem.ToString() == "Course History")
@@ -79,11 +85,14 @@ namespace RegSystemGUI
                     CourseDataGrid.Show();
                 if (!GPABox.Visible) 
                     GPABox.Show();
-                if (!creditsEarned.Visible)
+                if (!CreditsEarnedBox.Visible)
                 {
-                    creditsEarned.Show();
                     CreditsEarnedBox.Show();
                 }
+                if (!GPALabel.Visible)
+                    GPALabel.Show();
+                if (!NumCreditsEarnedLabel.Visible)
+                    NumCreditsEarnedLabel.Show();
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm, cData);
                 if (CourseDataGrid.Rows.Count == 0)
@@ -109,8 +118,12 @@ namespace RegSystemGUI
                     CourseDataGrid.Hide();
                 if (GPABox.Visible)
                     GPABox.Hide();
-                if (creditsEarned.Visible)
-                    creditsEarned.Hide();
+                if (CreditsEarnedBox.Visible)
+                    CreditsEarnedBox.Hide();
+                if (GPALabel.Visible)
+                    GPALabel.Hide();
+                if (NumCreditsEarnedLabel.Visible)
+                    NumCreditsEarnedLabel.Hide();
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Current", currentTerm, cData);
                 if (courseSchedule.Rows.Count == 0)
@@ -134,8 +147,12 @@ namespace RegSystemGUI
                     CourseDataGrid.Hide();
                 if (GPABox.Visible)
                     GPABox.Hide();
-                if (creditsEarned.Visible)
-                    creditsEarned.Hide();
+                if (CreditsEarnedBox.Visible)
+                    CreditsEarnedBox.Hide();
+                if (GPALabel.Visible)
+                    GPALabel.Hide();
+                if (NumCreditsEarnedLabel.Visible)
+                    NumCreditsEarnedLabel.Hide();
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Future", currentTerm, cData);
                 if (courseSchedule.Rows.Count == 0)
