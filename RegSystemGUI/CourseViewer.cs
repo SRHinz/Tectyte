@@ -32,7 +32,6 @@ namespace RegSystemGUI
             regC = coe.registerC;
             COE = coe;
             CourseDataGrid.ColumnCount = 11;
-            //CoursesGridBuild();
             curAcc = coe.uData.UDatabase[coe.CurAcc];
             FacultyCourseSelector.SelectedItem = "All Courses";
             studentsEnrolled.Hide();
@@ -49,14 +48,7 @@ namespace RegSystemGUI
                 FacultyCourseSelector.Show();
             }
             term = coe.NexTerm;
-            regC.displayCourses(coeC, CourseDataGrid);
         }
-
-        public void CourseViewerLoad()
-        {
-
-        }
-
 
 
         private void FacultyCourseSelector_SelectedIndexChanged(object sender, EventArgs e)
