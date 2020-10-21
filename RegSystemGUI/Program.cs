@@ -213,16 +213,6 @@ namespace RegSystemGUI
 				file2.Close();
 			}
         }
-		
-		private class adviseesDatabase
-        {
-			private List<StudentAcc> advisees = new List<StudentAcc>();
-
-			public void addAdvisee(StudentAcc student)
-            {
-				advisees.Add(student);
-            }
-        }
 
 		public class UserDatabase
 		{
