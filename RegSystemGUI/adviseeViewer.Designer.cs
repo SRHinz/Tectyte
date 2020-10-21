@@ -40,9 +40,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(191, 527);
+            this.pictureBox1.Location = new System.Drawing.Point(306, 770);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -51,19 +52,20 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(211, 532);
+            this.copyrightBox.Location = new System.Drawing.Point(338, 778);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(277, 15);
+            this.copyrightBox.Size = new System.Drawing.Size(443, 24);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(428, 143);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MenuReturn.Location = new System.Drawing.Point(685, 229);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(221, 42);
+            this.MenuReturn.Size = new System.Drawing.Size(354, 67);
             this.MenuReturn.TabIndex = 9;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -72,10 +74,11 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(37, 32);
+            this.listView1.Location = new System.Drawing.Point(59, 51);
+            this.listView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(336, 426);
+            this.listView1.Size = new System.Drawing.Size(535, 679);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -83,10 +86,10 @@
             // 
             // ViewStudent
             // 
-            this.ViewStudent.Location = new System.Drawing.Point(428, 220);
-            this.ViewStudent.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ViewStudent.Location = new System.Drawing.Point(685, 352);
+            this.ViewStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ViewStudent.Name = "ViewStudent";
-            this.ViewStudent.Size = new System.Drawing.Size(221, 42);
+            this.ViewStudent.Size = new System.Drawing.Size(354, 67);
             this.ViewStudent.TabIndex = 11;
             this.ViewStudent.Text = "View Advisee";
             this.ViewStudent.UseVisualStyleBackColor = true;
@@ -94,15 +97,16 @@
             // 
             // adviseeViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(679, 456);
+            this.ClientSize = new System.Drawing.Size(1086, 816);
             this.Controls.Add(this.ViewStudent);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "adviseeViewer";
             this.Text = "Advisee Viewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
