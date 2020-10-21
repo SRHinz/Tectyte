@@ -17,8 +17,9 @@ namespace RegSystemGUI
         private Program.viewCourses vCourses;
         private Program.CourseDatabase cData;
         private string currentTerm;
+        private string nextTerm;
         private int rowIndex;
-        public stuCourseHist(ref Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, Options menu)
+        public stuCourseHist(ref Program.StudentAcc studentAcc, ref Program.CourseDatabase courseData, Program.viewCourses viewC, string cTerm, string nTerm, Options menu)
         {
 
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace RegSystemGUI
             vCourses = viewC;
             Menu = menu;
             currentTerm = cTerm;
+            nextTerm = nTerm;
             TermSelectorBox.SelectedIndex = 0;
             
         }
@@ -159,6 +161,40 @@ namespace RegSystemGUI
                 {
                     warningBox.Show();
                     DropButton.Hide();
+                }
+                try
+                {
+                    foreach (Program.sHistory course in (account.CHistory))
+                    {
+                        if (course.Term == nextTerm & course.Grade == "N")
+                        {
+                            string[] courseTB1 = new string[cData.CDatabase[course.Course.Trim()].NtimeBlocks];
+                            for (int i = 0; i < courseTB1.Length; i++)
+                            {
+                                courseTB1[i] = vCourses.solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlockCollection[i]).Trim();
+                            }
+                            foreach (Program.sHistory course2 in (account).CHistory)
+                            {
+                                if ((course.Course != course2.Course) & (course2.Term == nextTerm) & (course2.Grade == "N"))
+                                {
+                                    string[] courseTB2 = new string[cData.CDatabase[course2.Course.Trim()].NtimeBlocks];
+                                    for (int i = 0; i < courseTB2.Length; i++)
+                                    {
+                                        courseTB2[i] = vCourses.solveTimeblock(cData.CDatabase[course2.Course].TimeBlockCollection[i]).Trim();
+                                    }
+                                    if (vCourses.timeConflict(courseTB1, cData.CDatabase[course.Course].TimeBlockCollection, courseTB2, cData.CDatabase[course2.Course].TimeBlockCollection))
+                                    {
+                                        throw new Program.regConflictException();
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+                catch (Program.regConflictException alpha)
+                {
+                    MessageBox.Show("There is a time conflict between one or more courses");
                 }
 
             }
