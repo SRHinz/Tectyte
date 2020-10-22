@@ -21,7 +21,7 @@ namespace RegSystemGUI
             stu = Student;
             coe = system;
             returnLoc = a;
-
+            comboBox1.SelectedIndex = 0;
 
         }
 
