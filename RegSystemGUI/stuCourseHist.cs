@@ -53,54 +53,33 @@ namespace RegSystemGUI
         {
             if (TermSelectorBox.SelectedItem.ToString() == "--select--")
             {
-                if (DropButton.Visible) // checks to see if drop button is already displayed and hides it if not
-                    DropButton.Hide();
-                if (warningBox.Visible)
-                    warningBox.Hide();
-                if (warningBox2.Visible)
-                    warningBox2.Hide();
-                if (courseSchedule.Visible)
-                    courseSchedule.Hide();
-                if (!CourseDataGrid.Visible)
-                    CourseDataGrid.Show();
-                if (GPABox.Visible)
-                    GPABox.Hide();
-                if (CreditsEarnedBox.Visible)
-                    CreditsEarnedBox.Hide();
-                if (GPALabel.Visible)
-                    GPALabel.Hide();
-                if (NumCreditsEarnedLabel.Visible)
-                    NumCreditsEarnedLabel.Hide();
+                DropButton.Visible = false;
+                warningBox.Visible = false;
+                warningBox2.Visible = false;
+                courseSchedule.Visible = false;
+                CourseDataGrid.Visible = true;
+                GPABox.Visible = false;
+                CreditsEarnedBox.Visible = false;
+                GPALabel.Visible = false;
+                NumCreditsEarnedLabel.Visible = false;
                 CourseDataGrid.Rows.Clear();
             }
             else if (TermSelectorBox.SelectedItem.ToString() == "Course History")
             {
-                if (DropButton.Visible)
-                    DropButton.Hide();
-                if (warningBox.Visible)
-                    warningBox.Hide();
-                if (warningBox2.Visible)
-                    warningBox2.Hide();
-                if (courseSchedule.Visible)
-                    courseSchedule.Hide();
-                if (!CourseDataGrid.Visible)
-                    CourseDataGrid.Show();
-                if (!GPABox.Visible) 
-                    GPABox.Show();
-                if (!CreditsEarnedBox.Visible)
-                {
-                    CreditsEarnedBox.Show();
-                }
-                if (!GPALabel.Visible)
-                    GPALabel.Show();
-                if (!NumCreditsEarnedLabel.Visible)
-                    NumCreditsEarnedLabel.Show();
+                DropButton.Visible = false;
+                warningBox.Visible = false;
+                warningBox2.Visible = false;
+                courseSchedule.Visible = false;
+                CourseDataGrid.Visible = true;
+                GPABox.Visible = true;
+                CreditsEarnedBox.Visible = true;
+                GPALabel.Visible = true;
+                NumCreditsEarnedLabel.Visible = true;
                 CourseDataGrid.Rows.Clear();
                 vCourses.displayStuHist(account, CourseDataGrid, "History", currentTerm, cData);
                 if (CourseDataGrid.Rows.Count == 0)
                 {
                     warningBox.Show();
-                    DropButton.Hide();
                 }
                 CreditsEarnedBox.Text = account.totalCredits.ToString();
                 GPABox.Text = account.GPA.ToString();
@@ -108,24 +87,15 @@ namespace RegSystemGUI
 
             else if (TermSelectorBox.SelectedItem.ToString() == "Current Courses")
             {
-                if (!DropButton.Visible)
-                    DropButton.Show();
-                if (warningBox.Visible)
-                    warningBox.Hide();
-                if (warningBox2.Visible)
-                    warningBox2.Hide();
-                if (!courseSchedule.Visible)
-                    courseSchedule.Show();
-                if (CourseDataGrid.Visible)
-                    CourseDataGrid.Hide();
-                if (GPABox.Visible)
-                    GPABox.Hide();
-                if (CreditsEarnedBox.Visible)
-                    CreditsEarnedBox.Hide();
-                if (GPALabel.Visible)
-                    GPALabel.Hide();
-                if (NumCreditsEarnedLabel.Visible)
-                    NumCreditsEarnedLabel.Hide();
+                DropButton.Visible = true;
+                warningBox.Visible = false;
+                warningBox2.Visible = false;
+                courseSchedule.Visible = true;
+                CourseDataGrid.Visible = false;
+                GPABox.Visible = false;
+                CreditsEarnedBox.Visible = false;
+                GPALabel.Visible = false;
+                NumCreditsEarnedLabel.Visible = false;
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Current", currentTerm, cData);
                 if (courseSchedule.Rows.Count == 0)
@@ -137,24 +107,15 @@ namespace RegSystemGUI
 
             else if (TermSelectorBox.SelectedItem.ToString() == "Future Courses")
             {
-                if (!DropButton.Visible) // checks to see if drop button is displayed and displays it if not
-                    DropButton.Show();
-                if (warningBox.Visible)
-                    warningBox.Hide();
-                if (warningBox2.Visible)
-                    warningBox2.Hide();
-                if (!courseSchedule.Visible)
-                    courseSchedule.Show();
-                if (CourseDataGrid.Visible)
-                    CourseDataGrid.Hide();
-                if (GPABox.Visible)
-                    GPABox.Hide();
-                if (CreditsEarnedBox.Visible)
-                    CreditsEarnedBox.Hide();
-                if (GPALabel.Visible)
-                    GPALabel.Hide();
-                if (NumCreditsEarnedLabel.Visible)
-                    NumCreditsEarnedLabel.Hide();
+                DropButton.Visible = true;
+                warningBox.Visible = false;
+                warningBox2.Visible = false;
+                courseSchedule.Visible = true;
+                CourseDataGrid.Visible = false;
+                GPABox.Visible = false;
+                CreditsEarnedBox.Visible = false;
+                GPALabel.Visible = false;
+                NumCreditsEarnedLabel.Visible = false;
                 courseSchedule.Rows.Clear();
                 vCourses.displayStuHist(account, courseSchedule, "Future", currentTerm, cData);
                 if (courseSchedule.Rows.Count == 0)
