@@ -320,6 +320,7 @@ namespace RegSystemGUI
             this.GPABox.ReadOnly = true;
             this.GPABox.Size = new System.Drawing.Size(209, 24);
             this.GPABox.TabIndex = 13;
+            this.GPABox.Text = "placeholder";
             this.GPABox.TextChanged += new System.EventHandler(this.GPABox_TextChanged);
             // 
             // GPALabel
@@ -343,6 +344,7 @@ namespace RegSystemGUI
             this.CreditsEarnedBox.Name = "CreditsEarnedBox";
             this.CreditsEarnedBox.Size = new System.Drawing.Size(209, 24);
             this.CreditsEarnedBox.TabIndex = 15;
+            this.CreditsEarnedBox.Text = "placeholder";
             // 
             // NumCreditsEarnedLabel
             // 

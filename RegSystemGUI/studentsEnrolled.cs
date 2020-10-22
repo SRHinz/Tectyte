@@ -32,7 +32,7 @@ namespace RegSystemGUI
             {
                 noEnrolledBox.Hide();
             }
-
+            courseBox.Text = course;
         }
 
         private void studentsEnrolled_Load(object sender, EventArgs e)
