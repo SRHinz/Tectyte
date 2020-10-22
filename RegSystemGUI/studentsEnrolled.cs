@@ -20,6 +20,7 @@ namespace RegSystemGUI
             InitializeComponent();
             cV = courseViewer;
             menu = Menu;
+            noEnrolledBox.Hide();
             foreach (string student in courseData.CDatabase[course].EnrolledStudents)
             {
                 enrolledStudentList.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
@@ -27,10 +28,6 @@ namespace RegSystemGUI
             if (enrolledStudentList.Items.Count == 0)
             {
                 noEnrolledBox.Show();
-            }
-            else
-            {
-                noEnrolledBox.Hide();
             }
             courseBox.Text = course;
         }
