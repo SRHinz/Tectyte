@@ -16,5 +16,10 @@ namespace RegSystemGUI
         {
             InitializeComponent();
         }
+
+        private void changeAdvisor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
