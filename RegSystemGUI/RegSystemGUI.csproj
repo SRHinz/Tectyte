@@ -59,6 +59,12 @@
     <Compile Include="adviseeViewer.Designer.cs">
       <DependentUpon>adviseeViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="changeAdvisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changeAdvisor.Designer.cs">
+      <DependentUpon>changeAdvisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adviseeViewer.resx">
       <DependentUpon>adviseeViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="changeAdvisor.resx">
+      <DependentUpon>changeAdvisor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseViewer.resx">
       <DependentUpon>CourseViewer.cs</DependentUpon>
