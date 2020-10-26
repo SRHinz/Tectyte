@@ -93,69 +93,70 @@ namespace RegSystemGUI
             {
 				cDatabase = courseData;
             }
-			public int stuRegister(StudentAcc sAcc, Course regCourse, string coursetitle, string term)		//Just adds a course to the student's schedule
+			public int stuRegister(StudentAcc sAcc, Course regCourse, string coursetitle, string term, bool admin)		//Just adds a course to the student's schedule
             {
 				float courseCredCounter = 0;
 				int passable = 0;
-				foreach (sHistory curCourse in sAcc.CHistory)
-                {
-					
-
-					if (curCourse.Grade == "N" & curCourse.Term == term)					//This guarentees we will only be checking against courses that 
-                    {
-						courseCredCounter += curCourse.Credits;
-						int cc = curCourse.Course.Trim().Length - 3;
-						int bb = coursetitle.Trim().Length - 3;
-						if (curCourse.Course.Substring(0,cc) == coursetitle.Substring(0,bb))
-                        {
-							throw new regConflictException("duplicate");
-                        }
-						else if (courseCredCounter >= 5)
-                        {
-							throw new regConflictException("credits");
-                        }
-						else if (cDatabase.CDatabase[coursetitle].AvailableSeats == 0)
-                        {
-							throw new regConflictException("seats");
-                        }
-						string[] timeBlocks1 = new string[regCourse.NtimeBlocks];
-						for (int i = 0; i < timeBlocks1.Length; i++)
-                        {
-							timeBlocks1[i] = base.solveTimeblock(regCourse.TimeBlockCollection[i]).Trim();
-                        }
-						int numTblocks = cDatabase.CDatabase[curCourse.Course.Trim()].NtimeBlocks;
-						string[] timeBlocks2 = new string[numTblocks];
-						for (int j = 0; j < timeBlocks2.Length; j++)
-                        {
-							timeBlocks2[j] = base.solveTimeblock(cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection[j]).Trim();
-                        }
-						int[] timeBNum = regCourse.TimeBlockCollection;
-						int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection;
-						if (base.timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
-						{
-							if ((passable == 2) | (passable == 3))
-							{
-								passable = 3;
-							}
-							else 
-							{ 
-								passable = 1;
-							}
-                        }
-						
-                    }
-                }
-				if (courseRepeatConflict(coursetitle, sAcc))
+				if (!admin)
 				{
-					if ((passable == 1) | (passable == 3))
+					foreach (sHistory curCourse in sAcc.CHistory)
 					{
-						passable = 3;
+						if (curCourse.Grade == "N" & curCourse.Term == term)                    //This guarentees we will only be checking against courses that 
+						{
+							courseCredCounter += curCourse.Credits;
+							int cc = curCourse.Course.Trim().Length - 3;
+							int bb = coursetitle.Trim().Length - 3;
+							if (curCourse.Course.Substring(0, cc) == coursetitle.Substring(0, bb))
+							{
+								throw new regConflictException("duplicate");
+							}
+							else if (courseCredCounter >= 5)
+							{
+								throw new regConflictException("credits");
+							}
+							else if (cDatabase.CDatabase[coursetitle].AvailableSeats == 0)
+							{
+								throw new regConflictException("seats");
+							}
+							string[] timeBlocks1 = new string[regCourse.NtimeBlocks];
+							for (int i = 0; i < timeBlocks1.Length; i++)
+							{
+								timeBlocks1[i] = base.solveTimeblock(regCourse.TimeBlockCollection[i]).Trim();
+							}
+							int numTblocks = cDatabase.CDatabase[curCourse.Course.Trim()].NtimeBlocks;
+							string[] timeBlocks2 = new string[numTblocks];
+							for (int j = 0; j < timeBlocks2.Length; j++)
+							{
+								timeBlocks2[j] = base.solveTimeblock(cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection[j]).Trim();
+							}
+							int[] timeBNum = regCourse.TimeBlockCollection;
+							int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection;
+							if (base.timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
+							{
+								if ((passable == 2) | (passable == 3))
+								{
+									passable = 3;
+								}
+								else
+								{
+									passable = 1;
+								}
+							}
+						}
+
 					}
-					else
+					if (courseRepeatConflict(coursetitle, sAcc))
 					{
-						passable = 2;
-					}
-				}				//This should check if the course is a repeat course. It doesn't need to be in the loop because it can check through all of the courses in the history on its own.
+						if ((passable == 1) | (passable == 3))
+						{
+							passable = 3;
+						}
+						else
+						{
+							passable = 2;
+						}
+					}												//This should check if the course is a repeat course. It doesn't need to be in the loop because it can check through all of the courses in the history on its own.
+				}
 				sAcc.addCourse(coursetitle, term, regCourse.Credits, "N");
 				return passable;									//Passable gives a code that allows us to know if there is an issue, or what the issue is
             }

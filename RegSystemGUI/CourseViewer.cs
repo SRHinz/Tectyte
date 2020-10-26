@@ -8,6 +8,7 @@ using System.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace RegSystemGUI
 {
@@ -46,6 +47,13 @@ namespace RegSystemGUI
                 curFacAcc = coe.uData.UDatabase[coe.CurAcc] as Program.FacultyAcc;
                 AddCourseButton.Hide();
                 FacultyCourseSelector.Show();
+            }
+            else if (curAcc is Program.AdminAcc)
+            {
+                AddCourseButton.Location.Offset(0, -66);
+                AddCourseButton.Show();
+                studentsEnrolled.Location.Offset(0, 66);
+
             }
             term = coe.NexTerm;
         }
@@ -87,7 +95,14 @@ namespace RegSystemGUI
             int error = 100;
             try
             {
-                error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim());
+                if (curAcc is Program.StudentAcc)
+                {
+                    error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim(), false);
+                }
+                else if (curAcc is Program.AdminAcc)
+                {
+                    error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim(), true);
+                }
                 coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc.UserName);
                 CourseDataGrid.Rows.Clear();
                 regC.displayCourses(coeC, CourseDataGrid);
@@ -133,6 +148,11 @@ namespace RegSystemGUI
 
         private void MenuReturn_Click_1(object sender, EventArgs e)
         {
+            if (curAcc is Program.AdminAcc)
+            {
+                AddCourseButton.Location.Offset(0, 66);
+                studentsEnrolled.Location.Offset(0, -66);
+            }
             this.Close();
             Menu.Show();
         }
