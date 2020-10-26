@@ -290,7 +290,7 @@ namespace RegSystemGUI
 					}
 					else
 					{
-						UDatabase.Add(words[0], new Account(words));
+						UDatabase.Add(words[0], new AdminAcc(words));
 					}
 				}
 				file.Close();
@@ -514,6 +514,13 @@ namespace RegSystemGUI
 			
         }
 
+		public class AdminAcc: Account
+        {
+			public AdminAcc(string[] args): base(args)
+            {
+
+            }
+        }
 		public class CourseDatabase
 		{
 			private Dictionary<string, Course> cDatabase = new Dictionary<string, Course>(); //Creating the dictionary in which we will store the courses 
