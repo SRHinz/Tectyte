@@ -45,6 +45,12 @@ namespace RegSystemGUI
                 CourseHisButton.Hide();
                 viewAdvisees.Show();
             }
+            else if (aType == "admin")
+            {
+                ViewCoursesButton.Location.Offset(-65, 0);
+                AdminStuHisButton.Show();
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
