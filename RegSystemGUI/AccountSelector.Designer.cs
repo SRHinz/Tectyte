@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.AccountDataGrid = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SearchLabel = new System.Windows.Forms.Label();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AccountDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,23 +50,6 @@
             this.AccountDataGrid.RowTemplate.Height = 24;
             this.AccountDataGrid.Size = new System.Drawing.Size(435, 394);
             this.AccountDataGrid.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(648, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // SearchLabel
-            // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Location = new System.Drawing.Point(585, 35);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(57, 17);
-            this.SearchLabel.TabIndex = 2;
-            this.SearchLabel.Text = "Search:";
             // 
             // LastName
             // 
@@ -89,6 +72,23 @@
             this.Username.Name = "Username";
             this.Username.Width = 125;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(648, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 22);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Location = new System.Drawing.Point(585, 35);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(57, 17);
+            this.SearchLabel.TabIndex = 2;
+            this.SearchLabel.Text = "Search:";
+            // 
             // AccountSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -99,6 +99,7 @@
             this.Controls.Add(this.AccountDataGrid);
             this.Name = "AccountSelector";
             this.Text = "Account Selector";
+            this.Load += new System.EventHandler(this.AccountSelector_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AccountDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

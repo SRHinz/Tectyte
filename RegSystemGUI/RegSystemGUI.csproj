@@ -71,11 +71,11 @@
     <Compile Include="CourseViewer.Designer.cs">
       <DependentUpon>CourseViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="AccountSelector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AccountSelector.Designer.cs">
+      <DependentUpon>AccountSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="CourseViewer.resx">
       <DependentUpon>CourseViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AccountSelector.resx">
+      <DependentUpon>AccountSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

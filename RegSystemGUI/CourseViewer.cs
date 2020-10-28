@@ -66,11 +66,11 @@ namespace RegSystemGUI
             }
             else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
             {
-                FacultySelector FS = new FacultySelector();
-                FS.ShowDialog();
-                CourseDataGrid.Rows.Clear();
-                regC.displayFacultyCourses(coeC, CourseDataGrid, FS.getFaculty);
-                studentsEnrolled.Show();
+                AccountSelector AS = new AccountSelector(ref COE.uData, "F");
+                AS.Show();
+                //CourseDataGrid.Rows.Clear();
+                //regC.displayFacultyCourses(coeC, CourseDataGrid, AS.getFaculty);
+                //studentsEnrolled.Show();
             }    
         }
 
