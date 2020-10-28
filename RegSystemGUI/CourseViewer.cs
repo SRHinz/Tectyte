@@ -8,7 +8,6 @@ using System.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 
 namespace RegSystemGUI
 {
@@ -88,6 +87,27 @@ namespace RegSystemGUI
 
         private void AddCourseButton_Click(object sender, EventArgs e)
         {
+            if (curAcc is Program.AdminAcc)
+            {
+                StudentSelector selector = new StudentSelector();
+                selector.ShowDialog();
+                if (COE.uData.UDatabase[selector.getStudent] is Program.StudentAcc)
+                {
+                    CourseAdd(COE.uData.UDatabase[selector.getStudent] as Program.StudentAcc, true);
+                }
+                else
+                {
+                    MessageBox.Show("No student account with that username exists.");
+                }
+            }
+            else if (curAcc is Program.StudentAcc)
+            {
+                CourseAdd(curStuAcc, false);
+            }
+        }
+
+        private void CourseAdd(Program.StudentAcc student, bool admin)
+        {
             int rowIndex = CourseDataGrid.CurrentCell.RowIndex;
             DataGridViewCellCollection row = CourseDataGrid.Rows[rowIndex].Cells;
             DataGridViewCell cell = row[0];
@@ -95,20 +115,20 @@ namespace RegSystemGUI
             int error = 100;
             try
             {
-                if (curAcc is Program.StudentAcc)
+                if (!admin)
                 {
-                    error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim(), false);
+                    error = regC.stuRegister(student, coeC.CDatabase[course], course.Trim(), term.Trim(), admin);
                 }
                 else if (curAcc is Program.AdminAcc)
                 {
-                    error = regC.stuRegister(curStuAcc, coeC.CDatabase[course], course.Trim(), term.Trim(), true);
+                    error = regC.stuRegister(student, coeC.CDatabase[course], course.Trim(), term.Trim(), true);
                 }
-                coeC.CDatabase[course.Trim()].enrollStudent(curStuAcc.UserName);
+                coeC.CDatabase[course.Trim()].enrollStudent(student.UserName);
                 CourseDataGrid.Rows.Clear();
                 regC.displayCourses(coeC, CourseDataGrid);
             }
             catch (Program.regConflictException f)         //If one of the three issues throws and error in stuRegister, the student won't be registered for the course. 
-            { 
+            {
                 string eMsg = f.ToString();
                 if (eMsg.Contains("duplicate"))
                 {
@@ -117,7 +137,7 @@ namespace RegSystemGUI
                 else if (eMsg.Contains("credits"))
                 {
                     MessageBox.Show("You are registered for too many credits.");
-               }
+                }
                 else if (eMsg.Contains("seats"))
                 {
                     MessageBox.Show("No available seats.");

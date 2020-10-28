@@ -104,3 +104,6 @@ C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.cspro
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeView.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
+C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
