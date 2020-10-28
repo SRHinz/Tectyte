@@ -23,13 +23,15 @@ namespace RegSystemGUI
             {
                 if (COE.uData.UDatabase[acc].Status != "faculty" && COE.uData.UDatabase[acc].Status != "admin")
                 {
-                    studentList.Items.Add((coe.uData.UDatabase[acc].UserName + " | " + coe.uData.UDatabase[acc].FName + " " + coe.uData.UDatabase[acc].LName));
+                    studentList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
                 }
                 else if (COE.uData.UDatabase[acc].Status == "faculty")
                 {
-                    facultyList.Items.Add((coe.uData.UDatabase[acc].UserName + " | " + coe.uData.UDatabase[acc].FName + " " + coe.uData.UDatabase[acc].LName));
+                    facultyList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
                 }
             }
+            studentSearchBox.Clear();
+            facultySearchBox.Clear();
         }
 
         private void changeAdvisor_Load(object sender, EventArgs e)
@@ -41,6 +43,39 @@ namespace RegSystemGUI
         {
             this.Close();
             Menu.Show();
+        }
+
+        private void studentSearchBox_TextChanged(object sender, EventArgs e)
+        {
+            studentList.Items.Clear();
+            foreach (string acc in COE.uData.UDatabase.Keys)
+            {
+                if (COE.uData.UDatabase[acc].Status != "faculty" && COE.uData.UDatabase[acc].Status != "admin")
+                {
+                    if (COE.uData.UDatabase[acc].LName.Contains(studentSearchBox.Text))
+                    {
+                        studentList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
+                    }
+                    
+                }
+            }
+
+        }
+
+        private void facultySearchBox_TextChanged(object sender, EventArgs e)
+        {
+            facultyList.Items.Clear();
+            foreach (string acc in COE.uData.UDatabase.Keys)
+            {
+                if (COE.uData.UDatabase[acc].Status == "faculty")
+                {
+                    if (COE.uData.UDatabase[acc].LName.Contains(facultySearchBox.Text))
+                    {
+                        facultyList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
+                    }
+
+                }
+            }
         }
     }
 }
