@@ -10,30 +10,26 @@ using System.Windows.Forms;
 
 namespace RegSystemGUI
 {
-    public partial class StudentSelector : Form
+    public partial class FacultySelector : Form
     {
-        public StudentSelector()
+        private string studentUser;
+        public FacultySelector()
         {
             InitializeComponent();
-            textBox1.Clear();
+            FacultyBox.Clear();
         }
 
-        public string getStudent
+        public string getFaculty
         {
             get
             {
-                return this.textBox1.Text;
+                return this.FacultyBox.Text;
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FacultyConfirm_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void StudentSelector_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

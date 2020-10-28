@@ -49,9 +49,7 @@ namespace RegSystemGUI
             }
             else if (curAcc is Program.AdminAcc)
             {
-                AddCourseButton.Location.Offset(0, -66);
                 AddCourseButton.Show();
-                studentsEnrolled.Location.Offset(0, 66);
 
             }
             term = coe.NexTerm;
@@ -68,8 +66,10 @@ namespace RegSystemGUI
             }
             else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
             {
+                FacultySelector FS = new FacultySelector();
+                FS.ShowDialog();
                 CourseDataGrid.Rows.Clear();
-                regC.displayFacultyCourses(coeC, CourseDataGrid, curFacAcc.UserName);
+                regC.displayFacultyCourses(coeC, CourseDataGrid, FS.getFaculty);
                 studentsEnrolled.Show();
             }    
         }
@@ -104,6 +104,16 @@ namespace RegSystemGUI
             {
                 CourseAdd(curStuAcc, false);
             }
+        }
+
+        private void CourseViewer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
 
         private void CourseAdd(Program.StudentAcc student, bool admin)
@@ -168,11 +178,6 @@ namespace RegSystemGUI
 
         private void MenuReturn_Click_1(object sender, EventArgs e)
         {
-            if (curAcc is Program.AdminAcc)
-            {
-                AddCourseButton.Location.Offset(0, 66);
-                studentsEnrolled.Location.Offset(0, -66);
-            }
             this.Close();
             Menu.Show();
         }

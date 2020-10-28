@@ -91,6 +91,12 @@
     <Compile Include="stuCourseHist.Designer.cs">
       <DependentUpon>stuCourseHist.cs</DependentUpon>
     </Compile>
+    <Compile Include="FacultySelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacultySelector.Designer.cs">
+      <DependentUpon>FacultySelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="stuCourseHist.resx">
       <DependentUpon>stuCourseHist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacultySelector.resx">
+      <DependentUpon>FacultySelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentSelector.resx">
       <DependentUpon>StudentSelector.cs</DependentUpon>

@@ -31,6 +31,12 @@ namespace RegSystemGUI
             {
                 curAcc = COE.uData.UDatabase[tempUN] as Program.StudentAcc;
             }
+            else if (aType == "admin")
+            {
+                ViewCoursesButton.Location.Offset(-130, 0);
+                AdminStuHisButton.Show();
+
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -47,7 +53,7 @@ namespace RegSystemGUI
             }
             else if (aType == "admin")
             {
-                ViewCoursesButton.Location.Offset(-65, 0);
+                ViewCoursesButton.Location.Offset(-130, 0);
                 AdminStuHisButton.Show();
 
             }
