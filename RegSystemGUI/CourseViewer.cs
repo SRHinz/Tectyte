@@ -45,7 +45,7 @@ namespace RegSystemGUI
             {
                 curFacAcc = coe.uData.UDatabase[coe.CurAcc] as Program.FacultyAcc;
                 AddCourseButton.Hide();
-                FacultyCourseSelector.Show();
+                //FacultyCourseSelector.Show();
             }
             else if (curAcc is Program.AdminAcc)
             {
