@@ -52,7 +52,8 @@ namespace RegSystemGUI
             {
                 if (COE.uData.UDatabase[acc].Status != "faculty" && COE.uData.UDatabase[acc].Status != "admin")
                 {
-                    if (COE.uData.UDatabase[acc].LName.Contains(studentSearchBox.Text))
+                    string accLName = COE.uData.UDatabase[acc].LName.ToLower();
+                    if (accLName.Contains(studentSearchBox.Text.ToLower()))
                     {
                         studentList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
                     }
@@ -69,7 +70,8 @@ namespace RegSystemGUI
             {
                 if (COE.uData.UDatabase[acc].Status == "faculty")
                 {
-                    if (COE.uData.UDatabase[acc].LName.Contains(facultySearchBox.Text))
+                    string accLName = COE.uData.UDatabase[acc].LName.ToLower();
+                    if (accLName.Contains(facultySearchBox.Text.ToLower()))
                     {
                         facultyList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
                     }
