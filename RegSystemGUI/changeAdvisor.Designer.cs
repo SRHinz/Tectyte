@@ -36,8 +36,8 @@
             this.changeAdv = new System.Windows.Forms.Button();
             this.searchStudents = new System.Windows.Forms.Label();
             this.searchFaculty = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.studentSearchBox = new System.Windows.Forms.TextBox();
+            this.facultySearchBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -110,21 +110,23 @@
             this.searchFaculty.TabIndex = 18;
             this.searchFaculty.Text = "Search Faculty by Last Name: ";
             // 
-            // textBox1
+            // studentSearchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(392, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 31);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.Text = "placeholder";
+            this.studentSearchBox.Location = new System.Drawing.Point(392, 67);
+            this.studentSearchBox.Name = "studentSearchBox";
+            this.studentSearchBox.Size = new System.Drawing.Size(325, 31);
+            this.studentSearchBox.TabIndex = 19;
+            this.studentSearchBox.Text = "placeholder";
+            this.studentSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
             // 
-            // textBox2
+            // facultySearchBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(392, 502);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 31);
-            this.textBox2.TabIndex = 20;
-            this.textBox2.Text = "placeholder";
+            this.facultySearchBox.Location = new System.Drawing.Point(392, 502);
+            this.facultySearchBox.Name = "facultySearchBox";
+            this.facultySearchBox.Size = new System.Drawing.Size(325, 31);
+            this.facultySearchBox.TabIndex = 20;
+            this.facultySearchBox.Text = "placeholder";
+            this.facultySearchBox.TextChanged += new System.EventHandler(this.facultySearchBox_TextChanged);
             // 
             // pictureBox1
             // 
@@ -156,8 +158,8 @@
             this.ClientSize = new System.Drawing.Size(1367, 996);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.facultySearchBox);
+            this.Controls.Add(this.studentSearchBox);
             this.Controls.Add(this.searchFaculty);
             this.Controls.Add(this.searchStudents);
             this.Controls.Add(this.changeAdv);
@@ -183,8 +185,8 @@
         private System.Windows.Forms.Button changeAdv;
         private System.Windows.Forms.Label searchStudents;
         private System.Windows.Forms.Label searchFaculty;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox studentSearchBox;
+        private System.Windows.Forms.TextBox facultySearchBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox3;
     }
