@@ -13,10 +13,23 @@ namespace RegSystemGUI
     public partial class changeAdvisor : Form
     {
         private Options Menu;
+        private Program.RegistrationSystem COE;
         public changeAdvisor(ref Program.RegistrationSystem coe, Options menu)
         {
             InitializeComponent();
             Menu = menu;
+            COE = coe;
+            foreach (string acc in COE.uData.UDatabase.Keys)
+            {
+                if (COE.uData.UDatabase[acc].Status != "faculty" && COE.uData.UDatabase[acc].Status != "admin")
+                {
+                    studentList.Items.Add((coe.uData.UDatabase[acc].UserName + " | " + coe.uData.UDatabase[acc].FName + " " + coe.uData.UDatabase[acc].LName));
+                }
+                else if (COE.uData.UDatabase[acc].Status == "faculty")
+                {
+                    facultyList.Items.Add((coe.uData.UDatabase[acc].UserName + " | " + coe.uData.UDatabase[acc].FName + " " + coe.uData.UDatabase[acc].LName));
+                }
+            }
         }
 
         private void changeAdvisor_Load(object sender, EventArgs e)
