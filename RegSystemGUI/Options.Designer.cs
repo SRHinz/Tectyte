@@ -37,7 +37,7 @@
             this.copyrightBox = new System.Windows.Forms.TextBox();
             this.viewAdvisees = new System.Windows.Forms.Button();
             this.AdminStuHisButton = new System.Windows.Forms.Button();
-            this.changeAdvisor = new System.Windows.Forms.Button();
+            this.changeAdvisorButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,22 +130,23 @@
             this.AdminStuHisButton.UseVisualStyleBackColor = true;
             this.AdminStuHisButton.Visible = false;
             // 
-            // changeAdvisor
+            // changeAdvisorButton
             // 
-            this.changeAdvisor.Location = new System.Drawing.Point(152, 266);
-            this.changeAdvisor.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.changeAdvisor.Name = "changeAdvisor";
-            this.changeAdvisor.Size = new System.Drawing.Size(202, 73);
-            this.changeAdvisor.TabIndex = 10;
-            this.changeAdvisor.Text = "Change Advisor";
-            this.changeAdvisor.UseVisualStyleBackColor = true;
+            this.changeAdvisorButton.Location = new System.Drawing.Point(152, 266);
+            this.changeAdvisorButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.changeAdvisorButton.Name = "changeAdvisorButton";
+            this.changeAdvisorButton.Size = new System.Drawing.Size(202, 73);
+            this.changeAdvisorButton.TabIndex = 10;
+            this.changeAdvisorButton.Text = "Change Advisor";
+            this.changeAdvisorButton.UseVisualStyleBackColor = true;
+            this.changeAdvisorButton.Click += new System.EventHandler(this.changeAdvisor_Click);
             // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 581);
-            this.Controls.Add(this.changeAdvisor);
+            this.Controls.Add(this.changeAdvisorButton);
             this.Controls.Add(this.AdminStuHisButton);
             this.Controls.Add(this.viewAdvisees);
             this.Controls.Add(this.pictureBox1);
@@ -177,6 +178,6 @@
         private System.Windows.Forms.TextBox copyrightBox;
         private System.Windows.Forms.Button viewAdvisees;
         private System.Windows.Forms.Button AdminStuHisButton;
-        private System.Windows.Forms.Button changeAdvisor;
+        private System.Windows.Forms.Button changeAdvisorButton;
     }
 }

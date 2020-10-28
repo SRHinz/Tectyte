@@ -12,14 +12,22 @@ namespace RegSystemGUI
 {
     public partial class changeAdvisor : Form
     {
-        public changeAdvisor()
+        private Options Menu;
+        public changeAdvisor(ref Program.RegistrationSystem coe, Options menu)
         {
             InitializeComponent();
+            Menu = menu;
         }
 
         private void changeAdvisor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MenuReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Menu.Show();
         }
     }
 }

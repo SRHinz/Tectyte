@@ -18,6 +18,7 @@ namespace RegSystemGUI
         private Program.StudentAcc curAcc;
         private CourseViewer cV;
         private adviseeViewer adView;
+        private changeAdvisor adChange;
         public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW, Login loginform)
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace RegSystemGUI
             {
                 ViewCoursesButton.Location.Offset(-130, 0);
                 AdminStuHisButton.Show();
-
+                
             }
         }
 
@@ -45,16 +46,19 @@ namespace RegSystemGUI
             {
                 CourseHisButton.Show();
                 viewAdvisees.Hide();
+                changeAdvisorButton.Hide();
             }
             else if (aType == "faculty")
             {
                 CourseHisButton.Hide();
                 viewAdvisees.Show();
+                changeAdvisorButton.Hide();
             }
             else if (aType == "admin")
             {
                 ViewCoursesButton.Location.Offset(-130, 0);
                 AdminStuHisButton.Show();
+                changeAdvisorButton.Show();
 
             }
         }
@@ -71,6 +75,13 @@ namespace RegSystemGUI
             this.Hide();
             adView = new adviseeViewer(ref COE, this);
             adView.Show();
+        }
+
+        private void changeAdvisor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            adChange = new changeAdvisor(ref COE, this);
+            adChange.Show();
         }
 
         private void viewCourse_Click(object sender, EventArgs e)

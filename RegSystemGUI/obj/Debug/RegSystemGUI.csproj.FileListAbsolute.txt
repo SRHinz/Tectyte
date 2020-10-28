@@ -110,3 +110,6 @@ C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\Re
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
+C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
+C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
+C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
