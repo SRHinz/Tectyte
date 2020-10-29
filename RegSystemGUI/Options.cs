@@ -34,7 +34,6 @@ namespace RegSystemGUI
             }
             else if (aType == "admin")
             {
-                ViewCoursesButton.Location.Offset(-130, 0);
                 AdminStuHisButton.Show();
                 
             }
@@ -56,7 +55,6 @@ namespace RegSystemGUI
             }
             else if (aType == "admin")
             {
-                ViewCoursesButton.Location.Offset(-130, 0);
                 AdminStuHisButton.Show();
                 changeAdvisorButton.Show();
 
@@ -82,6 +80,16 @@ namespace RegSystemGUI
             this.Hide();
             adChange = new changeAdvisor(ref COE, this);
             adChange.Show();
+        }
+
+        private void AdminStuHis_Click(object sender, EventArgs e)
+        {
+            AccountSelector AS = new AccountSelector(ref COE.uData, "S");
+            AS.ShowDialog();
+            curAcc = COE.uData.UDatabase[AS.getAccount()] as Program.StudentAcc;
+            stuCourseHist cH = new stuCourseHist(ref curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
+            this.Hide();
+            cH.Show();
         }
 
         private void viewCourse_Click(object sender, EventArgs e)
