@@ -49,25 +49,10 @@ C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Deb
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.DropCourse.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\bin\Debug\RegSystemGUI.exe
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\bin\Debug\RegSystemGUI.pdb
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.CourseViewer.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.Login.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.Options.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.Properties.Resources.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.GenerateResource.cache
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.exe
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
 C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
@@ -86,7 +71,6 @@ C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\Re
 C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeView.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeView.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeView.resources
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\bin\Debug\RegSystemGUI.exe
@@ -110,10 +94,27 @@ C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\Re
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
-C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AccountSelector.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\bin\Debug\RegSystemGUI.exe
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\bin\Debug\RegSystemGUI.pdb
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeView.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.CourseViewer.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.AccountSelector.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.Login.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.Options.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.Properties.Resources.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.GenerateResource.cache
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.csproj.CoreCompileInputs.cache
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.exe
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
