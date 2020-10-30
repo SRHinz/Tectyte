@@ -53,7 +53,7 @@ namespace RegSystemGUI
             DialogResult repeat = MessageBox.Show("Would you like to modify something else?", "Continue?", MessageBoxButtons.YesNo);
             if (repeat == DialogResult.No)
             {
-                this.Close();
+                this.Close();               //This will exit out of the form and return focus to the options form. 
             }
             
         }
