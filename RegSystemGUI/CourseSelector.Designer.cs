@@ -93,7 +93,7 @@
             this.editCourse.Name = "editCourse";
             this.editCourse.Size = new System.Drawing.Size(351, 114);
             this.editCourse.TabIndex = 3;
-            this.editCourse.Text = "Edit Course Time";
+            this.editCourse.Text = "Edit Course";
             this.editCourse.UseVisualStyleBackColor = true;
             // 
             // CourseName
