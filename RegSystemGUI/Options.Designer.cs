@@ -150,6 +150,7 @@
             this.SysModButton.TabIndex = 11;
             this.SysModButton.Text = "Database Modification";
             this.SysModButton.UseVisualStyleBackColor = true;
+            this.SysModButton.Click += new System.EventHandler(this.SysMod_Click);
             // 
             // Options
             // 

@@ -34,6 +34,7 @@ namespace RegSystemGUI
             }
             else if (aType == "admin")
             {
+                SysModButton.Show();
                 AdminStuHisButton.Show();
                 
             }
@@ -46,12 +47,14 @@ namespace RegSystemGUI
                 CourseHisButton.Show();
                 viewAdvisees.Hide();
                 changeAdvisorButton.Hide();
+                SysModButton.Hide();
             }
             else if (aType == "faculty")
             {
                 CourseHisButton.Hide();
                 viewAdvisees.Show();
                 changeAdvisorButton.Hide();
+                SysModButton.Hide();
             }
             else if (aType == "admin")
             {
@@ -90,6 +93,21 @@ namespace RegSystemGUI
             stuCourseHist cH = new stuCourseHist(ref curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
             this.Hide();
             cH.Show();
+        }
+
+        private void SysMod_Click(object sender, EventArgs e)
+        {
+            DatabaseMod DM = new DatabaseMod(ref COE);
+            DM.ShowDialog();
+            DialogResult result = DM.getResult;
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("Modification Sucessful");
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                MessageBox.Show("Modificaiton Aborted");
+            }
         }
 
         private void viewCourse_Click(object sender, EventArgs e)

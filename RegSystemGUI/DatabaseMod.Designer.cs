@@ -79,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1468, 335);
+            this.ClientSize = new System.Drawing.Size(1468, 368);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.choiceFaculty);
             this.Controls.Add(this.choiceStudent);
