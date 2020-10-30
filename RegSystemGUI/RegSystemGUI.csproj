@@ -77,6 +77,12 @@
     <Compile Include="AccountSelector.Designer.cs">
       <DependentUpon>AccountSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseMod.Designer.cs">
+      <DependentUpon>DatabaseMod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AccountSelector.resx">
       <DependentUpon>AccountSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseMod.resx">
+      <DependentUpon>DatabaseMod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

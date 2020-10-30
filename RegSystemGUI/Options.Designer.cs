@@ -38,6 +38,7 @@
             this.viewAdvisees = new System.Windows.Forms.Button();
             this.AdminStuHisButton = new System.Windows.Forms.Button();
             this.changeAdvisorButton = new System.Windows.Forms.Button();
+            this.SysModButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -89,7 +89,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(361, 798);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +101,7 @@
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.copyrightBox.Location = new System.Drawing.Point(409, 805);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(6);
             this.copyrightBox.Name = "copyrightBox";
             this.copyrightBox.Size = new System.Drawing.Size(659, 37);
             this.copyrightBox.TabIndex = 8;
@@ -142,11 +142,21 @@
             this.changeAdvisorButton.UseVisualStyleBackColor = true;
             this.changeAdvisorButton.Click += new System.EventHandler(this.changeAdvisor_Click);
             // 
+            // SysModButton
+            // 
+            this.SysModButton.Location = new System.Drawing.Point(871, 394);
+            this.SysModButton.Name = "SysModButton";
+            this.SysModButton.Size = new System.Drawing.Size(279, 108);
+            this.SysModButton.TabIndex = 11;
+            this.SysModButton.Text = "Database Modification";
+            this.SysModButton.UseVisualStyleBackColor = true;
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 860);
+            this.Controls.Add(this.SysModButton);
             this.Controls.Add(this.changeAdvisorButton);
             this.Controls.Add(this.AdminStuHisButton);
             this.Controls.Add(this.viewAdvisees);
@@ -179,5 +189,6 @@
         private System.Windows.Forms.Button viewAdvisees;
         private System.Windows.Forms.Button AdminStuHisButton;
         private System.Windows.Forms.Button changeAdvisorButton;
+        private System.Windows.Forms.Button SysModButton;
     }
 }
