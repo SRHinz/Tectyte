@@ -169,6 +169,7 @@
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "changeAdvisor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change Advisor";
             this.Load += new System.EventHandler(this.changeAdvisor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

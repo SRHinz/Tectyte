@@ -62,13 +62,13 @@
             this.TimeBlock3,
             this.TimeBlock4,
             this.TimeBlock5});
-            this.AdviseeViewGrid.Location = new System.Drawing.Point(5, 6);
-            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(1);
+            this.AdviseeViewGrid.Location = new System.Drawing.Point(8, 10);
+            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AdviseeViewGrid.Name = "AdviseeViewGrid";
             this.AdviseeViewGrid.ReadOnly = true;
             this.AdviseeViewGrid.RowHeadersWidth = 123;
             this.AdviseeViewGrid.RowTemplate.Height = 46;
-            this.AdviseeViewGrid.Size = new System.Drawing.Size(1028, 397);
+            this.AdviseeViewGrid.Size = new System.Drawing.Size(1645, 635);
             this.AdviseeViewGrid.TabIndex = 0;
             // 
             // Courses
@@ -77,7 +77,7 @@
             this.Courses.MinimumWidth = 6;
             this.Courses.Name = "Courses";
             this.Courses.ReadOnly = true;
-            this.Courses.Width = 89;
+            this.Courses.Width = 137;
             // 
             // Term
             // 
@@ -85,7 +85,7 @@
             this.Term.MinimumWidth = 6;
             this.Term.Name = "Term";
             this.Term.ReadOnly = true;
-            this.Term.Width = 70;
+            this.Term.Width = 106;
             // 
             // Credit
             // 
@@ -93,7 +93,7 @@
             this.Credit.MinimumWidth = 6;
             this.Credit.Name = "Credit";
             this.Credit.ReadOnly = true;
-            this.Credit.Width = 74;
+            this.Credit.Width = 114;
             // 
             // Grade
             // 
@@ -101,7 +101,7 @@
             this.Grade.MinimumWidth = 6;
             this.Grade.Name = "Grade";
             this.Grade.ReadOnly = true;
-            this.Grade.Width = 77;
+            this.Grade.Width = 116;
             // 
             // TimeBlock1
             // 
@@ -109,7 +109,7 @@
             this.TimeBlock1.MinimumWidth = 6;
             this.TimeBlock1.Name = "TimeBlock1";
             this.TimeBlock1.ReadOnly = true;
-            this.TimeBlock1.Width = 118;
+            this.TimeBlock1.Width = 181;
             // 
             // TimeBlock2
             // 
@@ -117,7 +117,7 @@
             this.TimeBlock2.MinimumWidth = 6;
             this.TimeBlock2.Name = "TimeBlock2";
             this.TimeBlock2.ReadOnly = true;
-            this.TimeBlock2.Width = 118;
+            this.TimeBlock2.Width = 181;
             // 
             // TimeBlock3
             // 
@@ -125,7 +125,7 @@
             this.TimeBlock3.MinimumWidth = 6;
             this.TimeBlock3.Name = "TimeBlock3";
             this.TimeBlock3.ReadOnly = true;
-            this.TimeBlock3.Width = 118;
+            this.TimeBlock3.Width = 181;
             // 
             // TimeBlock4
             // 
@@ -133,7 +133,7 @@
             this.TimeBlock4.MinimumWidth = 6;
             this.TimeBlock4.Name = "TimeBlock4";
             this.TimeBlock4.ReadOnly = true;
-            this.TimeBlock4.Width = 118;
+            this.TimeBlock4.Width = 181;
             // 
             // TimeBlock5
             // 
@@ -141,7 +141,7 @@
             this.TimeBlock5.MinimumWidth = 6;
             this.TimeBlock5.Name = "TimeBlock5";
             this.TimeBlock5.ReadOnly = true;
-            this.TimeBlock5.Width = 118;
+            this.TimeBlock5.Width = 181;
             // 
             // comboBox1
             // 
@@ -150,19 +150,19 @@
             "--select--",
             "Current Courses",
             "Future Courses"});
-            this.comboBox1.Location = new System.Drawing.Point(1096, 10);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.comboBox1.Location = new System.Drawing.Point(1754, 16);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 24);
+            this.comboBox1.Size = new System.Drawing.Size(223, 33);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Return_Button
             // 
-            this.Return_Button.Location = new System.Drawing.Point(1096, 53);
-            this.Return_Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Return_Button.Location = new System.Drawing.Point(1754, 85);
+            this.Return_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Return_Button.Name = "Return_Button";
-            this.Return_Button.Size = new System.Drawing.Size(139, 36);
+            this.Return_Button.Size = new System.Drawing.Size(222, 58);
             this.Return_Button.TabIndex = 2;
             this.Return_Button.Text = "Return";
             this.Return_Button.UseVisualStyleBackColor = true;
@@ -171,9 +171,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(422, 463);
+            this.pictureBox1.Location = new System.Drawing.Point(675, 741);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -182,26 +183,28 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(442, 468);
+            this.copyrightBox.Location = new System.Drawing.Point(707, 749);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(277, 15);
+            this.copyrightBox.Size = new System.Drawing.Size(443, 24);
             this.copyrightBox.TabIndex = 10;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // adviseeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1334, 492);
+            this.ClientSize = new System.Drawing.Size(2134, 787);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.Return_Button);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.AdviseeViewGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "adviseeView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advisee View";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.AdviseeViewGrid)).EndInit();

@@ -41,7 +41,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(306, 770);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -53,7 +53,7 @@
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.copyrightBox.Location = new System.Drawing.Point(338, 778);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5);
             this.copyrightBox.Name = "copyrightBox";
             this.copyrightBox.Size = new System.Drawing.Size(443, 24);
             this.copyrightBox.TabIndex = 8;
@@ -63,7 +63,7 @@
             // MenuReturn
             // 
             this.MenuReturn.Location = new System.Drawing.Point(685, 229);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
             this.MenuReturn.Name = "MenuReturn";
             this.MenuReturn.Size = new System.Drawing.Size(354, 67);
             this.MenuReturn.TabIndex = 9;
@@ -75,7 +75,7 @@
             // 
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(59, 51);
-            this.listView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.listView1.Margin = new System.Windows.Forms.Padding(5);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(535, 679);
@@ -87,7 +87,7 @@
             // ViewStudent
             // 
             this.ViewStudent.Location = new System.Drawing.Point(685, 352);
-            this.ViewStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewStudent.Margin = new System.Windows.Forms.Padding(2);
             this.ViewStudent.Name = "ViewStudent";
             this.ViewStudent.Size = new System.Drawing.Size(354, 67);
             this.ViewStudent.TabIndex = 11;
@@ -106,8 +106,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "adviseeViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advisee Viewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

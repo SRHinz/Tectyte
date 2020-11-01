@@ -139,6 +139,7 @@
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "studentsEnrolled";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Students Enrolled";
             this.Load += new System.EventHandler(this.studentsEnrolled_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
