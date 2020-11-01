@@ -774,6 +774,23 @@ namespace RegSystemGUI
                 }
             }
 
+			public void displaySearchCourses(CourseDatabase cData, DataGridView output, string c)
+            {
+				Course course = cData.CDatabase[c];
+				string cTitle = course.CourseTitle.Trim();
+				string instruc = course.Instructor.Trim();
+				int totS = course.TotalSeats;
+				int avS = course.AvailableSeats;
+				float cred = course.Credits;
+				int nBlocks = course.NtimeBlocks;
+				string tBlock1 = solveTimeblock(course.TimeBlock1);
+				string tBlock2 = solveTimeblock(course.TimeBlock2);
+				string tBlock3 = solveTimeblock(course.TimeBlock3);
+				string tBlock4 = solveTimeblock(course.TimeBlock4);
+				string tBlock5 = solveTimeblock(course.TimeBlock5);
+				output.Rows.Add(c, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
+			}
+
 			public void displayCourses(CourseDatabase cData, DataGridView output)
 			{
 				int counter = 0;

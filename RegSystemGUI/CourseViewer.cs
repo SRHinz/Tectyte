@@ -36,6 +36,7 @@ namespace RegSystemGUI
             FacultyCourseSelector.SelectedItem = "All Courses";
             studentsEnrolled.Hide();
             RemoveCourse.Hide();
+            searchBox.Clear();
             if (curAcc is Program.StudentAcc)
             {
                 curStuAcc = coe.uData.UDatabase[coe.CurAcc] as Program.StudentAcc;
@@ -117,6 +118,18 @@ namespace RegSystemGUI
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            CourseDataGrid.Rows.Clear();
+            foreach (string course in coeC.CDatabase.Keys)
+            {
+                if (course.Contains(searchBox.Text))
+                {
+                    regC.displaySearchCourses(coeC, CourseDataGrid, course);
+                }
+            }
         }
 
         private void CourseAdd(Program.StudentAcc student, bool admin)

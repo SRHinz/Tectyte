@@ -48,6 +48,8 @@
             this.FacultyCourseSelector = new System.Windows.Forms.ComboBox();
             this.studentsEnrolled = new System.Windows.Forms.Button();
             this.RemoveCourse = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,14 +76,13 @@
             this.tBlock3,
             this.tBlock4,
             this.tBlock5});
-            this.CourseDataGrid.Location = new System.Drawing.Point(14, 56);
-            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CourseDataGrid.Location = new System.Drawing.Point(22, 90);
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CourseDataGrid.Size = new System.Drawing.Size(1261, 817);
+            this.CourseDataGrid.Size = new System.Drawing.Size(2018, 1307);
             this.CourseDataGrid.TabIndex = 3;
             // 
             // CourseName
@@ -90,7 +91,7 @@
             this.CourseName.MinimumWidth = 6;
             this.CourseName.Name = "CourseName";
             this.CourseName.ReadOnly = true;
-            this.CourseName.Width = 123;
+            this.CourseName.Width = 188;
             // 
             // CourseTitle
             // 
@@ -98,7 +99,7 @@
             this.CourseTitle.MinimumWidth = 10;
             this.CourseTitle.Name = "CourseTitle";
             this.CourseTitle.ReadOnly = true;
-            this.CourseTitle.Width = 113;
+            this.CourseTitle.Width = 173;
             // 
             // Instructor
             // 
@@ -106,7 +107,7 @@
             this.Instructor.MinimumWidth = 6;
             this.Instructor.Name = "Instructor";
             this.Instructor.ReadOnly = true;
-            this.Instructor.Width = 96;
+            this.Instructor.Width = 146;
             // 
             // TotalSeats
             // 
@@ -114,7 +115,7 @@
             this.TotalSeats.MinimumWidth = 6;
             this.TotalSeats.Name = "TotalSeats";
             this.TotalSeats.ReadOnly = true;
-            this.TotalSeats.Width = 109;
+            this.TotalSeats.Width = 166;
             // 
             // OpenSeats
             // 
@@ -122,7 +123,7 @@
             this.OpenSeats.MinimumWidth = 6;
             this.OpenSeats.Name = "OpenSeats";
             this.OpenSeats.ReadOnly = true;
-            this.OpenSeats.Width = 112;
+            this.OpenSeats.Width = 170;
             // 
             // CreditsCol
             // 
@@ -130,7 +131,7 @@
             this.CreditsCol.MinimumWidth = 6;
             this.CreditsCol.Name = "CreditsCol";
             this.CreditsCol.ReadOnly = true;
-            this.CreditsCol.Width = 81;
+            this.CreditsCol.Width = 125;
             // 
             // tBlock1
             // 
@@ -138,7 +139,7 @@
             this.tBlock1.MinimumWidth = 6;
             this.tBlock1.Name = "tBlock1";
             this.tBlock1.ReadOnly = true;
-            this.tBlock1.Width = 118;
+            this.tBlock1.Width = 181;
             // 
             // tBlock2
             // 
@@ -146,7 +147,7 @@
             this.tBlock2.MinimumWidth = 6;
             this.tBlock2.Name = "tBlock2";
             this.tBlock2.ReadOnly = true;
-            this.tBlock2.Width = 118;
+            this.tBlock2.Width = 181;
             // 
             // tBlock3
             // 
@@ -154,7 +155,7 @@
             this.tBlock3.MinimumWidth = 6;
             this.tBlock3.Name = "tBlock3";
             this.tBlock3.ReadOnly = true;
-            this.tBlock3.Width = 118;
+            this.tBlock3.Width = 181;
             // 
             // tBlock4
             // 
@@ -162,7 +163,7 @@
             this.tBlock4.MinimumWidth = 6;
             this.tBlock4.Name = "tBlock4";
             this.tBlock4.ReadOnly = true;
-            this.tBlock4.Width = 118;
+            this.tBlock4.Width = 181;
             // 
             // tBlock5
             // 
@@ -170,14 +171,13 @@
             this.tBlock5.MinimumWidth = 6;
             this.tBlock5.Name = "tBlock5";
             this.tBlock5.ReadOnly = true;
-            this.tBlock5.Width = 118;
+            this.tBlock5.Width = 181;
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(1374, 411);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuReturn.Location = new System.Drawing.Point(2198, 658);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(332, 65);
+            this.MenuReturn.Size = new System.Drawing.Size(531, 104);
             this.MenuReturn.TabIndex = 4;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -185,10 +185,9 @@
             // 
             // AddCourseButton
             // 
-            this.AddCourseButton.Location = new System.Drawing.Point(1374, 517);
-            this.AddCourseButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddCourseButton.Location = new System.Drawing.Point(2198, 827);
             this.AddCourseButton.Name = "AddCourseButton";
-            this.AddCourseButton.Size = new System.Drawing.Size(332, 72);
+            this.AddCourseButton.Size = new System.Drawing.Size(531, 115);
             this.AddCourseButton.TabIndex = 5;
             this.AddCourseButton.Text = "Add Course";
             this.AddCourseButton.UseVisualStyleBackColor = true;
@@ -197,10 +196,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(680, 921);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(1088, 1474);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(59, 59);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -209,10 +207,9 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(710, 927);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.copyrightBox.Location = new System.Drawing.Point(1136, 1483);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(416, 15);
+            this.copyrightBox.Size = new System.Drawing.Size(666, 24);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -223,19 +220,17 @@
             this.FacultyCourseSelector.Items.AddRange(new object[] {
             "All Courses",
             "My Courses"});
-            this.FacultyCourseSelector.Location = new System.Drawing.Point(1367, 56);
-            this.FacultyCourseSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FacultyCourseSelector.Location = new System.Drawing.Point(2187, 90);
             this.FacultyCourseSelector.Name = "FacultyCourseSelector";
-            this.FacultyCourseSelector.Size = new System.Drawing.Size(164, 24);
+            this.FacultyCourseSelector.Size = new System.Drawing.Size(260, 33);
             this.FacultyCourseSelector.TabIndex = 9;
             this.FacultyCourseSelector.SelectedIndexChanged += new System.EventHandler(this.FacultyCourseSelector_SelectedIndexChanged);
             // 
             // studentsEnrolled
             // 
-            this.studentsEnrolled.Location = new System.Drawing.Point(1374, 622);
-            this.studentsEnrolled.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentsEnrolled.Location = new System.Drawing.Point(2198, 995);
             this.studentsEnrolled.Name = "studentsEnrolled";
-            this.studentsEnrolled.Size = new System.Drawing.Size(332, 72);
+            this.studentsEnrolled.Size = new System.Drawing.Size(531, 115);
             this.studentsEnrolled.TabIndex = 10;
             this.studentsEnrolled.Text = "View Enrolled Students";
             this.studentsEnrolled.UseVisualStyleBackColor = true;
@@ -243,20 +238,40 @@
             // 
             // RemoveCourse
             // 
-            this.RemoveCourse.Location = new System.Drawing.Point(1374, 726);
-            this.RemoveCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RemoveCourse.Location = new System.Drawing.Point(2198, 1162);
+            this.RemoveCourse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.RemoveCourse.Name = "RemoveCourse";
-            this.RemoveCourse.Size = new System.Drawing.Size(332, 72);
+            this.RemoveCourse.Size = new System.Drawing.Size(531, 115);
             this.RemoveCourse.TabIndex = 11;
             this.RemoveCourse.Text = "Remove Course";
             this.RemoveCourse.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Search by Course Name: ";
+            // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(278, 59);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(740, 31);
+            this.searchBox.TabIndex = 13;
+            this.searchBox.Text = "placeholder";
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            // 
             // CourseViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1584, 654);
+            this.ClientSize = new System.Drawing.Size(2534, 1046);
+            this.Controls.Add(this.searchBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.RemoveCourse);
             this.Controls.Add(this.studentsEnrolled);
             this.Controls.Add(this.FacultyCourseSelector);
@@ -266,7 +281,6 @@
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.CourseDataGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CourseViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Courses";
@@ -299,5 +313,7 @@
         private System.Windows.Forms.ComboBox FacultyCourseSelector;
         private System.Windows.Forms.Button studentsEnrolled;
         private System.Windows.Forms.Button RemoveCourse;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox searchBox;
     }
 }
