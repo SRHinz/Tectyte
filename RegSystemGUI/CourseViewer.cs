@@ -35,6 +35,7 @@ namespace RegSystemGUI
             curAcc = coe.uData.UDatabase[coe.CurAcc];
             FacultyCourseSelector.SelectedItem = "All Courses";
             studentsEnrolled.Hide();
+            RemoveCourse.Hide();
             if (curAcc is Program.StudentAcc)
             {
                 curStuAcc = coe.uData.UDatabase[coe.CurAcc] as Program.StudentAcc;
@@ -50,6 +51,7 @@ namespace RegSystemGUI
             else if (curAcc is Program.AdminAcc)
             {
                 AddCourseButton.Show();
+                RemoveCourse.Show();
 
             }
             term = coe.NexTerm;
