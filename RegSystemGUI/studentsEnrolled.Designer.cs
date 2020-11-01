@@ -31,13 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentsEnrolled));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
-            this.enrolledStudentList = new System.Windows.Forms.ListView();
             this.MenuReturn = new System.Windows.Forms.Button();
             this.courseReturn = new System.Windows.Forms.Button();
             this.noEnrolledBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.courseBox = new System.Windows.Forms.TextBox();
+            this.enrolledStudentDatagrid = new System.Windows.Forms.DataGridView();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrolledStudentDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -60,18 +64,6 @@
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // enrolledStudentList
-            // 
-            this.enrolledStudentList.HideSelection = false;
-            this.enrolledStudentList.Location = new System.Drawing.Point(50, 45);
-            this.enrolledStudentList.Margin = new System.Windows.Forms.Padding(5);
-            this.enrolledStudentList.MultiSelect = false;
-            this.enrolledStudentList.Name = "enrolledStudentList";
-            this.enrolledStudentList.Size = new System.Drawing.Size(535, 679);
-            this.enrolledStudentList.TabIndex = 11;
-            this.enrolledStudentList.UseCompatibleStateImageBehavior = false;
-            this.enrolledStudentList.View = System.Windows.Forms.View.List;
             // 
             // MenuReturn
             // 
@@ -124,17 +116,60 @@
             this.courseBox.TabIndex = 16;
             this.courseBox.Text = "placeholder";
             // 
+            // enrolledStudentDatagrid
+            // 
+            this.enrolledStudentDatagrid.AllowUserToAddRows = false;
+            this.enrolledStudentDatagrid.AllowUserToDeleteRows = false;
+            this.enrolledStudentDatagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.enrolledStudentDatagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.enrolledStudentDatagrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.enrolledStudentDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.enrolledStudentDatagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LastName,
+            this.FirstName,
+            this.Username});
+            this.enrolledStudentDatagrid.Location = new System.Drawing.Point(50, 44);
+            this.enrolledStudentDatagrid.Margin = new System.Windows.Forms.Padding(5);
+            this.enrolledStudentDatagrid.Name = "enrolledStudentDatagrid";
+            this.enrolledStudentDatagrid.ReadOnly = true;
+            this.enrolledStudentDatagrid.RowHeadersWidth = 4;
+            this.enrolledStudentDatagrid.RowTemplate.Height = 24;
+            this.enrolledStudentDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.enrolledStudentDatagrid.Size = new System.Drawing.Size(539, 679);
+            this.enrolledStudentDatagrid.TabIndex = 24;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.MinimumWidth = 6;
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.MinimumWidth = 6;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
             // studentsEnrolled
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 836);
+            this.Controls.Add(this.enrolledStudentDatagrid);
             this.Controls.Add(this.courseBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.noEnrolledBox);
             this.Controls.Add(this.courseReturn);
             this.Controls.Add(this.MenuReturn);
-            this.Controls.Add(this.enrolledStudentList);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -143,6 +178,7 @@
             this.Text = "Students Enrolled";
             this.Load += new System.EventHandler(this.studentsEnrolled_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enrolledStudentDatagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,11 +188,14 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
-        private System.Windows.Forms.ListView enrolledStudentList;
         private System.Windows.Forms.Button MenuReturn;
         private System.Windows.Forms.Button courseReturn;
         private System.Windows.Forms.TextBox noEnrolledBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox courseBox;
+        private System.Windows.Forms.DataGridView enrolledStudentDatagrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
     }
 }

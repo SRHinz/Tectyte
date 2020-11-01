@@ -23,9 +23,9 @@ namespace RegSystemGUI
             noEnrolledBox.Hide();
             foreach (string student in courseData.CDatabase[course].EnrolledStudents)
             {
-                enrolledStudentList.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
+                enrolledStudentDatagrid.Rows.Add(coe.uData.UDatabase[student].UserName, coe.uData.UDatabase[student].FName, coe.uData.UDatabase[student].LName);
             }
-            if (enrolledStudentList.Items.Count == 0)
+            if (enrolledStudentDatagrid.Rows.Count == 0)
             {
                 noEnrolledBox.Show();
             }
