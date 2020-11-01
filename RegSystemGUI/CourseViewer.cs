@@ -125,7 +125,7 @@ namespace RegSystemGUI
             CourseDataGrid.Rows.Clear();
             foreach (string course in coeC.CDatabase.Keys)
             {
-                if (course.Contains(searchBox.Text))
+                if (course.Contains(searchBox.Text.ToUpper()))
                 {
                     regC.displaySearchCourses(coeC, CourseDataGrid, course);
                 }
