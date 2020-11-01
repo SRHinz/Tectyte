@@ -51,20 +51,7 @@ namespace RegSystemGUI
 
         private void TermSelectorBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TermSelectorBox.SelectedItem.ToString() == "--select--")
-            {
-                DropButton.Visible = false;
-                warningBox.Visible = false;
-                warningBox2.Visible = false;
-                courseSchedule.Visible = false;
-                CourseDataGrid.Visible = true;
-                GPABox.Visible = false;
-                CreditsEarnedBox.Visible = false;
-                GPALabel.Visible = false;
-                NumCreditsEarnedLabel.Visible = false;
-                CourseDataGrid.Rows.Clear();
-            }
-            else if (TermSelectorBox.SelectedItem.ToString() == "Course History")
+            if (TermSelectorBox.SelectedItem.ToString() == "Course History")
             {
                 DropButton.Visible = false;
                 warningBox.Visible = false;
@@ -90,15 +77,15 @@ namespace RegSystemGUI
                 DropButton.Visible = true;
                 warningBox.Visible = false;
                 warningBox2.Visible = false;
-                courseSchedule.Visible = true;
-                CourseDataGrid.Visible = false;
+                courseSchedule.Visible = false;
+                CourseDataGrid.Visible = true;
                 GPABox.Visible = false;
                 CreditsEarnedBox.Visible = false;
                 GPALabel.Visible = false;
                 NumCreditsEarnedLabel.Visible = false;
-                courseSchedule.Rows.Clear();
-                vCourses.displayStuHist(account, courseSchedule, "Current", currentTerm, cData);
-                if (courseSchedule.Rows.Count == 0)
+                CourseDataGrid.Rows.Clear();
+                vCourses.displayStuHist(account, CourseDataGrid, "Current", currentTerm, cData);
+                if (CourseDataGrid.Rows.Count == 0)
                 {
                     warningBox.Show();
                     DropButton.Hide();

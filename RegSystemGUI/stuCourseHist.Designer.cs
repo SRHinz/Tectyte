@@ -80,7 +80,6 @@ namespace RegSystemGUI
             // 
             this.TermSelectorBox.FormattingEnabled = true;
             this.TermSelectorBox.Items.AddRange(new object[] {
-            "--select--",
             "Course History",
             "Current Courses",
             "Future Courses"});
