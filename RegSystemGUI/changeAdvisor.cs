@@ -23,11 +23,11 @@ namespace RegSystemGUI
             {
                 if (COE.uData.UDatabase[acc].Status != "faculty" && COE.uData.UDatabase[acc].Status != "admin")
                 {
-                    studentList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
+                    studentDatagrid.Rows.Add(COE.uData.UDatabase[acc].LName, COE.uData.UDatabase[acc].FName, COE.uData.UDatabase[acc].UserName);
                 }
                 else if (COE.uData.UDatabase[acc].Status == "faculty")
                 {
-                    facultyList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
+                    facultyDatagrid.Rows.Add(COE.uData.UDatabase[acc].LName, COE.uData.UDatabase[acc].FName, COE.uData.UDatabase[acc].UserName);
                 }
             }
             studentSearchBox.Clear();
@@ -47,7 +47,7 @@ namespace RegSystemGUI
 
         private void studentSearchBox_TextChanged(object sender, EventArgs e)
         {
-            studentList.Items.Clear();
+            studentDatagrid.Rows.Clear();
             foreach (string acc in COE.uData.UDatabase.Keys)
             {
                 if (COE.uData.UDatabase[acc].Status != "faculty" && COE.uData.UDatabase[acc].Status != "admin")
@@ -55,9 +55,9 @@ namespace RegSystemGUI
                     string accLName = COE.uData.UDatabase[acc].LName.ToLower();
                     if (accLName.Contains(studentSearchBox.Text.ToLower()))
                     {
-                        studentList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
+                        studentDatagrid.Rows.Add(COE.uData.UDatabase[acc].LName, COE.uData.UDatabase[acc].FName, COE.uData.UDatabase[acc].UserName);
                     }
-                    
+
                 }
             }
 
@@ -65,7 +65,7 @@ namespace RegSystemGUI
 
         private void facultySearchBox_TextChanged(object sender, EventArgs e)
         {
-            facultyList.Items.Clear();
+            facultyDatagrid.Rows.Clear();
             foreach (string acc in COE.uData.UDatabase.Keys)
             {
                 if (COE.uData.UDatabase[acc].Status == "faculty")
@@ -73,7 +73,7 @@ namespace RegSystemGUI
                     string accLName = COE.uData.UDatabase[acc].LName.ToLower();
                     if (accLName.Contains(facultySearchBox.Text.ToLower()))
                     {
-                        facultyList.Items.Add((COE.uData.UDatabase[acc].UserName + " | " + COE.uData.UDatabase[acc].FName + " " + COE.uData.UDatabase[acc].LName));
+                        facultyDatagrid.Rows.Add(COE.uData.UDatabase[acc].LName, COE.uData.UDatabase[acc].FName, COE.uData.UDatabase[acc].UserName);
                     }
 
                 }
