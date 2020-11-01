@@ -19,9 +19,11 @@ namespace RegSystemGUI
         private CourseViewer cV;
         private adviseeViewer adView;
         private changeAdvisor adChange;
+        private AccountSelector AS;
         public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW, Login loginform)
         {
             InitializeComponent();
+            AS = new AccountSelector(ref coe.uData);
             login = loginform;
             COE = coe;
             aType = accountType;
@@ -87,10 +89,10 @@ namespace RegSystemGUI
 
         private void AdminStuHis_Click(object sender, EventArgs e)
         {
-            AccountSelector AS = new AccountSelector(ref COE.uData, "S");
+            AS.DisplayStudentAccounts();
             AS.ShowDialog();
-            curAcc = COE.uData.UDatabase[AS.getAccount()] as Program.StudentAcc;
-            stuCourseHist cH = new stuCourseHist(ref curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
+            Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
+            stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
             this.Hide();
             cH.Show();
         }
@@ -121,9 +123,21 @@ namespace RegSystemGUI
 
         private void CourseHisButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            stuCourseHist cH = new stuCourseHist(ref curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this );
-            cH.Show();
+            if (aType == "admin")
+            {
+                AS.DisplayStudentAccounts();
+                AS.ShowDialog();
+                Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
+                this.Hide();
+                stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
+                cH.Show();
+            }
+            else
+            {
+                this.Hide();
+                stuCourseHist cH = new stuCourseHist(ref curAcc, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
+                cH.Show();
+            }
         }
     }
 }

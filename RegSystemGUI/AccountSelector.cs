@@ -14,19 +14,27 @@ namespace RegSystemGUI
     {
 
         private Program.UserDatabase coeData;
-        private string accountType, username;
-        private bool accountChosen = false;
+        private string accountType = "S";
+        private string username;
 
+
+        public AccountSelector(ref Program.UserDatabase uData)
+        {
+            coeData = uData;
+            InitializeComponent();
+            DisplayAccounts();
+        }
 
         public AccountSelector(ref Program.UserDatabase uData, string type)
         {
             coeData = uData;
             accountType = type;
             InitializeComponent();
+            DisplayAccounts();
         }
 
 
-        private void AccountSelector_Load(object sender, EventArgs e)
+        private void DisplayAccounts()
         {
             foreach (KeyValuePair<string, Program.Account> account in coeData.UDatabase)
             {
@@ -38,6 +46,21 @@ namespace RegSystemGUI
             }
 
         }
+
+        public void DisplayStudentAccounts()
+        {
+            AccountDataGrid.Rows.Clear();
+            accountType = "S";
+            DisplayAccounts();
+        }
+
+        public void DisplayFacultyAccounts()
+        {
+            AccountDataGrid.Rows.Clear();
+            accountType = "F";
+            DisplayAccounts();
+        }
+
 
         public string getAccount()
         {
@@ -55,12 +78,12 @@ namespace RegSystemGUI
                 {
                     if (accountType == "S" && account.Value is Program.StudentAcc)
                     {
-                        if (textBox1.Text == account.Value.LName.Substring(0, length))
+                        if (textBox1.Text.ToLower() == account.Value.LName.Substring(0, length).ToLower())
                             AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
                     }
                     else if (accountType == "F" && account.Value is Program.FacultyAcc)
                     {
-                        if (textBox1.Text == account.Value.LName.Substring(0, length))
+                        if (textBox1.Text.ToLower() == account.Value.LName.Substring(0, length).ToLower())
                             AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
                     }
                 }
