@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseSelector));
             this.courseModifierView = new System.Windows.Forms.DataGridView();
-            this.searchBar = new System.Windows.Forms.TextBox();
-            this.delCourse = new System.Windows.Forms.Button();
-            this.editCourse = new System.Windows.Forms.Button();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +41,13 @@
             this.TB3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TB4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TB5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchBar = new System.Windows.Forms.TextBox();
+            this.delCourse = new System.Windows.Forms.Button();
+            this.editCourse = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.copyrightBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.courseModifierView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // courseModifierView
@@ -61,40 +65,14 @@
             this.TB3,
             this.TB4,
             this.TB5});
-            this.courseModifierView.Location = new System.Drawing.Point(12, 12);
+            this.courseModifierView.Location = new System.Drawing.Point(11, 106);
+            this.courseModifierView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.courseModifierView.Name = "courseModifierView";
             this.courseModifierView.RowHeadersWidth = 123;
             this.courseModifierView.RowTemplate.Height = 46;
-            this.courseModifierView.Size = new System.Drawing.Size(2091, 810);
+            this.courseModifierView.Size = new System.Drawing.Size(1321, 547);
             this.courseModifierView.TabIndex = 0;
             this.courseModifierView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // searchBar
-            // 
-            this.searchBar.BackColor = System.Drawing.SystemColors.Window;
-            this.searchBar.Location = new System.Drawing.Point(2130, 13);
-            this.searchBar.Name = "searchBar";
-            this.searchBar.Size = new System.Drawing.Size(443, 44);
-            this.searchBar.TabIndex = 1;
-            this.searchBar.Text = "Search...";
-            // 
-            // delCourse
-            // 
-            this.delCourse.Location = new System.Drawing.Point(2180, 495);
-            this.delCourse.Name = "delCourse";
-            this.delCourse.Size = new System.Drawing.Size(351, 113);
-            this.delCourse.TabIndex = 2;
-            this.delCourse.Text = "Delete Course";
-            this.delCourse.UseVisualStyleBackColor = true;
-            // 
-            // editCourse
-            // 
-            this.editCourse.Location = new System.Drawing.Point(2180, 653);
-            this.editCourse.Name = "editCourse";
-            this.editCourse.Size = new System.Drawing.Size(351, 114);
-            this.editCourse.TabIndex = 3;
-            this.editCourse.Text = "Edit Course";
-            this.editCourse.UseVisualStyleBackColor = true;
             // 
             // CourseName
             // 
@@ -184,18 +162,77 @@
             this.TB5.ReadOnly = true;
             this.TB5.Width = 300;
             // 
+            // searchBar
+            // 
+            this.searchBar.BackColor = System.Drawing.SystemColors.Window;
+            this.searchBar.Location = new System.Drawing.Point(211, 71);
+            this.searchBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchBar.Name = "searchBar";
+            this.searchBar.Size = new System.Drawing.Size(281, 31);
+            this.searchBar.TabIndex = 1;
+            this.searchBar.Text = "Search...";
+            // 
+            // delCourse
+            // 
+            this.delCourse.Location = new System.Drawing.Point(1377, 334);
+            this.delCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delCourse.Name = "delCourse";
+            this.delCourse.Size = new System.Drawing.Size(222, 76);
+            this.delCourse.TabIndex = 2;
+            this.delCourse.Text = "Delete Course";
+            this.delCourse.UseVisualStyleBackColor = true;
+            // 
+            // editCourse
+            // 
+            this.editCourse.Location = new System.Drawing.Point(1377, 441);
+            this.editCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editCourse.Name = "editCourse";
+            this.editCourse.Size = new System.Drawing.Size(222, 77);
+            this.editCourse.TabIndex = 3;
+            this.editCourse.Text = "Edit Course";
+            this.editCourse.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(579, 689);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // copyrightBox
+            // 
+            this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
+            this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.copyrightBox.Location = new System.Drawing.Point(611, 697);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5);
+            this.copyrightBox.Name = "copyrightBox";
+            this.copyrightBox.Size = new System.Drawing.Size(443, 24);
+            this.copyrightBox.TabIndex = 14;
+            this.copyrightBox.Text = "this software is property of tectyte ©2020";
+            this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // CourseSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2585, 836);
+            this.ClientSize = new System.Drawing.Size(1633, 735);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.editCourse);
             this.Controls.Add(this.delCourse);
             this.Controls.Add(this.searchBar);
             this.Controls.Add(this.courseModifierView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CourseSelector";
-            this.Text = "CourseSelector";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Course Selector";
             ((System.ComponentModel.ISupportInitialize)(this.courseModifierView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +255,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TB3;
         private System.Windows.Forms.DataGridViewTextBoxColumn TB4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TB5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox copyrightBox;
     }
 }
