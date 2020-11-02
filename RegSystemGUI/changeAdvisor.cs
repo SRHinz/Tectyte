@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -76,6 +77,57 @@ namespace RegSystemGUI
                         facultyDatagrid.Rows.Add(COE.uData.UDatabase[acc].LName, COE.uData.UDatabase[acc].FName, COE.uData.UDatabase[acc].UserName);
                     }
 
+                }
+            }
+        }
+
+        private void changeA()
+        {
+            int stuLoc = studentDatagrid.CurrentCell.RowIndex;
+            string curStudent = studentDatagrid.Rows[stuLoc].Cells[2].ToString();
+            int facLoc = facultyDatagrid.CurrentCell.RowIndex;
+            string newAdvisor = facultyDatagrid.Rows[facLoc].Cells[2].ToString();
+
+            foreach (string acc in COE.uData.UDatabase.Keys)
+            {
+                if (COE.uData.UDatabase[acc].Status == "faculty")
+                {
+                    if (newAdvisor == acc)
+                    {
+                        if ((COE.uData.UDatabase[acc] as Program.FacultyAcc).Advisees.Contains(curStudent))
+                        {
+                            throw new Exception("Current Advisor");
+                        }
+                        (COE.uData.UDatabase[acc] as Program.FacultyAcc).addAdvisee(curStudent);
+                    }
+                    else
+                    {
+                        if ((COE.uData.UDatabase[acc] as Program.FacultyAcc).Advisees.Contains(curStudent))
+                        {
+                            (COE.uData.UDatabase[acc] as Program.FacultyAcc).Advisees.Remove(curStudent);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void changeAdv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                changeA();
+            }
+            catch (Exception f)
+            {
+                string eMsg = f.ToString();
+                if (eMsg.Contains("Current Advisor"))
+                {
+                    MessageBox.Show("Cannot change advisor to current advisor.");
+                }
+                else
+                {
+                    MessageBox.Show(eMsg);
                 }
             }
         }

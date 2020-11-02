@@ -68,6 +68,7 @@
             this.changeAdv.TabIndex = 16;
             this.changeAdv.Text = "Change Student Advisor";
             this.changeAdv.UseVisualStyleBackColor = true;
+            this.changeAdv.Click += new System.EventHandler(this.changeAdv_Click);
             // 
             // searchStudents
             // 
