@@ -24,39 +24,32 @@ namespace RegSystemGUI
         {
             if (type == "C")
             {
-                CourseSelector CS = new CourseSelector(ref COE);
-                CS.ShowDialog();
-                (string, string) ret = CS.getOptionandCourse;
-                if (ret.Item1 == "D")
-                {
-                    //call the remove course function of the courseDatabase
-                }
-                else if (ret.Item1 == "E")
-                {
-                    //create a new instance of the editCourse form, and then show dialog of that. 
-                }
+
             }
             else if (type == "S" | type == "F")
             {
                 AccountSelector AS = new AccountSelector(ref COE.uData, type);
                 AS.ShowDialog();
                 string selected = AS.getAccount();
-                DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (selected != null)
                 {
-                    if (type == "S")
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
                     {
-                        COE.uData.RemoveUser(ref COE.cData, COE.uData.UDatabase[selected] as Program.StudentAcc, COE.NexTerm);
+                        if (type == "S")
+                        {
+                            //Student deletion code
+                        }
+                        else
+                        {
+                            //Faculty Deletion Code
+                        }
+                        status = DialogResult.OK;
                     }
                     else
                     {
-                        COE.uData.RemoveUser(ref COE.cData, COE.uData.UDatabase[selected] as Program.FacultyAcc, COE.NexTerm);
+                        status = DialogResult.Cancel;
                     }
-                    status = DialogResult.OK;
-                }
-                else
-                {
-                    status = DialogResult.Cancel;
                 }
 
             }

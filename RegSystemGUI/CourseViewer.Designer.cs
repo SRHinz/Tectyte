@@ -48,7 +48,7 @@
             this.FacultyCourseSelector = new System.Windows.Forms.ComboBox();
             this.studentsEnrolled = new System.Windows.Forms.Button();
             this.RemoveCourse = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.searchLabel = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -239,25 +239,25 @@
             // RemoveCourse
             // 
             this.RemoveCourse.Location = new System.Drawing.Point(2198, 1162);
-            this.RemoveCourse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RemoveCourse.Margin = new System.Windows.Forms.Padding(6);
             this.RemoveCourse.Name = "RemoveCourse";
             this.RemoveCourse.Size = new System.Drawing.Size(531, 115);
             this.RemoveCourse.TabIndex = 11;
             this.RemoveCourse.Text = "Remove Course";
             this.RemoveCourse.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // searchLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 25);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Search by Course Name: ";
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(22, 59);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(258, 25);
+            this.searchLabel.TabIndex = 12;
+            this.searchLabel.Text = "Search by Course Name: ";
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(278, 59);
+            this.searchBox.Location = new System.Drawing.Point(286, 56);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(740, 31);
             this.searchBox.TabIndex = 13;
@@ -271,7 +271,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(2534, 1046);
             this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.RemoveCourse);
             this.Controls.Add(this.studentsEnrolled);
             this.Controls.Add(this.FacultyCourseSelector);
@@ -313,7 +313,7 @@
         private System.Windows.Forms.ComboBox FacultyCourseSelector;
         private System.Windows.Forms.Button studentsEnrolled;
         private System.Windows.Forms.Button RemoveCourse;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchBox;
     }
 }

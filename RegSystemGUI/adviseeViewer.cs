@@ -27,6 +27,17 @@ namespace RegSystemGUI
             COE = coe;
         }
 
+        public adviseeViewer(ref Program.RegistrationSystem coe, Options menu, Program.Account account)
+        {
+            InitializeComponent();
+            Menu = menu;
+            foreach (string student in (coe.uData.UDatabase[account.UserName] as Program.FacultyAcc).Advisees)
+            {
+                listView1.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
+            }
+            COE = coe;
+        }
+
         private void MenuReturn_Click(object sender, EventArgs e)
         {
             this.Close();
