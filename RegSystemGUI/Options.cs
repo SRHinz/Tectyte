@@ -75,9 +75,21 @@ namespace RegSystemGUI
 
         private void viewAdvisees_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            adView = new adviseeViewer(ref COE, this);
-            adView.Show();
+            if (aType == "admin")
+            {
+                AS.DisplayFacultyAccounts();
+                AS.ShowDialog();
+                Program.FacultyAcc facultyAcc = (Program.FacultyAcc)COE.uData.UDatabase[AS.getAccount()];
+                this.Hide();
+                adView = new adviseeViewer(ref COE, this, facultyAcc);
+                adView.Show();
+            }
+            else
+            {
+                this.Hide();
+                adView = new adviseeViewer(ref COE, this);
+                adView.Show();
+            }
         }
 
         private void changeAdvisor_Click(object sender, EventArgs e)
