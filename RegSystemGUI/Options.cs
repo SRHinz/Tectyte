@@ -79,10 +79,13 @@ namespace RegSystemGUI
             {
                 AS.DisplayFacultyAccounts();
                 AS.ShowDialog();
-                Program.FacultyAcc facultyAcc = (Program.FacultyAcc)COE.uData.UDatabase[AS.getAccount()];
-                this.Hide();
-                adView = new adviseeViewer(ref COE, this, facultyAcc);
-                adView.Show();
+                if (AS.getAccount() != null)
+                {
+                    Program.FacultyAcc facultyAcc = (Program.FacultyAcc)COE.uData.UDatabase[AS.getAccount()];
+                    this.Hide();
+                    adView = new adviseeViewer(ref COE, this, facultyAcc);
+                    adView.Show();
+                }
             }
             else
             {
@@ -103,10 +106,13 @@ namespace RegSystemGUI
         {
             AS.DisplayStudentAccounts();
             AS.ShowDialog();
-            Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
-            stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
-            this.Hide();
-            cH.Show();
+            if (AS.getAccount() != null)
+            {
+                Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
+                stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
+                this.Hide();
+                cH.Show();
+            }
         }
 
         private void SysMod_Click(object sender, EventArgs e)

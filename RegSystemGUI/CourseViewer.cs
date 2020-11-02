@@ -75,8 +75,15 @@ namespace RegSystemGUI
                 AS.DisplayFacultyAccounts();
                 CourseDataGrid.Rows.Clear();
                 AS.ShowDialog();
-                regC.displayFacultyCourses(coeC, CourseDataGrid, AS.getAccount());
-                studentsEnrolled.Show();
+                if (AS.getAccount() != null)
+                {
+                    regC.displayFacultyCourses(coeC, CourseDataGrid, AS.getAccount());
+                    studentsEnrolled.Show();
+                }
+                else
+                {
+                    FacultyCourseSelector.SelectedIndex = 0;
+                }
             }    
         }
 
