@@ -69,6 +69,8 @@ namespace RegSystemGUI
             }
             else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
             {
+                searchBox.Visible = false;
+                searchLabel.Visible = false;
                 AccountSelector AS = new AccountSelector(ref COE.uData);
                 AS.DisplayFacultyAccounts();
                 CourseDataGrid.Rows.Clear();
