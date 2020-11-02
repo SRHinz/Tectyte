@@ -325,7 +325,7 @@ namespace RegSystemGUI
 				}
 			}
 
-			public void RemoveUser(CourseDatabase cData, Account user, string nTerm)
+			public void RemoveUser(ref CourseDatabase cData, Account user, string nTerm)
             {
 				if (user is StudentAcc)
                 {

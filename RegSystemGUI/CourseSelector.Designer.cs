@@ -65,12 +65,12 @@
             this.TB3,
             this.TB4,
             this.TB5});
-            this.courseModifierView.Location = new System.Drawing.Point(11, 106);
-            this.courseModifierView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.courseModifierView.Location = new System.Drawing.Point(6, 55);
+            this.courseModifierView.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.courseModifierView.Name = "courseModifierView";
             this.courseModifierView.RowHeadersWidth = 123;
             this.courseModifierView.RowTemplate.Height = 46;
-            this.courseModifierView.Size = new System.Drawing.Size(1321, 547);
+            this.courseModifierView.Size = new System.Drawing.Size(660, 284);
             this.courseModifierView.TabIndex = 0;
             this.courseModifierView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -165,40 +165,42 @@
             // searchBar
             // 
             this.searchBar.BackColor = System.Drawing.SystemColors.Window;
-            this.searchBar.Location = new System.Drawing.Point(211, 71);
-            this.searchBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchBar.Location = new System.Drawing.Point(106, 37);
+            this.searchBar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.searchBar.Name = "searchBar";
-            this.searchBar.Size = new System.Drawing.Size(281, 31);
+            this.searchBar.Size = new System.Drawing.Size(142, 20);
             this.searchBar.TabIndex = 1;
             this.searchBar.Text = "Search...";
             // 
             // delCourse
             // 
-            this.delCourse.Location = new System.Drawing.Point(1377, 334);
-            this.delCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delCourse.Location = new System.Drawing.Point(688, 174);
+            this.delCourse.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.delCourse.Name = "delCourse";
-            this.delCourse.Size = new System.Drawing.Size(222, 76);
+            this.delCourse.Size = new System.Drawing.Size(111, 40);
             this.delCourse.TabIndex = 2;
             this.delCourse.Text = "Delete Course";
             this.delCourse.UseVisualStyleBackColor = true;
+            this.delCourse.Click += new System.EventHandler(this.DelCourseClick);
             // 
             // editCourse
             // 
-            this.editCourse.Location = new System.Drawing.Point(1377, 441);
-            this.editCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editCourse.Location = new System.Drawing.Point(688, 229);
+            this.editCourse.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.editCourse.Name = "editCourse";
-            this.editCourse.Size = new System.Drawing.Size(222, 77);
+            this.editCourse.Size = new System.Drawing.Size(111, 40);
             this.editCourse.TabIndex = 3;
             this.editCourse.Text = "Edit Course";
             this.editCourse.UseVisualStyleBackColor = true;
+            this.editCourse.Click += new System.EventHandler(this.EditCourseClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(579, 689);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Location = new System.Drawing.Point(290, 358);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(20, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -207,19 +209,19 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(611, 697);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5);
+            this.copyrightBox.Location = new System.Drawing.Point(306, 362);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(443, 24);
+            this.copyrightBox.Size = new System.Drawing.Size(222, 13);
             this.copyrightBox.TabIndex = 14;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // CourseSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1633, 735);
+            this.ClientSize = new System.Drawing.Size(802, 382);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.editCourse);
@@ -227,7 +229,7 @@
             this.Controls.Add(this.searchBar);
             this.Controls.Add(this.courseModifierView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "CourseSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Selector";

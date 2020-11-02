@@ -24,7 +24,17 @@ namespace RegSystemGUI
         {
             if (type == "C")
             {
-
+                CourseSelector CS = new CourseSelector(ref COE);
+                CS.ShowDialog();
+                (string, string) ret = CS.getOptionandCourse;
+                if (ret.Item1 == "D")
+                {
+                    //call the remove course function of the courseDatabase
+                }
+                else if (ret.Item1 == "E")
+                {
+                    //create a new instance of the editCourse form, and then show dialog of that. 
+                }
             }
             else if (type == "S" | type == "F")
             {
@@ -36,11 +46,11 @@ namespace RegSystemGUI
                 {
                     if (type == "S")
                     {
-                        //Student deletion code
+                        COE.uData.RemoveUser(ref COE.cData, COE.uData.UDatabase[selected] as Program.StudentAcc, COE.NexTerm);
                     }
                     else
                     {
-                        //Faculty Deletion Code
+                        COE.uData.RemoveUser(ref COE.cData, COE.uData.UDatabase[selected] as Program.FacultyAcc, COE.NexTerm);
                     }
                     status = DialogResult.OK;
                 }
