@@ -101,5 +101,10 @@ namespace RegSystemGUI
             username = AccountDataGrid.Rows[AccountDataGrid.CurrentCell.RowIndex].Cells[2].Value.ToString().Trim();
             this.Close();
         }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

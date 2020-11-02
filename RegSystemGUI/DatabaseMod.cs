@@ -24,6 +24,9 @@ namespace RegSystemGUI
         {
             if (type == "C")
             {
+                CourseSelector CS = new CourseSelector(ref COE);
+                CS.ShowDialog();
+                (string, string) ret = CS.getOptionandCourse;
 
             }
             else if (type == "S" | type == "F")
@@ -31,22 +34,25 @@ namespace RegSystemGUI
                 AccountSelector AS = new AccountSelector(ref COE.uData, type);
                 AS.ShowDialog();
                 string selected = AS.getAccount();
-                DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (selected != null)
                 {
-                    if (type == "S")
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
                     {
-                        //Student deletion code
+                        if (type == "S")
+                        {
+                            COE.uData.RemoveUser(ref COE.cData, COE.uData.UDatabase[selected.Trim()] as Program.StudentAcc, COE.NexTerm);
+                        }
+                        else
+                        {
+                            COE.uData.RemoveUser(ref COE.cData, COE.uData.UDatabase[selected.Trim()] as Program.FacultyAcc, COE.NexTerm);
+                        }
+                        status = DialogResult.OK;
                     }
                     else
                     {
-                        //Faculty Deletion Code
+                        status = DialogResult.Cancel;
                     }
-                    status = DialogResult.OK;
-                }
-                else
-                {
-                    status = DialogResult.Cancel;
                 }
 
             }
