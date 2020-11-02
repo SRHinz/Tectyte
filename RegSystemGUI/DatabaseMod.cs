@@ -31,22 +31,25 @@ namespace RegSystemGUI
                 AccountSelector AS = new AccountSelector(ref COE.uData, type);
                 AS.ShowDialog();
                 string selected = AS.getAccount();
-                DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (selected != null)
                 {
-                    if (type == "S")
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
                     {
-                        //Student deletion code
+                        if (type == "S")
+                        {
+                            //Student deletion code
+                        }
+                        else
+                        {
+                            //Faculty Deletion Code
+                        }
+                        status = DialogResult.OK;
                     }
                     else
                     {
-                        //Faculty Deletion Code
+                        status = DialogResult.Cancel;
                     }
-                    status = DialogResult.OK;
-                }
-                else
-                {
-                    status = DialogResult.Cancel;
                 }
 
             }
