@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms.VisualStyles;
+using System.Security.Cryptography;
 
 namespace RegSystemGUI
 {
@@ -324,6 +325,43 @@ namespace RegSystemGUI
 				}
 			}
 
+			public void RemoveUser(CourseDatabase cData, Account user, string nTerm)
+            {
+				if (user is StudentAcc)
+                {
+					StudentAcc stuUser = user as StudentAcc;
+					foreach (sHistory c in stuUser.CHistory)
+                    {
+						if (c.Grade == "N" & c.Term == nTerm)
+                        {
+							cData.CDatabase[c.Course.Trim()].unenrollStudent(stuUser.UserName);					//Unenrolls the student from all courses they were registered for next semester
+                        }
+                    }
+					(uDatabase[stuUser.Status.Trim()] as FacultyAcc).removeAdvisee(stuUser.UserName);			//Removes the student from their advisor's advisee list
+					uDatabase.Remove(stuUser.UserName);															//Removes the student and their login information from the system
+					//Student removal code
+                }
+				else if (user is FacultyAcc)
+                {
+					FacultyAcc facUser = user as FacultyAcc;
+					foreach (KeyValuePair<string, Course> C in cData.CDatabase)
+                    {
+						if (C.Value.Instructor == facUser.UserName)
+                        {
+							C.Value.changeInstructor("Staff");													//This will change any courses that the faculty is teaching to have "staff" as the instructor
+                        }
+                    }
+					foreach (KeyValuePair<string, Account> Acc in uDatabase)
+					{
+						if (Acc.Value.Status == facUser.UserName)													
+                        {
+							Acc.Value.Status = "Staff";															//Checks through all accounts with a status equal to the faculty's username, which means the only matches should be the student accounts with this faculty as their advisor
+                        }
+					}
+					uDatabase.Remove(facUser.UserName);															//Removes the faculty from the system
+					//Faculty Removal Code
+                }
+            }
 
 		}
 
@@ -335,7 +373,7 @@ namespace RegSystemGUI
 			private string fName;
 			private string mName;
 			private string lName;
-			public string Status { get => status; }
+			public string Status { get => status; set => status = value; }
 			public string UserName { get => userName; }
 			public string Password { get => password; }
             public string FName { get => fName; }
@@ -349,7 +387,7 @@ namespace RegSystemGUI
 				fName = args[2];
 				mName = args[3];
 				lName = args[4];
-				status = args[5];
+				status = args[5].Trim();
 			}
 
 			public string getAccount()
@@ -603,7 +641,7 @@ namespace RegSystemGUI
 			public Course(string[] args)
 			{
 				courseTitle = args[0];
-				instructor = args[1];
+				instructor = args[1].Trim();
 				totalSeats = Convert.ToInt32(args[3]);
 				availableSeats = Convert.ToInt32(args[3]);
 				credits = Convert.ToSingle(args[2]);
@@ -648,6 +686,11 @@ namespace RegSystemGUI
             {
 				enrolledStudents.Remove(student);
 				availableSeats++;
+            }
+
+			public void changeInstructor(string newInstructor)
+            {
+				instructor = newInstructor;
             }
 
 		}
