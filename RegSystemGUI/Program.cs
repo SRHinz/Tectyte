@@ -308,16 +308,23 @@ namespace RegSystemGUI
 
 			public string authenticateUser(string userName, string Password)
 			{
-				if (UDatabase.ContainsKey(userName) & UDatabase[userName].Password == Password)
+				if (UDatabase.ContainsKey(userName))
 				{
-					if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+					if (UDatabase[userName].Password == Password)
 					{
-						return "student";
+						if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+						{
+							return "student";
+						}
+						else
+						{
+							return UDatabase[userName].Status;
+						}
 					}
-					else
-					{
-						return UDatabase[userName].Status;
-					}
+                    else
+                    {
+						return "Failed";
+                    }
 				}
 				else
 				{
