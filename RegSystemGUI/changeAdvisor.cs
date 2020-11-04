@@ -81,7 +81,7 @@ namespace RegSystemGUI
             }
         }
 
-        private void changeA()
+        private bool changeA()
         {
             int stuLoc = studentDatagrid.CurrentCell.RowIndex;
             string curStudent = studentDatagrid.Rows[stuLoc].Cells[2].ToString();
@@ -109,14 +109,16 @@ namespace RegSystemGUI
                     }
                 }
             }
+            return true;
 
         }
 
         private void changeAdv_Click(object sender, EventArgs e)
         {
+            bool success = false;
             try
             {
-                changeA();
+                success = changeA();
             }
             catch (Exception f)
             {
@@ -129,6 +131,10 @@ namespace RegSystemGUI
                 {
                     MessageBox.Show(eMsg);
                 }
+            }
+            if (success)
+            {
+                MessageBox.Show("Advisor Changed Successfully.");
             }
         }
     }
