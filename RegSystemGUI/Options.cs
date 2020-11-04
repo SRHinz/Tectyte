@@ -145,10 +145,13 @@ namespace RegSystemGUI
             {
                 AS.DisplayStudentAccounts();
                 AS.ShowDialog();
-                Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
-                this.Hide();
-                stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
-                cH.Show();
+                if (AS.getAccount() != null)
+                {
+                    Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
+                    this.Hide();
+                    stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
+                    cH.Show();
+                }
             }
             else
             {
