@@ -27,6 +27,16 @@ namespace RegSystemGUI
                 CourseSelector CS = new CourseSelector(ref COE);
                 CS.ShowDialog();
                 (string, string) ret = CS.getOptionandCourse;
+                if (ret.Item1 == "D")
+                {
+                    //Delete Course code
+                }
+                else if (ret.Item1 == "E")
+                {
+                    EditCourse EC = new EditCourse(ref COE.cData, ref COE.uData, ret.Item2);
+                    EC.ShowDialog();
+
+                }
 
             }
             else if (type == "S" | type == "F")
