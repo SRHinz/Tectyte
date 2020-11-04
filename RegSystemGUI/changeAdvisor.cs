@@ -84,9 +84,9 @@ namespace RegSystemGUI
         private bool changeA()
         {
             int stuLoc = studentDatagrid.CurrentCell.RowIndex;
-            string curStudent = studentDatagrid.Rows[stuLoc].Cells[2].ToString();
+            string curStudent = studentDatagrid.Rows[stuLoc].Cells[2].Value.ToString();
             int facLoc = facultyDatagrid.CurrentCell.RowIndex;
-            string newAdvisor = facultyDatagrid.Rows[facLoc].Cells[2].ToString();
+            string newAdvisor = facultyDatagrid.Rows[facLoc].Cells[2].Value.ToString();
 
             foreach (string acc in COE.uData.UDatabase.Keys)
             {
