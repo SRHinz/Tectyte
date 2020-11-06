@@ -865,6 +865,41 @@ namespace RegSystemGUI
 
 			}
 
+			public int createTimeblock(int H_Start, int M_Start, bool AM_S, int H_End, int M_End, bool AM_E, bool[] days)
+            {
+				//Multiply days by 1000
+				//Take starting time, in miltary time, multiply by 2
+				//length in half hours
+				int tt;
+				int length;
+				int dd = 0;
+				int rep = 1;
+				if (!AM_S)
+                {
+					H_Start += 12;
+                }
+				float alpha = Convert.ToSingle(H_Start);
+				alpha += Convert.ToSingle(M_Start) / 60;
+				tt = Convert.ToInt32(alpha * 2) * 10;				//Sorta doing reverse of the solving timeblock to build the tt portion of timeblock
+				foreach (bool d in days)
+				{
+					if (d)
+					{ 
+						dd += rep;								//This will build out the dd portion of the timeblock
+					}
+					rep *= 2;
+                }
+				dd *= 1000;
+				if (!AM_E)
+                {
+					H_End += 12;
+                }
+				float beta = Convert.ToSingle(H_End);
+				beta += Convert.ToSingle(M_End) / 60;
+				length = Convert.ToInt32(((beta - alpha) % 24) / 0.5);
+				return dd+tt+length;
+            }
+
 			public string solveTimeblock(int tB)
 			{
 				string days = "";

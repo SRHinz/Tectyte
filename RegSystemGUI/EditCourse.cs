@@ -17,6 +17,7 @@ namespace RegSystemGUI
         string cN;
         Program.viewCourses VC = new Program.viewCourses();
         Program.UserDatabase UD;
+        private int[] TBs_New;
         public EditCourse(ref Program.CourseDatabase cData, ref Program.UserDatabase U, string cName)
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace RegSystemGUI
             Course = CDATA.CDatabase[cName];
             cN = cName;
             UD = U;
+            TBs_New = new int[Course.NtimeBlocks];
+            TBs_New = Course.TimeBlockCollection;
             Instructor_Box.Text = Course.Instructor;
             TB1_Box.Text = VC.solveTimeblock(Course.TimeBlock1);
             if (Course.TimeBlock2 == 0)
@@ -68,7 +71,42 @@ namespace RegSystemGUI
 
         private void EditTB1Button_Click(object sender, EventArgs e)
         {
+            EditTimeBlock ETB = new EditTimeBlock(TB1_Box.Text);
+            ETB.ShowDialog();
+            TBs_New[0] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+            TB1_Box.Text = VC.solveTimeblock(TBs_New[0]);
+        }
 
+        private void EditTB2Button_Click(object sender, EventArgs e)
+        {
+            EditTimeBlock ETB = new EditTimeBlock(TB2_Box.Text);
+            ETB.ShowDialog();
+            TBs_New[1] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+            TB2_Box.Text = VC.solveTimeblock(TBs_New[1]);
+        }
+
+        private void EditTB3Button_Click(object sender, EventArgs e)
+        {
+            EditTimeBlock ETB = new EditTimeBlock(TB3_Box.Text);
+            ETB.ShowDialog();
+            TBs_New[2] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+            TB3_Box.Text = VC.solveTimeblock(TBs_New[2]);
+        }
+
+        private void EditTB4Button_Click(object sender, EventArgs e)
+        {
+            EditTimeBlock ETB = new EditTimeBlock(TB4_Box.Text);
+            ETB.ShowDialog();
+            TBs_New[3] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+            TB4_Box.Text = VC.solveTimeblock(TBs_New[3]);
+        }
+
+        private void EditTB5Button_Click(object sender, EventArgs e)
+        {
+            EditTimeBlock ETB = new EditTimeBlock(TB5_Box.Text);
+            ETB.ShowDialog();
+            TBs_New[4] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+            TB5_Box.Text = VC.solveTimeblock(TBs_New[4]);
         }
     }
 }
