@@ -67,7 +67,7 @@ namespace RegSystemGUI
                                     {
                                         courseTB2[i] = coe.vCourse.solveTimeblock(coe.cData.CDatabase[course2.Course].TimeBlockCollection[i]).Trim();
                                     }
-                                    if (coe.vCourse.timeConflict(courseTB1, coe.cData.CDatabase[course.Course].TimeBlockCollection, courseTB2, coe.cData.CDatabase[course2.Course].TimeBlockCollection))
+                                    if (coe.vCourse.timeConflict(courseTB1, coe.cData.CDatabase[course.Course].TimeBlockCollection, courseTB2, coe.cData.CDatabase[course2.Course].TimeBlockCollection, false))
                                     {
                                         throw new Program.regConflictException();
                                     }

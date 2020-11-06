@@ -47,6 +47,7 @@
             this.EditTB4Button = new System.Windows.Forms.Button();
             this.EditTB5Button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -245,18 +246,30 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(617, 1094);
+            this.button1.Location = new System.Drawing.Point(853, 1100);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(284, 106);
             this.button1.TabIndex = 18;
             this.button1.Text = "Finish";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CancelButton
+            // 
+            this.CancelButton.Location = new System.Drawing.Point(308, 1100);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(284, 106);
+            this.CancelButton.TabIndex = 19;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // EditCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1444, 1281);
+            this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.EditTB5Button);
             this.Controls.Add(this.EditTB4Button);
@@ -305,5 +318,6 @@
         private System.Windows.Forms.Button EditTB4Button;
         private System.Windows.Forms.Button EditTB5Button;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CancelButton;
     }
 }

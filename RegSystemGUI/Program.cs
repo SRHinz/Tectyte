@@ -132,7 +132,7 @@ namespace RegSystemGUI
 							}
 							int[] timeBNum = regCourse.TimeBlockCollection;
 							int[] timeBNum2 = cDatabase.CDatabase[curCourse.Course.Trim()].TimeBlockCollection;
-							if (base.timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2))
+							if (base.timeConflict(timeBlocks1, timeBNum, timeBlocks2, timeBNum2, false))
 							{
 								if ((passable == 2) | (passable == 3))
 								{
@@ -607,6 +607,10 @@ namespace RegSystemGUI
 				file.Close();
 
 			}
+			public void changeCourseTime(int[] newTimeBlocks, string CourseName)
+            {
+				cDatabase[CourseName].TimeBlockCollection = newTimeBlocks;
+            }
 
 			public Dictionary<string, Course> CDatabase { get => cDatabase; }   //Made the dictionary a property for easier outside viewing.
 		}
@@ -619,11 +623,6 @@ namespace RegSystemGUI
 			private int availableSeats; //Available seats will be the only variable that we will want to change after instantiation
 			private float credits;
 			private int ntimeBlocks;
-			private int timeBlock1;
-			private int timeBlock2;
-			private int timeBlock3;
-			private int timeBlock4;
-			private int timeBlock5;
 			private int[] timeBlockCollection;
 			private List<string> enrolledStudents = new List<string>();
 
@@ -633,12 +632,7 @@ namespace RegSystemGUI
 			public int AvailableSeats { get => availableSeats; } 
 			public float Credits { get => credits; }
 			public int NtimeBlocks { get => ntimeBlocks; }
-			public int TimeBlock1 { get => timeBlock1; }
-			public int TimeBlock2 { get => timeBlock2; }
-			public int TimeBlock3 { get => timeBlock3; }
-            public int TimeBlock4 { get => timeBlock4; }
-            public int TimeBlock5 { get => timeBlock5; }
-            public int[] TimeBlockCollection { get => timeBlockCollection; }
+            public int[] TimeBlockCollection { get => timeBlockCollection; set => timeBlockCollection = value; }
 
 			public List<string> EnrolledStudents { get => enrolledStudents; }
 
@@ -654,31 +648,26 @@ namespace RegSystemGUI
 				credits = Convert.ToSingle(args[2]);
 				ntimeBlocks = Convert.ToInt32(args[4]);
 				timeBlockCollection = new int[ntimeBlocks];
-				timeBlock1 = Convert.ToInt32(args[5]);
-				timeBlockCollection[0] = timeBlock1;
-				timeBlock2 = 00000;
-				timeBlock3 = 00000;
-				timeBlock4 = 00000;
-				timeBlock5 = 00000;
+				for (int i = 0; i < ntimeBlocks; i++)
+                {
+					timeBlockCollection[i] = 0;
+                }
+				timeBlockCollection[0] = Convert.ToInt32(args[5]);
 				if (ntimeBlocks >= 2)
 				{
-					timeBlock2 = Convert.ToInt32(args[6]); //If there are 2 time blocks, this allows the placing of it in time block 2
-					TimeBlockCollection[1] = timeBlock2;
+					TimeBlockCollection[1] = Convert.ToInt32(args[6]); //If there are 2 time blocks, this allows the placing of it in time block 2
 				}
 				if (ntimeBlocks >= 3)
 				{
-					timeBlock3 = Convert.ToInt32(args[7]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
-					timeBlockCollection[2] = timeBlock3;
+					timeBlockCollection[2]  = Convert.ToInt32(args[7]); //If there are 3 time blocks, this allows the placing of the third one in time block 3
 				}
 				if (ntimeBlocks >=4 )
                 {
-					timeBlock4 = Convert.ToInt32(args[8]);
-					timeBlockCollection[3] = timeBlock4;
+					timeBlockCollection[3] = Convert.ToInt32(args[8]);
                 }
 				if (ntimeBlocks == 5)
                 {
-					timeBlock5 = Convert.ToInt32(args[9]);
-					TimeBlockCollection[4] = timeBlock5;
+					TimeBlockCollection[4] = Convert.ToInt32(args[9]);
                 }
 				
 			}
@@ -737,11 +726,11 @@ namespace RegSystemGUI
 							if (course.Term != Term)
                             {
 								int nBlocks = cData.CDatabase[course.Course.Trim()].NtimeBlocks;
-								string tBlock1 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock1);
-								string tBlock2 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock2);
-								string tBlock3 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock3);
-								string tBlock4 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock4);
-								string tBlock5 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlock5);
+								string tBlock1 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlockCollection[0]);
+								string tBlock2 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlockCollection[1]);
+								string tBlock3 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlockCollection[2]);
+								string tBlock4 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlockCollection[3]);
+								string tBlock5 = solveTimeblock(cData.CDatabase[course.Course.Trim()].TimeBlockCollection[4]);
 								output.Rows.Add(course.Course, course.Term, course.Credits, course.Grade, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
 							}
                     }
@@ -750,7 +739,7 @@ namespace RegSystemGUI
                 }
 
             }
-			public bool timeConflict(string[] t1, int[] n1, string[] t2, int[] n2)
+			public bool timeConflict(string[] t1, int[] n1, string[] t2, int[] n2, bool coursecheck)
 			{
 				bool conflict = false;
 				string issue = "";
@@ -783,23 +772,26 @@ namespace RegSystemGUI
 					num2 = 0;
 					foreach (string timeblock2 in t2)                   //This will be making sure every timeblock of the second course is compared
 					{
-						string[] daysAndTime2 = timeblock2.Split(',');
-						string[] days2 = daysAndTime2[0].Split(' ');
-						foreach (string i in days1)                     //This makes sure each day is checked in the list of days for timeblock 1
+						if (!(coursecheck & (timeblock == timeblock2) & (num1 == num2)))	//If it is doing a single course compared against itself to see if there are conflicts, then it will check if timeblocks conflict, as long as they are not the same timeblock 
 						{
-							foreach (string j in days2)                 //THis does the above for all the days in timeblock 2
+							string[] daysAndTime2 = timeblock2.Split(',');
+							string[] days2 = daysAndTime2[0].Split(' ');
+							foreach (string i in days1)                     //This makes sure each day is checked in the list of days for timeblock 1
 							{
-								if (i == j)                             //If there are matching days, then we get to check those!
+								foreach (string j in days2)                 //THis does the above for all the days in timeblock 2
 								{
-									int comp1 = st1[num1].CompareTo(st2[num2]);
-									int comp2 = (st1[num1] + lengths1[num1]).CompareTo(st2[num2]);
-									int comp3 = st2[num2].CompareTo(st1[num1]);
-									int comp4 = (st2[num2] + lengths2[num2]).CompareTo(st1[num1]);
-
-									if (((comp1 <= 0) & (comp2 > 0)) | (comp3 <= 0) & (comp4 > 0))
+									if (i == j)                             //If there are matching days, then we get to check those!
 									{
-										conflict = true;
-										return conflict;
+										int comp1 = st1[num1].CompareTo(st2[num2]);
+										int comp2 = (st1[num1] + lengths1[num1]).CompareTo(st2[num2]);
+										int comp3 = st2[num2].CompareTo(st1[num1]);
+										int comp4 = (st2[num2] + lengths2[num2]).CompareTo(st1[num1]);
+
+										if (((comp1 <= 0) & (comp2 > 0)) | (comp3 <= 0) & (comp4 > 0))
+										{
+											conflict = true;
+											return conflict;
+										}
 									}
 								}
 							}
@@ -819,7 +811,7 @@ namespace RegSystemGUI
                 {
 					if (course.Value.Instructor.Trim() == instructor.Trim())
                     {
-						output.Rows.Add(course.Key, course.Value.CourseTitle.Trim(), course.Value.Instructor.Trim(), course.Value.TotalSeats, course.Value.AvailableSeats, course.Value.Credits, course.Value.NtimeBlocks, solveTimeblock(course.Value.TimeBlock1), solveTimeblock(course.Value.TimeBlock2), solveTimeblock(course.Value.TimeBlock3), solveTimeblock(course.Value.TimeBlock4), solveTimeblock(course.Value.TimeBlock5)); //This solves the issue of having to copy over the entire course database and then delete from the copy by simply printing out all the things of courses that match instructor to the current signed in account. 
+						output.Rows.Add(course.Key, course.Value.CourseTitle.Trim(), course.Value.Instructor.Trim(), course.Value.TotalSeats, course.Value.AvailableSeats, course.Value.Credits, course.Value.NtimeBlocks, solveTimeblock(course.Value.TimeBlockCollection[0]), solveTimeblock(course.Value.TimeBlockCollection[1]), solveTimeblock(course.Value.TimeBlockCollection[2]), solveTimeblock(course.Value.TimeBlockCollection[3]), solveTimeblock(course.Value.TimeBlockCollection[4])); //This solves the issue of having to copy over the entire course database and then delete from the copy by simply printing out all the things of courses that match instructor to the current signed in account. 
                     }
                 }
             }
@@ -833,11 +825,11 @@ namespace RegSystemGUI
 				int avS = course.AvailableSeats;
 				float cred = course.Credits;
 				int nBlocks = course.NtimeBlocks;
-				string tBlock1 = solveTimeblock(course.TimeBlock1);
-				string tBlock2 = solveTimeblock(course.TimeBlock2);
-				string tBlock3 = solveTimeblock(course.TimeBlock3);
-				string tBlock4 = solveTimeblock(course.TimeBlock4);
-				string tBlock5 = solveTimeblock(course.TimeBlock5);
+				string tBlock1 = solveTimeblock(course.TimeBlockCollection[0]);
+				string tBlock2 = solveTimeblock(course.TimeBlockCollection[1]);
+				string tBlock3 = solveTimeblock(course.TimeBlockCollection[2]);
+				string tBlock4 = solveTimeblock(course.TimeBlockCollection[3]);
+				string tBlock5 = solveTimeblock(course.TimeBlockCollection[4]);
 				output.Rows.Add(c, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
 			}
 
@@ -852,11 +844,11 @@ namespace RegSystemGUI
 					int avS = course.Value.AvailableSeats;
 					float cred = course.Value.Credits;
 					int nBlocks = course.Value.NtimeBlocks;
-					string tBlock1 = solveTimeblock(course.Value.TimeBlock1);
-					string tBlock2 = solveTimeblock(course.Value.TimeBlock2);
-					string tBlock3 = solveTimeblock(course.Value.TimeBlock3);
-					string tBlock4 = solveTimeblock(course.Value.TimeBlock4);
-					string tBlock5 = solveTimeblock(course.Value.TimeBlock5);
+					string tBlock1 = solveTimeblock(course.Value.TimeBlockCollection[0]);
+					string tBlock2 = solveTimeblock(course.Value.TimeBlockCollection[1]);
+					string tBlock3 = solveTimeblock(course.Value.TimeBlockCollection[2]);
+					string tBlock4 = solveTimeblock(course.Value.TimeBlockCollection[3]);
+					string tBlock5 = solveTimeblock(course.Value.TimeBlockCollection[4]);
 					output.Rows.Add(course.Key, cTitle, instruc, totS, avS, cred, tBlock1, tBlock2, tBlock3, tBlock4, tBlock5);
 					output.Rows[counter].ReadOnly = true;
 					counter++;

@@ -35,6 +35,16 @@ namespace RegSystemGUI
                 {
                     EditCourse EC = new EditCourse(ref COE.cData, ref COE.uData, ret.Item2);
                     EC.ShowDialog();
+                    if (EC.getResponse == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Edit Canceled", "Edit Cancelation");
+                    }
+                    else if (EC.getResponse == DialogResult.OK)
+                    {
+                        COE.cData.changeCourseTime(EC.getTBs_new, ret.Item2);
+                        COE.cData.CDatabase[ret.Item2].changeInstructor(EC.getNewInstruct);
+                        MessageBox.Show("Course Modification Successful!", "Success");
+                    }
 
                 }
 
