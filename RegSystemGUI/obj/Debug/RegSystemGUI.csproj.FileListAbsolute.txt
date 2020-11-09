@@ -127,3 +127,6 @@ C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AccountSelec
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.DatabaseMod.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
+C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddUser.resources
+C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
+C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
