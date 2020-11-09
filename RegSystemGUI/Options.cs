@@ -34,9 +34,16 @@ namespace RegSystemGUI
             {
                 curAcc = COE.uData.UDatabase[tempUN] as Program.StudentAcc;
             }
-            else if (aType == "admin")
+            else if (aType == "admin" | aType == "manager")
             {
-                SysModButton.Show();
+                if (aType == "manager")
+                {
+                    SysModButton.Show();
+                }
+                else
+                {
+                    SysModButton.Hide();
+                }
                 AdminStuHisButton.Show();
                 
             }
@@ -58,8 +65,16 @@ namespace RegSystemGUI
                 changeAdvisorButton.Hide();
                 SysModButton.Hide();
             }
-            else if (aType == "admin")
+            else if (aType == "admin" | aType == "manager")
             {
+                if (aType == "manager")
+                {
+                    SysModButton.Show();
+                }
+                else
+                {
+                    SysModButton.Hide();
+                }
                 AdminStuHisButton.Show();
                 changeAdvisorButton.Show();
 
