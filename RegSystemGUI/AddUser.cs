@@ -12,9 +12,25 @@ namespace RegSystemGUI
 {
     public partial class AddUser : Form
     {
-        public AddUser()
+        Program.UserDatabase uData;
+        public AddUser(ref Program.UserDatabase userDatabase)
         {
             InitializeComponent();
+            uData = userDatabase;
+        }
+
+        private void IndexChanged_Acc(object sender, EventArgs e)
+        {
+            if (AccountType_Box.Text == "Student")
+            {
+                Advisor_Label.Show();
+                Select_Advisor_Button.Show();
+            }
+            else
+            {
+                Advisor_Label.Hide();
+                Select_Advisor_Button.Hide();
+            }
         }
     }
 }
