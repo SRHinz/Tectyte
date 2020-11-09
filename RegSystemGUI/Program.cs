@@ -269,6 +269,10 @@ namespace RegSystemGUI
 							//Do nothing, skipping over this one
                         }
                     }
+					else if (words[5] == "manager")
+                    {
+						uDatabase.Add(words[0], new ManagerAcc(words));
+                    }
 					else if ((words[5] != "admin"))
 					{
 						try
