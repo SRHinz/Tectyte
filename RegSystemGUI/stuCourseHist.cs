@@ -157,7 +157,7 @@ namespace RegSystemGUI
             cell = row[1];
             String courseTerm = cell.Value.ToString().Trim();
             Console.WriteLine(courseName);
-            bool success = account.delCourse(courseName);
+            bool success = account.delCourse(courseName, nextTerm);
             if (success)
             {
                 MessageBox.Show("Course successfully dropped.");

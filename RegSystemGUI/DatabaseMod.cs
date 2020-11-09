@@ -29,7 +29,8 @@ namespace RegSystemGUI
                 (string, string) ret = CS.getOptionandCourse;
                 if (ret.Item1 == "D")
                 {
-                    //Delete Course code
+                    COE.cData.RemoveCourse(ret.Item2, ref COE.uData, COE.NexTerm);
+                    MessageBox.Show("Course Deletion Successful");
                 }
                 else if (ret.Item1 == "E")
                 {

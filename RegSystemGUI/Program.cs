@@ -517,12 +517,12 @@ namespace RegSystemGUI
 				cHistory.Add(new sHistory(course, term, credits, grade));
             }
 
-			public bool delCourse(string courseName)
+			public bool delCourse(string courseName, string term)
             {
 				bool success = false;
 				foreach (sHistory c in cHistory)        //This loop checks each course to see if it is the one that is to be removed. If it is, it will remove it. Only courses that are being taken currently or registered for next semester should be allowed to be deleted.		
 				{
-					if (c.Course.Trim() == courseName && c.Grade == "N")
+					if ((c.Course.Trim() == courseName) && (c.Grade == "N") && (c.Term == term))
 					{ 
 						cHistory.Remove(c);
 						success = true;
@@ -609,7 +609,21 @@ namespace RegSystemGUI
 			}
 			public void changeCourseTime(int[] newTimeBlocks, string CourseName)
             {
-				cDatabase[CourseName].TimeBlockCollection = newTimeBlocks;
+				for (int i = 0; i < newTimeBlocks.Length; i ++)
+                {
+					cDatabase[CourseName].TimeBlockCollection[i] = newTimeBlocks[i];
+                }
+            }
+
+			public void RemoveCourse(string CourseN, ref UserDatabase UData, string term)
+            {
+				foreach (KeyValuePair<string, Account> user in UData.UDatabase)
+                {
+					if (user.Value is StudentAcc)
+                    {
+						bool success = (user.Value as StudentAcc).delCourse(CourseN, term);
+                    }
+                }
             }
 
 			public Dictionary<string, Course> CDatabase { get => cDatabase; }   //Made the dictionary a property for easier outside viewing.
@@ -647,11 +661,7 @@ namespace RegSystemGUI
 				availableSeats = Convert.ToInt32(args[3]);
 				credits = Convert.ToSingle(args[2]);
 				ntimeBlocks = Convert.ToInt32(args[4]);
-				timeBlockCollection = new int[ntimeBlocks];
-				for (int i = 0; i < ntimeBlocks; i++)
-                {
-					timeBlockCollection[i] = 0;
-                }
+				timeBlockCollection = new int[5] { 0, 0, 0, 0, 0 };
 				timeBlockCollection[0] = Convert.ToInt32(args[5]);
 				if (ntimeBlocks >= 2)
 				{
