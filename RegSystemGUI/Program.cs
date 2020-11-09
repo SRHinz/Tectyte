@@ -567,6 +567,15 @@ namespace RegSystemGUI
 
             }
         }
+
+		public class ManagerAcc: AdminAcc
+        {
+			public ManagerAcc(string[] args): base(args)
+            {
+
+            }
+        }
+
 		public class CourseDatabase
 		{
 			private Dictionary<string, Course> cDatabase = new Dictionary<string, Course>(); //Creating the dictionary in which we will store the courses 
