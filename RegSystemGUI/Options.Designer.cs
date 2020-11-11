@@ -162,6 +162,7 @@
             this.AddUser_Button.TabIndex = 12;
             this.AddUser_Button.Text = "Add User";
             this.AddUser_Button.UseVisualStyleBackColor = true;
+            this.AddUser_Button.Click += new System.EventHandler(this.AddUser_Button_Click);
             // 
             // AddCourse_Button
             // 

@@ -145,6 +145,21 @@ namespace RegSystemGUI
             }
         }
 
+        private void AddUser_Button_Click(object sender, EventArgs e)
+        {
+            AddUser AU = new AddUser(ref COE.uData);
+            AU.ShowDialog();
+            if (AU.returnStatus == DialogResult.Cancel)
+            {
+                MessageBox.Show("User add aborted.", "Add Aborted");
+            }
+            else if (AU.returnStatus == DialogResult.OK)
+            {
+                COE.uData.AddUser(AU.getUserData);
+                MessageBox.Show(AU.getUserData.Item1 + " " + AU.getUserData.Item2 + " " + AU.getUserData.Item3 + " added as a " + AU.getUserData.Item4 + " account.");
+            }
+        }
+
         private void viewCourse_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -42,6 +42,7 @@
             this.MName_Box = new System.Windows.Forms.TextBox();
             this.Select_Advisor_Button = new System.Windows.Forms.Button();
             this.Add_Button = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,11 +175,22 @@
             this.Add_Button.UseVisualStyleBackColor = true;
             this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
+            // CancelButton
+            // 
+            this.CancelButton.Location = new System.Drawing.Point(380, 423);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.TabIndex = 29;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 458);
+            this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.Add_Button);
             this.Controls.Add(this.Select_Advisor_Button);
             this.Controls.Add(this.MName_Box);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.TextBox MName_Box;
         private System.Windows.Forms.Button Select_Advisor_Button;
         private System.Windows.Forms.Button Add_Button;
+        private System.Windows.Forms.Button CancelButton;
     }
 }

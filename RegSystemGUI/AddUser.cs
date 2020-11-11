@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace RegSystemGUI
         Program.UserDatabase uData;
         private string Advisor;
         private (string, string, string, string, string) UserData;
+        private DialogResult status;
 
         public AddUser(ref Program.UserDatabase userDatabase)
         {
@@ -54,6 +56,7 @@ namespace RegSystemGUI
                     if (result == DialogResult.OK)
                     {
                         UserData = (FName_Box.Text, MName_Box.Text, LName_Box.Text, AccountType_Box.Text.ToLower(), "staff");
+                        status = DialogResult.OK;
                         this.Close();
                     }
                     else
@@ -64,6 +67,7 @@ namespace RegSystemGUI
                 else
                 {
                     UserData = (FName_Box.Text, MName_Box.Text, LName_Box.Text, AccountType_Box.Text, Advisor);
+                    status = DialogResult.OK;
                     this.Close();
                 }
             }
@@ -80,6 +84,20 @@ namespace RegSystemGUI
             {
                 return UserData;
             }
+        }
+
+        public DialogResult returnStatus
+        {
+            get
+            {
+                return status;
+            }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            status = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
