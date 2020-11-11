@@ -80,21 +80,14 @@ namespace RegSystemGUI
 			{
 				course = line.Substring(0, 7).Trim();
 				numPrereqs = int.Parse(line.Substring(8, 2).Trim());
-				List<Course> prereqs = new List<Course>();
+				List<String> prereqs = new List<String>();
 				//need for i in range loop to collect all prereq courses
 				for (int index = 0; index < numPrereqs; index++)
 				{
 					int start = 10 + (index * 7);
 					string courseName = line.Substring(start, 7).Trim();
-					Console.WriteLine(courseName);
-					foreach (KeyValuePair<string, Course> cValues in cData.CDatabase)
-					{
-						if (cValues.Key.Substring(0, courseName.Length) == courseName)
-						{
-							prereqs.Add(cValues.Value);
-							Console.WriteLine("Test");
-						}
-					}
+					prereqs.Add(courseName);
+
 				}
 				foreach (KeyValuePair<string, Course> cValues in cData.CDatabase)
 				{
@@ -693,7 +686,7 @@ namespace RegSystemGUI
 			private int ntimeBlocks;
 			private int[] timeBlockCollection;
 			private List<string> enrolledStudents = new List<string>();
-			private List<Course> prereqs = new List<Course>();
+			private List<String> prereqs = new List<String>();
 
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
@@ -705,7 +698,7 @@ namespace RegSystemGUI
 			
 			public List<string> EnrolledStudents { get => enrolledStudents; }
 
-			public List<Course> Prereqs { get => prereqs; }
+			public List<String> Prereqs { get => prereqs; }
 
 
 
@@ -739,12 +732,11 @@ namespace RegSystemGUI
 				
 			}
 
-			public void addPrereq(List<Course> courses)
+			public void addPrereq(List<String> courses)
 			{
-				foreach (Course course in courses)
+				foreach (String course in courses)
 				{
 					Prereqs.Add(course);
-					Console.WriteLine(course.courseTitle);
 				}
 			}
 

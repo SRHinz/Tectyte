@@ -130,3 +130,6 @@ C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBloc
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddUser.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.AddUser.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
+C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
