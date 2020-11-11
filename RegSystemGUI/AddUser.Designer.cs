@@ -162,6 +162,7 @@
             this.Select_Advisor_Button.TabIndex = 27;
             this.Select_Advisor_Button.Text = "Select Advisor";
             this.Select_Advisor_Button.UseVisualStyleBackColor = true;
+            this.Select_Advisor_Button.Click += new System.EventHandler(this.Select_Advisor_Button_Click);
             // 
             // Add_Button
             // 
@@ -171,6 +172,7 @@
             this.Add_Button.TabIndex = 28;
             this.Add_Button.Text = "Add";
             this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.Add_Button_Click);
             // 
             // AddUser
             // 
@@ -191,7 +193,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add User";
