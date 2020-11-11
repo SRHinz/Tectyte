@@ -409,6 +409,41 @@ namespace RegSystemGUI
                 }
             }
 
+			public void AddUser((string, string, string, string, string) InfoTuple )
+            {
+				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3;
+				int i = 1;
+				while ((uDatabase.ContainsKey(uName)) & (i < InfoTuple.Item1.Length))
+                {
+					i += 1;
+					uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3;
+
+				}
+				string[] info = new string[6] { uName, "password", InfoTuple.Item1, InfoTuple.Item2, InfoTuple.Item3, "" };
+				if (InfoTuple.Item4 == "student")
+                {
+					info[5] = InfoTuple.Item5;
+					string[] courses = new string[0];
+					uDatabase.Add(uName, new StudentAcc(info, courses));
+                }
+                else
+                {
+					info[5] = InfoTuple.Item4;
+					if (InfoTuple.Item4 == "faculty")
+                    {
+						UDatabase.Add(uName, new FacultyAcc(info));
+                    }
+					else if (InfoTuple.Item4 == "admin")
+                    {
+						UDatabase.Add(uName, new AdminAcc(info));
+                    }
+					else if (InfoTuple.Item4 == "manager")
+                    {
+						UDatabase.Add(uName, new ManagerAcc(info));
+                    }
+                }
+            }
+
 		}
 
 		public class Account
