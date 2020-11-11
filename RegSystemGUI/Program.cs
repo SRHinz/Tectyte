@@ -34,6 +34,7 @@ namespace RegSystemGUI
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			RegisterHistoryClasses(ref COE.cData, ref COE.uData);
+			AddPrereqCourses(ref COE.cData);
 			Login login = new Login(ref COE);
 			Application.Run(login);
 		}
@@ -68,7 +69,47 @@ namespace RegSystemGUI
             }
         }
 
-        public static void RegisterHistoryClasses(ref CourseDatabase cData, ref UserDatabase uData)
+		public static void AddPrereqCourses(ref CourseDatabase cData)
+		{
+			int numPrereqs;
+			string course;
+			string line;
+			string loc = Path.GetFullPath("CoursePrereqs.in");
+			System.IO.StreamReader file2 = new System.IO.StreamReader(@loc);
+			while ((line = file2.ReadLine()) != null)
+			{
+				course = line.Substring(0, 7).Trim();
+				numPrereqs = int.Parse(line.Substring(8, 2).Trim());
+				List<Course> prereqs = new List<Course>();
+				//need for i in range loop to collect all prereq courses
+				for (int index = 0; index < numPrereqs; index++)
+				{
+					int start = 10 + (index * 7);
+					string courseName = line.Substring(start, 7).Trim();
+					Console.WriteLine(courseName);
+					foreach (KeyValuePair<string, Course> cValues in cData.CDatabase)
+					{
+						if (cValues.Key.Substring(0, courseName.Length) == courseName)
+						{
+							prereqs.Add(cValues.Value);
+							Console.WriteLine("Test");
+						}
+					}
+				}
+				foreach (KeyValuePair<string, Course> cValues in cData.CDatabase)
+				{
+					if (course == cValues.Key)
+					{
+						cValues.Value.addPrereq(prereqs);
+						//cValues.Value.addPrereq();
+					}
+				}
+
+
+			}
+		}
+
+		public static void RegisterHistoryClasses(ref CourseDatabase cData, ref UserDatabase uData)
 		{
 			foreach (KeyValuePair<string, Account> uValues in uData.UDatabase)
 			{
@@ -652,6 +693,7 @@ namespace RegSystemGUI
 			private int ntimeBlocks;
 			private int[] timeBlockCollection;
 			private List<string> enrolledStudents = new List<string>();
+			private List<Course> prereqs = new List<Course>();
 
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
@@ -660,8 +702,10 @@ namespace RegSystemGUI
 			public float Credits { get => credits; }
 			public int NtimeBlocks { get => ntimeBlocks; }
             public int[] TimeBlockCollection { get => timeBlockCollection; set => timeBlockCollection = value; }
-
+			
 			public List<string> EnrolledStudents { get => enrolledStudents; }
+
+			public List<Course> Prereqs { get => prereqs; }
 
 
 
@@ -693,6 +737,15 @@ namespace RegSystemGUI
 					TimeBlockCollection[4] = Convert.ToInt32(args[9]);
                 }
 				
+			}
+
+			public void addPrereq(List<Course> courses)
+			{
+				foreach (Course course in courses)
+				{
+					Prereqs.Add(course);
+					Console.WriteLine(course.courseTitle);
+				}
 			}
 
 			public void enrollStudent(string student)
