@@ -311,21 +311,22 @@ namespace RegSystemGUI
 					{
 						try
 						{
-							UDatabase.Add(words[0], new StudentAcc(words, hDatabase.HisDatabase[words[0]]));
-							if (UDatabase.ContainsKey(words[5]))
-                            {
-								(UDatabase[words[5]] as FacultyAcc).addAdvisee(words[0]);	//This will add the student as an advisee of whoever is listed in their status, if the account is already created.
-                            }
-                            else
-                            {
-								leftovers.Add(words[0], words[5]);																//If the student's advisor has not yet been added to the database, this will store them in the leftovers dictionary, which keeps track of students who are not yet listed in their advisor's advisee list.
-                            }
+							UDatabase.Add(words[0], new StudentAcc(words, hDatabase.HisDatabase[words[0]]));															//If the student's advisor has not yet been added to the database, this will store them in the leftovers dictionary, which keeps track of students who are not yet listed in their advisor's advisee list.
 						}
 						catch (KeyNotFoundException)              //If there exists no course records for the student, then it will simply create a student account with no coures in their history.
 						{
 							string[] noHis = { };
 							UDatabase.Add(words[0], new StudentAcc(words, noHis));
 						}
+						if (UDatabase.ContainsKey(words[5]))
+						{
+							(UDatabase[words[5]] as FacultyAcc).addAdvisee(words[0]);   //This will add the student as an advisee of whoever is listed in their status, if the account is already created.
+						}
+						else
+						{
+							leftovers.Add(words[0], words[5]);                                                              //If the student's advisor has not yet been added to the database, this will store them in the leftovers dictionary, which keeps track of students who are not yet listed in their advisor's advisee list.
+						}
+
 						//So this obsencely annoying looking piece of code should create a student account with the relevant course history. 
 					}
 					else
