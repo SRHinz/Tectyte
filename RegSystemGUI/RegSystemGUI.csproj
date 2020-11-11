@@ -151,6 +151,9 @@
     <Compile Include="studentsEnrolled.Designer.cs">
       <DependentUpon>studentsEnrolled.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCourse.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>

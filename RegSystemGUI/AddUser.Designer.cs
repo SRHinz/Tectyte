@@ -112,6 +112,7 @@
             // FName_Box
             // 
             this.FName_Box.Location = new System.Drawing.Point(232, 45);
+            this.FName_Box.MaxLength = 15;
             this.FName_Box.Name = "FName_Box";
             this.FName_Box.Size = new System.Drawing.Size(121, 20);
             this.FName_Box.TabIndex = 21;
@@ -119,6 +120,7 @@
             // LName_Box
             // 
             this.LName_Box.Location = new System.Drawing.Point(232, 138);
+            this.LName_Box.MaxLength = 15;
             this.LName_Box.Name = "LName_Box";
             this.LName_Box.Size = new System.Drawing.Size(100, 20);
             this.LName_Box.TabIndex = 22;
@@ -151,6 +153,7 @@
             // MName_Box
             // 
             this.MName_Box.Location = new System.Drawing.Point(232, 88);
+            this.MName_Box.MaxLength = 15;
             this.MName_Box.Name = "MName_Box";
             this.MName_Box.Size = new System.Drawing.Size(100, 20);
             this.MName_Box.TabIndex = 26;
