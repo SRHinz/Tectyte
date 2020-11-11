@@ -102,11 +102,12 @@ namespace RegSystemGUI
         {
             if (curAcc is Program.AdminAcc)
             {
-                StudentSelector selector = new StudentSelector();
-                selector.ShowDialog();
-                if (COE.uData.UDatabase[selector.getStudent] is Program.StudentAcc)
+                AccountSelector AS = new AccountSelector(ref COE.uData);
+                AS.DisplayStudentAccounts();
+                AS.ShowDialog();
+                if (COE.uData.UDatabase[AS.getAccount()] is Program.StudentAcc)
                 {
-                    CourseAdd(COE.uData.UDatabase[selector.getStudent] as Program.StudentAcc, true);
+                    CourseAdd(COE.uData.UDatabase[AS.getAccount()] as Program.StudentAcc, true);
                 }
                 else
                 {
