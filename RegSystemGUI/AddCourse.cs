@@ -16,12 +16,12 @@ namespace RegSystemGUI
         public AddCourse(ref Program.UserDatabase uData)
         {
             InitializeComponent();
-            UDATA = 
+            //UDATA = 
         }
 
         private void Instructor_Button_Click(object sender, EventArgs e)
         {
-            AccountSelector AS = new AccountSelector()
+            //AccountSelector AS = new AccountSelector()
         }
     }
 }

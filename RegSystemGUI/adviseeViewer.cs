@@ -21,8 +21,8 @@ namespace RegSystemGUI
             InitializeComponent();
             Menu = menu;
             foreach (string student in (coe.uData.UDatabase[coe.CurAcc] as Program.FacultyAcc).Advisees)
-            {   
-                listView1.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
+            {
+                adviseeDatagrid.Rows.Add(coe.uData.UDatabase[student].LName, coe.uData.UDatabase[student].FName, coe.uData.UDatabase[student].UserName);
             }
             COE = coe;
         }
@@ -33,7 +33,7 @@ namespace RegSystemGUI
             Menu = menu;
             foreach (string student in (coe.uData.UDatabase[account.UserName] as Program.FacultyAcc).Advisees)
             {
-                listView1.Items.Add((coe.uData.UDatabase[student].UserName + " | " + coe.uData.UDatabase[student].FName + " " + coe.uData.UDatabase[student].LName));
+                adviseeDatagrid.Rows.Add(coe.uData.UDatabase[student].LName, coe.uData.UDatabase[student].FName, coe.uData.UDatabase[student].UserName);
             }
             COE = coe;
         }
@@ -54,10 +54,9 @@ namespace RegSystemGUI
         {
             try
             {
-                ListViewItem item = listView1.SelectedItems[0];
-                string selected = item.SubItems[0].Text;
-                int spaceLOC = selected.IndexOf(' ');
-                adviseeView AD = new adviseeView(selected.Substring(0, spaceLOC), ref COE, this);
+                int stuLoc = adviseeDatagrid.CurrentCell.RowIndex;
+                string item = adviseeDatagrid.Rows[stuLoc].Cells[2].Value.ToString();
+                adviseeView AD = new adviseeView(item, ref COE, this);
                 AD.Show();
                 this.Hide();
             }
