@@ -63,13 +63,13 @@
             this.TimeBlock3,
             this.TimeBlock4,
             this.TimeBlock5});
-            this.AdviseeViewGrid.Location = new System.Drawing.Point(8, 10);
-            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.AdviseeViewGrid.Location = new System.Drawing.Point(4, 5);
+            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.AdviseeViewGrid.Name = "AdviseeViewGrid";
             this.AdviseeViewGrid.ReadOnly = true;
             this.AdviseeViewGrid.RowHeadersWidth = 30;
             this.AdviseeViewGrid.RowTemplate.Height = 46;
-            this.AdviseeViewGrid.Size = new System.Drawing.Size(1645, 635);
+            this.AdviseeViewGrid.Size = new System.Drawing.Size(822, 318);
             this.AdviseeViewGrid.TabIndex = 0;
             // 
             // Courses
@@ -139,22 +139,21 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "--select--",
             "Current Courses",
             "Future Courses"});
-            this.comboBox1.Location = new System.Drawing.Point(1754, 16);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Location = new System.Drawing.Point(877, 8);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(223, 33);
+            this.comboBox1.Size = new System.Drawing.Size(114, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Return_Button
             // 
-            this.Return_Button.Location = new System.Drawing.Point(1754, 85);
-            this.Return_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.Return_Button.Location = new System.Drawing.Point(877, 42);
+            this.Return_Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Return_Button.Name = "Return_Button";
-            this.Return_Button.Size = new System.Drawing.Size(222, 58);
+            this.Return_Button.Size = new System.Drawing.Size(111, 29);
             this.Return_Button.TabIndex = 2;
             this.Return_Button.Text = "Return";
             this.Return_Button.UseVisualStyleBackColor = true;
@@ -163,10 +162,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(675, 741);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Location = new System.Drawing.Point(338, 370);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -175,26 +174,26 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(707, 749);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5);
+            this.copyrightBox.Location = new System.Drawing.Point(354, 374);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(443, 24);
+            this.copyrightBox.Size = new System.Drawing.Size(222, 13);
             this.copyrightBox.TabIndex = 10;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // adviseeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(2134, 787);
+            this.ClientSize = new System.Drawing.Size(1011, 394);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.Return_Button);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.AdviseeViewGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "adviseeView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advisee View";
