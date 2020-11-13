@@ -44,11 +44,6 @@ namespace RegSystemGUI
             Menu.Show();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void ViewStudent_Click(object sender, EventArgs e)
         {
