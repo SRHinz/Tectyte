@@ -178,6 +178,10 @@ namespace RegSystemGUI
                 {
                     MessageBox.Show("No available seats.");
                 }
+                else if (eMsg.Contains("prereqs"))
+                {
+                    MessageBox.Show("Have not taken required prerequisites");
+                }
                 else
                     MessageBox.Show(eMsg);
             }

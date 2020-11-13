@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms.VisualStyles;
 using System.Security.Cryptography;
+using System.Linq.Expressions;
 
 namespace RegSystemGUI
 {
@@ -81,20 +82,27 @@ namespace RegSystemGUI
 				course = line.Substring(0, 7).Trim();
 				numPrereqs = int.Parse(line.Substring(8, 2).Trim());
 				List<String> prereqs = new List<String>();
-				//need for i in range loop to collect all prereq courses
 				for (int index = 0; index < numPrereqs; index++)
 				{
 					int start = 10 + (index * 7);
-					string courseName = line.Substring(start, 7).Trim();
-					prereqs.Add(courseName);
-
+					try
+					{
+						string courseName = line.Substring(start, 7).Trim();
+						prereqs.Add(courseName);
+					}
+                    catch (ArgumentOutOfRangeException)
+                    {
+						string courseName = line.Substring(start).Trim();
+						prereqs.Add(courseName);
+					}
+					
 				}
 				foreach (KeyValuePair<string, Course> cValues in cData.CDatabase)
 				{
-					if (course == cValues.Key)
+					if (course == cValues.Key.Substring(0, course.Length))
 					{
+						Console.WriteLine("test");
 						cValues.Value.addPrereq(prereqs);
-						//cValues.Value.addPrereq();
 					}
 				}
 
@@ -134,6 +142,24 @@ namespace RegSystemGUI
 				int passable = 0;
 				if (!admin)
 				{
+					if (regCourse.Prereqs.Any<string>())
+                    {
+						foreach (string pCourse in regCourse.Prereqs)
+                        {
+							bool found = false;
+							foreach (sHistory sHist in sAcc.CHistory)
+                            {
+								if (sHist.Course.Substring(0, pCourse.Length) == pCourse && !found)
+                                {
+									found = true;
+                                }
+                            }
+							if (!found)
+                            {
+								throw new regConflictException("prereqs");
+                            }
+						}
+                    }
 					foreach (sHistory curCourse in sAcc.CHistory)
 					{
 						if (curCourse.Grade == "N" & curCourse.Term == term)                    //This guarentees we will only be checking against courses that 
