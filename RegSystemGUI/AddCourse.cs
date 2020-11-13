@@ -114,7 +114,7 @@ namespace RegSystemGUI
         {
             EditTimeBlock ETB = new EditTimeBlock("new");
             ETB.ShowDialog();
-            TB
+            TBs[0] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
         }
     }
 }
