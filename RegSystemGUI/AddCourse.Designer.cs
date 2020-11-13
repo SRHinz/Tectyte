@@ -55,6 +55,7 @@
             this.TB3 = new System.Windows.Forms.TextBox();
             this.TB4 = new System.Windows.Forms.TextBox();
             this.TB5 = new System.Windows.Forms.TextBox();
+            this.Submit_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Num_TimeBlocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Seats)).BeginInit();
             this.SuspendLayout();
@@ -190,6 +191,7 @@
             this.Credit_Box.Name = "Credit_Box";
             this.Credit_Box.Size = new System.Drawing.Size(380, 44);
             this.Credit_Box.TabIndex = 11;
+            this.Credit_Box.Text = "None Selected";
             // 
             // Num_Seats
             // 
@@ -290,6 +292,7 @@
             this.Edit_TB2_Button.TabIndex = 24;
             this.Edit_TB2_Button.Text = "Edit";
             this.Edit_TB2_Button.UseVisualStyleBackColor = true;
+            this.Edit_TB2_Button.Click += new System.EventHandler(this.Edit_TB2_Button_Click);
             // 
             // Edit_TB3_Button
             // 
@@ -300,6 +303,7 @@
             this.Edit_TB3_Button.TabIndex = 25;
             this.Edit_TB3_Button.Text = "Edit";
             this.Edit_TB3_Button.UseVisualStyleBackColor = true;
+            this.Edit_TB3_Button.Click += new System.EventHandler(this.Edit_TB3_Button_Click);
             // 
             // Edit_TB4_Button
             // 
@@ -310,6 +314,7 @@
             this.Edit_TB4_Button.TabIndex = 26;
             this.Edit_TB4_Button.Text = "Edit";
             this.Edit_TB4_Button.UseVisualStyleBackColor = true;
+            this.Edit_TB4_Button.Click += new System.EventHandler(this.Edit_TB4_Button_Click);
             // 
             // Edit_TB5_Button
             // 
@@ -320,6 +325,7 @@
             this.Edit_TB5_Button.TabIndex = 27;
             this.Edit_TB5_Button.Text = "Edit";
             this.Edit_TB5_Button.UseVisualStyleBackColor = true;
+            this.Edit_TB5_Button.Click += new System.EventHandler(this.Edit_TB5_Button_Click);
             // 
             // TB1
             // 
@@ -361,11 +367,22 @@
             this.TB5.Size = new System.Drawing.Size(384, 44);
             this.TB5.TabIndex = 32;
             // 
+            // Submit_Button
+            // 
+            this.Submit_Button.Location = new System.Drawing.Point(715, 1296);
+            this.Submit_Button.Name = "Submit_Button";
+            this.Submit_Button.Size = new System.Drawing.Size(330, 108);
+            this.Submit_Button.TabIndex = 33;
+            this.Submit_Button.Text = "Submit";
+            this.Submit_Button.UseVisualStyleBackColor = true;
+            this.Submit_Button.Click += new System.EventHandler(this.Submit_Button_Click);
+            // 
             // AddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2533, 1281);
+            this.ClientSize = new System.Drawing.Size(1642, 1436);
+            this.Controls.Add(this.Submit_Button);
             this.Controls.Add(this.TB5);
             this.Controls.Add(this.TB4);
             this.Controls.Add(this.TB3);
@@ -432,5 +449,6 @@
         private System.Windows.Forms.TextBox TB3;
         private System.Windows.Forms.TextBox TB4;
         private System.Windows.Forms.TextBox TB5;
+        private System.Windows.Forms.Button Submit_Button;
     }
 }

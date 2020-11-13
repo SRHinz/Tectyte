@@ -735,6 +735,11 @@ namespace RegSystemGUI
                 }
             }
 
+			public void AddCourse()
+            {
+
+            }
+
 			public Dictionary<string, Course> CDatabase { get => cDatabase; }   //Made the dictionary a property for easier outside viewing.
 		}
 
