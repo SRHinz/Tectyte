@@ -41,7 +41,7 @@ namespace RegSystemGUI
 
         private void Select_Advisor_Button_Click(object sender, EventArgs e)
         {
-            AccountSelector AS = new AccountSelector(ref uData);
+            AccountSelector AS = new AccountSelector(ref uData, "faculty");     
             AS.ShowDialog();
             Advisor = AS.getAccount();
         }
