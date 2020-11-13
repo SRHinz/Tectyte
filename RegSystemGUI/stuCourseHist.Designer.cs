@@ -59,10 +59,13 @@ namespace RegSystemGUI
             this.GPALabel = new System.Windows.Forms.Label();
             this.CreditsEarnedBox = new System.Windows.Forms.TextBox();
             this.NumCreditsEarnedLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseSchedule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuReturn
@@ -356,11 +359,36 @@ namespace RegSystemGUI
             this.NumCreditsEarnedLabel.TabIndex = 16;
             this.NumCreditsEarnedLabel.Text = "Number of Credits Earned:";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(741, 808);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(773, 816);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(443, 24);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "this software is property of tectyte ©2020";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // stuCourseHist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1957, 854);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.NumCreditsEarnedLabel);
             this.Controls.Add(this.CreditsEarnedBox);
             this.Controls.Add(this.GPALabel);
@@ -384,6 +412,7 @@ namespace RegSystemGUI
             ((System.ComponentModel.ISupportInitialize)(this.courseSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseDatabaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +451,7 @@ namespace RegSystemGUI
         private System.Windows.Forms.Label GPALabel;
         private System.Windows.Forms.TextBox CreditsEarnedBox;
         private System.Windows.Forms.Label NumCreditsEarnedLabel;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

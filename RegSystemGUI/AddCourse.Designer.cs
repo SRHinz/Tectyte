@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCourse));
             this.Course_Name_Label = new System.Windows.Forms.Label();
             this.Course_Title_Label = new System.Windows.Forms.Label();
             this.Instructor_Label = new System.Windows.Forms.Label();
@@ -50,18 +51,21 @@
             this.Edit_TB3_Button = new System.Windows.Forms.Button();
             this.Edit_TB4_Button = new System.Windows.Forms.Button();
             this.Edit_TB5_Button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.copyrightBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Num_TimeBlocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Seats)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Course_Name_Label
             // 
             this.Course_Name_Label.AutoSize = true;
             this.Course_Name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Course_Name_Label.Location = new System.Drawing.Point(263, 80);
-            this.Course_Name_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.Course_Name_Label.Location = new System.Drawing.Point(166, 54);
+            this.Course_Name_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Course_Name_Label.Name = "Course_Name_Label";
-            this.Course_Name_Label.Size = new System.Drawing.Size(391, 65);
+            this.Course_Name_Label.Size = new System.Drawing.Size(265, 44);
             this.Course_Name_Label.TabIndex = 0;
             this.Course_Name_Label.Text = "Course Name";
             // 
@@ -69,10 +73,10 @@
             // 
             this.Course_Title_Label.AutoSize = true;
             this.Course_Title_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Course_Title_Label.Location = new System.Drawing.Point(263, 191);
-            this.Course_Title_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.Course_Title_Label.Location = new System.Drawing.Point(166, 129);
+            this.Course_Title_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Course_Title_Label.Name = "Course_Title_Label";
-            this.Course_Title_Label.Size = new System.Drawing.Size(349, 65);
+            this.Course_Title_Label.Size = new System.Drawing.Size(237, 44);
             this.Course_Title_Label.TabIndex = 1;
             this.Course_Title_Label.Text = "Course Title";
             // 
@@ -80,18 +84,18 @@
             // 
             this.Instructor_Label.AutoSize = true;
             this.Instructor_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Instructor_Label.Location = new System.Drawing.Point(263, 299);
-            this.Instructor_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.Instructor_Label.Location = new System.Drawing.Point(166, 202);
+            this.Instructor_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Instructor_Label.Name = "Instructor_Label";
-            this.Instructor_Label.Size = new System.Drawing.Size(278, 65);
+            this.Instructor_Label.Size = new System.Drawing.Size(189, 44);
             this.Instructor_Label.TabIndex = 2;
             this.Instructor_Label.Text = "Instructor";
             // 
             // Num_TimeBlocks
             // 
             this.Num_TimeBlocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Num_TimeBlocks.Location = new System.Drawing.Point(998, 635);
-            this.Num_TimeBlocks.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Num_TimeBlocks.Location = new System.Drawing.Point(630, 429);
+            this.Num_TimeBlocks.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Num_TimeBlocks.Maximum = new decimal(new int[] {
             5,
             0,
@@ -103,7 +107,7 @@
             0,
             0});
             this.Num_TimeBlocks.Name = "Num_TimeBlocks";
-            this.Num_TimeBlocks.Size = new System.Drawing.Size(380, 52);
+            this.Num_TimeBlocks.Size = new System.Drawing.Size(240, 37);
             this.Num_TimeBlocks.TabIndex = 3;
             this.Num_TimeBlocks.Value = new decimal(new int[] {
             1,
@@ -115,10 +119,10 @@
             // 
             this.Num_TB_Label.AutoSize = true;
             this.Num_TB_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Num_TB_Label.Location = new System.Drawing.Point(263, 629);
-            this.Num_TB_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.Num_TB_Label.Location = new System.Drawing.Point(166, 425);
+            this.Num_TB_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Num_TB_Label.Name = "Num_TB_Label";
-            this.Num_TB_Label.Size = new System.Drawing.Size(620, 65);
+            this.Num_TB_Label.Size = new System.Drawing.Size(422, 44);
             this.Num_TB_Label.TabIndex = 4;
             this.Num_TB_Label.Text = "Number of Timeblocks";
             // 
@@ -126,10 +130,10 @@
             // 
             this.Credits_Label.AutoSize = true;
             this.Credits_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Credits_Label.Location = new System.Drawing.Point(263, 410);
-            this.Credits_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.Credits_Label.Location = new System.Drawing.Point(166, 277);
+            this.Credits_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Credits_Label.Name = "Credits_Label";
-            this.Credits_Label.Size = new System.Drawing.Size(217, 65);
+            this.Credits_Label.Size = new System.Drawing.Size(148, 44);
             this.Credits_Label.TabIndex = 5;
             this.Credits_Label.Text = "Credits";
             // 
@@ -137,37 +141,37 @@
             // 
             this.Num_Seats_Label.AutoSize = true;
             this.Num_Seats_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Num_Seats_Label.Location = new System.Drawing.Point(263, 509);
-            this.Num_Seats_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.Num_Seats_Label.Location = new System.Drawing.Point(166, 344);
+            this.Num_Seats_Label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Num_Seats_Label.Name = "Num_Seats_Label";
-            this.Num_Seats_Label.Size = new System.Drawing.Size(471, 65);
+            this.Num_Seats_Label.Size = new System.Drawing.Size(320, 44);
             this.Num_Seats_Label.TabIndex = 6;
             this.Num_Seats_Label.Text = "Number of Seats";
             // 
             // Course_Name_Box
             // 
-            this.Course_Name_Box.Location = new System.Drawing.Point(994, 88);
-            this.Course_Name_Box.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Course_Name_Box.Location = new System.Drawing.Point(628, 59);
+            this.Course_Name_Box.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Course_Name_Box.MaxLength = 10;
             this.Course_Name_Box.Name = "Course_Name_Box";
-            this.Course_Name_Box.Size = new System.Drawing.Size(308, 44);
+            this.Course_Name_Box.Size = new System.Drawing.Size(196, 31);
             this.Course_Name_Box.TabIndex = 8;
             // 
             // Course_Title_Box
             // 
-            this.Course_Title_Box.Location = new System.Drawing.Point(994, 199);
-            this.Course_Title_Box.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Course_Title_Box.Location = new System.Drawing.Point(628, 134);
+            this.Course_Title_Box.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Course_Title_Box.MaxLength = 15;
             this.Course_Title_Box.Name = "Course_Title_Box";
-            this.Course_Title_Box.Size = new System.Drawing.Size(308, 44);
+            this.Course_Title_Box.Size = new System.Drawing.Size(196, 31);
             this.Course_Title_Box.TabIndex = 9;
             // 
             // Instructor_Button
             // 
-            this.Instructor_Button.Location = new System.Drawing.Point(998, 299);
-            this.Instructor_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Instructor_Button.Location = new System.Drawing.Point(630, 202);
+            this.Instructor_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Instructor_Button.Name = "Instructor_Button";
-            this.Instructor_Button.Size = new System.Drawing.Size(238, 65);
+            this.Instructor_Button.Size = new System.Drawing.Size(150, 44);
             this.Instructor_Button.TabIndex = 10;
             this.Instructor_Button.Text = "Select";
             this.Instructor_Button.UseVisualStyleBackColor = true;
@@ -179,17 +183,17 @@
             this.Credit_Box.Items.Add("0.3");
             this.Credit_Box.Items.Add("0.5");
             this.Credit_Box.Items.Add("1.0");
-            this.Credit_Box.Location = new System.Drawing.Point(994, 410);
-            this.Credit_Box.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Credit_Box.Location = new System.Drawing.Point(628, 277);
+            this.Credit_Box.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Credit_Box.Name = "Credit_Box";
-            this.Credit_Box.Size = new System.Drawing.Size(380, 44);
+            this.Credit_Box.Size = new System.Drawing.Size(240, 31);
             this.Credit_Box.TabIndex = 11;
             // 
             // Num_Seats
             // 
             this.Num_Seats.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Num_Seats.Location = new System.Drawing.Point(994, 521);
-            this.Num_Seats.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Num_Seats.Location = new System.Drawing.Point(628, 352);
+            this.Num_Seats.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Num_Seats.Maximum = new decimal(new int[] {
             999,
             0,
@@ -201,7 +205,7 @@
             0,
             0});
             this.Num_Seats.Name = "Num_Seats";
-            this.Num_Seats.Size = new System.Drawing.Size(380, 52);
+            this.Num_Seats.Size = new System.Drawing.Size(240, 37);
             this.Num_Seats.TabIndex = 12;
             this.Num_Seats.Value = new decimal(new int[] {
             1,
@@ -212,10 +216,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(276, 777);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.checkBox1.Location = new System.Drawing.Point(174, 525);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(216, 41);
+            this.checkBox1.Size = new System.Drawing.Size(150, 29);
             this.checkBox1.TabIndex = 18;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -223,10 +227,10 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(276, 882);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.checkBox2.Location = new System.Drawing.Point(174, 596);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(218, 41);
+            this.checkBox2.Size = new System.Drawing.Size(150, 29);
             this.checkBox2.TabIndex = 19;
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -234,10 +238,10 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(276, 976);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.checkBox3.Location = new System.Drawing.Point(174, 659);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(218, 41);
+            this.checkBox3.Size = new System.Drawing.Size(150, 29);
             this.checkBox3.TabIndex = 20;
             this.checkBox3.Text = "checkBox3";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -245,10 +249,10 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(276, 1070);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.checkBox4.Location = new System.Drawing.Point(174, 723);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(218, 41);
+            this.checkBox4.Size = new System.Drawing.Size(150, 29);
             this.checkBox4.TabIndex = 21;
             this.checkBox4.Text = "checkBox4";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -256,69 +260,94 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(276, 1164);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.checkBox5.Location = new System.Drawing.Point(174, 786);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(218, 41);
+            this.checkBox5.Size = new System.Drawing.Size(150, 29);
             this.checkBox5.TabIndex = 22;
             this.checkBox5.Text = "checkBox5";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // Edit_TB1_Button
             // 
-            this.Edit_TB1_Button.Location = new System.Drawing.Point(576, 766);
-            this.Edit_TB1_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Edit_TB1_Button.Location = new System.Drawing.Point(364, 518);
+            this.Edit_TB1_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Edit_TB1_Button.Name = "Edit_TB1_Button";
-            this.Edit_TB1_Button.Size = new System.Drawing.Size(238, 65);
+            this.Edit_TB1_Button.Size = new System.Drawing.Size(150, 44);
             this.Edit_TB1_Button.TabIndex = 23;
             this.Edit_TB1_Button.Text = "Edit";
             this.Edit_TB1_Button.UseVisualStyleBackColor = true;
             // 
             // Edit_TB2_Button
             // 
-            this.Edit_TB2_Button.Location = new System.Drawing.Point(576, 871);
-            this.Edit_TB2_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Edit_TB2_Button.Location = new System.Drawing.Point(364, 589);
+            this.Edit_TB2_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Edit_TB2_Button.Name = "Edit_TB2_Button";
-            this.Edit_TB2_Button.Size = new System.Drawing.Size(238, 65);
+            this.Edit_TB2_Button.Size = new System.Drawing.Size(150, 44);
             this.Edit_TB2_Button.TabIndex = 24;
             this.Edit_TB2_Button.Text = "Edit";
             this.Edit_TB2_Button.UseVisualStyleBackColor = true;
             // 
             // Edit_TB3_Button
             // 
-            this.Edit_TB3_Button.Location = new System.Drawing.Point(576, 965);
-            this.Edit_TB3_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Edit_TB3_Button.Location = new System.Drawing.Point(364, 652);
+            this.Edit_TB3_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Edit_TB3_Button.Name = "Edit_TB3_Button";
-            this.Edit_TB3_Button.Size = new System.Drawing.Size(238, 65);
+            this.Edit_TB3_Button.Size = new System.Drawing.Size(150, 44);
             this.Edit_TB3_Button.TabIndex = 25;
             this.Edit_TB3_Button.Text = "Edit";
             this.Edit_TB3_Button.UseVisualStyleBackColor = true;
             // 
             // Edit_TB4_Button
             // 
-            this.Edit_TB4_Button.Location = new System.Drawing.Point(576, 1059);
-            this.Edit_TB4_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Edit_TB4_Button.Location = new System.Drawing.Point(364, 716);
+            this.Edit_TB4_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Edit_TB4_Button.Name = "Edit_TB4_Button";
-            this.Edit_TB4_Button.Size = new System.Drawing.Size(238, 65);
+            this.Edit_TB4_Button.Size = new System.Drawing.Size(150, 44);
             this.Edit_TB4_Button.TabIndex = 26;
             this.Edit_TB4_Button.Text = "Edit";
             this.Edit_TB4_Button.UseVisualStyleBackColor = true;
             // 
             // Edit_TB5_Button
             // 
-            this.Edit_TB5_Button.Location = new System.Drawing.Point(576, 1153);
-            this.Edit_TB5_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Edit_TB5_Button.Location = new System.Drawing.Point(364, 779);
+            this.Edit_TB5_Button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Edit_TB5_Button.Name = "Edit_TB5_Button";
-            this.Edit_TB5_Button.Size = new System.Drawing.Size(238, 65);
+            this.Edit_TB5_Button.Size = new System.Drawing.Size(150, 44);
             this.Edit_TB5_Button.TabIndex = 27;
             this.Edit_TB5_Button.Text = "Edit";
             this.Edit_TB5_Button.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(563, 820);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // copyrightBox
+            // 
+            this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
+            this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.copyrightBox.Location = new System.Drawing.Point(595, 828);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(5);
+            this.copyrightBox.Name = "copyrightBox";
+            this.copyrightBox.Size = new System.Drawing.Size(443, 24);
+            this.copyrightBox.TabIndex = 29;
+            this.copyrightBox.Text = "this software is property of tectyte ©2020";
+            this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // AddCourse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2533, 1281);
+            this.ClientSize = new System.Drawing.Size(1600, 866);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.Edit_TB5_Button);
             this.Controls.Add(this.Edit_TB4_Button);
             this.Controls.Add(this.Edit_TB3_Button);
@@ -341,11 +370,14 @@
             this.Controls.Add(this.Instructor_Label);
             this.Controls.Add(this.Course_Title_Label);
             this.Controls.Add(this.Course_Name_Label);
-            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "AddCourse";
-            this.Text = "AddCourse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Course";
             ((System.ComponentModel.ISupportInitialize)(this.Num_TimeBlocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Seats)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,5 +407,7 @@
         private System.Windows.Forms.Button Edit_TB3_Button;
         private System.Windows.Forms.Button Edit_TB4_Button;
         private System.Windows.Forms.Button Edit_TB5_Button;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox copyrightBox;
     }
 }
