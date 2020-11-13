@@ -66,7 +66,7 @@
             this.TB4,
             this.TB5});
             this.courseModifierView.Location = new System.Drawing.Point(6, 55);
-            this.courseModifierView.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.courseModifierView.Margin = new System.Windows.Forms.Padding(1);
             this.courseModifierView.Name = "courseModifierView";
             this.courseModifierView.RowHeadersWidth = 123;
             this.courseModifierView.RowTemplate.Height = 46;
@@ -165,8 +165,8 @@
             // searchBar
             // 
             this.searchBar.BackColor = System.Drawing.SystemColors.Window;
-            this.searchBar.Location = new System.Drawing.Point(106, 37);
-            this.searchBar.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.searchBar.Location = new System.Drawing.Point(105, 33);
+            this.searchBar.Margin = new System.Windows.Forms.Padding(1);
             this.searchBar.Name = "searchBar";
             this.searchBar.Size = new System.Drawing.Size(142, 20);
             this.searchBar.TabIndex = 1;
@@ -175,7 +175,7 @@
             // delCourse
             // 
             this.delCourse.Location = new System.Drawing.Point(688, 174);
-            this.delCourse.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.delCourse.Margin = new System.Windows.Forms.Padding(1);
             this.delCourse.Name = "delCourse";
             this.delCourse.Size = new System.Drawing.Size(111, 40);
             this.delCourse.TabIndex = 2;
@@ -186,7 +186,7 @@
             // editCourse
             // 
             this.editCourse.Location = new System.Drawing.Point(688, 229);
-            this.editCourse.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.editCourse.Margin = new System.Windows.Forms.Padding(1);
             this.editCourse.Name = "editCourse";
             this.editCourse.Size = new System.Drawing.Size(111, 40);
             this.editCourse.TabIndex = 3;
@@ -229,7 +229,7 @@
             this.Controls.Add(this.searchBar);
             this.Controls.Add(this.courseModifierView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "CourseSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Selector";
