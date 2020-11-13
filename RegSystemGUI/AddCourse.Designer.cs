@@ -50,6 +50,11 @@
             this.Edit_TB3_Button = new System.Windows.Forms.Button();
             this.Edit_TB4_Button = new System.Windows.Forms.Button();
             this.Edit_TB5_Button = new System.Windows.Forms.Button();
+            this.TB1 = new System.Windows.Forms.TextBox();
+            this.TB2 = new System.Windows.Forms.TextBox();
+            this.TB3 = new System.Windows.Forms.TextBox();
+            this.TB4 = new System.Windows.Forms.TextBox();
+            this.TB5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Num_TimeBlocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Seats)).BeginInit();
             this.SuspendLayout();
@@ -110,6 +115,7 @@
             0,
             0,
             0});
+            this.Num_TimeBlocks.ValueChanged += new System.EventHandler(this.Num_TB_Change);
             // 
             // Num_TB_Label
             // 
@@ -215,9 +221,9 @@
             this.checkBox1.Location = new System.Drawing.Point(276, 777);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(216, 41);
+            this.checkBox1.Size = new System.Drawing.Size(246, 41);
             this.checkBox1.TabIndex = 18;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Time Block 1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -226,9 +232,9 @@
             this.checkBox2.Location = new System.Drawing.Point(276, 882);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(218, 41);
+            this.checkBox2.Size = new System.Drawing.Size(248, 41);
             this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.Text = "Time Block 2";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox3
@@ -237,9 +243,9 @@
             this.checkBox3.Location = new System.Drawing.Point(276, 976);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(218, 41);
+            this.checkBox3.Size = new System.Drawing.Size(248, 41);
             this.checkBox3.TabIndex = 20;
-            this.checkBox3.Text = "checkBox3";
+            this.checkBox3.Text = "Time Block 3";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox4
@@ -248,9 +254,9 @@
             this.checkBox4.Location = new System.Drawing.Point(276, 1070);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(218, 41);
+            this.checkBox4.Size = new System.Drawing.Size(248, 41);
             this.checkBox4.TabIndex = 21;
-            this.checkBox4.Text = "checkBox4";
+            this.checkBox4.Text = "Time Block 4";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox5
@@ -259,9 +265,9 @@
             this.checkBox5.Location = new System.Drawing.Point(276, 1164);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(218, 41);
+            this.checkBox5.Size = new System.Drawing.Size(248, 41);
             this.checkBox5.TabIndex = 22;
-            this.checkBox5.Text = "checkBox5";
+            this.checkBox5.Text = "Time Block 5";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // Edit_TB1_Button
@@ -273,6 +279,7 @@
             this.Edit_TB1_Button.TabIndex = 23;
             this.Edit_TB1_Button.Text = "Edit";
             this.Edit_TB1_Button.UseVisualStyleBackColor = true;
+            this.Edit_TB1_Button.Click += new System.EventHandler(this.Edit_TB1_Button_Click);
             // 
             // Edit_TB2_Button
             // 
@@ -314,11 +321,56 @@
             this.Edit_TB5_Button.Text = "Edit";
             this.Edit_TB5_Button.UseVisualStyleBackColor = true;
             // 
+            // TB1
+            // 
+            this.TB1.Location = new System.Drawing.Point(994, 773);
+            this.TB1.Name = "TB1";
+            this.TB1.ReadOnly = true;
+            this.TB1.Size = new System.Drawing.Size(384, 44);
+            this.TB1.TabIndex = 28;
+            // 
+            // TB2
+            // 
+            this.TB2.Location = new System.Drawing.Point(994, 880);
+            this.TB2.Name = "TB2";
+            this.TB2.ReadOnly = true;
+            this.TB2.Size = new System.Drawing.Size(384, 44);
+            this.TB2.TabIndex = 29;
+            // 
+            // TB3
+            // 
+            this.TB3.Location = new System.Drawing.Point(994, 973);
+            this.TB3.Name = "TB3";
+            this.TB3.ReadOnly = true;
+            this.TB3.Size = new System.Drawing.Size(384, 44);
+            this.TB3.TabIndex = 30;
+            // 
+            // TB4
+            // 
+            this.TB4.Location = new System.Drawing.Point(994, 1067);
+            this.TB4.Name = "TB4";
+            this.TB4.ReadOnly = true;
+            this.TB4.Size = new System.Drawing.Size(384, 44);
+            this.TB4.TabIndex = 31;
+            // 
+            // TB5
+            // 
+            this.TB5.Location = new System.Drawing.Point(994, 1161);
+            this.TB5.Name = "TB5";
+            this.TB5.ReadOnly = true;
+            this.TB5.Size = new System.Drawing.Size(384, 44);
+            this.TB5.TabIndex = 32;
+            // 
             // AddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2533, 1281);
+            this.Controls.Add(this.TB5);
+            this.Controls.Add(this.TB4);
+            this.Controls.Add(this.TB3);
+            this.Controls.Add(this.TB2);
+            this.Controls.Add(this.TB1);
             this.Controls.Add(this.Edit_TB5_Button);
             this.Controls.Add(this.Edit_TB4_Button);
             this.Controls.Add(this.Edit_TB3_Button);
@@ -375,5 +427,10 @@
         private System.Windows.Forms.Button Edit_TB3_Button;
         private System.Windows.Forms.Button Edit_TB4_Button;
         private System.Windows.Forms.Button Edit_TB5_Button;
+        private System.Windows.Forms.TextBox TB1;
+        private System.Windows.Forms.TextBox TB2;
+        private System.Windows.Forms.TextBox TB3;
+        private System.Windows.Forms.TextBox TB4;
+        private System.Windows.Forms.TextBox TB5;
     }
 }
