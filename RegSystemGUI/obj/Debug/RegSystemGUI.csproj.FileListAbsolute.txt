@@ -134,3 +134,13 @@ C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.AddCourse.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddCourse.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddUser.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseSelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AccountSelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.DatabaseMod.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
