@@ -13,14 +13,19 @@ namespace RegSystemGUI
     public partial class AddCourse : Form
     {
         Program.UserDatabase UDATA;
+        Program.CourseDatabase CDATA;
         private string instructor = "staff";
         private int[] TBs = new int[5] { 0, 0, 0, 0, 0 };
         private Program.viewCourses VC = new Program.viewCourses();
         private (string, string, string, string, int, int, int[]) courseInfo;
-        public AddCourse(ref Program.UserDatabase uData)
+        private List<string> prereqs;
+        private bool PR = false;
+        public AddCourse(ref Program.UserDatabase uData, Program.CourseDatabase cData)
         {
             InitializeComponent();
             UDATA = uData;
+            CDATA = cData;
+
         }
 
         private void Instructor_Button_Click(object sender, EventArgs e)
@@ -28,6 +33,9 @@ namespace RegSystemGUI
             AccountSelector AS = new AccountSelector(ref UDATA, "faculty");
             AS.ShowDialog();
             instructor = AS.getAccount();
+            Num_TimeBlocks.Value = 1;
+            Add_P_Button.Hide();
+            Prereq_Display.Hide();
 
         }
 
@@ -210,7 +218,7 @@ namespace RegSystemGUI
             {
                 MessageBox.Show("You have not selected a valid number of Credits", "Invalid Credits Selected");
             }
-            else if (((Num_TimeBlocks.Value == 1) & (TBs[0] == 0)) | ((Num_TimeBlocks.Value == 2) & ((TBs[0] == 0) | (TBs[1] == 0))) | ((Num_TimeBlocks.Value == 3) & ((TBs[0] == 0) | (TBs[1] == 0) | (TBs[2] == 0))) | ((Num_TimeBlocks.Value == 4) & ((TBs[0] == 0) | (TBs[1] == 0) | (TBs[2] == 0) | (TBs[3] == 0))) | ((Num_TimeBlocks.Value == 5) & ((TBs[0] == 0) | (TBs[1] == 0) | (TBs[2] == 0) | (TBs[3] == 0) | (TBs[4] == 0))) )
+            else if (((Num_TimeBlocks.Value == 1) & (TBs[0] == 0)) | ((Num_TimeBlocks.Value == 2) & ((TBs[0] == 0) | (TBs[1] == 0))) | ((Num_TimeBlocks.Value == 3) & ((TBs[0] == 0) | (TBs[1] == 0) | (TBs[2] == 0))) | ((Num_TimeBlocks.Value == 4) & ((TBs[0] == 0) | (TBs[1] == 0) | (TBs[2] == 0) | (TBs[3] == 0))) | ((Num_TimeBlocks.Value == 5) & ((TBs[0] == 0) | (TBs[1] == 0) | (TBs[2] == 0) | (TBs[3] == 0) | (TBs[4] == 0))))
             {
                 MessageBox.Show("Invalid Time Block(s) selected for the chosen number of Time Blocks", "Invalid Time Block(s)");
             }
@@ -229,7 +237,7 @@ namespace RegSystemGUI
             }
             else
             {
-                if (Convert.ToInt32(Num_TimeBlocks.Value) == 1 )
+                if (Convert.ToInt32(Num_TimeBlocks.Value) == 1)
                 {
                     for (int i = 1; i <= 4; i++)
                     {
@@ -267,6 +275,57 @@ namespace RegSystemGUI
             get
             {
                 return courseInfo;
+            }
+        }
+
+        private void Prereq_Click(object sender, EventArgs e)
+        {
+            if (Prereq.Checked)
+            {
+                Prereq_Display.Hide();
+                Add_P_Button.Hide();
+                PR = true;
+            }
+            else
+            {
+                Prereq_Display.Show();
+                Add_P_Button.Show();
+                PR = false;
+            }
+        }
+
+        private void Add_P_Button_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Is the prerequisite course being offered next semester?", "Prereq Choice", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                CourseSelector CS = new CourseSelector(CDATA);
+                CS.ShowDialog();
+                Prereq_Display.Text += CS.getCourse.Substring(0, (CS.getCourse.Length - 3)) + "\n";
+                prereqs.Add(CS.getCourse.Substring(0, (CS.getCourse.Length - 3)));
+
+            }
+            else if (result == DialogResult.No)
+            {
+                CourseEnter CE = new CourseEnter();
+                CE.ShowDialog();
+                Prereq_Display.Text += CE.getcourseName + "\n";
+                prereqs.Add(CE.getcourseName);
+            }
+        }
+        public List<string> getPrereqs
+        {
+            get
+            {
+                return prereqs;
+            }
+        }
+
+        public bool getPR
+        {
+            get
+            {
+                return PR;
             }
         }
     }

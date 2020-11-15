@@ -16,11 +16,22 @@ namespace RegSystemGUI
         string option;
         string course;
         Program.RegistrationSystem COE;
+        private Program.viewCourses VC = new Program.viewCourses();
         public CourseSelector(ref Program.RegistrationSystem iSys)
         {
             InitializeComponent();
             COE = iSys;
-            COE.vCourse.displayCourses(COE.cData, courseModifierView);
+            delCourse.Show();
+            editCourse.Show();
+            Add_Preq_Button.Hide();
+            VC.displayCourses(COE.cData, courseModifierView);
+        }
+        public CourseSelector(Program.CourseDatabase courseDatabase)
+        {
+            delCourse.Hide();
+            editCourse.Hide();
+            Add_Preq_Button.Show();
+            VC.displayCourses(courseDatabase, courseModifierView);
         }
 
         public (string, string) getOptionandCourse
@@ -28,6 +39,14 @@ namespace RegSystemGUI
             get
             {
                 return (option, course);
+            }
+        }
+
+        public string getCourse
+        {
+            get
+            {
+                return course;
             }
         }
 
@@ -53,6 +72,15 @@ namespace RegSystemGUI
             DataGridViewCell cell = row[0];
             course = cell.Value.ToString().Trim();
             option = "E";
+            this.Close();
+        }
+
+        private void Add_Preq_Button_Click(object sender, EventArgs e)
+        {
+            int rowIndex = courseModifierView.CurrentCell.RowIndex;
+            DataGridViewCellCollection row = courseModifierView.Rows[rowIndex].Cells;
+            DataGridViewCell cell = row[0];
+            course = cell.Value.ToString().Trim();
             this.Close();
         }
     }

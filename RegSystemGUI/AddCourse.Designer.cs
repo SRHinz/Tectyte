@@ -56,6 +56,10 @@
             this.TB4 = new System.Windows.Forms.TextBox();
             this.TB5 = new System.Windows.Forms.TextBox();
             this.Submit_Button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Prereq = new System.Windows.Forms.CheckBox();
+            this.Prereq_Display = new System.Windows.Forms.TextBox();
+            this.Add_P_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Num_TimeBlocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Seats)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +113,7 @@
             0,
             0});
             this.Num_TimeBlocks.Name = "Num_TimeBlocks";
-            this.Num_TimeBlocks.Size = new System.Drawing.Size(380, 52);
+            this.Num_TimeBlocks.Size = new System.Drawing.Size(376, 52);
             this.Num_TimeBlocks.TabIndex = 3;
             this.Num_TimeBlocks.Value = new decimal(new int[] {
             1,
@@ -332,7 +336,7 @@
             this.TB1.Location = new System.Drawing.Point(994, 773);
             this.TB1.Name = "TB1";
             this.TB1.ReadOnly = true;
-            this.TB1.Size = new System.Drawing.Size(384, 44);
+            this.TB1.Size = new System.Drawing.Size(380, 44);
             this.TB1.TabIndex = 28;
             // 
             // TB2
@@ -340,7 +344,7 @@
             this.TB2.Location = new System.Drawing.Point(994, 880);
             this.TB2.Name = "TB2";
             this.TB2.ReadOnly = true;
-            this.TB2.Size = new System.Drawing.Size(384, 44);
+            this.TB2.Size = new System.Drawing.Size(380, 44);
             this.TB2.TabIndex = 29;
             // 
             // TB3
@@ -348,7 +352,7 @@
             this.TB3.Location = new System.Drawing.Point(994, 973);
             this.TB3.Name = "TB3";
             this.TB3.ReadOnly = true;
-            this.TB3.Size = new System.Drawing.Size(384, 44);
+            this.TB3.Size = new System.Drawing.Size(380, 44);
             this.TB3.TabIndex = 30;
             // 
             // TB4
@@ -356,7 +360,7 @@
             this.TB4.Location = new System.Drawing.Point(994, 1067);
             this.TB4.Name = "TB4";
             this.TB4.ReadOnly = true;
-            this.TB4.Size = new System.Drawing.Size(384, 44);
+            this.TB4.Size = new System.Drawing.Size(380, 44);
             this.TB4.TabIndex = 31;
             // 
             // TB5
@@ -364,12 +368,12 @@
             this.TB5.Location = new System.Drawing.Point(994, 1161);
             this.TB5.Name = "TB5";
             this.TB5.ReadOnly = true;
-            this.TB5.Size = new System.Drawing.Size(384, 44);
+            this.TB5.Size = new System.Drawing.Size(380, 44);
             this.TB5.TabIndex = 32;
             // 
             // Submit_Button
             // 
-            this.Submit_Button.Location = new System.Drawing.Point(715, 1296);
+            this.Submit_Button.Location = new System.Drawing.Point(745, 1617);
             this.Submit_Button.Name = "Submit_Button";
             this.Submit_Button.Size = new System.Drawing.Size(330, 108);
             this.Submit_Button.TabIndex = 33;
@@ -377,11 +381,54 @@
             this.Submit_Button.UseVisualStyleBackColor = true;
             this.Submit_Button.Click += new System.EventHandler(this.Submit_Button_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(265, 1296);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(571, 64);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Prerequisite Courses";
+            // 
+            // Prereq
+            // 
+            this.Prereq.AutoSize = true;
+            this.Prereq.Location = new System.Drawing.Point(994, 1305);
+            this.Prereq.Name = "Prereq";
+            this.Prereq.Size = new System.Drawing.Size(42, 41);
+            this.Prereq.TabIndex = 36;
+            this.Prereq.UseVisualStyleBackColor = true;
+            this.Prereq.Click += new System.EventHandler(this.Prereq_Click);
+            // 
+            // Prereq_Display
+            // 
+            this.Prereq_Display.Location = new System.Drawing.Point(276, 1363);
+            this.Prereq_Display.Multiline = true;
+            this.Prereq_Display.Name = "Prereq_Display";
+            this.Prereq_Display.Size = new System.Drawing.Size(560, 225);
+            this.Prereq_Display.TabIndex = 37;
+            // 
+            // Add_P_Button
+            // 
+            this.Add_P_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_P_Button.Location = new System.Drawing.Point(998, 1420);
+            this.Add_P_Button.Name = "Add_P_Button";
+            this.Add_P_Button.Size = new System.Drawing.Size(283, 81);
+            this.Add_P_Button.TabIndex = 38;
+            this.Add_P_Button.Text = "Add";
+            this.Add_P_Button.UseVisualStyleBackColor = true;
+            this.Add_P_Button.Click += new System.EventHandler(this.Add_P_Button_Click);
+            // 
             // AddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1642, 1436);
+            this.ClientSize = new System.Drawing.Size(1642, 1764);
+            this.Controls.Add(this.Add_P_Button);
+            this.Controls.Add(this.Prereq_Display);
+            this.Controls.Add(this.Prereq);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Submit_Button);
             this.Controls.Add(this.TB5);
             this.Controls.Add(this.TB4);
@@ -450,5 +497,9 @@
         private System.Windows.Forms.TextBox TB4;
         private System.Windows.Forms.TextBox TB5;
         private System.Windows.Forms.Button Submit_Button;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox Prereq;
+        private System.Windows.Forms.TextBox Prereq_Display;
+        private System.Windows.Forms.Button Add_P_Button;
     }
 }
