@@ -20,6 +20,9 @@ namespace RegSystemGUI
         private adviseeViewer adView;
         private changeAdvisor adChange;
         private AccountSelector AS;
+        private int locX = 101;
+        private int locY = 61;
+        private int rowCount = 1;
         public Options(ref Program.RegistrationSystem coe, string accountType, string tempUN, string tempPW, Login loginform)
         {
             InitializeComponent();
@@ -46,6 +49,39 @@ namespace RegSystemGUI
                 }
                 AdminStuHisButton.Show();
                 
+            }
+            //setButtonPositions();
+        }
+
+        private void setButtonPositions()
+        {
+            int wStart = (this.Width / 2) - 220;
+            int hStart = (this.Height / 2) - 120;
+            int colCount = 0;
+            int rowCount = 0;
+            int widthMod = 140;
+            int heightMod = 55;
+            Point point = new Point();
+            foreach (var button in this.Controls.OfType<Button>())
+            {
+                button.Width = 135;
+                button.Height = 50;
+
+                if (button.Text == "Log Out")
+                    button.Location = new Point(wStart + widthMod, hStart + heightMod * 3);
+                if (button.Visible && button.Text != "Log Out")
+                {
+                    point.X = wStart + (colCount * widthMod);
+                    point.Y = hStart + (rowCount * heightMod);
+                    button.Location = point;
+                    if (colCount == 2)
+                    {
+                        rowCount++;
+                        colCount = 0;
+                    }
+                    else
+                        colCount++;
+                }
             }
         }
 
@@ -79,6 +115,7 @@ namespace RegSystemGUI
                 changeAdvisorButton.Show();
 
             }
+            setButtonPositions();
         }
 
         private void button1_Click(object sender, EventArgs e)
