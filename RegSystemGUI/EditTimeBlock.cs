@@ -17,9 +17,10 @@ namespace RegSystemGUI
         private bool[] days = new bool[5] { false, false, false, false, false };
         public EditTimeBlock(string TBs)
         {
+            InitializeComponent();
             if (TBs != "new")
             {
-                InitializeComponent();
+                
                 if (TBs.Contains("Mon"))
                 {
                     checkBox1.Checked = true;

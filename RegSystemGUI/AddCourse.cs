@@ -26,6 +26,20 @@ namespace RegSystemGUI
             InitializeComponent();
             UDATA = uData;
             CDATA = cData;
+            Prereq.Checked = true;
+            Edit_TB2_Button.Hide();
+            checkBox2.Hide();
+            TB2.Hide();
+            Edit_TB3_Button.Hide();
+            checkBox3.Hide();
+            TB3.Hide();
+            Edit_TB4_Button.Hide();
+            checkBox4.Hide();
+            TB4.Hide();
+            Edit_TB5_Button.Hide();
+            checkBox5.Hide();
+            TB5.Hide();
+
 
         }
 
@@ -127,7 +141,7 @@ namespace RegSystemGUI
             {
                 ETB = new EditTimeBlock(VC.solveTimeblock(TBs[0]));
             }
-            catch (IndexOutOfRangeException f)
+            catch (Exception f)
             {
                 ETB = new EditTimeBlock("new");
             }
@@ -144,7 +158,7 @@ namespace RegSystemGUI
             {
                 ETB = new EditTimeBlock(VC.solveTimeblock(TBs[1]));
             }
-            catch (IndexOutOfRangeException f)
+            catch (Exception f)
             {
                 ETB = new EditTimeBlock("new");
             }
@@ -161,7 +175,7 @@ namespace RegSystemGUI
             {
                 ETB = new EditTimeBlock(VC.solveTimeblock(TBs[2]));
             }
-            catch (IndexOutOfRangeException f)
+            catch (Exception f)
             {
                 ETB = new EditTimeBlock("new");
             }
@@ -178,7 +192,7 @@ namespace RegSystemGUI
             {
                 ETB = new EditTimeBlock(VC.solveTimeblock(TBs[3]));
             }
-            catch (IndexOutOfRangeException f)
+            catch (Exception f)
             {
                 ETB = new EditTimeBlock("new");
             }
@@ -195,7 +209,7 @@ namespace RegSystemGUI
             {
                 ETB = new EditTimeBlock(VC.solveTimeblock(TBs[4]));
             }
-            catch (IndexOutOfRangeException f)
+            catch (Exception f)
             {
                 ETB = new EditTimeBlock("new");
             }
@@ -283,7 +297,7 @@ namespace RegSystemGUI
 
         private void Prereq_Click(object sender, EventArgs e)
         {
-            if (Prereq.Checked)
+            if (!Prereq.Checked)
             {
                 Prereq_Display.Hide();
                 Add_P_Button.Hide();
@@ -335,6 +349,7 @@ namespace RegSystemGUI
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
             Result = DialogResult.Cancel;
+            this.Close();
         }
 
         public DialogResult GetResult
@@ -343,6 +358,11 @@ namespace RegSystemGUI
             {
                 return Result;
             }
+        }
+
+        private void AddCourse_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

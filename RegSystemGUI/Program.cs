@@ -377,7 +377,7 @@ namespace RegSystemGUI
 				{
 					if (UDatabase[userName].Password == Password)
 					{
-						if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+						if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin") | UDatabase[userName].Status.Equals("manager"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
 						{
 							return "student";
 						}
@@ -437,13 +437,19 @@ namespace RegSystemGUI
 
 			public void AddUser((string, string, string, string, string) InfoTuple )
             {
-				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3;
+				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3.Substring(0, 9);
 				int i = 1;
 				while ((uDatabase.ContainsKey(uName)) & (i < InfoTuple.Item1.Length))
                 {
 					i += 1;
-					uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3;
-
+					if (uName.Length == 10)
+					{
+						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3.Substring(0, 9 - i);
+					}
+					else
+					{
+						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3;
+					}
 				}
 				string[] info = new string[6] { uName, "password", InfoTuple.Item1, InfoTuple.Item2, InfoTuple.Item3, "" };
 				if (InfoTuple.Item4 == "student")

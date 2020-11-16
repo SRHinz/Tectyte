@@ -224,6 +224,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.AutoCheck = false;
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(276, 777);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
@@ -235,6 +236,7 @@
             // 
             // checkBox2
             // 
+            this.checkBox2.AutoCheck = false;
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(276, 882);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
@@ -246,6 +248,7 @@
             // 
             // checkBox3
             // 
+            this.checkBox3.AutoCheck = false;
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(276, 976);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
@@ -257,6 +260,7 @@
             // 
             // checkBox4
             // 
+            this.checkBox4.AutoCheck = false;
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(276, 1070);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
@@ -268,6 +272,7 @@
             // 
             // checkBox5
             // 
+            this.checkBox5.AutoCheck = false;
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(276, 1164);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
@@ -435,6 +440,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1642, 1764);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Add_P_Button);
@@ -472,6 +478,7 @@
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "AddCourse";
             this.Text = "AddCourse";
+            this.Load += new System.EventHandler(this.AddCourse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Num_TimeBlocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Seats)).EndInit();
             this.ResumeLayout(false);
