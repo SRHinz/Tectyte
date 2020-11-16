@@ -83,5 +83,10 @@ namespace RegSystemGUI
             course = cell.Value.ToString().Trim();
             this.Close();
         }
+
+        private void CourseSelector_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

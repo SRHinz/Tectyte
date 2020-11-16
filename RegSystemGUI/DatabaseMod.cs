@@ -24,7 +24,7 @@ namespace RegSystemGUI
         {
             if (type == "C")
             {
-                CourseSelector CS = new CourseSelector(ref COE, "edit-del");
+                CourseSelector CS = new CourseSelector(ref COE);
                 CS.ShowDialog();
                 (string, string) ret = CS.getOptionandCourse;
                 if (ret.Item1 == "D")
