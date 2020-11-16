@@ -26,10 +26,11 @@ namespace RegSystemGUI
             AS = new AccountSelector(ref coe.uData);
             login = loginform;
             COE = coe;
-            aType = accountType;
+            aType = accountType.Trim();
             accountUN = tempUN;
             accountPW = tempPW;
             COE.registerC = new Program.Register(ref COE.cData);
+            SysModButton.Hide();
             if (aType == "student")
             {
                 curAcc = COE.uData.UDatabase[tempUN] as Program.StudentAcc;
@@ -39,41 +40,49 @@ namespace RegSystemGUI
                 if (aType == "manager")
                 {
                     SysModButton.Show();
+                    AddCourse_Button.Show();
+                    AddUser_Button.Show();
                 }
                 else
                 {
-                    SysModButton.Hide();
+                    AddUser_Button.Hide();
+                    AddCourse_Button.Hide();
                 }
                 AdminStuHisButton.Show();
-                
+                changeAdvisorButton.Show();
+
             }
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            SysModButton.Hide();
+            AddUser_Button.Hide();
+            AddCourse_Button.Hide();
             if (aType == "student")
             {
                 CourseHisButton.Show();
                 viewAdvisees.Hide();
                 changeAdvisorButton.Hide();
-                SysModButton.Hide();
             }
             else if (aType == "faculty")
             {
                 CourseHisButton.Hide();
                 viewAdvisees.Show();
                 changeAdvisorButton.Hide();
-                SysModButton.Hide();
             }
             else if (aType == "admin" | aType == "manager")
             {
                 if (aType == "manager")
                 {
                     SysModButton.Show();
+                    AddCourse_Button.Show();
+                    AddUser_Button.Show();
                 }
                 else
                 {
-                    SysModButton.Hide();
+                    AddUser_Button.Hide();
+                    AddCourse_Button.Hide();
                 }
                 AdminStuHisButton.Show();
                 changeAdvisorButton.Show();
@@ -90,7 +99,7 @@ namespace RegSystemGUI
 
         private void viewAdvisees_Click(object sender, EventArgs e)
         {
-            if (aType == "admin")
+            if ((aType == "admin") | (aType == "manager"))
             {
                 AS.DisplayFacultyAccounts();
                 AS.ShowDialog();
@@ -185,7 +194,7 @@ namespace RegSystemGUI
 
         private void CourseHisButton_Click(object sender, EventArgs e)
         {
-            if (aType == "admin")
+            if ((aType == "admin") | (aType == "manager"))
             {
                 AS.DisplayStudentAccounts();
                 AS.ShowDialog();

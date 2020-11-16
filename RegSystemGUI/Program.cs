@@ -377,7 +377,7 @@ namespace RegSystemGUI
 				{
 					if (UDatabase[userName].Password == Password)
 					{
-						if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+						if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin") | UDatabase[userName].Status.Equals("manager"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
 						{
 							return "student";
 						}

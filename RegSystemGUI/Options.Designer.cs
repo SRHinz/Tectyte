@@ -64,6 +64,7 @@
             this.CourseHisButton.TabIndex = 1;
             this.CourseHisButton.Text = "View Course History";
             this.CourseHisButton.UseVisualStyleBackColor = true;
+            this.CourseHisButton.UseWaitCursor = true;
             this.CourseHisButton.Click += new System.EventHandler(this.CourseHisButton_Click);
             // 
             // logOutButton
@@ -92,7 +93,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(361, 797);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,7 +105,7 @@
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.copyrightBox.Location = new System.Drawing.Point(409, 805);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(6);
             this.copyrightBox.Name = "copyrightBox";
             this.copyrightBox.Size = new System.Drawing.Size(659, 37);
             this.copyrightBox.TabIndex = 8;
@@ -153,6 +154,7 @@
             this.SysModButton.TabIndex = 11;
             this.SysModButton.Text = "Database Modification";
             this.SysModButton.UseVisualStyleBackColor = true;
+            this.SysModButton.UseWaitCursor = true;
             this.SysModButton.Click += new System.EventHandler(this.SysMod_Click);
             // 
             // AddUser_Button
@@ -200,6 +202,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Shown += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
