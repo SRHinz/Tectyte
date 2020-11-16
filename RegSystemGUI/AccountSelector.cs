@@ -36,14 +36,21 @@ namespace RegSystemGUI
 
         private void DisplayAccounts()
         {
-            foreach (KeyValuePair<string, Program.Account> account in coeData.UDatabase)
+            foreach (string acc in coeData.UDatabase.Keys)
             {
-                if (accountType == "S" && account.Value is Program.StudentAcc)
-                    AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
-                else if (accountType == "F" && account.Value is Program.FacultyAcc)
-                    AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
-
+                if (coeData.UDatabase[acc].Status == accountType)
+                {
+                    AccountDataGrid.Rows.Add(coeData.UDatabase[acc].LName, coeData.UDatabase[acc].FName, coeData.UDatabase[acc].UserName);
+                }
             }
+            //foreach (KeyValuePair<string, Program.Account> account in coeData.UDatabase)
+            //{
+            //    if (accountType == "S" && account.Value is Program.StudentAcc)
+            //        AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
+            //    else if (accountType == "F" && account.Value is Program.FacultyAcc)
+            //        AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
+
+            //}
 
         }
 

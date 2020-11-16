@@ -144,3 +144,4 @@ C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditC
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter.resources
