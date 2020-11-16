@@ -60,6 +60,7 @@
             this.Prereq = new System.Windows.Forms.CheckBox();
             this.Prereq_Display = new System.Windows.Forms.TextBox();
             this.Add_P_Button = new System.Windows.Forms.Button();
+            this.Cancel_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Num_TimeBlocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Seats)).BeginInit();
             this.SuspendLayout();
@@ -420,11 +421,22 @@
             this.Add_P_Button.UseVisualStyleBackColor = true;
             this.Add_P_Button.Click += new System.EventHandler(this.Add_P_Button_Click);
             // 
+            // Cancel_Button
+            // 
+            this.Cancel_Button.Location = new System.Drawing.Point(1488, 1698);
+            this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.Size = new System.Drawing.Size(142, 54);
+            this.Cancel_Button.TabIndex = 39;
+            this.Cancel_Button.Text = "Cancel";
+            this.Cancel_Button.UseVisualStyleBackColor = true;
+            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
+            // 
             // AddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1642, 1764);
+            this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Add_P_Button);
             this.Controls.Add(this.Prereq_Display);
             this.Controls.Add(this.Prereq);
@@ -501,5 +513,6 @@
         private System.Windows.Forms.CheckBox Prereq;
         private System.Windows.Forms.TextBox Prereq_Display;
         private System.Windows.Forms.Button Add_P_Button;
+        private System.Windows.Forms.Button Cancel_Button;
     }
 }

@@ -20,6 +20,7 @@ namespace RegSystemGUI
         private (string, string, string, string, int, int, int[]) courseInfo;
         private List<string> prereqs;
         private bool PR = false;
+        DialogResult Result;
         public AddCourse(ref Program.UserDatabase uData, Program.CourseDatabase cData)
         {
             InitializeComponent();
@@ -228,6 +229,7 @@ namespace RegSystemGUI
                 if (result == DialogResult.Yes)
                 {
                     courseInfo = (Course_Name_Box.Text, Course_Title_Box.Text, instructor, Credit_Box.Text, Convert.ToInt32(Num_Seats.Value), Convert.ToInt32(Num_TimeBlocks.Value), TBs);
+                    Result = DialogResult.OK;
                     this.Close();
                 }
                 else if (result == DialogResult.No)
@@ -266,6 +268,7 @@ namespace RegSystemGUI
                     }
                 }
                 courseInfo = (Course_Name_Box.Text, Course_Title_Box.Text, instructor, Credit_Box.Text, Convert.ToInt32(Num_Seats.Value), Convert.ToInt32(Num_TimeBlocks.Value), TBs);
+                Result = DialogResult.OK;
                 this.Close();
             }
         }
@@ -326,6 +329,19 @@ namespace RegSystemGUI
             get
             {
                 return PR;
+            }
+        }
+
+        private void Cancel_Button_Click(object sender, EventArgs e)
+        {
+            Result = DialogResult.Cancel;
+        }
+
+        public DialogResult GetResult
+        {
+            get
+            {
+                return Result;
             }
         }
     }

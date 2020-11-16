@@ -160,6 +160,20 @@ namespace RegSystemGUI
             }
         }
 
+        private void AddCourse_Button_Click(object sender, EventArgs e)
+        {
+            AddCourse AC = new AddCourse(ref COE.uData, COE.cData);
+            AC.ShowDialog();
+            if (AC.GetResult == DialogResult.OK)
+            {
+                COE.cData.AddCourse(AC.getCourseInfo.Item1, AC.getCourseInfo.Item2, AC.getCourseInfo.Item3, AC.getCourseInfo.Item4, AC.getCourseInfo.Item5, AC.getCourseInfo.Item6, AC.getCourseInfo.Item7, AC.getPR, AC.getPrereqs);
+            }
+            else if (AC.GetResult == DialogResult.Cancel)
+            {
+                MessageBox.Show("Course Add Canceled", "Abort CourseAdd");
+            }
+        }
+
         private void viewCourse_Click(object sender, EventArgs e)
         {
             this.Hide();

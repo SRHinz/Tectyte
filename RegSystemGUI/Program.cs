@@ -735,10 +735,25 @@ namespace RegSystemGUI
                 }
             }
 
-			public void AddCourse()
+			public void AddCourse(string cName, string cTitle, string instructor, string credits, int nSeats, int nTBs, int[] Tbs, bool PR_exist, List<string> prereqs )
             {
-
+				string[] h = new string[5 + nTBs];
+				h[0] = cTitle;
+				h[1] = instructor;
+				h[2] = credits;
+				h[3] = Convert.ToString(nSeats);
+				h[4] = Convert.ToString(nTBs);
+				for (int i = 5; i < h.Length; i++)
+                {
+					h[i] = Convert.ToString(Tbs[i]);
+                }
+				cDatabase.Add(cName.Trim(), new Course(h));
+				if (PR_exist)
+                {
+					cDatabase[cName].addPrereq(prereqs);
+                }
             }
+
 
 			public Dictionary<string, Course> CDatabase { get => cDatabase; }   //Made the dictionary a property for easier outside viewing.
 		}
