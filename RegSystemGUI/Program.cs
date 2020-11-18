@@ -752,7 +752,7 @@ namespace RegSystemGUI
 				h[4] = Convert.ToString(nTBs);
 				for (int i = 5; i < h.Length; i++)
                 {
-					h[i] = Convert.ToString(Tbs[i-5]);
+					h[i] = Convert.ToString(Tbs[i]);
                 }
 				cDatabase.Add(cName.Trim(), new Course(h));
 				if (PR_exist)
@@ -1023,7 +1023,7 @@ namespace RegSystemGUI
 				int length;
 				int dd = 0;
 				int rep = 1;
-				if (!AM_S & (H_Start != 12))
+				if (!AM_S)
                 {
 					H_Start += 12;
                 }
@@ -1039,7 +1039,7 @@ namespace RegSystemGUI
 					rep *= 2;
                 }
 				dd *= 1000;
-				if (!AM_E & (H_End != 12))
+				if (!AM_E)
                 {
 					H_End += 12;
                 }
