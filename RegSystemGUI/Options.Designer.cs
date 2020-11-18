@@ -46,10 +46,10 @@
             // 
             // ViewCoursesButton
             // 
-            this.ViewCoursesButton.Location = new System.Drawing.Point(241, 268);
-            this.ViewCoursesButton.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.ViewCoursesButton.Location = new System.Drawing.Point(101, 116);
+            this.ViewCoursesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ViewCoursesButton.Name = "ViewCoursesButton";
-            this.ViewCoursesButton.Size = new System.Drawing.Size(320, 108);
+            this.ViewCoursesButton.Size = new System.Drawing.Size(135, 47);
             this.ViewCoursesButton.TabIndex = 0;
             this.ViewCoursesButton.Text = "View Courses";
             this.ViewCoursesButton.UseVisualStyleBackColor = true;
@@ -57,10 +57,10 @@
             // 
             // CourseHisButton
             // 
-            this.CourseHisButton.Location = new System.Drawing.Point(576, 393);
-            this.CourseHisButton.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.CourseHisButton.Location = new System.Drawing.Point(243, 170);
+            this.CourseHisButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseHisButton.Name = "CourseHisButton";
-            this.CourseHisButton.Size = new System.Drawing.Size(279, 108);
+            this.CourseHisButton.Size = new System.Drawing.Size(117, 47);
             this.CourseHisButton.TabIndex = 1;
             this.CourseHisButton.Text = "View Course History";
             this.CourseHisButton.UseVisualStyleBackColor = true;
@@ -69,10 +69,10 @@
             // 
             // logOutButton
             // 
-            this.logOutButton.Location = new System.Drawing.Point(576, 518);
-            this.logOutButton.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.logOutButton.Location = new System.Drawing.Point(243, 224);
+            this.logOutButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(279, 108);
+            this.logOutButton.Size = new System.Drawing.Size(117, 47);
             this.logOutButton.TabIndex = 2;
             this.logOutButton.Text = "Log Out";
             this.logOutButton.UseVisualStyleBackColor = true;
@@ -80,22 +80,20 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1428, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(601, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(361, 797);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBox1.Location = new System.Drawing.Point(152, 345);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -104,20 +102,19 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(409, 805);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(6);
+            this.copyrightBox.Location = new System.Drawing.Point(172, 348);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(659, 37);
+            this.copyrightBox.Size = new System.Drawing.Size(277, 15);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // viewAdvisees
             // 
-            this.viewAdvisees.Location = new System.Drawing.Point(871, 268);
-            this.viewAdvisees.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.viewAdvisees.Location = new System.Drawing.Point(367, 116);
+            this.viewAdvisees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.viewAdvisees.Name = "viewAdvisees";
-            this.viewAdvisees.Size = new System.Drawing.Size(279, 108);
+            this.viewAdvisees.Size = new System.Drawing.Size(117, 47);
             this.viewAdvisees.TabIndex = 1;
             this.viewAdvisees.Text = "View Advisees";
             this.viewAdvisees.UseVisualStyleBackColor = true;
@@ -125,22 +122,22 @@
             // 
             // AdminStuHisButton
             // 
-            this.AdminStuHisButton.Location = new System.Drawing.Point(576, 268);
-            this.AdminStuHisButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.AdminStuHisButton.Location = new System.Drawing.Point(243, 116);
+            this.AdminStuHisButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AdminStuHisButton.Name = "AdminStuHisButton";
-            this.AdminStuHisButton.Size = new System.Drawing.Size(279, 108);
+            this.AdminStuHisButton.Size = new System.Drawing.Size(117, 47);
             this.AdminStuHisButton.TabIndex = 9;
             this.AdminStuHisButton.Text = "View Student History";
             this.AdminStuHisButton.UseVisualStyleBackColor = true;
             this.AdminStuHisButton.Visible = false;
-            this.AdminStuHisButton.Click += new System.EventHandler(this.AdminStuHis_Click);
+            this.AdminStuHisButton.Click += new System.EventHandler(this.AdminStuHisButton_Click);
             // 
             // changeAdvisorButton
             // 
-            this.changeAdvisorButton.Location = new System.Drawing.Point(241, 393);
-            this.changeAdvisorButton.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.changeAdvisorButton.Location = new System.Drawing.Point(101, 170);
+            this.changeAdvisorButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.changeAdvisorButton.Name = "changeAdvisorButton";
-            this.changeAdvisorButton.Size = new System.Drawing.Size(320, 108);
+            this.changeAdvisorButton.Size = new System.Drawing.Size(135, 47);
             this.changeAdvisorButton.TabIndex = 10;
             this.changeAdvisorButton.Text = "Change Advisor";
             this.changeAdvisorButton.UseVisualStyleBackColor = true;
@@ -148,9 +145,10 @@
             // 
             // SysModButton
             // 
-            this.SysModButton.Location = new System.Drawing.Point(871, 393);
+            this.SysModButton.Location = new System.Drawing.Point(367, 170);
+            this.SysModButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.SysModButton.Name = "SysModButton";
-            this.SysModButton.Size = new System.Drawing.Size(279, 108);
+            this.SysModButton.Size = new System.Drawing.Size(117, 47);
             this.SysModButton.TabIndex = 11;
             this.SysModButton.Text = "Database Modification";
             this.SysModButton.UseVisualStyleBackColor = true;
@@ -159,10 +157,10 @@
             // 
             // AddUser_Button
             // 
-            this.AddUser_Button.Location = new System.Drawing.Point(871, 142);
-            this.AddUser_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.AddUser_Button.Location = new System.Drawing.Point(367, 61);
+            this.AddUser_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddUser_Button.Name = "AddUser_Button";
-            this.AddUser_Button.Size = new System.Drawing.Size(279, 108);
+            this.AddUser_Button.Size = new System.Drawing.Size(117, 47);
             this.AddUser_Button.TabIndex = 12;
             this.AddUser_Button.Text = "Add User";
             this.AddUser_Button.UseVisualStyleBackColor = true;
@@ -170,10 +168,10 @@
             // 
             // AddCourse_Button
             // 
-            this.AddCourse_Button.Location = new System.Drawing.Point(241, 142);
-            this.AddCourse_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.AddCourse_Button.Location = new System.Drawing.Point(101, 61);
+            this.AddCourse_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddCourse_Button.Name = "AddCourse_Button";
-            this.AddCourse_Button.Size = new System.Drawing.Size(320, 108);
+            this.AddCourse_Button.Size = new System.Drawing.Size(135, 47);
             this.AddCourse_Button.TabIndex = 13;
             this.AddCourse_Button.Text = "Add Course";
             this.AddCourse_Button.UseVisualStyleBackColor = true;
@@ -181,9 +179,9 @@
             // 
             // Options
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 860);
+            this.ClientSize = new System.Drawing.Size(601, 372);
             this.Controls.Add(this.AddCourse_Button);
             this.Controls.Add(this.AddUser_Button);
             this.Controls.Add(this.SysModButton);
@@ -198,6 +196,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "Options";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
