@@ -114,15 +114,23 @@ namespace RegSystemGUI
                 AccountSelector AS = new AccountSelector(ref COE.uData);
                 AS.DisplayStudentAccounts();
                 AS.ShowDialog();
-                if (COE.uData.UDatabase[AS.getAccount()] is Program.StudentAcc)
+                try
                 {
-                    CourseAdd(COE.uData.UDatabase[AS.getAccount()] as Program.StudentAcc, true);
+                    if (COE.uData.UDatabase[AS.getAccount()] is Program.StudentAcc)
+                    {
+                        CourseAdd(COE.uData.UDatabase[AS.getAccount()] as Program.StudentAcc, true);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No student account with that username exists.");
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("No student account with that username exists.");
+                    MessageBox.Show("No account selected.");
                 }
-            }
+                }
+                
             else if (curAcc is Program.StudentAcc)
             {
                 CourseAdd(curStuAcc, false);
