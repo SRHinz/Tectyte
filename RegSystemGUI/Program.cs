@@ -562,19 +562,19 @@ namespace RegSystemGUI
 				float gradePoints = 0;
 				Dictionary<string, float> gradesGP = new Dictionary<string, float>()
 				{
-					{"A", 4.0F },
-					{"A-", 3.7F },
-					{"B+", 3.3F },
-					{"B", 3.0F },
-					{"B-", 2.7F },
-					{"C+", 2.3F },
-					{"C", 2.0F },
-					{"C-", 1.7F },
-					{"D+", 1.3F },
-					{"D", 1.0F },
-					{"D-", 0.7F },
-					{"F", 0.0F },
-					{"WF", 0.0F },
+					{"A", 4.000F },
+					{"A-", 3.700F },
+					{"B+", 3.300F },
+					{"B", 3.000F },
+					{"B-", 2.700F },
+					{"C+", 2.300F },
+					{"C", 2.000F },
+					{"C-", 1.700F },
+					{"D+", 1.300F },
+					{"D", 1.000F },
+					{"D-", 0.700F },
+					{"F", 0.000F },
+					{"WF", 0.000F },
 
 				};
 				float credits4GradePoint = 0;
@@ -596,7 +596,7 @@ namespace RegSystemGUI
                         }
 						totalCred += c.Credits;
 						credits4GradePoint += c.Credits;
-						gradePoints += gradesGP[c.Grade.Trim()];
+						gradePoints += gradesGP[c.Grade.Trim()] * c.Credits;
                     }
 						
                 }
