@@ -129,8 +129,17 @@ namespace RegSystemGUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            login.Show();
+            DialogResult logout = MessageBox.Show("Are you sure you want to log out?", "Log Out Confirmation", MessageBoxButtons.YesNo);
+            if (logout == DialogResult.Yes)
+            {
+                this.Close();
+                login.Show();
+            }
+            else if (logout == DialogResult.No)
+            {
+                //Nothing is done :D
+            }
+            
 
         }
 
