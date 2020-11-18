@@ -134,10 +134,6 @@ namespace RegSystemGUI
 
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
@@ -163,7 +159,7 @@ namespace RegSystemGUI
             {
                 if (!admin)
                 {
-                    error = regC.stuRegister(student, coeC.CDatabase[course], course.Trim(), term.Trim(), admin);
+                    error = regC.stuRegister(student, coeC.CDatabase[course], course.Trim(), term.Trim(), false);
                 }
                 else if (curAcc is Program.AdminAcc)
                 {
