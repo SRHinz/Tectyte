@@ -739,6 +739,7 @@ namespace RegSystemGUI
 						bool success = (user.Value as StudentAcc).delCourse(CourseN, term);
                     }
                 }
+				cDatabase.Remove(CourseN);
             }
 
 			public void AddCourse(string cName, string cTitle, string instructor, string credits, int nSeats, int nTBs, int[] Tbs, bool PR_exist, List<string> prereqs )
