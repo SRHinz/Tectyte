@@ -51,6 +51,7 @@ namespace RegSystemGUI
                     AddUser_Button.Hide();
                     AddCourse_Button.Hide();
                 }
+                CourseHisButton.Hide();
                 AdminStuHisButton.Show();
                 changeAdvisorButton.Show();
 
@@ -172,19 +173,6 @@ namespace RegSystemGUI
             adChange.Show();
         }
 
-        private void AdminStuHis_Click(object sender, EventArgs e)
-        {
-            AS.DisplayStudentAccounts();
-            AS.ShowDialog();
-            if (AS.getAccount() != null)
-            {
-                Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
-                stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
-                this.Hide();
-                cH.Show();
-            }
-        }
-
         private void SysMod_Click(object sender, EventArgs e)
         {
             DatabaseMod DM = new DatabaseMod(ref COE);
@@ -226,6 +214,19 @@ namespace RegSystemGUI
             else if (AC.GetResult == DialogResult.Cancel)
             {
                 MessageBox.Show("Course Add Canceled", "Abort CourseAdd");
+            }
+        }
+
+        private void AdminStuHisButton_Click(object sender, EventArgs e)
+        {
+            AS.DisplayStudentAccounts();
+            AS.ShowDialog();
+            if (AS.getAccount() != null)
+            {
+                Program.StudentAcc stuAccount = (Program.StudentAcc)COE.uData.UDatabase[AS.getAccount()];
+                stuCourseHist cH = new stuCourseHist(ref stuAccount, ref COE.cData, COE.vCourse, COE.CurTerm, COE.NexTerm, this);
+                this.Hide();
+                cH.Show();
             }
         }
 
