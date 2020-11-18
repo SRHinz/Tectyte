@@ -69,21 +69,31 @@ namespace RegSystemGUI
             }
             else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
             {
+                CourseDataGrid.Rows.Clear();
                 searchBox.Visible = false;
                 searchLabel.Visible = false;
-                AccountSelector AS = new AccountSelector(ref COE.uData);
-                AS.DisplayFacultyAccounts();
-                CourseDataGrid.Rows.Clear();
-                AS.ShowDialog();
-                if (AS.getAccount() != null)
+                if (curAcc is Program.FacultyAcc)
                 {
-                    regC.displayFacultyCourses(coeC, CourseDataGrid, AS.getAccount());
+                    regC.displayFacultyCourses(coeC, CourseDataGrid, curAcc.UserName);
                     studentsEnrolled.Show();
                 }
                 else
                 {
-                    FacultyCourseSelector.SelectedIndex = 0;
+                    AccountSelector AS = new AccountSelector(ref COE.uData);
+                    AS.DisplayFacultyAccounts();
+                    CourseDataGrid.Rows.Clear();
+                    AS.ShowDialog();
+                    if (AS.getAccount() != null)
+                    {
+                        regC.displayFacultyCourses(coeC, CourseDataGrid, AS.getAccount());
+                        studentsEnrolled.Show();
+                    }
+                    else
+                    {
+                        FacultyCourseSelector.SelectedIndex = 0;
+                    }
                 }
+                
             }    
         }
 
