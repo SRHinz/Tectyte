@@ -50,7 +50,7 @@ namespace RegSystemGUI
                 }
 
             }
-            else if (type == "S" | type == "F")
+            else if (type == "student" | type == "faculty")
             {
                 AccountSelector AS = new AccountSelector(ref COE.uData, type);
                 AS.ShowDialog();
@@ -92,12 +92,12 @@ namespace RegSystemGUI
 
         private void StudentButtonClick(object sender, EventArgs e)
         {
-            Selection("S");
+            Selection("student");
         }
 
         private void FacultyButtonClick(object sender, EventArgs e)
         {
-            Selection("F");
+            Selection("faculty");
         }
 
         public DialogResult getResult
