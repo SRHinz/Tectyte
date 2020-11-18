@@ -49,7 +49,6 @@ C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Deb
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.exe
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.pdb
 C:\Users\brkol\OneDrive\Desktop\Software Engineering\RegSys\RegSystemGUI\obj\Debug\RegSystemGUI.DropCourse.resources
-C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.stuCourseHist.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.adviseeViewer.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.studentsEnrolled.resources
@@ -134,3 +133,18 @@ C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.AddCourse.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddCourse.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddUser.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseSelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AccountSelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.DatabaseMod.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditCourse.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.EditTimeBlock.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
+C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddCourse.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddUser.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache

@@ -18,60 +18,62 @@ namespace RegSystemGUI
         public EditTimeBlock(string TBs)
         {
             InitializeComponent();
-            if (TBs.Contains("Mon"))
+            if (TBs != "new")
             {
-                checkBox1.Checked = true;
-                days[0] = true;
+                
+                if (TBs.Contains("Mon"))
+                {
+                    checkBox1.Checked = true;
+                    days[0] = true;
+                }
+                if (TBs.Contains("Tues"))
+                {
+                    checkBox2.Checked = true;
+                    days[1] = true;
+                }
+                if (TBs.Contains("Weds"))
+                {
+                    checkBox3.Checked = true;
+                    days[2] = true;
+                }
+                if (TBs.Contains("Thurs"))
+                {
+                    checkBox4.Checked = true;
+                    days[3] = true;
+                }
+                if (TBs.Contains("Fri"))
+                {
+                    checkBox5.Checked = true;
+                    days[4] = true;
+                }
+                string[] dts = TBs.Split(',');
+                string time = dts[dts.Length - 1];
+                HourStart.Value = Convert.ToInt32(time.Substring(0, 2));
+                MinuteStart.Value = Convert.ToInt32(time.Substring(2, 2));
+                if (time.Substring(5, 2) == "AM")
+                {
+                    AMStart.Checked = true;
+                    PMStart.Checked = false;
+                }
+                else
+                {
+                    AMStart.Checked = false;
+                    PMStart.Checked = true;
+                }
+                HourEnd.Value = Convert.ToInt32(time.Substring(11, 2));
+                MinuteEnd.Value = Convert.ToInt32(time.Substring(13, 2));
+                if (time.Substring(15, 2) == "AM")
+                {
+                    AMEnd.Checked = true;
+                    PMEnd.Checked = false;
+                }
+                else
+                {
+                    AMEnd.Checked = false;
+                    PMEnd.Checked = true;
+                }
             }
-            if (TBs.Contains("Tues"))
-            {
-                checkBox2.Checked = true;
-                days[1] = true;
-            }
-            if (TBs.Contains("Weds"))
-            {
-                checkBox3.Checked = true;
-                days[2] = true;
-            }
-            if (TBs.Contains("Thurs"))
-            {
-                checkBox4.Checked = true;
-                days[3] = true;
-            }
-            if (TBs.Contains("Fri"))
-            {
-                checkBox5.Checked = true;
-                days[4] = true;
-            }
-            string[] dts = TBs.Split(',');
-            string time = dts[dts.Length - 1];
-            HourStart.Value = Convert.ToInt32(time.Substring(0, 2));
-            MinuteStart.Value = Convert.ToInt32(time.Substring(2, 2));
-            if (time.Substring(5, 2) == "AM")
-            {
-                AMStart.Checked = true;
-                PMStart.Checked = false;
-            }
-            else
-            {
-                AMStart.Checked = false;
-                PMStart.Checked = true;
-            }
-            HourEnd.Value = Convert.ToInt32(time.Substring(11, 2));
-            MinuteEnd.Value = Convert.ToInt32(time.Substring(13, 2));
-            if (time.Substring(15, 2) == "AM")
-            {
-                AMEnd.Checked = true;
-                PMEnd.Checked = false;
-            }
-            else
-            {
-                AMEnd.Checked = false;
-                PMEnd.Checked = true;
-            }
-
             
-
         }
 
         private void label1_Click(object sender, EventArgs e)

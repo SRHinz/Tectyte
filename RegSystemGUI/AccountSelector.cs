@@ -14,7 +14,7 @@ namespace RegSystemGUI
     {
 
         private Program.UserDatabase coeData;
-        private string accountType = "S";
+        private string accountType = "student";
         private string username;
 
 
@@ -36,28 +36,42 @@ namespace RegSystemGUI
 
         private void DisplayAccounts()
         {
-            foreach (KeyValuePair<string, Program.Account> account in coeData.UDatabase)
+            foreach (string acc in coeData.UDatabase.Keys)
             {
-                if (accountType == "S" && account.Value is Program.StudentAcc)
-                    AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
-                else if (accountType == "F" && account.Value is Program.FacultyAcc)
-                    AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
-
+                if (accountType == "student")
+                {
+                    if (coeData.UDatabase[acc].Status != "faculty" && coeData.UDatabase[acc].Status != "admin")
+                    {
+                        AccountDataGrid.Rows.Add(coeData.UDatabase[acc].LName, coeData.UDatabase[acc].FName, coeData.UDatabase[acc].UserName);
+                    }
+                }
+                else if (coeData.UDatabase[acc].Status == accountType)
+                {
+                    AccountDataGrid.Rows.Add(coeData.UDatabase[acc].LName, coeData.UDatabase[acc].FName, coeData.UDatabase[acc].UserName);
+                }
             }
+            //foreach (KeyValuePair<string, Program.Account> account in coeData.UDatabase)
+            //{
+            //    if (accountType == "S" && account.Value is Program.StudentAcc)
+            //        AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
+            //    else if (accountType == "F" && account.Value is Program.FacultyAcc)
+            //        AccountDataGrid.Rows.Add(account.Value.LName, account.Value.FName, account.Key);
+
+            //}
 
         }
 
         public void DisplayStudentAccounts()
         {
             AccountDataGrid.Rows.Clear();
-            accountType = "S";
+            accountType = "student";
             DisplayAccounts();
         }
 
         public void DisplayFacultyAccounts()
         {
             AccountDataGrid.Rows.Clear();
-            accountType = "F";
+            accountType = "faculty";
             DisplayAccounts();
         }
 

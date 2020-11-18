@@ -377,7 +377,7 @@ namespace RegSystemGUI
 				{
 					if (UDatabase[userName].Password == Password)
 					{
-						if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
+						if (!(UDatabase[userName].Status.Equals("faculty") | UDatabase[userName].Status.Equals("admin") | UDatabase[userName].Status.Equals("manager"))) //If the username password tuple exists as a key in the dictionary, and its status is not faculty or admin, then that neccesitates that it is a student account.
 						{
 							return "student";
 						}
@@ -437,13 +437,19 @@ namespace RegSystemGUI
 
 			public void AddUser((string, string, string, string, string) InfoTuple )
             {
-				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3;
+				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3.Substring(0, 9);
 				int i = 1;
 				while ((uDatabase.ContainsKey(uName)) & (i < InfoTuple.Item1.Length))
                 {
 					i += 1;
-					uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3;
-
+					if (uName.Length == 10)
+					{
+						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3.Substring(0, 9 - i);
+					}
+					else
+					{
+						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3;
+					}
 				}
 				string[] info = new string[6] { uName, "password", InfoTuple.Item1, InfoTuple.Item2, InfoTuple.Item3, "" };
 				if (InfoTuple.Item4 == "student")
@@ -733,7 +739,28 @@ namespace RegSystemGUI
 						bool success = (user.Value as StudentAcc).delCourse(CourseN, term);
                     }
                 }
+				cDatabase.Remove(CourseN);
             }
+
+			public void AddCourse(string cName, string cTitle, string instructor, string credits, int nSeats, int nTBs, int[] Tbs, bool PR_exist, List<string> prereqs )
+            {
+				string[] h = new string[5 + nTBs];
+				h[0] = cTitle;
+				h[1] = instructor;
+				h[2] = credits;
+				h[3] = Convert.ToString(nSeats);
+				h[4] = Convert.ToString(nTBs);
+				for (int i = 5; i < h.Length; i++)
+                {
+					h[i] = Convert.ToString(Tbs[i-5]);
+                }
+				cDatabase.Add(cName.Trim(), new Course(h));
+				if (PR_exist)
+                {
+					cDatabase[cName].addPrereq(prereqs);
+                }
+            }
+
 
 			public Dictionary<string, Course> CDatabase { get => cDatabase; }   //Made the dictionary a property for easier outside viewing.
 		}
@@ -996,7 +1023,7 @@ namespace RegSystemGUI
 				int length;
 				int dd = 0;
 				int rep = 1;
-				if (!AM_S)
+				if (!AM_S & (H_Start!=12))
                 {
 					H_Start += 12;
                 }
@@ -1012,7 +1039,7 @@ namespace RegSystemGUI
 					rep *= 2;
                 }
 				dd *= 1000;
-				if (!AM_E)
+				if (!AM_E & (H_End!=12))
                 {
 					H_End += 12;
                 }

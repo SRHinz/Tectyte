@@ -35,7 +35,6 @@ namespace RegSystemGUI
             curAcc = coe.uData.UDatabase[coe.CurAcc];
             FacultyCourseSelector.SelectedItem = "All Courses";
             studentsEnrolled.Hide();
-            RemoveCourse.Hide();
             searchBox.Clear();
             if (curAcc is Program.StudentAcc)
             {
@@ -52,7 +51,6 @@ namespace RegSystemGUI
             else if (curAcc is Program.AdminAcc)
             {
                 AddCourseButton.Show();
-                RemoveCourse.Show();
 
             }
             term = coe.NexTerm;
@@ -69,21 +67,32 @@ namespace RegSystemGUI
             }
             else if (FacultyCourseSelector.SelectedItem.ToString() == "My Courses")
             {
+                CourseDataGrid.Rows.Clear();
                 searchBox.Visible = false;
                 searchLabel.Visible = false;
-                AccountSelector AS = new AccountSelector(ref COE.uData);
-                AS.DisplayFacultyAccounts();
-                CourseDataGrid.Rows.Clear();
-                AS.ShowDialog();
-                if (AS.getAccount() != null)
+                AddCourseButton.Visible = false;
+                if (curAcc is Program.FacultyAcc)
                 {
-                    regC.displayFacultyCourses(coeC, CourseDataGrid, AS.getAccount());
+                    regC.displayFacultyCourses(coeC, CourseDataGrid, curAcc.UserName);
                     studentsEnrolled.Show();
                 }
                 else
                 {
-                    FacultyCourseSelector.SelectedIndex = 0;
+                    AccountSelector AS = new AccountSelector(ref COE.uData);
+                    AS.DisplayFacultyAccounts();
+                    CourseDataGrid.Rows.Clear();
+                    AS.ShowDialog();
+                    if (AS.getAccount() != null)
+                    {
+                        regC.displayFacultyCourses(coeC, CourseDataGrid, AS.getAccount());
+                        studentsEnrolled.Show();
+                    }
+                    else
+                    {
+                        FacultyCourseSelector.SelectedIndex = 0;
+                    }
                 }
+                
             }    
         }
 
@@ -125,10 +134,6 @@ namespace RegSystemGUI
 
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
@@ -142,6 +147,7 @@ namespace RegSystemGUI
             }
         }
 
+
         private void CourseAdd(Program.StudentAcc student, bool admin)
         {
             int rowIndex = CourseDataGrid.CurrentCell.RowIndex;
@@ -153,7 +159,7 @@ namespace RegSystemGUI
             {
                 if (!admin)
                 {
-                    error = regC.stuRegister(student, coeC.CDatabase[course], course.Trim(), term.Trim(), admin);
+                    error = regC.stuRegister(student, coeC.CDatabase[course], course.Trim(), term.Trim(), false);
                 }
                 else if (curAcc is Program.AdminAcc)
                 {

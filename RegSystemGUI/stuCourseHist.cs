@@ -74,7 +74,7 @@ namespace RegSystemGUI
 
             else if (TermSelectorBox.SelectedItem.ToString() == "Current Courses")
             {
-                DropButton.Visible = true;
+                DropButton.Visible = false;
                 warningBox.Visible = false;
                 warningBox2.Visible = false;
                 courseSchedule.Visible = false;

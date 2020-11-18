@@ -47,7 +47,6 @@
             this.copyrightBox = new System.Windows.Forms.TextBox();
             this.FacultyCourseSelector = new System.Windows.Forms.ComboBox();
             this.studentsEnrolled = new System.Windows.Forms.Button();
-            this.RemoveCourse = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
@@ -243,15 +242,6 @@
             this.studentsEnrolled.UseVisualStyleBackColor = true;
             this.studentsEnrolled.Click += new System.EventHandler(this.studentsEnrolled_Click);
             // 
-            // RemoveCourse
-            // 
-            this.RemoveCourse.Location = new System.Drawing.Point(1099, 581);
-            this.RemoveCourse.Name = "RemoveCourse";
-            this.RemoveCourse.Size = new System.Drawing.Size(266, 58);
-            this.RemoveCourse.TabIndex = 11;
-            this.RemoveCourse.Text = "Remove Course";
-            this.RemoveCourse.UseVisualStyleBackColor = true;
-            // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
@@ -280,7 +270,6 @@
             this.ClientSize = new System.Drawing.Size(1151, 562);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchLabel);
-            this.Controls.Add(this.RemoveCourse);
             this.Controls.Add(this.studentsEnrolled);
             this.Controls.Add(this.FacultyCourseSelector);
             this.Controls.Add(this.pictureBox1);
@@ -321,7 +310,6 @@
         private System.Windows.Forms.TextBox copyrightBox;
         private System.Windows.Forms.ComboBox FacultyCourseSelector;
         private System.Windows.Forms.Button studentsEnrolled;
-        private System.Windows.Forms.Button RemoveCourse;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchBox;
     }

@@ -50,19 +50,20 @@
             this.LoginPanel.Controls.Add(this.UsernameInput);
             this.LoginPanel.Controls.Add(this.PasswordLabel);
             this.LoginPanel.Controls.Add(this.UsernameLabel);
-            this.LoginPanel.Location = new System.Drawing.Point(12, 12);
+            this.LoginPanel.Location = new System.Drawing.Point(10, 10);
+            this.LoginPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(618, 454);
+            this.LoginPanel.Size = new System.Drawing.Size(494, 363);
             this.LoginPanel.TabIndex = 0;
             this.LoginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginPanel_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(160, 429);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(128, 343);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -71,20 +72,22 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(180, 434);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.copyrightBox.Location = new System.Drawing.Point(144, 347);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(277, 15);
-            this.copyrightBox.TabIndex = 6;
+            this.copyrightBox.Size = new System.Drawing.Size(222, 13);
+            this.copyrightBox.TabIndex = 0;
+            this.copyrightBox.TabStop = false;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.copyrightBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(261, 327);
+            this.LoginButton.Location = new System.Drawing.Point(209, 262);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(74, 33);
+            this.LoginButton.Size = new System.Drawing.Size(59, 26);
             this.LoginButton.TabIndex = 4;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -92,43 +95,47 @@
             // 
             // PasswordInput
             // 
-            this.PasswordInput.Location = new System.Drawing.Point(276, 191);
+            this.PasswordInput.Location = new System.Drawing.Point(221, 153);
+            this.PasswordInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PasswordInput.Name = "PasswordInput";
             this.PasswordInput.PasswordChar = '*';
-            this.PasswordInput.Size = new System.Drawing.Size(169, 22);
+            this.PasswordInput.Size = new System.Drawing.Size(136, 20);
             this.PasswordInput.TabIndex = 3;
             // 
             // UsernameInput
             // 
-            this.UsernameInput.Location = new System.Drawing.Point(276, 103);
+            this.UsernameInput.Location = new System.Drawing.Point(221, 82);
+            this.UsernameInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UsernameInput.Name = "UsernameInput";
-            this.UsernameInput.Size = new System.Drawing.Size(169, 22);
+            this.UsernameInput.Size = new System.Drawing.Size(136, 20);
             this.UsernameInput.TabIndex = 2;
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(147, 191);
+            this.PasswordLabel.Location = new System.Drawing.Point(118, 153);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(69, 17);
+            this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password";
             // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(144, 103);
+            this.UsernameLabel.Location = new System.Drawing.Point(115, 82);
+            this.UsernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(73, 17);
+            this.UsernameLabel.Size = new System.Drawing.Size(55, 13);
             this.UsernameLabel.TabIndex = 0;
             this.UsernameLabel.Text = "Username";
             // 
             // Login
             // 
             this.AcceptButton = this.LoginButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(642, 478);
+            this.ClientSize = new System.Drawing.Size(514, 382);
             this.Controls.Add(this.LoginPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
