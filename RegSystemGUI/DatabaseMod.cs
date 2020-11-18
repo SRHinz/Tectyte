@@ -60,7 +60,7 @@ namespace RegSystemGUI
                     DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        if (type == "S")
+                        if (type == "student")
                         {
                             COE.uData.RemoveUser(ref COE.cData, COE.uData.UDatabase[selected.Trim()] as Program.StudentAcc, COE.NexTerm);
                         }
