@@ -62,6 +62,7 @@
             this.copyrightBox.Name = "copyrightBox";
             this.copyrightBox.Size = new System.Drawing.Size(416, 24);
             this.copyrightBox.TabIndex = 8;
+            this.copyrightBox.TabStop = false;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -70,7 +71,7 @@
             this.MenuReturn.Location = new System.Drawing.Point(649, 257);
             this.MenuReturn.Name = "MenuReturn";
             this.MenuReturn.Size = new System.Drawing.Size(406, 73);
-            this.MenuReturn.TabIndex = 12;
+            this.MenuReturn.TabIndex = 0;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
             this.MenuReturn.Click += new System.EventHandler(this.MenuReturn_Click);
@@ -80,7 +81,7 @@
             this.courseReturn.Location = new System.Drawing.Point(649, 420);
             this.courseReturn.Name = "courseReturn";
             this.courseReturn.Size = new System.Drawing.Size(406, 73);
-            this.courseReturn.TabIndex = 13;
+            this.courseReturn.TabIndex = 1;
             this.courseReturn.Text = "Return to My Courses";
             this.courseReturn.UseVisualStyleBackColor = true;
             this.courseReturn.Click += new System.EventHandler(this.courseReturn_Click);
