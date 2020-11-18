@@ -35,7 +35,6 @@ namespace RegSystemGUI
             curAcc = coe.uData.UDatabase[coe.CurAcc];
             FacultyCourseSelector.SelectedItem = "All Courses";
             studentsEnrolled.Hide();
-            RemoveCourse.Hide();
             searchBox.Clear();
             if (curAcc is Program.StudentAcc)
             {
@@ -52,7 +51,6 @@ namespace RegSystemGUI
             else if (curAcc is Program.AdminAcc)
             {
                 AddCourseButton.Show();
-                RemoveCourse.Show();
 
             }
             term = coe.NexTerm;
@@ -72,6 +70,7 @@ namespace RegSystemGUI
                 CourseDataGrid.Rows.Clear();
                 searchBox.Visible = false;
                 searchLabel.Visible = false;
+                AddCourseButton.Visible = false;
                 if (curAcc is Program.FacultyAcc)
                 {
                     regC.displayFacultyCourses(coeC, CourseDataGrid, curAcc.UserName);
@@ -151,6 +150,7 @@ namespace RegSystemGUI
                 }
             }
         }
+
 
         private void CourseAdd(Program.StudentAcc student, bool admin)
         {

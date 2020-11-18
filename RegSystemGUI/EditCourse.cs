@@ -168,6 +168,7 @@ namespace RegSystemGUI
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Response = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
