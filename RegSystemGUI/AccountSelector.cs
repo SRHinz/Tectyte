@@ -14,7 +14,7 @@ namespace RegSystemGUI
     {
 
         private Program.UserDatabase coeData;
-        private string accountType = "S";
+        private string accountType = "student";
         private string username;
 
 
@@ -38,7 +38,14 @@ namespace RegSystemGUI
         {
             foreach (string acc in coeData.UDatabase.Keys)
             {
-                if (coeData.UDatabase[acc].Status == accountType)
+                if (accountType == "student")
+                {
+                    if (coeData.UDatabase[acc].Status != "faculty" && coeData.UDatabase[acc].Status != "admin")
+                    {
+                        AccountDataGrid.Rows.Add(coeData.UDatabase[acc].LName, coeData.UDatabase[acc].FName, coeData.UDatabase[acc].UserName);
+                    }
+                }
+                else if (coeData.UDatabase[acc].Status == accountType)
                 {
                     AccountDataGrid.Rows.Add(coeData.UDatabase[acc].LName, coeData.UDatabase[acc].FName, coeData.UDatabase[acc].UserName);
                 }
@@ -57,14 +64,14 @@ namespace RegSystemGUI
         public void DisplayStudentAccounts()
         {
             AccountDataGrid.Rows.Clear();
-            accountType = "S";
+            accountType = "student";
             DisplayAccounts();
         }
 
         public void DisplayFacultyAccounts()
         {
             AccountDataGrid.Rows.Clear();
-            accountType = "F";
+            accountType = "faculty";
             DisplayAccounts();
         }
 
