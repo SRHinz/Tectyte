@@ -15,7 +15,7 @@ namespace RegSystemGUI
 
         private Program.UserDatabase coeData;
         private string accountType = "student";
-        private string username;
+        private string username = null;
 
 
         public AccountSelector(ref Program.UserDatabase uData)
