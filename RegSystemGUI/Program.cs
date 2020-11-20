@@ -437,14 +437,14 @@ namespace RegSystemGUI
 
 			public void AddUser((string, string, string, string, string) InfoTuple )
             {
-				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3.Substring(0, 9);
+				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3.Substring(0, InfoTuple.Item3.Length);
 				int i = 1;
 				while ((uDatabase.ContainsKey(uName)) & (i < InfoTuple.Item1.Length))
                 {
 					i += 1;
 					if (uName.Length == 10)
 					{
-						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3.Substring(0, 9 - i);
+						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3.Substring(0, InfoTuple.Item3.Length - i);
 					}
 					else
 					{
