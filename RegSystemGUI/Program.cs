@@ -775,7 +775,7 @@ namespace RegSystemGUI
 			private int ntimeBlocks;
 			private int[] timeBlockCollection;
 			private List<string> enrolledStudents = new List<string>();
-			private List<String> prereqs = new List<String>();
+			private List<string> prereqs = new List<string>();
 
 			public string CourseTitle { get => courseTitle; }
 			public string Instructor { get => instructor; }
@@ -787,7 +787,7 @@ namespace RegSystemGUI
 			
 			public List<string> EnrolledStudents { get => enrolledStudents; }
 
-			public List<String> Prereqs { get => prereqs; }
+			public List<string> Prereqs { get => prereqs; }
 
 
 
@@ -821,9 +821,9 @@ namespace RegSystemGUI
 				
 			}
 
-			public void addPrereq(List<String> courses)
+			public void addPrereq(List<string> courses)
 			{
-				foreach (String course in courses)
+				foreach (string course in courses)
 				{
 					Prereqs.Add(course);
 				}
