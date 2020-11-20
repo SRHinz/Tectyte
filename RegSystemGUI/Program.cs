@@ -1039,10 +1039,10 @@ namespace RegSystemGUI
 					rep *= 2;
                 }
 				dd *= 1000;
-				if (!AM_E & (H_End!=12))
-                {
+				if (!AM_E & (H_End != 12))
+				{
 					H_End += 12;
-                }
+				}
 				float beta = Convert.ToSingle(H_End);
 				beta += Convert.ToSingle(M_End) / 60;
 				length = Convert.ToInt32(((beta - alpha) % 24) / 0.5);
