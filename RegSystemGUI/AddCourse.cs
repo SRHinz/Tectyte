@@ -18,7 +18,7 @@ namespace RegSystemGUI
         private int[] TBs = new int[5] { 0, 0, 0, 0, 0 };
         private Program.viewCourses VC = new Program.viewCourses();
         private (string, string, string, string, int, int, int[]) courseInfo;
-        private List<string> prereqs;
+        private List<string> prereqs = new List<string>();
         private bool PR = false;
         DialogResult Result;
         public AddCourse(ref Program.UserDatabase uData, Program.CourseDatabase cData)
@@ -320,8 +320,15 @@ namespace RegSystemGUI
             {
                 CourseSelector CS = new CourseSelector(CDATA);
                 CS.ShowDialog();
-                Prereq_Display.Text += CS.getCourse.Substring(0, (CS.getCourse.Length - 3)) + "\n";
-                prereqs.Add(CS.getCourse.Substring(0, (CS.getCourse.Length - 3)));
+                if (CS.getCourse == "cancel")
+                {
+                    MessageBox.Show("Prereq Add Cancelled");
+                }
+                else
+                {
+                    Prereq_Display.Text += CS.getCourse.Substring(0, (CS.getCourse.Length - 3)) + "\n";
+                    prereqs.Add(CS.getCourse.Substring(0, (CS.getCourse.Length - 3)));
+                }
 
             }
             else if (result == DialogResult.No)
@@ -344,7 +351,7 @@ namespace RegSystemGUI
         {
             get
             {
-                if (!prereqs.Any<string>())
+                if (prereqs == null)
                     PR = false;
                 return PR;
             }

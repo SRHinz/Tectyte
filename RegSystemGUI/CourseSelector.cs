@@ -32,6 +32,7 @@ namespace RegSystemGUI
         }
         public CourseSelector(Program.CourseDatabase courseDatabase)
         {
+            InitializeComponent();
             delCourse.Hide();
             editCourse.Hide();
             Add_Preq_Button.Show();
@@ -52,6 +53,8 @@ namespace RegSystemGUI
         {
             get
             {
+                if (course == null)
+                    course = "cancel";
                 return course;
             }
         }
@@ -108,7 +111,8 @@ namespace RegSystemGUI
 
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+
+        private void CancelButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
