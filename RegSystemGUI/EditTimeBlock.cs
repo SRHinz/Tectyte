@@ -48,8 +48,8 @@ namespace RegSystemGUI
                 }
                 string[] dts = TBs.Split(',');
                 string time = dts[dts.Length - 1];
-                HourStart.Value = Convert.ToInt32(time.Substring(0, 2));
-                MinuteStart.Value = Convert.ToInt32(time.Substring(2, 2));
+                HourStart.Value = Convert.ToInt32(time.Trim().Substring(0, 2));
+                MinuteStart.Value = Convert.ToInt32(time.Trim().Substring(3, 2));
                 if (time.Substring(5, 2) == "AM")
                 {
                     AMStart.Checked = true;
@@ -61,7 +61,7 @@ namespace RegSystemGUI
                     PMStart.Checked = true;
                 }
                 HourEnd.Value = Convert.ToInt32(time.Substring(11, 2));
-                MinuteEnd.Value = Convert.ToInt32(time.Substring(13, 2));
+                MinuteEnd.Value = Convert.ToInt32(time.Trim().Substring(13, 2));
                 if (time.Substring(15, 2) == "AM")
                 {
                     AMEnd.Checked = true;
