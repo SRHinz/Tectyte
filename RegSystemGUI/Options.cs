@@ -180,11 +180,11 @@ namespace RegSystemGUI
             DialogResult result = DM.getResult;
             if (result == DialogResult.OK)
             {
-                MessageBox.Show("Modification Sucessful");
+                MessageBox.Show("Modification Successful");
             }
             else if (result == DialogResult.Cancel)
             {
-                MessageBox.Show("Modificaiton Aborted");
+                MessageBox.Show("Modification Aborted");
             }
         }
 

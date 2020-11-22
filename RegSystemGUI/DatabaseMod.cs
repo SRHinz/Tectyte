@@ -38,7 +38,7 @@ namespace RegSystemGUI
                     EC.ShowDialog();
                     if (EC.getResponse == DialogResult.Cancel)
                     {
-                        MessageBox.Show("Edit Canceled", "Edit Cancelation");
+                        MessageBox.Show("Edit Cancelled", "Edit Cancellation");
                     }
                     else if (EC.getResponse == DialogResult.OK)
                     {
@@ -57,7 +57,7 @@ namespace RegSystemGUI
                 string selected = AS.getAccount();
                 if (selected != null)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + "from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete " + selected + " from the system?", "Confirm Selection", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         if (type == "student")
