@@ -48,16 +48,17 @@
             this.tBlock5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchLabel = new System.Windows.Forms.Label();
+            this.CancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CourseDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // delCourse
             // 
-            this.delCourse.Location = new System.Drawing.Point(1154, 35);
-            this.delCourse.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.delCourse.Location = new System.Drawing.Point(1539, 43);
+            this.delCourse.Margin = new System.Windows.Forms.Padding(1);
             this.delCourse.Name = "delCourse";
-            this.delCourse.Size = new System.Drawing.Size(111, 40);
+            this.delCourse.Size = new System.Drawing.Size(148, 49);
             this.delCourse.TabIndex = 2;
             this.delCourse.Text = "Delete Course";
             this.delCourse.UseVisualStyleBackColor = true;
@@ -65,10 +66,10 @@
             // 
             // editCourse
             // 
-            this.editCourse.Location = new System.Drawing.Point(1154, 90);
-            this.editCourse.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.editCourse.Location = new System.Drawing.Point(1539, 111);
+            this.editCourse.Margin = new System.Windows.Forms.Padding(1);
             this.editCourse.Name = "editCourse";
-            this.editCourse.Size = new System.Drawing.Size(111, 40);
+            this.editCourse.Size = new System.Drawing.Size(148, 49);
             this.editCourse.TabIndex = 3;
             this.editCourse.Text = "Edit Course";
             this.editCourse.UseVisualStyleBackColor = true;
@@ -77,10 +78,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(562, 606);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(749, 746);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 21);
+            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -89,20 +90,20 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(578, 610);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.copyrightBox.Location = new System.Drawing.Point(771, 751);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(222, 13);
+            this.copyrightBox.Size = new System.Drawing.Size(296, 15);
             this.copyrightBox.TabIndex = 14;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Add_Preq_Button
             // 
-            this.Add_Preq_Button.Location = new System.Drawing.Point(1154, 145);
-            this.Add_Preq_Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Add_Preq_Button.Location = new System.Drawing.Point(1539, 178);
+            this.Add_Preq_Button.Margin = new System.Windows.Forms.Padding(1);
             this.Add_Preq_Button.Name = "Add_Preq_Button";
-            this.Add_Preq_Button.Size = new System.Drawing.Size(111, 40);
+            this.Add_Preq_Button.Size = new System.Drawing.Size(148, 49);
             this.Add_Preq_Button.TabIndex = 15;
             this.Add_Preq_Button.Text = "Add Prerequisite";
             this.Add_Preq_Button.UseVisualStyleBackColor = true;
@@ -130,14 +131,14 @@
             this.tBlock3,
             this.tBlock4,
             this.tBlock5});
-            this.CourseDataGrid.Location = new System.Drawing.Point(11, 35);
-            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.CourseDataGrid.Location = new System.Drawing.Point(15, 43);
+            this.CourseDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CourseDataGrid.Name = "CourseDataGrid";
             this.CourseDataGrid.ReadOnly = true;
             this.CourseDataGrid.RowHeadersWidth = 30;
             this.CourseDataGrid.RowTemplate.Height = 46;
             this.CourseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CourseDataGrid.Size = new System.Drawing.Size(1063, 552);
+            this.CourseDataGrid.Size = new System.Drawing.Size(1417, 679);
             this.CourseDataGrid.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn1
@@ -219,10 +220,10 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(176, 11);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBox.Location = new System.Drawing.Point(235, 14);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(372, 20);
+            this.searchBox.Size = new System.Drawing.Size(495, 22);
             this.searchBox.TabIndex = 18;
             this.searchBox.Text = "placeholder";
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
@@ -230,19 +231,29 @@
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(44, 18);
-            this.searchLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.searchLabel.Location = new System.Drawing.Point(59, 22);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(128, 13);
+            this.searchLabel.Size = new System.Drawing.Size(170, 17);
             this.searchLabel.TabIndex = 17;
             this.searchLabel.Text = "Search by Course Name: ";
             this.searchLabel.Click += new System.EventHandler(this.searchLabel_Click);
             // 
+            // CancelButton
+            // 
+            this.CancelButton.Location = new System.Drawing.Point(1539, 303);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(148, 54);
+            this.CancelButton.TabIndex = 19;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
             // CourseSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 635);
+            this.ClientSize = new System.Drawing.Size(1816, 782);
+            this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.CourseDataGrid);
@@ -252,7 +263,7 @@
             this.Controls.Add(this.editCourse);
             this.Controls.Add(this.delCourse);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "CourseSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Selector";
@@ -285,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tBlock5;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.Button CancelButton;
     }
 }
