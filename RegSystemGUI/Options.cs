@@ -213,7 +213,7 @@ namespace RegSystemGUI
             }
             else if (AC.GetResult == DialogResult.Cancel)
             {
-                MessageBox.Show("Course Add Canceled", "Abort CourseAdd");
+                MessageBox.Show("Course Add Cancelled", "Abort CourseAdd");
             }
         }
 

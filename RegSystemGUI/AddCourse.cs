@@ -26,7 +26,7 @@ namespace RegSystemGUI
             InitializeComponent();
             UDATA = uData;
             CDATA = cData;
-            Prereq.Checked = true;
+            Prereq.Checked = false;
             Edit_TB2_Button.Hide();
             checkBox2.Hide();
             TB2.Hide();
