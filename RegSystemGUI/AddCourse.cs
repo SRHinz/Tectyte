@@ -27,6 +27,8 @@ namespace RegSystemGUI
             UDATA = uData;
             CDATA = cData;
             Prereq.Checked = false;
+            Prereq_Display.Hide();
+            Add_P_Button.Hide();
             Edit_TB2_Button.Hide();
             checkBox2.Hide();
             TB2.Hide();
@@ -342,6 +344,8 @@ namespace RegSystemGUI
         {
             get
             {
+                if (!prereqs.Any<string>())
+                    PR = false;
                 return PR;
             }
         }
