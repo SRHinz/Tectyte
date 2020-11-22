@@ -305,7 +305,7 @@ namespace RegSystemGUI
                 Add_P_Button.Hide();
                 PR = true;
             }
-            else
+            else if (Prereq.Checked)
             {
                 Prereq_Display.Show();
                 Add_P_Button.Show();

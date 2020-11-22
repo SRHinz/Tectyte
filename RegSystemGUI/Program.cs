@@ -437,14 +437,22 @@ namespace RegSystemGUI
 
 			public void AddUser((string, string, string, string, string) InfoTuple )
             {
-				string uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3.Substring(0, 9);
+				string uName;
+				if (InfoTuple.Item3.Length >= 9)
+				{
+					uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3.Substring(0, 9);
+				}
+				else
+				{
+					uName = InfoTuple.Item1.Substring(0, 1) + InfoTuple.Item3;
+				}
 				int i = 1;
 				while ((uDatabase.ContainsKey(uName)) & (i < InfoTuple.Item1.Length))
                 {
 					i += 1;
 					if (uName.Length == 10)
 					{
-						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3.Substring(0, 9 - i);
+						uName = InfoTuple.Item1.Substring(0, i) + InfoTuple.Item3.Substring(0, InfoTuple.Item3.Length - i);
 					}
 					else
 					{
@@ -1039,10 +1047,10 @@ namespace RegSystemGUI
 					rep *= 2;
                 }
 				dd *= 1000;
-				if (!AM_E & (H_End!=12))
-                {
+				if (!AM_E & (H_End != 12))
+				{
 					H_End += 12;
-                }
+				}
 				float beta = Convert.ToSingle(H_End);
 				beta += Convert.ToSingle(M_End) / 60;
 				length = Convert.ToInt32(((beta - alpha) % 24) / 0.5);
