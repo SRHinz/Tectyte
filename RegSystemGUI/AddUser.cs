@@ -64,6 +64,27 @@ namespace RegSystemGUI
                         //Nothing happenes, and the messagebox closes
                     }
                 }
+                else if (AccountType_Box.Text == "Faculty" || AccountType_Box.Text == "Admin" || AccountType_Box.Text == "Manager")
+                {
+                    if (AccountType_Box.Text == "Faculty")
+                    {
+                        UserData = (FName_Box.Text, MName_Box.Text, LName_Box.Text, AccountType_Box.Text, "faculty");
+                    }
+                    else if (AccountType_Box.Text == "Admin")
+                    {
+                        UserData = (FName_Box.Text, MName_Box.Text, LName_Box.Text, AccountType_Box.Text, "admin");
+                    }
+                    if (AccountType_Box.Text == "Manager")
+                    {
+                        UserData = (FName_Box.Text, MName_Box.Text, LName_Box.Text, AccountType_Box.Text, "manager");
+                    }
+                    status = DialogResult.OK;
+                    this.Close();
+                }
+                else if (AccountType_Box.Text == "Account Type")
+                {
+                    MessageBox.Show("Please select account type.");
+                }
                 else
                 {
                     UserData = (FName_Box.Text, MName_Box.Text, LName_Box.Text, AccountType_Box.Text, Advisor);
