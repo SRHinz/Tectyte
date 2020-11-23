@@ -172,7 +172,7 @@
             this.Select_Advisor_Button.Location = new System.Drawing.Point(309, 293);
             this.Select_Advisor_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Select_Advisor_Button.Name = "Select_Advisor_Button";
-            this.Select_Advisor_Button.Size = new System.Drawing.Size(133, 29);
+            this.Select_Advisor_Button.Size = new System.Drawing.Size(132, 44);
             this.Select_Advisor_Button.TabIndex = 27;
             this.Select_Advisor_Button.Text = "Select Advisor";
             this.Select_Advisor_Button.UseVisualStyleBackColor = true;
