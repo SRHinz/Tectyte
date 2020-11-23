@@ -16,7 +16,6 @@ namespace RegSystemGUI
         public CourseEnter()
         {
             InitializeComponent();
-
         }
 
         private void CourseEnter_Load(object sender, EventArgs e)
