@@ -91,8 +91,6 @@ C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\Re
 C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
 C:\Users\Administrator\Downloads\Tectyte Group Project\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
-C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.FacultySelector.resources
-C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.StudentSelector.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.changeAdvisor.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AccountSelector.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\bin\Debug\RegSystemGUI.exe.config
@@ -143,9 +141,9 @@ C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.Stude
 C:\Users\Michelle\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddCourse.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddUser.resources
-C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter.resources
 C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter.resources
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.AddCourse.resources
 C:\Users\brkol\OneDrive\Desktop\Sengineering\RegSystemGUI\obj\Debug\RegSystemGUI.csprojAssemblyReference.cache
 C:\Users\miche\Source\Repos\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter2.resources
+C:\Users\User\Downloads\Tectyte\RegSystemGUI\obj\Debug\RegSystemGUI.CourseEnter2.resources

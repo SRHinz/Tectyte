@@ -460,7 +460,8 @@ namespace RegSystemGUI
 					}
 				}
 				string[] info = new string[6] { uName, "password", InfoTuple.Item1, InfoTuple.Item2, InfoTuple.Item3, "" };
-				if (InfoTuple.Item4.ToLower() == "student")
+				string alpha = InfoTuple.Item4.ToLower();
+				if (alpha == "student")
                 {
 					info[5] = InfoTuple.Item5;
 					string[] courses = new string[0];
@@ -468,16 +469,16 @@ namespace RegSystemGUI
                 }
                 else
                 {
-					info[5] = InfoTuple.Item4;
-					if (InfoTuple.Item4.ToLower() == "faculty")
+					info[5] = InfoTuple.Item4.ToLower();
+					if (info[5] == "faculty")
                     {
 						UDatabase.Add(uName, new FacultyAcc(info));
                     }
-					else if (InfoTuple.Item4.ToLower() == "admin")
+					else if (info[5].ToLower() == "admin")
                     {
 						UDatabase.Add(uName, new AdminAcc(info));
                     }
-					else if (InfoTuple.Item4.ToLower() == "manager")
+					else if (info[5] == "manager")
                     {
 						UDatabase.Add(uName, new ManagerAcc(info));
                     }
