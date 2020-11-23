@@ -77,12 +77,6 @@
     <Compile Include="changeAdvisor.Designer.cs">
       <DependentUpon>changeAdvisor.cs</DependentUpon>
     </Compile>
-    <Compile Include="CourseEnter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CourseEnter.Designer.cs">
-      <DependentUpon>CourseEnter.cs</DependentUpon>
-    </Compile>
     <Compile Include="CourseSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,12 +133,6 @@
     <Compile Include="stuCourseHist.Designer.cs">
       <DependentUpon>stuCourseHist.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentSelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentSelector.Designer.cs">
-      <DependentUpon>StudentSelector.cs</DependentUpon>
-    </Compile>
     <Compile Include="studentsEnrolled.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +153,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="changeAdvisor.resx">
       <DependentUpon>changeAdvisor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CourseEnter.resx">
-      <DependentUpon>CourseEnter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.resx">
       <DependentUpon>CourseSelector.cs</DependentUpon>
@@ -204,9 +189,6 @@
     </Compile>
     <EmbeddedResource Include="stuCourseHist.resx">
       <DependentUpon>stuCourseHist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentSelector.resx">
-      <DependentUpon>StudentSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="studentsEnrolled.resx">
       <DependentUpon>studentsEnrolled.cs</DependentUpon>
