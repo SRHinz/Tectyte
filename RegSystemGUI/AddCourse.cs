@@ -152,9 +152,19 @@ namespace RegSystemGUI
                 ETB = new EditTimeBlock("new");
             }
             ETB.ShowDialog();
-            TBs[0] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB1.Text = VC.solveTimeblock(TBs[0]);
-            checkBox1.Checked = true;
+
+            if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("Edit Time Block Cancelled");
+            }
+            else
+            {
+                TBs[0] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB1.Text = VC.solveTimeblock(TBs[0]);
+                checkBox1.Checked = true;
+            }
+            
+          
         }
 
         private void Edit_TB2_Button_Click(object sender, EventArgs e)
@@ -169,9 +179,16 @@ namespace RegSystemGUI
                 ETB = new EditTimeBlock("new");
             }
             ETB.ShowDialog();
-            TBs[1] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB2.Text = VC.solveTimeblock(TBs[1]);
-            checkBox2.Checked = true;
+            if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("Edit Time Block Cancelled");
+            }
+            else
+            {
+                TBs[1] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB2.Text = VC.solveTimeblock(TBs[1]);
+                checkBox2.Checked = true;
+            }
         }
 
         private void Edit_TB3_Button_Click(object sender, EventArgs e)
@@ -186,9 +203,19 @@ namespace RegSystemGUI
                 ETB = new EditTimeBlock("new");
             }
             ETB.ShowDialog();
-            TBs[2] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB3.Text = VC.solveTimeblock(TBs[2]);
-            checkBox3.Checked = true;
+
+            if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("Edit Time Block Cancelled");
+            }
+            else
+            {
+                TBs[2] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB3.Text = VC.solveTimeblock(TBs[2]);
+                checkBox3.Checked = true;
+            }
+            
+   
         }
 
         private void Edit_TB4_Button_Click(object sender, EventArgs e)
@@ -203,9 +230,16 @@ namespace RegSystemGUI
                 ETB = new EditTimeBlock("new");
             }
             ETB.ShowDialog();
-            TBs[3] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB4.Text = VC.solveTimeblock(TBs[3]);
-            checkBox3.Checked = true;
+            if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("Edit Time Block Cancelled");
+            }
+            else
+            {
+                TBs[3] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB4.Text = VC.solveTimeblock(TBs[3]);
+                checkBox3.Checked = true;
+            }
         }
 
         private void Edit_TB5_Button_Click(object sender, EventArgs e)
@@ -220,9 +254,16 @@ namespace RegSystemGUI
                 ETB = new EditTimeBlock("new");
             }
             ETB.ShowDialog();
-            TBs[4] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB5.Text = VC.solveTimeblock(TBs[4]);
-            checkBox3.Checked = true;
+            if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("Edit Time Block Cancelled");
+            }
+            else
+            {
+                TBs[4] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB5.Text = VC.solveTimeblock(TBs[4]);
+                checkBox3.Checked = true;
+            }
         }
 
         private void Submit_Button_Click(object sender, EventArgs e)

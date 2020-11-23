@@ -48,7 +48,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(220, 508);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -60,7 +60,7 @@
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.copyrightBox.Location = new System.Drawing.Point(240, 512);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2);
             this.copyrightBox.Name = "copyrightBox";
             this.copyrightBox.Size = new System.Drawing.Size(277, 15);
             this.copyrightBox.TabIndex = 8;
@@ -71,7 +71,7 @@
             // MenuReturn
             // 
             this.MenuReturn.Location = new System.Drawing.Point(433, 164);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2);
             this.MenuReturn.Name = "MenuReturn";
             this.MenuReturn.Size = new System.Drawing.Size(271, 47);
             this.MenuReturn.TabIndex = 0;
@@ -82,7 +82,7 @@
             // courseReturn
             // 
             this.courseReturn.Location = new System.Drawing.Point(433, 269);
-            this.courseReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.courseReturn.Margin = new System.Windows.Forms.Padding(2);
             this.courseReturn.Name = "courseReturn";
             this.courseReturn.Size = new System.Drawing.Size(271, 47);
             this.courseReturn.TabIndex = 1;
@@ -95,7 +95,7 @@
             this.noEnrolledBox.BackColor = System.Drawing.SystemColors.Control;
             this.noEnrolledBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.noEnrolledBox.Location = new System.Drawing.Point(33, 8);
-            this.noEnrolledBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.noEnrolledBox.Margin = new System.Windows.Forms.Padding(2);
             this.noEnrolledBox.Name = "noEnrolledBox";
             this.noEnrolledBox.Size = new System.Drawing.Size(359, 15);
             this.noEnrolledBox.TabIndex = 14;
@@ -118,7 +118,7 @@
             this.courseBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.courseBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseBox.Location = new System.Drawing.Point(583, 8);
-            this.courseBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.courseBox.Margin = new System.Windows.Forms.Padding(2);
             this.courseBox.Name = "courseBox";
             this.courseBox.Size = new System.Drawing.Size(147, 20);
             this.courseBox.TabIndex = 16;
@@ -171,6 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 535);
+            this.ControlBox = false;
             this.Controls.Add(this.enrolledStudentDatagrid);
             this.Controls.Add(this.courseBox);
             this.Controls.Add(this.label1);
@@ -180,7 +181,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "studentsEnrolled";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Students Enrolled";

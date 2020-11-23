@@ -52,9 +52,10 @@
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(974, 455);
+            this.MenuReturn.Location = new System.Drawing.Point(649, 291);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(406, 73);
+            this.MenuReturn.Size = new System.Drawing.Size(271, 47);
             this.MenuReturn.TabIndex = 15;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -62,9 +63,10 @@
             // 
             // changeAdv
             // 
-            this.changeAdv.Location = new System.Drawing.Point(974, 582);
+            this.changeAdv.Location = new System.Drawing.Point(649, 372);
+            this.changeAdv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.changeAdv.Name = "changeAdv";
-            this.changeAdv.Size = new System.Drawing.Size(406, 73);
+            this.changeAdv.Size = new System.Drawing.Size(271, 47);
             this.changeAdv.TabIndex = 16;
             this.changeAdv.Text = "Change Student Advisor";
             this.changeAdv.UseVisualStyleBackColor = true;
@@ -73,35 +75,39 @@
             // searchStudents
             // 
             this.searchStudents.AutoSize = true;
-            this.searchStudents.Location = new System.Drawing.Point(48, 67);
+            this.searchStudents.Location = new System.Drawing.Point(32, 43);
+            this.searchStudents.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.searchStudents.Name = "searchStudents";
-            this.searchStudents.Size = new System.Drawing.Size(321, 25);
+            this.searchStudents.Size = new System.Drawing.Size(212, 17);
             this.searchStudents.TabIndex = 17;
             this.searchStudents.Text = "Search Students by Last Name: ";
             // 
             // searchFaculty
             // 
             this.searchFaculty.AutoSize = true;
-            this.searchFaculty.Location = new System.Drawing.Point(48, 526);
+            this.searchFaculty.Location = new System.Drawing.Point(32, 337);
+            this.searchFaculty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.searchFaculty.Name = "searchFaculty";
-            this.searchFaculty.Size = new System.Drawing.Size(306, 25);
+            this.searchFaculty.Size = new System.Drawing.Size(201, 17);
             this.searchFaculty.TabIndex = 18;
             this.searchFaculty.Text = "Search Faculty by Last Name: ";
             // 
             // studentSearchBox
             // 
-            this.studentSearchBox.Location = new System.Drawing.Point(395, 67);
+            this.studentSearchBox.Location = new System.Drawing.Point(263, 43);
+            this.studentSearchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.studentSearchBox.Name = "studentSearchBox";
-            this.studentSearchBox.Size = new System.Drawing.Size(486, 31);
+            this.studentSearchBox.Size = new System.Drawing.Size(325, 22);
             this.studentSearchBox.TabIndex = 19;
             this.studentSearchBox.Text = "placeholder";
             this.studentSearchBox.TextChanged += new System.EventHandler(this.studentSearchBox_TextChanged);
             // 
             // facultySearchBox
             // 
-            this.facultySearchBox.Location = new System.Drawing.Point(395, 526);
+            this.facultySearchBox.Location = new System.Drawing.Point(263, 337);
+            this.facultySearchBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.facultySearchBox.Name = "facultySearchBox";
-            this.facultySearchBox.Size = new System.Drawing.Size(486, 31);
+            this.facultySearchBox.Size = new System.Drawing.Size(325, 22);
             this.facultySearchBox.TabIndex = 20;
             this.facultySearchBox.Text = "placeholder";
             this.facultySearchBox.TextChanged += new System.EventHandler(this.facultySearchBox_TextChanged);
@@ -109,10 +115,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(477, 984);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Location = new System.Drawing.Point(318, 630);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -121,10 +126,9 @@
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Control;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(509, 992);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox3.Location = new System.Drawing.Point(339, 635);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(443, 24);
+            this.textBox3.Size = new System.Drawing.Size(295, 15);
             this.textBox3.TabIndex = 22;
             this.textBox3.Text = "this software is property of tectyte ©2020";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -141,14 +145,13 @@
             this.LastName,
             this.FirstName,
             this.Username});
-            this.studentDatagrid.Location = new System.Drawing.Point(395, 106);
-            this.studentDatagrid.Margin = new System.Windows.Forms.Padding(5);
+            this.studentDatagrid.Location = new System.Drawing.Point(263, 68);
             this.studentDatagrid.Name = "studentDatagrid";
             this.studentDatagrid.ReadOnly = true;
             this.studentDatagrid.RowHeadersWidth = 4;
             this.studentDatagrid.RowTemplate.Height = 24;
             this.studentDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.studentDatagrid.Size = new System.Drawing.Size(486, 375);
+            this.studentDatagrid.Size = new System.Drawing.Size(324, 240);
             this.studentDatagrid.TabIndex = 23;
             // 
             // LastName
@@ -184,14 +187,13 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.facultyDatagrid.Location = new System.Drawing.Point(395, 565);
-            this.facultyDatagrid.Margin = new System.Windows.Forms.Padding(5);
+            this.facultyDatagrid.Location = new System.Drawing.Point(263, 362);
             this.facultyDatagrid.Name = "facultyDatagrid";
             this.facultyDatagrid.ReadOnly = true;
             this.facultyDatagrid.RowHeadersWidth = 4;
             this.facultyDatagrid.RowTemplate.Height = 24;
             this.facultyDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.facultyDatagrid.Size = new System.Drawing.Size(486, 375);
+            this.facultyDatagrid.Size = new System.Drawing.Size(324, 240);
             this.facultyDatagrid.TabIndex = 24;
             // 
             // dataGridViewTextBoxColumn1
@@ -217,9 +219,10 @@
             // 
             // changeAdvisor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1429, 1030);
+            this.ClientSize = new System.Drawing.Size(953, 659);
+            this.ControlBox = false;
             this.Controls.Add(this.facultyDatagrid);
             this.Controls.Add(this.studentDatagrid);
             this.Controls.Add(this.pictureBox1);
@@ -231,6 +234,7 @@
             this.Controls.Add(this.changeAdv);
             this.Controls.Add(this.MenuReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "changeAdvisor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change Advisor";

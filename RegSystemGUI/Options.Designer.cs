@@ -123,7 +123,7 @@
             // AdminStuHisButton
             // 
             this.AdminStuHisButton.Location = new System.Drawing.Point(243, 116);
-            this.AdminStuHisButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminStuHisButton.Margin = new System.Windows.Forms.Padding(4);
             this.AdminStuHisButton.Name = "AdminStuHisButton";
             this.AdminStuHisButton.Size = new System.Drawing.Size(117, 47);
             this.AdminStuHisButton.TabIndex = 9;
@@ -146,7 +146,7 @@
             // SysModButton
             // 
             this.SysModButton.Location = new System.Drawing.Point(367, 170);
-            this.SysModButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.SysModButton.Margin = new System.Windows.Forms.Padding(1);
             this.SysModButton.Name = "SysModButton";
             this.SysModButton.Size = new System.Drawing.Size(117, 47);
             this.SysModButton.TabIndex = 11;
@@ -158,7 +158,7 @@
             // AddUser_Button
             // 
             this.AddUser_Button.Location = new System.Drawing.Point(367, 61);
-            this.AddUser_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddUser_Button.Margin = new System.Windows.Forms.Padding(4);
             this.AddUser_Button.Name = "AddUser_Button";
             this.AddUser_Button.Size = new System.Drawing.Size(117, 47);
             this.AddUser_Button.TabIndex = 12;
@@ -169,7 +169,7 @@
             // AddCourse_Button
             // 
             this.AddCourse_Button.Location = new System.Drawing.Point(101, 61);
-            this.AddCourse_Button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddCourse_Button.Margin = new System.Windows.Forms.Padding(4);
             this.AddCourse_Button.Name = "AddCourse_Button";
             this.AddCourse_Button.Size = new System.Drawing.Size(135, 47);
             this.AddCourse_Button.TabIndex = 13;
@@ -182,6 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 372);
+            this.ControlBox = false;
             this.Controls.Add(this.AddCourse_Button);
             this.Controls.Add(this.AddUser_Button);
             this.Controls.Add(this.SysModButton);
@@ -196,7 +197,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Options";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

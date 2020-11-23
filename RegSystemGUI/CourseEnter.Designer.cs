@@ -35,16 +35,18 @@ namespace RegSystemGUI
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(32, 73);
+            this.textBox1.Location = new System.Drawing.Point(13, 32);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(452, 44);
+            this.textBox1.Size = new System.Drawing.Size(193, 22);
             this.textBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(585, 73);
+            this.button1.Location = new System.Drawing.Point(246, 32);
+            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 44);
+            this.button1.Size = new System.Drawing.Size(74, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,11 +54,13 @@ namespace RegSystemGUI
             // 
             // CourseEnter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 178);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(352, 130);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "CourseEnter";
             this.Text = "CourseEnter";
             this.Load += new System.EventHandler(this.CourseEnter_Load);
