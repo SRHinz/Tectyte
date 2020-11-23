@@ -77,12 +77,6 @@
     <Compile Include="changeAdvisor.Designer.cs">
       <DependentUpon>changeAdvisor.cs</DependentUpon>
     </Compile>
-    <Compile Include="CourseEnter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CourseEnter.Designer.cs">
-      <DependentUpon>CourseEnter.cs</DependentUpon>
-    </Compile>
     <Compile Include="CourseSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="changeAdvisor.resx">
       <DependentUpon>changeAdvisor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CourseEnter.resx">
-      <DependentUpon>CourseEnter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.resx">
       <DependentUpon>CourseSelector.cs</DependentUpon>
