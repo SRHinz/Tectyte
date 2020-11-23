@@ -44,10 +44,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(153, 385);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(191, 481);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -56,20 +56,20 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(169, 389);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.copyrightBox.Location = new System.Drawing.Point(211, 486);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(222, 13);
+            this.copyrightBox.Size = new System.Drawing.Size(278, 15);
             this.copyrightBox.TabIndex = 8;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MenuReturn
             // 
-            this.MenuReturn.Location = new System.Drawing.Point(342, 114);
-            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.MenuReturn.Location = new System.Drawing.Point(428, 142);
+            this.MenuReturn.Margin = new System.Windows.Forms.Padding(1);
             this.MenuReturn.Name = "MenuReturn";
-            this.MenuReturn.Size = new System.Drawing.Size(177, 34);
+            this.MenuReturn.Size = new System.Drawing.Size(221, 42);
             this.MenuReturn.TabIndex = 9;
             this.MenuReturn.Text = "Return to Menu";
             this.MenuReturn.UseVisualStyleBackColor = true;
@@ -77,10 +77,10 @@
             // 
             // ViewStudent
             // 
-            this.ViewStudent.Location = new System.Drawing.Point(342, 176);
-            this.ViewStudent.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ViewStudent.Location = new System.Drawing.Point(428, 220);
+            this.ViewStudent.Margin = new System.Windows.Forms.Padding(1);
             this.ViewStudent.Name = "ViewStudent";
-            this.ViewStudent.Size = new System.Drawing.Size(177, 34);
+            this.ViewStudent.Size = new System.Drawing.Size(221, 42);
             this.ViewStudent.TabIndex = 11;
             this.ViewStudent.Text = "View Advisee";
             this.ViewStudent.UseVisualStyleBackColor = true;
@@ -98,14 +98,14 @@
             this.LastName,
             this.FirstName,
             this.Username});
-            this.adviseeDatagrid.Location = new System.Drawing.Point(30, 26);
-            this.adviseeDatagrid.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.adviseeDatagrid.Location = new System.Drawing.Point(38, 32);
+            this.adviseeDatagrid.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.adviseeDatagrid.Name = "adviseeDatagrid";
             this.adviseeDatagrid.ReadOnly = true;
             this.adviseeDatagrid.RowHeadersWidth = 4;
             this.adviseeDatagrid.RowTemplate.Height = 24;
             this.adviseeDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adviseeDatagrid.Size = new System.Drawing.Size(270, 354);
+            this.adviseeDatagrid.Size = new System.Drawing.Size(338, 442);
             this.adviseeDatagrid.TabIndex = 24;
             // 
             // LastName
@@ -131,16 +131,17 @@
             // 
             // adviseeViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(543, 408);
+            this.ClientSize = new System.Drawing.Size(679, 510);
+            this.ControlBox = false;
             this.Controls.Add(this.adviseeDatagrid);
             this.Controls.Add(this.ViewStudent);
             this.Controls.Add(this.MenuReturn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "adviseeViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advisee Viewer";

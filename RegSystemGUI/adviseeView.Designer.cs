@@ -69,13 +69,13 @@
             this.TimeBlock3,
             this.TimeBlock4,
             this.TimeBlock5});
-            this.AdviseeViewGrid.Location = new System.Drawing.Point(10, 45);
+            this.AdviseeViewGrid.Location = new System.Drawing.Point(12, 56);
             this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(1);
             this.AdviseeViewGrid.Name = "AdviseeViewGrid";
             this.AdviseeViewGrid.ReadOnly = true;
             this.AdviseeViewGrid.RowHeadersWidth = 30;
             this.AdviseeViewGrid.RowTemplate.Height = 46;
-            this.AdviseeViewGrid.Size = new System.Drawing.Size(822, 318);
+            this.AdviseeViewGrid.Size = new System.Drawing.Size(1028, 398);
             this.AdviseeViewGrid.TabIndex = 0;
             // 
             // Courses
@@ -148,19 +148,19 @@
             "Course History",
             "Current Courses",
             "Future Courses"});
-            this.comboBox1.Location = new System.Drawing.Point(883, 48);
+            this.comboBox1.Location = new System.Drawing.Point(1104, 60);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 21);
+            this.comboBox1.Size = new System.Drawing.Size(142, 24);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Return_Button
             // 
-            this.Return_Button.Location = new System.Drawing.Point(883, 82);
+            this.Return_Button.Location = new System.Drawing.Point(1104, 102);
             this.Return_Button.Margin = new System.Windows.Forms.Padding(1);
             this.Return_Button.Name = "Return_Button";
-            this.Return_Button.Size = new System.Drawing.Size(111, 29);
+            this.Return_Button.Size = new System.Drawing.Size(139, 36);
             this.Return_Button.TabIndex = 2;
             this.Return_Button.Text = "Return";
             this.Return_Button.UseVisualStyleBackColor = true;
@@ -169,10 +169,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(386, 438);
+            this.pictureBox1.Location = new System.Drawing.Point(482, 548);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -181,10 +181,10 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(402, 442);
+            this.copyrightBox.Location = new System.Drawing.Point(502, 552);
             this.copyrightBox.Margin = new System.Windows.Forms.Padding(2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(222, 13);
+            this.copyrightBox.Size = new System.Drawing.Size(278, 15);
             this.copyrightBox.TabIndex = 10;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -193,9 +193,10 @@
             // 
             this.NumCreditsEarnedLabel.AutoSize = true;
             this.NumCreditsEarnedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.NumCreditsEarnedLabel.Location = new System.Drawing.Point(18, 376);
+            this.NumCreditsEarnedLabel.Location = new System.Drawing.Point(22, 470);
+            this.NumCreditsEarnedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NumCreditsEarnedLabel.Name = "NumCreditsEarnedLabel";
-            this.NumCreditsEarnedLabel.Size = new System.Drawing.Size(176, 17);
+            this.NumCreditsEarnedLabel.Size = new System.Drawing.Size(209, 20);
             this.NumCreditsEarnedLabel.TabIndex = 20;
             this.NumCreditsEarnedLabel.Text = "Number of Credits Earned:";
             // 
@@ -203,10 +204,10 @@
             // 
             this.CreditsEarnedBox.BackColor = System.Drawing.SystemColors.Control;
             this.CreditsEarnedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CreditsEarnedBox.Location = new System.Drawing.Point(192, 379);
+            this.CreditsEarnedBox.Location = new System.Drawing.Point(240, 474);
             this.CreditsEarnedBox.Margin = new System.Windows.Forms.Padding(1);
             this.CreditsEarnedBox.Name = "CreditsEarnedBox";
-            this.CreditsEarnedBox.Size = new System.Drawing.Size(104, 13);
+            this.CreditsEarnedBox.Size = new System.Drawing.Size(130, 15);
             this.CreditsEarnedBox.TabIndex = 19;
             this.CreditsEarnedBox.Text = "placeholder";
             // 
@@ -214,19 +215,21 @@
             // 
             this.GPALabel.AutoSize = true;
             this.GPALabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.GPALabel.Location = new System.Drawing.Point(146, 394);
+            this.GPALabel.Location = new System.Drawing.Point(182, 492);
+            this.GPALabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GPALabel.Name = "GPALabel";
-            this.GPALabel.Size = new System.Drawing.Size(41, 17);
+            this.GPALabel.Size = new System.Drawing.Size(49, 20);
             this.GPALabel.TabIndex = 18;
             this.GPALabel.Text = "GPA:";
             // 
             // GPABox
             // 
             this.GPABox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GPABox.Location = new System.Drawing.Point(192, 397);
+            this.GPABox.Location = new System.Drawing.Point(240, 496);
+            this.GPABox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GPABox.Name = "GPABox";
             this.GPABox.ReadOnly = true;
-            this.GPABox.Size = new System.Drawing.Size(104, 13);
+            this.GPABox.Size = new System.Drawing.Size(130, 15);
             this.GPABox.TabIndex = 17;
             this.GPABox.Text = "placeholder";
             // 
@@ -235,10 +238,10 @@
             this.warningBox2.BackColor = System.Drawing.SystemColors.Control;
             this.warningBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.warningBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warningBox2.Location = new System.Drawing.Point(37, 26);
+            this.warningBox2.Location = new System.Drawing.Point(46, 32);
             this.warningBox2.Margin = new System.Windows.Forms.Padding(2);
             this.warningBox2.Name = "warningBox2";
-            this.warningBox2.Size = new System.Drawing.Size(432, 16);
+            this.warningBox2.Size = new System.Drawing.Size(540, 20);
             this.warningBox2.TabIndex = 22;
             this.warningBox2.Text = "**Warning: There is a time conflict between two or more classes.**";
             // 
@@ -247,18 +250,19 @@
             this.warningBox.BackColor = System.Drawing.SystemColors.Control;
             this.warningBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.warningBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.warningBox.Location = new System.Drawing.Point(37, 26);
+            this.warningBox.Location = new System.Drawing.Point(46, 32);
             this.warningBox.Margin = new System.Windows.Forms.Padding(2);
             this.warningBox.Name = "warningBox";
-            this.warningBox.Size = new System.Drawing.Size(432, 16);
+            this.warningBox.Size = new System.Drawing.Size(540, 20);
             this.warningBox.TabIndex = 21;
             this.warningBox.Text = "**Warning: There are no registered classes.**";
             // 
             // adviseeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1011, 466);
+            this.ClientSize = new System.Drawing.Size(1264, 582);
+            this.ControlBox = false;
             this.Controls.Add(this.warningBox2);
             this.Controls.Add(this.warningBox);
             this.Controls.Add(this.NumCreditsEarnedLabel);

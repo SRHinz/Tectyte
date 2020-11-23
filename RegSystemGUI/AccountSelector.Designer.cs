@@ -55,14 +55,14 @@
             this.LastName,
             this.FirstName,
             this.Username});
-            this.AccountDataGrid.Location = new System.Drawing.Point(10, 26);
+            this.AccountDataGrid.Location = new System.Drawing.Point(12, 32);
             this.AccountDataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.AccountDataGrid.Name = "AccountDataGrid";
             this.AccountDataGrid.ReadOnly = true;
             this.AccountDataGrid.RowHeadersWidth = 10;
             this.AccountDataGrid.RowTemplate.Height = 24;
             this.AccountDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AccountDataGrid.Size = new System.Drawing.Size(348, 315);
+            this.AccountDataGrid.Size = new System.Drawing.Size(435, 394);
             this.AccountDataGrid.TabIndex = 4;
             this.AccountDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AccountDataGrid_CellContentClick);
             // 
@@ -89,29 +89,29 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(518, 26);
+            this.textBox1.Location = new System.Drawing.Point(648, 32);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 20);
+            this.textBox1.Size = new System.Drawing.Size(152, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // SearchLabel
             // 
             this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Location = new System.Drawing.Point(395, 28);
+            this.SearchLabel.Location = new System.Drawing.Point(494, 35);
             this.SearchLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(112, 13);
+            this.SearchLabel.Size = new System.Drawing.Size(148, 17);
             this.SearchLabel.TabIndex = 4;
             this.SearchLabel.Text = "Search by Last Name:";
             // 
             // SelectButton
             // 
-            this.SelectButton.Location = new System.Drawing.Point(547, 76);
+            this.SelectButton.Location = new System.Drawing.Point(684, 95);
             this.SelectButton.Margin = new System.Windows.Forms.Padding(2);
             this.SelectButton.Name = "SelectButton";
-            this.SelectButton.Size = new System.Drawing.Size(77, 30);
+            this.SelectButton.Size = new System.Drawing.Size(96, 38);
             this.SelectButton.TabIndex = 1;
             this.SelectButton.Text = "Select";
             this.SelectButton.UseVisualStyleBackColor = true;
@@ -120,10 +120,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(210, 404);
+            this.pictureBox1.Location = new System.Drawing.Point(262, 505);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -132,10 +132,10 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(226, 408);
+            this.copyrightBox.Location = new System.Drawing.Point(282, 510);
             this.copyrightBox.Margin = new System.Windows.Forms.Padding(2);
             this.copyrightBox.Name = "copyrightBox";
-            this.copyrightBox.Size = new System.Drawing.Size(222, 13);
+            this.copyrightBox.Size = new System.Drawing.Size(278, 15);
             this.copyrightBox.TabIndex = 5;
             this.copyrightBox.TabStop = false;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
@@ -143,10 +143,10 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(460, 269);
+            this.CancelButton.Location = new System.Drawing.Point(575, 336);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(144, 41);
+            this.CancelButton.Size = new System.Drawing.Size(180, 51);
             this.CancelButton.TabIndex = 2;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -155,18 +155,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 7);
+            this.label1.Location = new System.Drawing.Point(155, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.Size = new System.Drawing.Size(123, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Select An Account";
             // 
             // AccountSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(657, 427);
+            this.ClientSize = new System.Drawing.Size(821, 534);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.pictureBox1);
