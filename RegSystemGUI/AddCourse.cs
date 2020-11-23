@@ -378,7 +378,7 @@ namespace RegSystemGUI
             }
             else if (result == DialogResult.No)
             {
-                CourseEnter CE = new CourseEnter();
+                CourseEnter2 CE = new CourseEnter2();
                 CE.ShowDialog();
                 Prereq_Display.Text += CE.getcourseName + "\n";
                 prereqs.Add(CE.getcourseName);
