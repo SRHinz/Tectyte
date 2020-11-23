@@ -33,13 +33,17 @@ namespace RegSystemGUI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if ((textBox1.TextLength > 7) | !((textBox1.Text.ElementAt(2).Equals('-')) | (textBox1.Text.ElementAt(3).Equals('-'))))
+            if (((textBox1.TextLength > 8) & (textBox1.TextLength <11)) & (((textBox1.Text.ElementAt(2).Equals('-')) | (textBox1.Text.ElementAt(3).Equals('-'))) & ((textBox1.Text.ElementAt(6).Equals('-')) | (textBox1.Text.ElementAt(7).Equals('-')))))
             {
                 try
                 {
-                    Convert.ToInt32((textBox1.Text.Substring(textBox1.TextLength - 3)));
-                    courseName = textBox1.Text;
-                    this.Close();
+                    int i = 0;
+                    if ((int.TryParse(textBox1.Text.Substring(textBox1.Text.IndexOf('-') + 1, 3), out i)) & ((int.TryParse(textBox1.Text.Substring(textBox1.TextLength - 3), out i))))
+                    {
+                        courseName = textBox1.Text;
+                        this.Close();
+                    }
+                    
                 }
                 catch (Exception)
                 {
