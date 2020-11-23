@@ -66,50 +66,90 @@ namespace RegSystemGUI
 
         private void EditInstructorButton_Click(object sender, EventArgs e)
         {
-            AccountSelector AS = new AccountSelector(ref UD, "F");
+            AccountSelector AS = new AccountSelector(ref UD, "faculty");
             AS.ShowDialog();
-            Instructor_Box.Text = AS.getAccount();
-            Instructor_New = AS.getAccount();
+            if (AS.getAccount() != null)
+            {
+                Instructor_Box.Text = AS.getAccount();
+                Instructor_New = AS.getAccount();
+            }
         }
 
         private void EditTB1Button_Click(object sender, EventArgs e)
         {
             EditTimeBlock ETB = new EditTimeBlock(TB1_Box.Text);
             ETB.ShowDialog();
-            TBs_New[0] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB1_Box.Text = VC.solveTimeblock(TBs_New[0]);
+            if (ETB.getResponse == DialogResult.OK)
+            {
+                TBs_New[0] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB1_Box.Text = VC.solveTimeblock(TBs_New[0]);
+            }
+            else if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("There was an issue editing the time block. Edit cancelled.");
+            }
         }
 
         private void EditTB2Button_Click(object sender, EventArgs e)
         {
             EditTimeBlock ETB = new EditTimeBlock(TB2_Box.Text);
             ETB.ShowDialog();
-            TBs_New[1] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB2_Box.Text = VC.solveTimeblock(TBs_New[1]);
+            if (ETB.getResponse == DialogResult.OK)
+            {
+                TBs_New[1] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB2_Box.Text = VC.solveTimeblock(TBs_New[1]);
+            }
+            else if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("There was an issue editing the time block. Edit cancelled.");
+            }
         }
 
         private void EditTB3Button_Click(object sender, EventArgs e)
         {
             EditTimeBlock ETB = new EditTimeBlock(TB3_Box.Text);
             ETB.ShowDialog();
-            TBs_New[2] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB3_Box.Text = VC.solveTimeblock(TBs_New[2]);
+            if (ETB.getResponse == DialogResult.OK)
+            {
+                TBs_New[2] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB3_Box.Text = VC.solveTimeblock(TBs_New[2]);
+            }
+            else if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("There was an issue editing the time block. Edit cancelled.");
+            }
         }
 
         private void EditTB4Button_Click(object sender, EventArgs e)
         {
             EditTimeBlock ETB = new EditTimeBlock(TB4_Box.Text);
             ETB.ShowDialog();
-            TBs_New[3] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB4_Box.Text = VC.solveTimeblock(TBs_New[3]);
+            if (ETB.getResponse == DialogResult.OK)
+            {
+                TBs_New[3] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB4_Box.Text = VC.solveTimeblock(TBs_New[3]);
+            }
+                
+            else if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("There was an issue editing the time block. Edit cancelled.");
+            }
         }
 
         private void EditTB5Button_Click(object sender, EventArgs e)
         {
             EditTimeBlock ETB = new EditTimeBlock(TB5_Box.Text);
             ETB.ShowDialog();
-            TBs_New[4] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
-            TB5_Box.Text = VC.solveTimeblock(TBs_New[4]);
+            if (ETB.getResponse == DialogResult.OK)
+            {
+                TBs_New[4] = VC.createTimeblock(ETB.getTBNew.Item1, ETB.getTBNew.Item2, ETB.getTBNew.Item3, ETB.getTBNew.Item4, ETB.getTBNew.Item5, ETB.getTBNew.Item6, ETB.getTBNew.Item7);
+                TB5_Box.Text = VC.solveTimeblock(TBs_New[4]);
+            }
+            else if (ETB.getResponse == DialogResult.Cancel)
+            {
+                MessageBox.Show("There was an issue editing the time block. Edit cancelled.");
+            }
+
         }
 
         public int[] getTBs_new

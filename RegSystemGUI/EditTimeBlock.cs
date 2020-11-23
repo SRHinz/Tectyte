@@ -15,6 +15,7 @@ namespace RegSystemGUI
     {
         private (int, int, bool, int, int, bool, bool[]) TB_New;
         private bool[] days = new bool[5] { false, false, false, false, false };
+        DialogResult Response;
         public EditTimeBlock(string TBs)
         {
             InitializeComponent();
@@ -128,7 +129,15 @@ namespace RegSystemGUI
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            TB_New = (Convert.ToInt32(HourStart.Value), Convert.ToInt32(MinuteStart.Value), AMStart.Checked, Convert.ToInt32(HourEnd.Value), Convert.ToInt32(MinuteEnd.Value), AMEnd.Checked, days);
+            try
+            {
+                TB_New = (Convert.ToInt32(HourStart.Value), Convert.ToInt32(MinuteStart.Value), AMStart.Checked, Convert.ToInt32(HourEnd.Value), Convert.ToInt32(MinuteEnd.Value), AMEnd.Checked, days);
+                Response = DialogResult.OK;
+            }
+            catch
+            {
+                Response = DialogResult.Cancel;
+            }
             this.Close();
         }
 
@@ -138,6 +147,20 @@ namespace RegSystemGUI
             {
                 return TB_New;
             }
+        }
+
+        public DialogResult getResponse
+        {
+            get
+            {
+                return Response;
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Response = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

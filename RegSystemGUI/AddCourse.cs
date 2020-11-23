@@ -50,6 +50,10 @@ namespace RegSystemGUI
             AccountSelector AS = new AccountSelector(ref UDATA, "faculty");
             AS.ShowDialog();
             instructor = AS.getAccount();
+            if (instructor == null)
+            {
+                instructor = "Staff";
+            }
             Num_TimeBlocks.Value = 1;
             Add_P_Button.Hide();
             Prereq_Display.Hide();
