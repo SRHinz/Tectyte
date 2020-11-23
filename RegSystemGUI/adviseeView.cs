@@ -27,8 +27,36 @@ namespace RegSystemGUI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "Current Courses")
+            if (comboBox1.SelectedItem.ToString() == "Course History")
             {
+                warningBox.Visible = false;
+                warningBox2.Visible = false;
+                AdviseeViewGrid.Rows.Clear();
+                AdviseeViewGrid.Columns[4].Visible = false;
+                AdviseeViewGrid.Columns[5].Visible = false;
+                AdviseeViewGrid.Columns[6].Visible = false;
+                AdviseeViewGrid.Columns[7].Visible = false;
+                AdviseeViewGrid.Columns[8].Visible = false;
+                GPABox.Visible = true;
+                CreditsEarnedBox.Visible = true;
+                GPALabel.Visible = true;
+                NumCreditsEarnedLabel.Visible = true;
+                coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "History", coe.CurTerm, coe.cData);
+                if (AdviseeViewGrid.Rows.Count == 1)
+                {
+                    warningBox.Show();
+                }
+                CreditsEarnedBox.Text = (coe.uData.UDatabase[stu] as Program.StudentAcc).totalCredits.ToString();
+                GPABox.Text = (coe.uData.UDatabase[stu] as Program.StudentAcc).GPA.ToString();
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Current Courses")
+            {
+                warningBox.Visible = false;
+                warningBox2.Visible = false;
+                GPABox.Visible = false;
+                CreditsEarnedBox.Visible = false;
+                GPALabel.Visible = false;
+                NumCreditsEarnedLabel.Visible = false;
                 AdviseeViewGrid.Rows.Clear();
                 AdviseeViewGrid.Columns[4].Visible = false;
                 AdviseeViewGrid.Columns[5].Visible = false;
@@ -36,10 +64,20 @@ namespace RegSystemGUI
                 AdviseeViewGrid.Columns[7].Visible = false;
                 AdviseeViewGrid.Columns[8].Visible = false;
                 coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Current", coe.CurTerm, coe.cData);
+                if (AdviseeViewGrid.Rows.Count == 1)
+                {
+                    warningBox.Show();
+                }
 
             }
             else if (comboBox1.SelectedItem.ToString() == "Future Courses")
             {
+                warningBox.Visible = false;
+                warningBox2.Visible = false;
+                GPABox.Visible = false;
+                CreditsEarnedBox.Visible = false;
+                GPALabel.Visible = false;
+                NumCreditsEarnedLabel.Visible = false;
                 AdviseeViewGrid.Rows.Clear();
                 AdviseeViewGrid.Columns[4].Visible = true;
                 AdviseeViewGrid.Columns[5].Visible = true;
@@ -47,6 +85,10 @@ namespace RegSystemGUI
                 AdviseeViewGrid.Columns[7].Visible = true;
                 AdviseeViewGrid.Columns[8].Visible = true;
                 coe.vCourse.displayStuHist(coe.uData.UDatabase[stu] as Program.StudentAcc, AdviseeViewGrid, "Future", coe.CurTerm, coe.cData);
+                if (AdviseeViewGrid.Rows.Count == 1)
+                {
+                    warningBox.Show();
+                }
                 try
                 {
                     foreach (Program.sHistory course in (coe.uData.UDatabase[stu] as Program.StudentAcc).CHistory)
@@ -80,6 +122,7 @@ namespace RegSystemGUI
                 catch (Program.regConflictException alpha)
                 {
                     MessageBox.Show("There is a time conflict between one or more courses");
+                    warningBox2.Show();
                 }
             }
         }

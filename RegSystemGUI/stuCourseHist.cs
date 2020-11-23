@@ -143,6 +143,7 @@ namespace RegSystemGUI
                 catch (Program.regConflictException alpha)
                 {
                     MessageBox.Show("There is a time conflict between one or more courses");
+                    warningBox2.Show();
                 }
 
             }

@@ -43,6 +43,12 @@
             this.Return_Button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.copyrightBox = new System.Windows.Forms.TextBox();
+            this.NumCreditsEarnedLabel = new System.Windows.Forms.Label();
+            this.CreditsEarnedBox = new System.Windows.Forms.TextBox();
+            this.GPALabel = new System.Windows.Forms.Label();
+            this.GPABox = new System.Windows.Forms.TextBox();
+            this.warningBox2 = new System.Windows.Forms.TextBox();
+            this.warningBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AdviseeViewGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,8 +69,8 @@
             this.TimeBlock3,
             this.TimeBlock4,
             this.TimeBlock5});
-            this.AdviseeViewGrid.Location = new System.Drawing.Point(4, 5);
-            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.AdviseeViewGrid.Location = new System.Drawing.Point(10, 45);
+            this.AdviseeViewGrid.Margin = new System.Windows.Forms.Padding(1);
             this.AdviseeViewGrid.Name = "AdviseeViewGrid";
             this.AdviseeViewGrid.ReadOnly = true;
             this.AdviseeViewGrid.RowHeadersWidth = 30;
@@ -139,10 +145,11 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "Course History",
             "Current Courses",
             "Future Courses"});
-            this.comboBox1.Location = new System.Drawing.Point(877, 8);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox1.Location = new System.Drawing.Point(883, 48);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(114, 21);
             this.comboBox1.TabIndex = 1;
@@ -150,8 +157,8 @@
             // 
             // Return_Button
             // 
-            this.Return_Button.Location = new System.Drawing.Point(877, 42);
-            this.Return_Button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Return_Button.Location = new System.Drawing.Point(883, 82);
+            this.Return_Button.Margin = new System.Windows.Forms.Padding(1);
             this.Return_Button.Name = "Return_Button";
             this.Return_Button.Size = new System.Drawing.Size(111, 29);
             this.Return_Button.TabIndex = 2;
@@ -162,8 +169,8 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(338, 370);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(386, 438);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -174,26 +181,97 @@
             // 
             this.copyrightBox.BackColor = System.Drawing.SystemColors.Control;
             this.copyrightBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.copyrightBox.Location = new System.Drawing.Point(354, 374);
-            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.copyrightBox.Location = new System.Drawing.Point(402, 442);
+            this.copyrightBox.Margin = new System.Windows.Forms.Padding(2);
             this.copyrightBox.Name = "copyrightBox";
             this.copyrightBox.Size = new System.Drawing.Size(222, 13);
             this.copyrightBox.TabIndex = 10;
             this.copyrightBox.Text = "this software is property of tectyte ©2020";
             this.copyrightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // NumCreditsEarnedLabel
+            // 
+            this.NumCreditsEarnedLabel.AutoSize = true;
+            this.NumCreditsEarnedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.NumCreditsEarnedLabel.Location = new System.Drawing.Point(18, 376);
+            this.NumCreditsEarnedLabel.Name = "NumCreditsEarnedLabel";
+            this.NumCreditsEarnedLabel.Size = new System.Drawing.Size(176, 17);
+            this.NumCreditsEarnedLabel.TabIndex = 20;
+            this.NumCreditsEarnedLabel.Text = "Number of Credits Earned:";
+            // 
+            // CreditsEarnedBox
+            // 
+            this.CreditsEarnedBox.BackColor = System.Drawing.SystemColors.Control;
+            this.CreditsEarnedBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CreditsEarnedBox.Location = new System.Drawing.Point(192, 379);
+            this.CreditsEarnedBox.Margin = new System.Windows.Forms.Padding(1);
+            this.CreditsEarnedBox.Name = "CreditsEarnedBox";
+            this.CreditsEarnedBox.Size = new System.Drawing.Size(104, 13);
+            this.CreditsEarnedBox.TabIndex = 19;
+            this.CreditsEarnedBox.Text = "placeholder";
+            // 
+            // GPALabel
+            // 
+            this.GPALabel.AutoSize = true;
+            this.GPALabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GPALabel.Location = new System.Drawing.Point(146, 394);
+            this.GPALabel.Name = "GPALabel";
+            this.GPALabel.Size = new System.Drawing.Size(41, 17);
+            this.GPALabel.TabIndex = 18;
+            this.GPALabel.Text = "GPA:";
+            // 
+            // GPABox
+            // 
+            this.GPABox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GPABox.Location = new System.Drawing.Point(192, 397);
+            this.GPABox.Name = "GPABox";
+            this.GPABox.ReadOnly = true;
+            this.GPABox.Size = new System.Drawing.Size(104, 13);
+            this.GPABox.TabIndex = 17;
+            this.GPABox.Text = "placeholder";
+            // 
+            // warningBox2
+            // 
+            this.warningBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.warningBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.warningBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warningBox2.Location = new System.Drawing.Point(37, 26);
+            this.warningBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.warningBox2.Name = "warningBox2";
+            this.warningBox2.Size = new System.Drawing.Size(432, 16);
+            this.warningBox2.TabIndex = 22;
+            this.warningBox2.Text = "**Warning: There is a time conflict between two or more classes.**";
+            // 
+            // warningBox
+            // 
+            this.warningBox.BackColor = System.Drawing.SystemColors.Control;
+            this.warningBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.warningBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warningBox.Location = new System.Drawing.Point(37, 26);
+            this.warningBox.Margin = new System.Windows.Forms.Padding(2);
+            this.warningBox.Name = "warningBox";
+            this.warningBox.Size = new System.Drawing.Size(432, 16);
+            this.warningBox.TabIndex = 21;
+            this.warningBox.Text = "**Warning: There are no registered classes.**";
+            // 
             // adviseeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1011, 394);
+            this.ClientSize = new System.Drawing.Size(1011, 466);
+            this.Controls.Add(this.warningBox2);
+            this.Controls.Add(this.warningBox);
+            this.Controls.Add(this.NumCreditsEarnedLabel);
+            this.Controls.Add(this.CreditsEarnedBox);
+            this.Controls.Add(this.GPALabel);
+            this.Controls.Add(this.GPABox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightBox);
             this.Controls.Add(this.Return_Button);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.AdviseeViewGrid);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "adviseeView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Advisee View";
@@ -221,5 +299,11 @@
         private System.Windows.Forms.Button Return_Button;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox copyrightBox;
+        private System.Windows.Forms.Label NumCreditsEarnedLabel;
+        private System.Windows.Forms.TextBox CreditsEarnedBox;
+        private System.Windows.Forms.Label GPALabel;
+        private System.Windows.Forms.TextBox GPABox;
+        private System.Windows.Forms.TextBox warningBox2;
+        private System.Windows.Forms.TextBox warningBox;
     }
 }
